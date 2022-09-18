@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1450968365 source:c:\src\opengl\lesson10\lesson10.rc
+	<windows.h>
+	<winver.h>
+	"resource.h"
+
+1450968353 c:\src\opengl\lesson10\resource.h
+
+1630674193 source:c:\src\opengl\nehe_lesson10-master\lesson10.rc
+	<windows.h>
+	<winver.h>
+	"resource.h"
+
+1630672118 c:\src\opengl\nehe_lesson10-master\resource.h
+
+1610990923 source:c:\src\opengl\nehe_lesson10-master\lesson10.c
+	<windows.h>
+	<windows.h>
+	<math.h>
+	<stdio.h>
+	<gl\gl.h>
+	<gl\glu.h>
+	<stdbool.h>
+
+1663503928 source:c:\src\opengl\nehe_lesson10-master\src\lesson10.rc
+	<windows.h>
+	<winver.h>
+	"resource.h"
+
+1630675718 c:\src\opengl\nehe_lesson10-master\src\resource.h
+

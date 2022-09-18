@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<results version="2">
+    <cppcheck version="2.7" />
+    <errors>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;z&apos; shadows outer variable" verbose="Local variable &apos;z&apos; shadows outer variable" cwe="398" file0="Lesson10.c">
+            <location file="Lesson10.c" line="197" column="14" info="Shadow variable" />
+            <location file="Lesson10.c" line="138" column="9" info="Shadowed declaration" />
+            <symbol>z</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;vert&apos; is assigned a value that is never used." verbose="Variable &apos;vert&apos; is assigned a value that is never used." cwe="563" file0="Lesson10.c">
+            <location file="Lesson10.c" line="199" column="18" />
+            <symbol>vert</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;PixelFormat&apos; is assigned a value that is never used." verbose="Variable &apos;PixelFormat&apos; is assigned a value that is never used." cwe="563" file0="Lesson10.c">
+            <location file="Lesson10.c" line="588" column="20" />
+            <symbol>PixelFormat</symbol>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Cppcheck cannot find all the include files (use --check-config for details)" verbose="Cppcheck cannot find all the include files. Cppcheck can check the code without the include files found. But the results will probably be more accurate if all the include files are found. Please check your project&apos;s include directories and add all of them as include directories for Cppcheck. To see what files Cppcheck cannot find use --check-config." />
+    </errors>
+</results>

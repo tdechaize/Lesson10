@@ -1,0 +1,10 @@
+<map id="SetupWorld" name="SetupWorld">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,94,32"/>
+<area shape="rect" id="Node000002" href="$logger_8c.html#abd2d19eeef46a8184a2302d33c6c7397" title=" " alt="" coords="251,5,321,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,16,236,16,236,21,94,21"/>
+<area shape="rect" id="Node000004" href="$_lesson10_8c.html#a7f195c38a24eda1f207df6e094f9181e" title=" " alt="" coords="142,31,203,57"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="95,25,128,32,127,37,94,30"/>
+<area shape="rect" id="Node000003" href="$logger_8c.html#aeea85f0478e1d5c40a6293f63269ac03" title=" " alt="" coords="369,5,448,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="321,16,354,16,354,21,321,21"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="203,35,236,27,237,32,204,40"/>
+</map>

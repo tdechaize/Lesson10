@@ -1,0 +1,231 @@
+[Sunday, 20 October 2024, 12:10:06] [src\Lesson10.c ,line: 826] Lancement du programme Lesson10.
+[Sunday, 20 October 2024, 12:10:06] [src\Lesson10.c ,line: 833] Niveau de trace : FULL.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 589] At the beginning of function CreateGLWindow.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 643] In function CreateGLWindow, before CreateWindowsEx.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 711] In function CreateGLWindow, before ReSizeGLScene.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 410] At the beginning of function InitGL.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 348] At the beginning of function LoadGLTextures.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 297] At the beginning of function NeHeLoadBitmap3, load file name : ../../Data/Mud2.bmp.
+
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 336] At the ending of function NeHeLoadBitmap3.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 359] At the ending of function LoadGLTextures.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 221] In function SetupWorld -> fichier traite : ../../data/world.txt .
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 230] In function SetupWorld -> after first readstr : NUMPOLLIES 36
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 244] In function SetupWorld -> after sscanf tor read numtriangles : 36.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -3.0  0.0 -3.0 0.0 6.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -3.0  0.0  3.0 0.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading :  3.0  0.0  3.0 6.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -3.0  0.0 -3.0 0.0 6.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading :  3.0  0.0 -3.0 6.0 6.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading :  3.0  0.0  3.0 6.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -3.0  1.0 -3.0 0.0 6.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -3.0  1.0  3.0 0.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading :  3.0  1.0  3.0 6.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -3.0  1.0 -3.0 0.0 6.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading :  3.0  1.0 -3.0 6.0 6.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading :  3.0  1.0  3.0 6.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -2.0  1.0  -2.0 0.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -2.0  0.0  -2.0 0.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -0.5  0.0  -2.0 1.5 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -2.0  1.0  -2.0 0.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -0.5  1.0  -2.0 1.5 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -0.5  0.0  -2.0 1.5 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading :  2.0  1.0  -2.0 2.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading :  2.0  0.0  -2.0 2.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading :  0.5  0.0  -2.0 0.5 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading :  2.0  1.0  -2.0 2.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading :  0.5  1.0  -2.0 0.5 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading :  0.5  0.0  -2.0 0.5 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -2.0  1.0  2.0 2.0  1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -2.0  0.0   2.0 2.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -0.5  0.0   2.0 0.5 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -2.0  1.0  2.0 2.0  1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -0.5  1.0  2.0 0.5  1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -0.5  0.0   2.0 0.5 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading :  2.0  1.0  2.0 2.0  1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading :  2.0  0.0   2.0 2.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading :  0.5  0.0   2.0 0.5 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading :  2.0  1.0  2.0 2.0  1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading :  0.5  1.0  2.0 0.5  1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading :  0.5  0.0   2.0 0.5 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -2.0  1.0  -2.0 0.0  1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -2.0  0.0   -2.0 0.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -2.0  0.0   -0.5 1.5 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -2.0  1.0  -2.0 0.0  1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -2.0  1.0  -0.5 1.5  1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -2.0  0.0   -0.5 1.5 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -2.0  1.0   2.0 2.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -2.0  0.0   2.0 2.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -2.0  0.0   0.5 0.5 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -2.0  1.0  2.0 2.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -2.0  1.0  0.5 0.5 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -2.0  0.0   0.5 0.5 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 2.0  1.0  -2.0 0.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 2.0  0.0   -2.0 0.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 2.0  0.0   -0.5 1.5 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 2.0  1.0  -2.0 0.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 2.0  1.0  -0.5 1.5 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 2.0  0.0   -0.5 1.5 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 2.0  1.0  2.0 2.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 2.0  0.0   2.0 2.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 2.0  0.0   0.5 0.5 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 2.0  1.0  2.0 2.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 2.0  1.0  0.5 0.5 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 2.0  0.0   0.5 0.5 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -0.5  1.0  -3.0 0.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -0.5  0.0   -3.0 0.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -0.5  0.0   -2.0 1.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -0.5  1.0  -3.0 0.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -0.5  1.0  -2.0 1.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -0.5  0.0   -2.0 1.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 0.5  1.0  -3.0 0.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 0.5  0.0   -3.0 0.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 0.5  0.0   -2.0 1.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 0.5  1.0  -3.0 0.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 0.5  1.0  -2.0 1.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 0.5  0.0   -2.0 1.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -0.5  1.0  3.0 0.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -0.5  0.0   3.0 0.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -0.5  0.0   2.0 1.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -0.5  1.0  3.0 0.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -0.5  1.0  2.0 1.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -0.5  0.0   2.0 1.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 0.5  1.0  3.0 0.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 0.5  0.0   3.0 0.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 0.5  0.0   2.0 1.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 0.5  1.0  3.0 0.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 0.5  1.0  2.0 1.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 0.5  0.0   2.0 1.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -3.0  1.0  0.5 1.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -3.0  0.0   0.5 1.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -2.0  0.0   0.5 0.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -3.0  1.0  0.5 1.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -2.0  1.0  0.5 0.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -2.0  0.0   0.5 0.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -3.0  1.0  -0.5 1.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -3.0  0.0   -0.5 1.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -2.0  0.0   -0.5 0.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -3.0  1.0  -0.5 1.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -2.0  1.0  -0.5 0.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : -2.0  0.0   -0.5 0.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 3.0  1.0  0.5 1.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 3.0  0.0   0.5 1.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 2.0  0.0   0.5 0.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 3.0  1.0  0.5 1.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 2.0  1.0  0.5 0.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 2.0  0.0   0.5 0.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 3.0  1.0  -0.5 1.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 3.0  0.0   -0.5 1.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 2.0  0.0   -0.5 0.0 0.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 3.0  1.0  -0.5 1.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 2.0  1.0 -0.5 0.0 1.0
+.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 260] In function SetupWorld -> in the loop of reading : 2.0  0.0   -0.5 0.0 0.0.
+[Sunday, 20 October 2024, 12:10:09] [src\Lesson10.c ,line: 432] At the ending of function InitGL.

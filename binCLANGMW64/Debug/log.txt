@@ -1,0 +1,267 @@
+[Monday, 21 October 2024, 15:52:29] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 839] Lancement du programme Lesson10.
+[Monday, 21 October 2024, 15:52:29] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 846] Niveau de trace : FULL.
+[Monday, 21 October 2024, 15:52:31] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 602] At the beginning of function CreateGLWindow.
+[Monday, 21 October 2024, 15:52:31] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 656] In function CreateGLWindow, before CreateWindowsEx.
+[Monday, 21 October 2024, 15:52:31] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 724] In function CreateGLWindow, before ReSizeGLScene.
+[Monday, 21 October 2024, 15:52:31] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 423] At the beginning of function InitGL.
+[Monday, 21 October 2024, 15:52:31] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 361] At the beginning of function LoadGLTextures.
+[Monday, 21 October 2024, 15:52:31] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 310] At the beginning of function NeHeLoadBitmap3, load file name : ../../Data/Mud2.bmp.
+
+[Monday, 21 October 2024, 15:52:31] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 349] At the ending of function NeHeLoadBitmap3.
+[Monday, 21 October 2024, 15:52:31] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 372] At the ending of function LoadGLTextures.
+[Monday, 21 October 2024, 15:52:31] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 263] In function SetupWorld -> fichier traite : ../../data/world.txt .
+[Monday, 21 October 2024, 15:52:31] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : NUMPOLLIES 36
+
+[Monday, 21 October 2024, 15:52:31] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : // Floor 1
+
+[Monday, 21 October 2024, 15:52:31] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -3.0  0.0 -3.0 0.0 6.0
+
+[Monday, 21 October 2024, 15:52:31] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -3.0  0.0  3.0 0.0 0.0
+
+[Monday, 21 October 2024, 15:52:31] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record :  3.0  0.0  3.0 6.0 0.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -3.0  0.0 -3.0 0.0 6.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record :  3.0  0.0 -3.0 6.0 6.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record :  3.0  0.0  3.0 6.0 0.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : // Ceiling 1
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -3.0  1.0 -3.0 0.0 6.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -3.0  1.0  3.0 0.0 0.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record :  3.0  1.0  3.0 6.0 0.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -3.0  1.0 -3.0 0.0 6.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record :  3.0  1.0 -3.0 6.0 6.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record :  3.0  1.0  3.0 6.0 0.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : // A1
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -2.0  1.0  -2.0 0.0 1.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -2.0  0.0  -2.0 0.0 0.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -0.5  0.0  -2.0 1.5 0.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -2.0  1.0  -2.0 0.0 1.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -0.5  1.0  -2.0 1.5 1.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -0.5  0.0  -2.0 1.5 0.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : // A2
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record :  2.0  1.0  -2.0 2.0 1.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record :  2.0  0.0  -2.0 2.0 0.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record :  0.5  0.0  -2.0 0.5 0.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record :  2.0  1.0  -2.0 2.0 1.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record :  0.5  1.0  -2.0 0.5 1.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record :  0.5  0.0  -2.0 0.5 0.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : // B1
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -2.0  1.0  2.0 2.0  1.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -2.0  0.0   2.0 2.0 0.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -0.5  0.0   2.0 0.5 0.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -2.0  1.0  2.0 2.0  1.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -0.5  1.0  2.0 0.5  1.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -0.5  0.0   2.0 0.5 0.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : // B2
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record :  2.0  1.0  2.0 2.0  1.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record :  2.0  0.0   2.0 2.0 0.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record :  0.5  0.0   2.0 0.5 0.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record :  2.0  1.0  2.0 2.0  1.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record :  0.5  1.0  2.0 0.5  1.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record :  0.5  0.0   2.0 0.5 0.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : // C1
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -2.0  1.0  -2.0 0.0  1.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -2.0  0.0   -2.0 0.0 0.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -2.0  0.0   -0.5 1.5 0.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -2.0  1.0  -2.0 0.0  1.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -2.0  1.0  -0.5 1.5  1.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -2.0  0.0   -0.5 1.5 0.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : // C2
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -2.0  1.0   2.0 2.0 1.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -2.0  0.0   2.0 2.0 0.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -2.0  0.0   0.5 0.5 0.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -2.0  1.0  2.0 2.0 1.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -2.0  1.0  0.5 0.5 1.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -2.0  0.0   0.5 0.5 0.0
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : // D1
+
+[Monday, 21 October 2024, 15:52:32] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 2.0  1.0  -2.0 0.0 1.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 2.0  0.0   -2.0 0.0 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 2.0  0.0   -0.5 1.5 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 2.0  1.0  -2.0 0.0 1.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 2.0  1.0  -0.5 1.5 1.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 2.0  0.0   -0.5 1.5 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : // D2
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 2.0  1.0  2.0 2.0 1.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 2.0  0.0   2.0 2.0 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 2.0  0.0   0.5 0.5 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 2.0  1.0  2.0 2.0 1.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 2.0  1.0  0.5 0.5 1.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 2.0  0.0   0.5 0.5 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : // Upper hallway - L
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -0.5  1.0  -3.0 0.0 1.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -0.5  0.0   -3.0 0.0 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -0.5  0.0   -2.0 1.0 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -0.5  1.0  -3.0 0.0 1.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -0.5  1.0  -2.0 1.0 1.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -0.5  0.0   -2.0 1.0 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : // Upper hallway - R
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 0.5  1.0  -3.0 0.0 1.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 0.5  0.0   -3.0 0.0 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 0.5  0.0   -2.0 1.0 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 0.5  1.0  -3.0 0.0 1.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 0.5  1.0  -2.0 1.0 1.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 0.5  0.0   -2.0 1.0 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : // Lower hallway - L
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -0.5  1.0  3.0 0.0 1.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -0.5  0.0   3.0 0.0 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -0.5  0.0   2.0 1.0 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -0.5  1.0  3.0 0.0 1.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -0.5  1.0  2.0 1.0 1.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -0.5  0.0   2.0 1.0 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : // Lower hallway - R
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 0.5  1.0  3.0 0.0 1.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 0.5  0.0   3.0 0.0 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 0.5  0.0   2.0 1.0 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 0.5  1.0  3.0 0.0 1.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 0.5  1.0  2.0 1.0 1.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 0.5  0.0   2.0 1.0 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : // Left hallway - Lw
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -3.0  1.0  0.5 1.0 1.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -3.0  0.0   0.5 1.0 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -2.0  0.0   0.5 0.0 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -3.0  1.0  0.5 1.0 1.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -2.0  1.0  0.5 0.0 1.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -2.0  0.0   0.5 0.0 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : // Left hallway - Hi
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -3.0  1.0  -0.5 1.0 1.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -3.0  0.0   -0.5 1.0 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -2.0  0.0   -0.5 0.0 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -3.0  1.0  -0.5 1.0 1.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -2.0  1.0  -0.5 0.0 1.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : -2.0  0.0   -0.5 0.0 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : // Right hallway - Lw
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 3.0  1.0  0.5 1.0 1.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 3.0  0.0   0.5 1.0 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 2.0  0.0   0.5 0.0 0.0
+
+[Monday, 21 October 2024, 15:52:33] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 3.0  1.0  0.5 1.0 1.0
+
+[Monday, 21 October 2024, 15:52:34] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 2.0  1.0  0.5 0.0 1.0
+
+[Monday, 21 October 2024, 15:52:34] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 2.0  0.0   0.5 0.0 0.0
+
+[Monday, 21 October 2024, 15:52:34] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : // Right hallway - Hi
+
+[Monday, 21 October 2024, 15:52:34] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 3.0  1.0  -0.5 1.0 1.0
+
+[Monday, 21 October 2024, 15:52:34] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 3.0  0.0   -0.5 1.0 0.0
+
+[Monday, 21 October 2024, 15:52:34] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 2.0  0.0   -0.5 0.0 0.0
+
+[Monday, 21 October 2024, 15:52:34] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 3.0  1.0  -0.5 1.0 1.0
+
+[Monday, 21 October 2024, 15:52:34] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 2.0  1.0 -0.5 0.0 1.0
+
+[Monday, 21 October 2024, 15:52:34] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 210] In function readstr analyze this record : 2.0  0.0   -0.5 0.0 0.0
+[Monday, 21 October 2024, 15:52:34] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 283] At the end of function SetupWorld
+[Monday, 21 October 2024, 15:52:34] [C:\src\OpenGL\NeHe_Lesson10-master\src\Lesson10.c ,line: 445] At the ending of function InitGL.

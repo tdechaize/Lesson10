@@ -1,0 +1,29 @@
+<map id="CreateGLWindow" name="CreateGLWindow">
+<area shape="rect" id="Node000001" title="Creation of our OpenGL Window." alt="" coords="5,287,129,313"/>
+<area shape="rect" id="Node000002" href="$_lesson10_8c.html#aa4c387d3f1ebce6d57684b6a10c9b0ae" title="Fonction InitGL : Fin de l&#39;initialisation de la fenêtre Windows gérant OpenGL." alt="" coords="200,109,256,136"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,284,203,145,207,149,83,288"/>
+<area shape="rect" id="Node000004" href="$logger_8c.html#abd2d19eeef46a8184a2302d33c6c7397" title=" " alt="" coords="673,109,743,136"/>
+<area shape="poly" id="edge13_Node000001_Node000004" title=" " alt="" coords="122,284,176,272,245,264,305,263,409,270,458,271,508,265,562,250,623,222,645,207,663,188,691,148,695,151,667,191,648,211,626,226,564,255,509,271,458,276,409,275,305,269,246,269,177,277,123,289"/>
+<area shape="rect" id="Node000009" href="$_lesson10_8c.html#af33a2273205c1491be5916d3091658e0" title="Fonction KillGLWindow : Destruction de toutes les ressources du programme." alt="" coords="177,287,279,313"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="129,297,162,297,162,303,129,303"/>
+<area shape="rect" id="Node000010" href="$_lesson10_8c.html#a87bb84d489df61ed7b0c002584fd984f" title="Fonction ReSizeGLScene : redimensionnement de la fenêtre Windows gérant OpenGL." alt="" coords="327,363,445,389"/>
+<area shape="poly" id="edge14_Node000001_Node000010" title=" " alt="" coords="127,311,313,356,312,361,126,317"/>
+<area shape="rect" id="Node000011" href="$_lesson10_8c.html#ae749e989b362e19783c7af4a2bf46c95" title="Fonction CALLBACK de traitement des messages Windows." alt="" coords="190,388,266,415"/>
+<area shape="poly" id="edge15_Node000001_Node000011" title=" " alt="" coords="91,312,194,378,192,382,88,316"/>
+<area shape="rect" id="Node000003" href="$_lesson10_8c.html#a8dd15539ba90ae3670aa0a9f889d2236" title=" " alt="" coords="329,33,444,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="255,107,342,65,345,69,258,112"/>
+<area shape="poly" id="edge7_Node000002_Node000004" title=" " alt="" coords="256,119,413,113,625,113,658,116,658,121,625,119,413,118,257,124"/>
+<area shape="rect" id="Node000007" href="$_lesson10_8c.html#a34e550eaac41bec549d492372e9dcbd7" title=" " alt="" coords="342,135,430,161"/>
+<area shape="poly" id="edge8_Node000002_Node000007" title=" " alt="" coords="257,125,328,136,327,141,256,130"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="419,30,462,16,515,6,571,5,599,9,626,19,649,34,668,54,696,95,691,97,664,57,645,38,623,24,598,15,571,10,515,11,463,22,421,35"/>
+<area shape="rect" id="Node000006" href="$_lesson10_8c.html#ae1c091a456680cc628759567198fe7ec" title="Fonction NeHeLoadBitmap3 : charge un fichier BMP en mémoire pour generer un tableau de trois textures." alt="" coords="493,33,625,60"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="444,44,478,44,478,49,444,49"/>
+<area shape="rect" id="Node000005" href="$logger_8c.html#aeea85f0478e1d5c40a6293f63269ac03" title=" " alt="" coords="791,109,869,136"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="743,120,776,120,776,125,743,125"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="590,58,626,76,670,100,667,104,623,81,587,63"/>
+<area shape="poly" id="edge9_Node000007_Node000004" title=" " alt="" coords="430,142,658,124,658,129,431,147"/>
+<area shape="rect" id="Node000008" href="$_lesson10_8c.html#a7f195c38a24eda1f207df6e094f9181e" title=" " alt="" coords="528,185,590,212"/>
+<area shape="poly" id="edge10_Node000007_Node000008" title=" " alt="" coords="432,158,515,183,513,188,430,164"/>
+<area shape="poly" id="edge11_Node000008_Node000004" title=" " alt="" coords="587,183,623,164,667,141,670,146,626,169,590,187"/>
+<area shape="poly" id="edge16_Node000011_Node000010" title=" " alt="" coords="266,393,312,385,313,390,266,398"/>
+</map>

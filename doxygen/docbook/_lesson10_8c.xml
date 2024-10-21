@@ -1,0 +1,941 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__lesson10_8c" xml:lang="fr">
+<title>RÃ©fÃ©rence du fichier Lesson10.c</title>
+<indexterm><primary>Lesson10.c</primary></indexterm>
+<para>
+
+<para>Open simple window on Windows systems and create a 3D world in which you can navigated on click on &quot;arrows key&quot;. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;windows.h&gt;<?linebreak?>#include &lt;math.h&gt;<?linebreak?>#include &lt;stdio.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &lt;gl\gl.h&gt;<?linebreak?>#include &lt;gl\glu.h&gt;<?linebreak?>#include &lt;stdlib.h&gt;<?linebreak?>#include &quot;logger.h&quot;<?linebreak?>#include &lt;stdbool.h&gt;<?linebreak?>#include &quot;resource.h&quot;<?linebreak?></programlisting>Graphe des dÃ©pendances par inclusion de Lesson10.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_lesson10_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Structures de donnÃ©es    </title>
+        <itemizedlist>
+            <listitem><para>struct <link linkend="_structtag_v_e_r_t_e_x">tagVERTEX</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structtag_t_r_i_a_n_g_l_e">tagTRIANGLE</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_structtag_s_e_c_t_o_r">tagSECTOR</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="__lesson10_8c_1ac7bef5d85e3dcd73eef56ad39ffc84a9">WIN32_LEAN_AND_MEAN</link></para>
+</listitem>
+            <listitem><para>#define <link linkend="__lesson10_8c_1a41f9c5fb8b08eb5dc3edce4dcb37fee7">true</link>&#160;&#160;&#160;1</para>
+</listitem>
+            <listitem><para>#define <link linkend="__lesson10_8c_1aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</link>&#160;&#160;&#160;1</para>
+</listitem>
+            <listitem><para>#define <link linkend="__lesson10_8c_1a65e9886d74aaee76545e83dd09011727">false</link>&#160;&#160;&#160;0</para>
+</listitem>
+            <listitem><para>#define <link linkend="__lesson10_8c_1aa93f0eb578d23995850d61f7d61c55c1">FALSE</link>&#160;&#160;&#160;0</para>
+</listitem>
+            <listitem><para>#define <link linkend="__lesson10_8c_1a57e2e4402b0a1ec39bf04a8247063a5e">CDS_FULLSCREEN</link>&#160;&#160;&#160;4									/* Compilers. By Defining It This Way,      */</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>DÃ©finitions de type    </title>
+        <itemizedlist>
+            <listitem><para>typedef int <link linkend="__lesson10_8c_1a1062901a7428fdd9c7f180f5e01ea056">bool</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_structtag_v_e_r_t_e_x">tagVERTEX</link> <link linkend="__lesson10_8c_1adfdb66b636e291c02c94c8ed35727ead">VERTEX</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_structtag_t_r_i_a_n_g_l_e">tagTRIANGLE</link> <link linkend="__lesson10_8c_1a878879116fcf5312db8fa898ce52e309">TRIANGLE</link></para>
+</listitem>
+            <listitem><para>typedef struct <link linkend="_structtag_s_e_c_t_o_r">tagSECTOR</link> <link linkend="__lesson10_8c_1aa99a25bbda5687c0a5d1c4a426ec110c">SECTOR</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Fonctions    </title>
+        <itemizedlist>
+            <listitem><para>LRESULT CALLBACK <link linkend="__lesson10_8c_1ae749e989b362e19783c7af4a2bf46c95">WndProc</link> (HWND <link linkend="__lesson10_8c_1afec4341c234519e145bac6f0e5edaa51">hWnd</link>, UINT uMsg, WPARAM wParam, LPARAM lParam)</para>
+
+<para>Fonction CALLBACK de traitement des messages Windows. </para>
+</listitem>
+            <listitem><para>void <link linkend="__lesson10_8c_1a7f195c38a24eda1f207df6e094f9181e">readstr</link> (char *string)</para>
+</listitem>
+            <listitem><para>void <link linkend="__lesson10_8c_1a34e550eaac41bec549d492372e9dcbd7">SetupWorld</link> ()</para>
+</listitem>
+            <listitem><para><link linkend="__lesson10_8c_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="__lesson10_8c_1ae1c091a456680cc628759567198fe7ec">NeHeLoadBitmap3</link> (LPTSTR szFileName, GLuint *<link linkend="__lesson10_8c_1a04b2088c33683580ff9664f8a35cef23">texid</link>)</para>
+
+<para>Fonction NeHeLoadBitmap3 : charge un fichier BMP en mémoire pour generer un tableau de trois textures. </para>
+</listitem>
+            <listitem><para>int <link linkend="__lesson10_8c_1a8dd15539ba90ae3670aa0a9f889d2236">LoadGLTextures</link> ()</para>
+</listitem>
+            <listitem><para>GLvoid <link linkend="__lesson10_8c_1a87bb84d489df61ed7b0c002584fd984f">ReSizeGLScene</link> (GLsizei width, GLsizei height)</para>
+
+<para>Fonction ReSizeGLScene : redimensionnement de la fenêtre Windows gérant OpenGL. </para>
+</listitem>
+            <listitem><para>int <link linkend="__lesson10_8c_1aa4c387d3f1ebce6d57684b6a10c9b0ae">InitGL</link> (GLvoid)</para>
+
+<para>Fonction InitGL : Fin de l&apos;initialisation de la fenêtre Windows gérant OpenGL. </para>
+</listitem>
+            <listitem><para>int <link linkend="__lesson10_8c_1a52061247bdaeb770e3a1d59eefaad972">DrawGLScene</link> (GLvoid)</para>
+
+<para>Fonction DrawGLScene : Dessin sous OpenGL dans la fenêtre Windows. </para>
+</listitem>
+            <listitem><para>GLvoid <link linkend="__lesson10_8c_1af33a2273205c1491be5916d3091658e0">KillGLWindow</link> (GLvoid)</para>
+
+<para>Fonction KillGLWindow : Destruction de toutes les ressources du programme. </para>
+</listitem>
+            <listitem><para>BOOL <link linkend="__lesson10_8c_1ae5f043c9df9b9e5e0e26d567feeeb1bc">CreateGLWindow</link> (char *title, int width, int height, int bits, BOOL fullscreenflag)</para>
+
+<para>Creation of our OpenGL Window. </para>
+</listitem>
+            <listitem><para>int WINAPI <link linkend="__lesson10_8c_1a661c2abc03926acfaeb93b4ae7db4943">WinMain</link> (HINSTANCE <link linkend="__lesson10_8c_1a74029128723095e7bf00a71d46af8b24">hInstance</link>, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)</para>
+
+<para>Creation of our application on Windows System (not console application) *. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>HDC <link linkend="__lesson10_8c_1a78f6446a0e13adc7b7b2f239112ac785">hDC</link> =NULL</para>
+</listitem>
+            <listitem><para>HGLRC <link linkend="__lesson10_8c_1a874963259c7cd998acfe6e187fbdb4c1">hRC</link> =NULL</para>
+</listitem>
+            <listitem><para>HWND <link linkend="__lesson10_8c_1afec4341c234519e145bac6f0e5edaa51">hWnd</link> =NULL</para>
+</listitem>
+            <listitem><para>HINSTANCE <link linkend="__lesson10_8c_1a74029128723095e7bf00a71d46af8b24">hInstance</link></para>
+</listitem>
+            <listitem><para>BOOL <link linkend="__lesson10_8c_1a55a8351b704275ad12988864918abb2a">keys</link> [256]</para>
+</listitem>
+            <listitem><para>BOOL <link linkend="__lesson10_8c_1a22389371583c4b8843e06da43399d6d9">active</link> =<link linkend="__lesson10_8c_1aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</link></para>
+</listitem>
+            <listitem><para>BOOL <link linkend="__lesson10_8c_1ab15a33c0173f2c5b6ac806c55cf7f0ba">fullscreen</link> =<link linkend="__lesson10_8c_1aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</link></para>
+</listitem>
+            <listitem><para>BOOL <link linkend="__lesson10_8c_1af3d0c623676f78dff5a84bc436095550">blend</link></para>
+</listitem>
+            <listitem><para>BOOL <link linkend="__lesson10_8c_1a81fe5d48ae6cf5016dfc24c0835dee10">bp</link></para>
+</listitem>
+            <listitem><para>BOOL <link linkend="__lesson10_8c_1a351433969208eaa89b942d3e587fcc9c">fp</link></para>
+</listitem>
+            <listitem><para>char * <link linkend="__lesson10_8c_1ae9fb3d4767f6255c70dcd5123bbf2f54">level_debug</link></para>
+</listitem>
+            <listitem><para><link linkend="__lesson10_8c_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> <link linkend="__lesson10_8c_1a1a73c6d2f29511093b6a39513c379926">level_def</link> = <link linkend="__lesson10_8c_1a41f9c5fb8b08eb5dc3edce4dcb37fee7">true</link></para>
+</listitem>
+            <listitem><para>const float <link linkend="__lesson10_8c_1a1a6535285fc9406de04538e1200d8ed3">piover180</link> = 0.0174532925f</para>
+</listitem>
+            <listitem><para>float <link linkend="__lesson10_8c_1ac5682e48513a771560df50e3b213e61a">heading</link></para>
+</listitem>
+            <listitem><para>float <link linkend="__lesson10_8c_1adad239fcacf5c59997872bd0c12bdfd1">xpos</link></para>
+</listitem>
+            <listitem><para>float <link linkend="__lesson10_8c_1a1145c2d616cccd00793eb0b60929a3b3">zpos</link></para>
+</listitem>
+            <listitem><para>GLfloat <link linkend="__lesson10_8c_1a9549138cf4d209303566523d805d8525">yrot</link></para>
+</listitem>
+            <listitem><para>GLfloat <link linkend="__lesson10_8c_1ac52295b1c86ab1c35431a1f02382bad1">walkbias</link> = 0</para>
+</listitem>
+            <listitem><para>GLfloat <link linkend="__lesson10_8c_1ad839b78305422c269907845c11f19321">walkbiasangle</link> = 0</para>
+</listitem>
+            <listitem><para>GLfloat <link linkend="__lesson10_8c_1ab253ae37d6b80578f7883bbd03657a59">lookupdown</link> = 0.0f</para>
+</listitem>
+            <listitem><para>GLfloat <link linkend="__lesson10_8c_1acfde595878f838c910907ec90d040114">z</link> =0.0f</para>
+</listitem>
+            <listitem><para>GLuint <link linkend="__lesson10_8c_1abaab572c2d38c9839d1b9831155cb3f3">filter</link> =0</para>
+</listitem>
+            <listitem><para>GLuint <link linkend="__lesson10_8c_1ae303c167c23691bbf165ab05813e5713">texture</link> [3]</para>
+</listitem>
+            <listitem><para>GLuint <link linkend="__lesson10_8c_1a04b2088c33683580ff9664f8a35cef23">texid</link> [3]</para>
+</listitem>
+            <listitem><para><link linkend="__lesson10_8c_1aa99a25bbda5687c0a5d1c4a426ec110c">SECTOR</link> <link linkend="__lesson10_8c_1a196a466e0a51460be93ca4f32c313eff">sector1</link></para>
+</listitem>
+            <listitem><para>int <link linkend="__lesson10_8c_1ad667f040f2932c8097435492fbd10d76">loop</link> = 0</para>
+</listitem>
+            <listitem><para>int <link linkend="__lesson10_8c_1a816a7bb71de16d574a2aac953f57f918">vert</link> = -1</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description dÃ©taillÃ©e</title>
+
+<para>Open simple window on Windows systems and create a 3D world in which you can navigated on click on &quot;arrows key&quot;. </para>
+
+<para>Comments manageable by Doxygen</para>
+
+<para>Modified smoothly by Thierry DECHAIZE.</para>
+
+<para>Paradigm : obtain one source (only one !) compatible for multiple free C Compilers (many GCC compilers included in MinGW, Mingw32, Mingw64, MSYS2, CYGWIN64, TDM, and another Visual C/C++ included in Visual Studio + kits Windows, LCC, WATCOM, DMC, Borland, OneAPI Intel compiler, many CLANG compilers, etc..) and provide for all users an development environment on Windows 11 64 bits the great Code::Blocks IDE (improved version &quot;nightly build&quot; 23.06), and don&apos;t use glaux.lib or glaux.dll (old and buggy library).</para>
+
+<para>a) Mingw 32 bits, official version, with version gcc 9.2.0 (very old !) : downloadable on <link xlink:href="http://sourceforge.net/projects/mingw/">http://sourceforge.net/projects/mingw/</link> (dead branch ?) b) Mingw 64 bits included in new IDE Red Panda Cpp varsion 3.1, version gcc 12.2.0 : donwloadable on <link xlink:href="https://sourceforge.net/projects/redpanda-cpp/files/">https://sourceforge.net/projects/redpanda-cpp/files/</link> c) Mingw 64 bits included in package Code::Blocks (version 20.03 with mingw), downloadable on <link xlink:href="http://sourceforge.net/projects/codeblocks/files/Binaries/20.03/Windows/">http://sourceforge.net/projects/codeblocks/files/Binaries/20.03/Windows/</link> but improved with most recent version of MinGW64 + gcc (version gcc 13.1.0) with &quot;nightly build&quot; dated of 4 june 2023 downloadable on : <link xlink:href="https://sourceforge.net/projects/codeblocks/files/Binaries/Nightlies/2023/CB_20230604_rev13311_win64-setup-MinGW.exe">https://sourceforge.net/projects/codeblocks/files/Binaries/Nightlies/2023/CB_20230604_rev13311_win64-setup-MinGW.exe</link> d) Mingw 32 and 64 bits packaged, version gcc 14.2.0 : downloadable on <link xlink:href="https://winlibs.com/">https://winlibs.com/</link> (and CLANG included in, 32 and 64 bits), two kits :<itemizedlist>
+<listitem>
+<para>winlibs-i686-posix-dwarf-gcc-14.2.0-llvm-19.1.1-mingw-w64ucrt-12.0.0-r2.7z (32 bits)</para>
+</listitem><listitem>
+<para>winlibs-x86_64-posix-seh-gcc-14.2.0-llvm-19.1.1-mingw-w64ucrt-12.0.0-r2.7z (64 bits) e) Cygwin64 with three compilers, &quot;native&quot; GCC 64 bits and GCC in MinGW32 + MinGW64, versions gcc 12.4.0 : downloadable on <link xlink:href="http://www.cygwin.com/install.html">http://www.cygwin.com/install.html</link> (tool for install : setup-x86_64.exe) f) TDM GCC, 32 and 64 bits, version 10.3.0 : downloadable on <link xlink:href="http://sourceforge.net/projects/TDM-GCC">http://sourceforge.net/projects/TDM-GCC</link> g) MSYS2 environment MINGW32 and MINGW64, 32 et 64 bits, version de 2024 (msys2-x86_64-20240727.exe), version gcc 14.2.0 : downloadable on <link xlink:href="https://repo.msys2.org/distrib/x86_64/msys2-x86_64-20240727.exe">https://repo.msys2.org/distrib/x86_64/msys2-x86_64-20240727.exe</link> h) Visual Studio 2022, 32 and 64 bit, community edition for free : downloadable on <link xlink:href="https://visualstudio.microsoft.com/fr/vs/community/">https://visualstudio.microsoft.com/fr/vs/community/</link> i) Borland C/C++ 32 bit, version 5.5.1 : downloadable on <link xlink:href="https://developerinsider.co/download-and-install-borland-c-compiler-on-windows-10/">https://developerinsider.co/download-and-install-borland-c-compiler-on-windows-10/</link> j) Digital Mars Compiler C 32 bits, installation package version 8.57 : downloadable on <link xlink:href="http://www.digitalmars.com">http://www.digitalmars.com</link> (the more old compiler, the more bugged, dead branch !) k) OpenWatcom 32 and 64 bit, version 2.0 (frequently rebuild) : downloadable on <link xlink:href="https://github.com/open-watcom/open-watcom-v2/releases/tag/Current-build">https://github.com/open-watcom/open-watcom-v2/releases/tag/Current-build</link> l) Lcc and Lcc64, 32 and 64 bit : downloadable <link xlink:href="http://www.cs.virginia.edu/~lcc-win32/">http://www.cs.virginia.edu/~lcc-win32/</link> (not really free !) m) PELLES C, 32 and 64 bit, version 12.0 : downloadable on <link xlink:href="http://www.smorgasbordet.com/pellesc/">http://www.smorgasbordet.com/pellesc/</link> o) CLANG 32 and 64 bit included in version WinLibs, leaned at environments MINGW64 et MINGW32, version 19.1.1 (version gcc 14.2.0) : downloadable on <link xlink:href="https://winlibs.com/">https://winlibs.com/</link> p) CLANG 32 and 64 bit leaned at environments Visual Studio 2022 (+ kits Microsoft), version 19.1.1 : downloadable on <link xlink:href="https://releases.llvm.org/download.html">https://releases.llvm.org/download.html</link> q) CLANG 32 and 64 bit included in version MSYS2, leaned at environments MINGW64 et MINGW32, version 18.1.8 (version gcc 14.2.0) : downloadable on <link xlink:href="https://repo.msys2.org/distrib/x86_64/msys2-x86_64-20220118.exe">https://repo.msys2.org/distrib/x86_64/msys2-x86_64-20220118.exe</link> r) CLANG 32 bit of version CYGWIN64, adossé aux environnements MINGW64 et MINGW32, version 8.0.0, very old (version gcc 12.4.0) : downloadable <link xlink:href="http://www.cygwin.com/install.html">http://www.cygwin.com/install.html</link> (tool for install : setup-x86_64.exe) s) OneAPI Intel C/C++ compiler 32 and 64 bit, version 2024.2.1 downloadable on site <link xlink:href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html">https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html</link></para>
+</listitem></itemizedlist>
+</para>
+
+<para>TDE -&gt; Add resource file end resource header for restitute version + icon OpenGL.ico for fun, because versionning is important, same for freeware :-) !</para>
+
+<para>62 generations with &quot;All build&quot; target into IDE Code::Blocks, or with CMAKE (and &quot;make&quot; tools with compilers don&apos;t supported with CMAKE), or, finally, with &quot;command files&quot; (versions 32 or 64 bits, &quot;Debug&quot; or &quot;Release&quot;), just &quot;for fun&quot; or &quot;academic demonstration&quot; of these tools.</para>
+
+<para>Date : 2024/10/16</para>
+
+<para><formalpara><title>Auteur</title>
+
+<para>Jeff Molofee ( NeHe ) originely, Modified for LCCWin32 compiler by Robert Wishlaw 2002/11/23 </para>
+
+<para>After adapted by Thierry Dechaize to verify paradigm : one source for multiple C Compilers </para>
+</formalpara>
+<formalpara><title>Version</title>
+
+<para>2.0.4.0 </para>
+</formalpara>
+<formalpara><title>Date</title>
+
+<para>16 octobre 2024</para>
+</formalpara>
+This program manage only three &quot;Windows&quot; events : click on &quot;arrows key&quot; on keyboard, click on button &quot;Close&quot; of open windows or exit by touch &quot;ESC&quot;,</para>
+
+<para>but manage also &quot;Fullscreen&quot; or not.</para>
+
+<para>WARNING : Bug detected with Pelles C Compiler : filein = fopen(&quot;../../data/world.txt&quot;, &quot;rt&quot;); fail because option &quot;rt&quot; is undefined in any std reference of</para>
+
+<para>language C. It&apos;s only a &quot;tolerance&quot; supported by many compiler on Windows ... except Pelles C. It&apos;s a major reason of rewrite of functions &quot;SetWorld&quot;</para>
+
+<para>and &quot;readstr&quot; in this source =&gt; it&apos;s not the orginally source of NeHe Lesson10. Tested with success with all free compilers described below or in &quot;Notes&quot;</para>
+
+<para>into CB project. </para>
+</section>
+<section>
+<title>Documentation des macros</title>
+<anchor xml:id="__lesson10_8c_1a57e2e4402b0a1ec39bf04a8247063a5e"/><section>
+    <title>CDS_FULLSCREEN</title>
+<indexterm><primary>CDS_FULLSCREEN</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>CDS_FULLSCREEN</secondary></indexterm>
+<para><computeroutput>#define CDS_FULLSCREEN&#160;&#160;&#160;4									/* Compilers. By Defining It This Way,      */</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1aa93f0eb578d23995850d61f7d61c55c1"/><section>
+    <title>FALSE</title>
+<indexterm><primary>FALSE</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>FALSE</secondary></indexterm>
+<para><computeroutput>#define FALSE&#160;&#160;&#160;0</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1a65e9886d74aaee76545e83dd09011727"/><section>
+    <title>false</title>
+<indexterm><primary>false</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>false</secondary></indexterm>
+<para><computeroutput>#define false&#160;&#160;&#160;0</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1aa8cecfc5c5c054d2875c03e77b7be15d"/><section>
+    <title>TRUE</title>
+<indexterm><primary>TRUE</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>TRUE</secondary></indexterm>
+<para><computeroutput>#define TRUE&#160;&#160;&#160;1</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1a41f9c5fb8b08eb5dc3edce4dcb37fee7"/><section>
+    <title>true</title>
+<indexterm><primary>true</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>true</secondary></indexterm>
+<para><computeroutput>#define true&#160;&#160;&#160;1</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1ac7bef5d85e3dcd73eef56ad39ffc84a9"/><section>
+    <title>WIN32_LEAN_AND_MEAN</title>
+<indexterm><primary>WIN32_LEAN_AND_MEAN</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>WIN32_LEAN_AND_MEAN</secondary></indexterm>
+<para><computeroutput>#define WIN32_LEAN_AND_MEAN</computeroutput></para></section>
+</section>
+<section>
+<title>Documentation des dÃ©finitions de type</title>
+<anchor xml:id="__lesson10_8c_1a1062901a7428fdd9c7f180f5e01ea056"/><section>
+    <title>bool</title>
+<indexterm><primary>bool</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>bool</secondary></indexterm>
+<para><computeroutput>typedef int <link linkend="__lesson10_8c_1a1062901a7428fdd9c7f180f5e01ea056">bool</link></computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1aa99a25bbda5687c0a5d1c4a426ec110c"/><section>
+    <title>SECTOR</title>
+<indexterm><primary>SECTOR</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>SECTOR</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_structtag_s_e_c_t_o_r">tagSECTOR</link> <link linkend="__lesson10_8c_1aa99a25bbda5687c0a5d1c4a426ec110c">SECTOR</link></computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1a878879116fcf5312db8fa898ce52e309"/><section>
+    <title>TRIANGLE</title>
+<indexterm><primary>TRIANGLE</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>TRIANGLE</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_structtag_t_r_i_a_n_g_l_e">tagTRIANGLE</link> <link linkend="__lesson10_8c_1a878879116fcf5312db8fa898ce52e309">TRIANGLE</link></computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1adfdb66b636e291c02c94c8ed35727ead"/><section>
+    <title>VERTEX</title>
+<indexterm><primary>VERTEX</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>VERTEX</secondary></indexterm>
+<para><computeroutput>typedef struct <link linkend="_structtag_v_e_r_t_e_x">tagVERTEX</link> <link linkend="__lesson10_8c_1adfdb66b636e291c02c94c8ed35727ead">VERTEX</link></computeroutput></para></section>
+</section>
+<section>
+<title>Documentation des fonctions</title>
+<anchor xml:id="__lesson10_8c_1ae5f043c9df9b9e5e0e26d567feeeb1bc"/><section>
+    <title>CreateGLWindow()</title>
+<indexterm><primary>CreateGLWindow</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>CreateGLWindow</secondary></indexterm>
+<para><computeroutput>BOOL CreateGLWindow (char * title, int width, int height, int bits, BOOL fullscreenflag)</computeroutput></para><para>
+
+<para>Creation of our OpenGL Window. </para>
+</para>
+
+<para>This Code Creates Our OpenGL Window. Parameters Are: * 
+                <formalpara>
+                    <title>
+ParamÃ¨tres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>title</entry><entry>
+<para>- Title To Appear At The Top Of The Window * </para>
+</entry>
+                            </row>
+                            <row>
+<entry>width</entry><entry>
+<para>- Width Of The GL Window Or Fullscreen Mode * </para>
+</entry>
+                            </row>
+                            <row>
+<entry>height</entry><entry>
+<para>- Height Of The GL Window Or Fullscreen Mode * </para>
+</entry>
+                            </row>
+                            <row>
+<entry>bits</entry><entry>
+<para>- Number Of Bits To Use For Color (8/16/24/32) * </para>
+</entry>
+                            </row>
+                            <row>
+<entry>fullscreenflag</entry><entry>
+<para>- Use Fullscreen Mode (TRUE) Or Windowed Mode (FALSE) * </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>BOOL - un entier booleen (OK ou non). </para>
+</formalpara>
+</para>
+Voici le graphe d&apos;appel pour cette fonction :<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_lesson10_8c_ae5f043c9df9b9e5e0e26d567feeeb1bc_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Voici le graphe des appelants de cette fonction :<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_lesson10_8c_ae5f043c9df9b9e5e0e26d567feeeb1bc_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__lesson10_8c_1a52061247bdaeb770e3a1d59eefaad972"/><section>
+    <title>DrawGLScene()</title>
+<indexterm><primary>DrawGLScene</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>DrawGLScene</secondary></indexterm>
+<para><computeroutput>int DrawGLScene (GLvoid )</computeroutput></para><para>
+
+<para>Fonction DrawGLScene : Dessin sous OpenGL dans la fenêtre Windows. </para>
+</para>
+
+<para>This Code draw the scene OpenGL in the main window.</para>
+
+<para>Rien 
+                <formalpara>
+                    <title>
+ParamÃ¨tres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>GLvoid</entry><entry>
+<para>un void OpenGL. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>int un entier (booleen) </para>
+</formalpara>
+</para>
+Voici le graphe des appelants de cette fonction :<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_lesson10_8c_a52061247bdaeb770e3a1d59eefaad972_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__lesson10_8c_1aa4c387d3f1ebce6d57684b6a10c9b0ae"/><section>
+    <title>InitGL()</title>
+<indexterm><primary>InitGL</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>InitGL</secondary></indexterm>
+<para><computeroutput>int InitGL (GLvoid )</computeroutput></para><para>
+
+<para>Fonction InitGL : Fin de l&apos;initialisation de la fenêtre Windows gérant OpenGL. </para>
+</para>
+
+<para>This Code finish the initialization OpenGL of the main window.</para>
+
+<para>Rien 
+                <formalpara>
+                    <title>
+ParamÃ¨tres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>GLvoid</entry><entry>
+<para>un void OpenGL. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>int un entier (booleen) </para>
+</formalpara>
+</para>
+Voici le graphe d&apos;appel pour cette fonction :<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_lesson10_8c_aa4c387d3f1ebce6d57684b6a10c9b0ae_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Voici le graphe des appelants de cette fonction :<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_lesson10_8c_aa4c387d3f1ebce6d57684b6a10c9b0ae_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__lesson10_8c_1af33a2273205c1491be5916d3091658e0"/><section>
+    <title>KillGLWindow()</title>
+<indexterm><primary>KillGLWindow</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>KillGLWindow</secondary></indexterm>
+<para><computeroutput>GLvoid KillGLWindow (GLvoid )</computeroutput></para><para>
+
+<para>Fonction KillGLWindow : Destruction de toutes les ressources du programme. </para>
+</para>
+
+<para>This Code destroy all resources of this program.</para>
+
+<para>Rien 
+                <formalpara>
+                    <title>
+ParamÃ¨tres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>GLvoid</entry><entry>
+<para>un void OpenGL. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>GLvoid un void OpenGL. </para>
+</formalpara>
+</para>
+Voici le graphe des appelants de cette fonction :<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_lesson10_8c_af33a2273205c1491be5916d3091658e0_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__lesson10_8c_1a8dd15539ba90ae3670aa0a9f889d2236"/><section>
+    <title>LoadGLTextures()</title>
+<indexterm><primary>LoadGLTextures</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>LoadGLTextures</secondary></indexterm>
+<para><computeroutput>int LoadGLTextures ( )</computeroutput></para>Voici le graphe d&apos;appel pour cette fonction :<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_lesson10_8c_a8dd15539ba90ae3670aa0a9f889d2236_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Voici le graphe des appelants de cette fonction :<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_lesson10_8c_a8dd15539ba90ae3670aa0a9f889d2236_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__lesson10_8c_1ae1c091a456680cc628759567198fe7ec"/><section>
+    <title>NeHeLoadBitmap3()</title>
+<indexterm><primary>NeHeLoadBitmap3</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>NeHeLoadBitmap3</secondary></indexterm>
+<para><computeroutput><link linkend="__lesson10_8c_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> NeHeLoadBitmap3 (LPTSTR szFileName, GLuint * texid)</computeroutput></para><para>
+
+<para>Fonction NeHeLoadBitmap3 : charge un fichier BMP en mémoire pour generer un tableau de trois textures. </para>
+</para>
+
+<para>This Code Creates Texture From a Bitmap File.</para>
+
+<para>En entrée le nom du fichier Bitmap et en sortie le tableau des trois textures utilisables avec OpenGL 
+                <formalpara>
+                    <title>
+ParamÃ¨tres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>szFileName</entry><entry>
+<para>nom du fichier BMP * </para>
+</entry>
+                            </row>
+                            <row>
+<entry>*texid</entry><entry>
+<para>un pointeur sur lae tableau des trois textures générées * </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>bool un booleen, le tableau des trois textures créé ou non. </para>
+</formalpara>
+</para>
+Voici le graphe d&apos;appel pour cette fonction :<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_lesson10_8c_ae1c091a456680cc628759567198fe7ec_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Voici le graphe des appelants de cette fonction :<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_lesson10_8c_ae1c091a456680cc628759567198fe7ec_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__lesson10_8c_1a7f195c38a24eda1f207df6e094f9181e"/><section>
+    <title>readstr()</title>
+<indexterm><primary>readstr</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>readstr</secondary></indexterm>
+<para><computeroutput>void readstr (char * string)</computeroutput></para>Voici le graphe d&apos;appel pour cette fonction :<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_lesson10_8c_a7f195c38a24eda1f207df6e094f9181e_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Voici le graphe des appelants de cette fonction :<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_lesson10_8c_a7f195c38a24eda1f207df6e094f9181e_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__lesson10_8c_1a87bb84d489df61ed7b0c002584fd984f"/><section>
+    <title>ReSizeGLScene()</title>
+<indexterm><primary>ReSizeGLScene</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>ReSizeGLScene</secondary></indexterm>
+<para><computeroutput>GLvoid ReSizeGLScene (GLsizei width, GLsizei height)</computeroutput></para><para>
+
+<para>Fonction ReSizeGLScene : redimensionnement de la fenêtre Windows gérant OpenGL. </para>
+</para>
+
+<para>This Code Resize the main window.</para>
+
+<para>En entrée les deux nouvelles dimensions de la fenêtre 
+                <formalpara>
+                    <title>
+ParamÃ¨tres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>width</entry><entry>
+<para>Width of the GL Window Or Fullscreen Mode * </para>
+</entry>
+                            </row>
+                            <row>
+<entry>height</entry><entry>
+<para>Height of the GL Window Or Fullscreen Mode * </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>GLvoid un void OpenGL. </para>
+</formalpara>
+</para>
+Voici le graphe des appelants de cette fonction :<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_lesson10_8c_a87bb84d489df61ed7b0c002584fd984f_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__lesson10_8c_1a34e550eaac41bec549d492372e9dcbd7"/><section>
+    <title>SetupWorld()</title>
+<indexterm><primary>SetupWorld</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>SetupWorld</secondary></indexterm>
+<para><computeroutput>void SetupWorld ( )</computeroutput></para>Voici le graphe d&apos;appel pour cette fonction :<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_lesson10_8c_a34e550eaac41bec549d492372e9dcbd7_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Voici le graphe des appelants de cette fonction :<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_lesson10_8c_a34e550eaac41bec549d492372e9dcbd7_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__lesson10_8c_1a661c2abc03926acfaeb93b4ae7db4943"/><section>
+    <title>WinMain()</title>
+<indexterm><primary>WinMain</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>WinMain</secondary></indexterm>
+<para><computeroutput>int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)</computeroutput></para><para>
+
+<para>Creation of our application on Windows System (not console application) *. </para>
+</para>
+
+<para>This Code is mandatory to create windows application (function WinMain) * 
+                <formalpara>
+                    <title>
+ParamÃ¨tres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>hInstance</entry><entry>
+<para>- Header de l&apos;instance Windows * </para>
+</entry>
+                            </row>
+                            <row>
+<entry>hPrevInstance</entry><entry>
+<para>- Header de l&apos;instance précédente de Windows * </para>
+</entry>
+                            </row>
+                            <row>
+<entry>lpCmdLine</entry><entry>
+<para>- Un pointeur sur la ligne de commande * </para>
+</entry>
+                            </row>
+                            <row>
+<entry>nCmdShow</entry><entry>
+<para>- Un indicateur d&apos;état * </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>int - un entier booleen (OK ou non). *<itemizedlist>
+<listitem></listitem></itemizedlist>
+</para>
+</formalpara>
+</para>
+Voici le graphe d&apos;appel pour cette fonction :<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_lesson10_8c_a661c2abc03926acfaeb93b4ae7db4943_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="__lesson10_8c_1ae749e989b362e19783c7af4a2bf46c95"/><section>
+    <title>WndProc()</title>
+<indexterm><primary>WndProc</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>WndProc</secondary></indexterm>
+<para><computeroutput>LRESULT CALLBACK WndProc (HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)</computeroutput></para><para>
+
+<para>Fonction CALLBACK de traitement des messages Windows. </para>
+</para>
+
+<para>Comments manageable by Doxygen</para>
+
+<para>Traitement de la boucle infinie des messages Windows 
+                <formalpara>
+                    <title>
+ParamÃ¨tres</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>hWnd</entry><entry>
+<para>L&apos;header de la fenêtre principale. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>uMsg</entry><entry>
+<para>Un entier non signé. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>wParam</entry><entry>
+<para>Les paramétres en entrée. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>lParam</entry><entry>
+<para>Autres paramétres en entrée. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Renvoie</title>
+
+<para>LRESULT Un LRESULT donnant le status du traitement du message. </para>
+</formalpara>
+</para>
+Voici le graphe d&apos;appel pour cette fonction :<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_lesson10_8c_ae749e989b362e19783c7af4a2bf46c95_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Voici le graphe des appelants de cette fonction :<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_lesson10_8c_ae749e989b362e19783c7af4a2bf46c95_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Documentation des variables</title>
+<anchor xml:id="__lesson10_8c_1a22389371583c4b8843e06da43399d6d9"/><section>
+    <title>active</title>
+<indexterm><primary>active</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>active</secondary></indexterm>
+<para><computeroutput>BOOL active =<link linkend="__lesson10_8c_1aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</link></computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1af3d0c623676f78dff5a84bc436095550"/><section>
+    <title>blend</title>
+<indexterm><primary>blend</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>blend</secondary></indexterm>
+<para><computeroutput>BOOL blend</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1a81fe5d48ae6cf5016dfc24c0835dee10"/><section>
+    <title>bp</title>
+<indexterm><primary>bp</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>bp</secondary></indexterm>
+<para><computeroutput>BOOL bp</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1abaab572c2d38c9839d1b9831155cb3f3"/><section>
+    <title>filter</title>
+<indexterm><primary>filter</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>filter</secondary></indexterm>
+<para><computeroutput>GLuint filter =0</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1a351433969208eaa89b942d3e587fcc9c"/><section>
+    <title>fp</title>
+<indexterm><primary>fp</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>fp</secondary></indexterm>
+<para><computeroutput>BOOL fp</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1ab15a33c0173f2c5b6ac806c55cf7f0ba"/><section>
+    <title>fullscreen</title>
+<indexterm><primary>fullscreen</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>fullscreen</secondary></indexterm>
+<para><computeroutput>BOOL fullscreen =<link linkend="__lesson10_8c_1aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</link></computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1a78f6446a0e13adc7b7b2f239112ac785"/><section>
+    <title>hDC</title>
+<indexterm><primary>hDC</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>hDC</secondary></indexterm>
+<para><computeroutput>HDC hDC =NULL</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1ac5682e48513a771560df50e3b213e61a"/><section>
+    <title>heading</title>
+<indexterm><primary>heading</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>heading</secondary></indexterm>
+<para><computeroutput>float heading</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1a74029128723095e7bf00a71d46af8b24"/><section>
+    <title>hInstance</title>
+<indexterm><primary>hInstance</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>hInstance</secondary></indexterm>
+<para><computeroutput>HINSTANCE hInstance</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1a874963259c7cd998acfe6e187fbdb4c1"/><section>
+    <title>hRC</title>
+<indexterm><primary>hRC</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>hRC</secondary></indexterm>
+<para><computeroutput>HGLRC hRC =NULL</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1afec4341c234519e145bac6f0e5edaa51"/><section>
+    <title>hWnd</title>
+<indexterm><primary>hWnd</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>hWnd</secondary></indexterm>
+<para><computeroutput>HWND hWnd =NULL</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1a55a8351b704275ad12988864918abb2a"/><section>
+    <title>keys</title>
+<indexterm><primary>keys</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>keys</secondary></indexterm>
+<para><computeroutput>BOOL keys[256]</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1ae9fb3d4767f6255c70dcd5123bbf2f54"/><section>
+    <title>level_debug</title>
+<indexterm><primary>level_debug</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>level_debug</secondary></indexterm>
+<para><computeroutput>char* level_debug</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1a1a73c6d2f29511093b6a39513c379926"/><section>
+    <title>level_def</title>
+<indexterm><primary>level_def</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>level_def</secondary></indexterm>
+<para><computeroutput><link linkend="__lesson10_8c_1a1062901a7428fdd9c7f180f5e01ea056">bool</link> level_def = <link linkend="__lesson10_8c_1a41f9c5fb8b08eb5dc3edce4dcb37fee7">true</link></computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1ab253ae37d6b80578f7883bbd03657a59"/><section>
+    <title>lookupdown</title>
+<indexterm><primary>lookupdown</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>lookupdown</secondary></indexterm>
+<para><computeroutput>GLfloat lookupdown = 0.0f</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1ad667f040f2932c8097435492fbd10d76"/><section>
+    <title>loop</title>
+<indexterm><primary>loop</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>loop</secondary></indexterm>
+<para><computeroutput>int loop = 0</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1a1a6535285fc9406de04538e1200d8ed3"/><section>
+    <title>piover180</title>
+<indexterm><primary>piover180</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>piover180</secondary></indexterm>
+<para><computeroutput>const float piover180 = 0.0174532925f</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1a196a466e0a51460be93ca4f32c313eff"/><section>
+    <title>sector1</title>
+<indexterm><primary>sector1</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>sector1</secondary></indexterm>
+<para><computeroutput><link linkend="__lesson10_8c_1aa99a25bbda5687c0a5d1c4a426ec110c">SECTOR</link> sector1</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1a04b2088c33683580ff9664f8a35cef23"/><section>
+    <title>texid</title>
+<indexterm><primary>texid</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>texid</secondary></indexterm>
+<para><computeroutput>GLuint texid[3]</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1ae303c167c23691bbf165ab05813e5713"/><section>
+    <title>texture</title>
+<indexterm><primary>texture</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>texture</secondary></indexterm>
+<para><computeroutput>GLuint texture[3]</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1a816a7bb71de16d574a2aac953f57f918"/><section>
+    <title>vert</title>
+<indexterm><primary>vert</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>vert</secondary></indexterm>
+<para><computeroutput>int vert = -1</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1ac52295b1c86ab1c35431a1f02382bad1"/><section>
+    <title>walkbias</title>
+<indexterm><primary>walkbias</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>walkbias</secondary></indexterm>
+<para><computeroutput>GLfloat walkbias = 0</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1ad839b78305422c269907845c11f19321"/><section>
+    <title>walkbiasangle</title>
+<indexterm><primary>walkbiasangle</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>walkbiasangle</secondary></indexterm>
+<para><computeroutput>GLfloat walkbiasangle = 0</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1adad239fcacf5c59997872bd0c12bdfd1"/><section>
+    <title>xpos</title>
+<indexterm><primary>xpos</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>xpos</secondary></indexterm>
+<para><computeroutput>float xpos</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1a9549138cf4d209303566523d805d8525"/><section>
+    <title>yrot</title>
+<indexterm><primary>yrot</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>yrot</secondary></indexterm>
+<para><computeroutput>GLfloat yrot</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1acfde595878f838c910907ec90d040114"/><section>
+    <title>z</title>
+<indexterm><primary>z</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>z</secondary></indexterm>
+<para><computeroutput>GLfloat z =0.0f</computeroutput></para></section>
+<anchor xml:id="__lesson10_8c_1a1145c2d616cccd00793eb0b60929a3b3"/><section>
+    <title>zpos</title>
+<indexterm><primary>zpos</primary><secondary>Lesson10.c</secondary></indexterm>
+<indexterm><primary>Lesson10.c</primary><secondary>zpos</secondary></indexterm>
+<para><computeroutput>float zpos</computeroutput></para></section>
+</section>
+</section>

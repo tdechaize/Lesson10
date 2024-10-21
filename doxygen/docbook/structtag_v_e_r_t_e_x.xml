@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structtag_v_e_r_t_e_x" xml:lang="fr">
+<title>Référence de la structure tagVERTEX</title>
+<indexterm><primary>tagVERTEX</primary></indexterm>
+<simplesect>
+    <title>Champs de données    </title>
+        <itemizedlist>
+            <listitem><para>float <link linkend="_structtag_v_e_r_t_e_x_1ad0da36b2558901e21e7a30f6c227a45e">x</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_structtag_v_e_r_t_e_x_1aa4f0d3eebc3c443f9be81bf48561a217">y</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_structtag_v_e_r_t_e_x_1af73583b1e980b0aa03f9884812e9fd4d">z</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_structtag_v_e_r_t_e_x_1a55831f7eab5ed2917a0191e858852f42">u</link></para>
+</listitem>
+            <listitem><para>float <link linkend="_structtag_v_e_r_t_e_x_1a48d9522e58fa05906c6dba23e5745a72">v</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Documentation des champs</title>
+<anchor xml:id="_structtag_v_e_r_t_e_x_1a55831f7eab5ed2917a0191e858852f42"/><section>
+    <title>u</title>
+<indexterm><primary>u</primary><secondary>tagVERTEX</secondary></indexterm>
+<indexterm><primary>tagVERTEX</primary><secondary>u</secondary></indexterm>
+<para><computeroutput>float u</computeroutput></para></section>
+<anchor xml:id="_structtag_v_e_r_t_e_x_1a48d9522e58fa05906c6dba23e5745a72"/><section>
+    <title>v</title>
+<indexterm><primary>v</primary><secondary>tagVERTEX</secondary></indexterm>
+<indexterm><primary>tagVERTEX</primary><secondary>v</secondary></indexterm>
+<para><computeroutput>float v</computeroutput></para></section>
+<anchor xml:id="_structtag_v_e_r_t_e_x_1ad0da36b2558901e21e7a30f6c227a45e"/><section>
+    <title>x</title>
+<indexterm><primary>x</primary><secondary>tagVERTEX</secondary></indexterm>
+<indexterm><primary>tagVERTEX</primary><secondary>x</secondary></indexterm>
+<para><computeroutput>float x</computeroutput></para></section>
+<anchor xml:id="_structtag_v_e_r_t_e_x_1aa4f0d3eebc3c443f9be81bf48561a217"/><section>
+    <title>y</title>
+<indexterm><primary>y</primary><secondary>tagVERTEX</secondary></indexterm>
+<indexterm><primary>tagVERTEX</primary><secondary>y</secondary></indexterm>
+<para><computeroutput>float y</computeroutput></para></section>
+<anchor xml:id="_structtag_v_e_r_t_e_x_1af73583b1e980b0aa03f9884812e9fd4d"/><section>
+    <title>z</title>
+<indexterm><primary>z</primary><secondary>tagVERTEX</secondary></indexterm>
+<indexterm><primary>tagVERTEX</primary><secondary>z</secondary></indexterm>
+<para><computeroutput>float z</computeroutput></para></section>
+<para>
+La documentation de cette structure a été générée à partir du fichier suivant :</para>
+<link linkend="__lesson10_8c">Lesson10.c</link></section>
+</section>

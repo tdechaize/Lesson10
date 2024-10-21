@@ -1,0 +1,25 @@
+<map id="Lesson10.c" name="Lesson10.c">
+<area shape="rect" id="Node000001" title="Open simple window on Windows systems and create a 3D world in which you can navigated on click on &quot;a..." alt="" coords="396,5,485,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,80,89,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="396,30,103,82,102,77,395,25"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="112,80,174,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="396,33,189,82,187,77,395,27"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="198,80,259,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="404,35,273,80,271,75,403,30"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="283,80,347,107"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="420,35,351,75,348,70,417,30"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="371,80,427,107"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="435,34,416,68,411,66,431,31"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="451,80,515,107"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="450,31,471,66,466,68,445,34"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="539,80,603,107"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="464,30,537,70,534,75,462,35"/>
+<area shape="rect" id="Node000009" href="$logger_8h.html" title="Header de l&#39;ajout de fonction de &quot;logging&quot; (traces dans un fichier texte log.txt) uniquement en mode ..." alt="" coords="627,80,694,107"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="479,30,613,74,612,79,478,35"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="718,80,792,107"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="486,27,704,77,703,82,484,32"/>
+<area shape="rect" id="Node000012" href="$resource_8h.html" title="Les définitions utilisées par le programme et les ressources." alt="" coords="817,80,899,107"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="485,24,623,45,803,77,802,82,622,51,484,29"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="626,155,695,181"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="663,107,663,140,658,140,658,107"/>
+</map>

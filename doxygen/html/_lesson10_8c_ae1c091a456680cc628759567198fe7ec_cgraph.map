@@ -1,0 +1,7 @@
+<map id="NeHeLoadBitmap3" name="NeHeLoadBitmap3">
+<area shape="rect" id="Node000001" title="Fonction NeHeLoadBitmap3 : charge un fichier BMP en mémoire pour generer un tableau de trois textures." alt="" coords="5,5,137,32"/>
+<area shape="rect" id="Node000002" href="$logger_8c.html#abd2d19eeef46a8184a2302d33c6c7397" title=" " alt="" coords="185,5,255,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,16,170,16,170,21,137,21"/>
+<area shape="rect" id="Node000003" href="$logger_8c.html#aeea85f0478e1d5c40a6293f63269ac03" title=" " alt="" coords="303,5,381,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="255,16,288,16,288,21,255,21"/>
+</map>

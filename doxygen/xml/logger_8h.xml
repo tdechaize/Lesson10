@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="logger_8h" kind="file" language="C++">
+    <compoundname>logger.h</compoundname>
+    <includes local="no">stdarg.h</includes>
+    <includedby refid="_lesson10_8c" local="yes">Lesson10.c</includedby>
+    <includedby refid="logger_8c" local="yes">logger.c</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>logger.h</label>
+        <link refid="logger_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>stdarg.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>Lesson10.c</label>
+        <link refid="_lesson10_8c"/>
+      </node>
+      <node id="3">
+        <label>logger.c</label>
+        <link refid="logger_8c"/>
+      </node>
+      <node id="1">
+        <label>logger.h</label>
+        <link refid="logger_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="logger_8h_1abd2d19eeef46a8184a2302d33c6c7397" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void log_print</definition>
+        <argsstring>(char *filename, int line, char *fmt,...)</argsstring>
+        <name>log_print</name>
+        <param>
+          <type>char *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/logger.h" line="38" column="6" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/logger.c" bodystart="108" bodyend="190" declfile="C:/src/OpenGL/NeHe_Lesson10-master/src/logger.h" declline="38" declcolumn="6"/>
+        <references refid="logger_8c_1a724e7d2bbffb847aa6e987a006d4d13b" compoundref="logger_8c" startline="79">ft</references>
+        <references refid="logger_8c_1aeea85f0478e1d5c40a6293f63269ac03" compoundref="logger_8c" startline="83" endline="107">print_time</references>
+        <referencedby refid="_lesson10_8c_1ae5f043c9df9b9e5e0e26d567feeeb1bc" compoundref="_lesson10_8c" startline="573" endline="738">CreateGLWindow</referencedby>
+        <referencedby refid="_lesson10_8c_1aa4c387d3f1ebce6d57684b6a10c9b0ae" compoundref="_lesson10_8c" startline="417" endline="449">InitGL</referencedby>
+        <referencedby refid="_lesson10_8c_1a8dd15539ba90ae3670aa0a9f889d2236" compoundref="_lesson10_8c" startline="356" endline="377">LoadGLTextures</referencedby>
+        <referencedby refid="_lesson10_8c_1ae1c091a456680cc628759567198fe7ec" compoundref="_lesson10_8c" startline="300" endline="354">NeHeLoadBitmap3</referencedby>
+        <referencedby refid="_lesson10_8c_1a7f195c38a24eda1f207df6e094f9181e" compoundref="_lesson10_8c" startline="203" endline="239">readstr</referencedby>
+        <referencedby refid="_lesson10_8c_1a34e550eaac41bec549d492372e9dcbd7" compoundref="_lesson10_8c" startline="242" endline="288">SetupWorld</referencedby>
+        <referencedby refid="_lesson10_8c_1a661c2abc03926acfaeb93b4ae7db4943" compoundref="_lesson10_8c" startline="823" endline="1002">WinMain</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Header de l&apos;ajout de fonction de &quot;logging&quot; (traces dans un fichier texte log.txt) uniquement en mode Debug et avec des niveaux de tracing définis dans une varaiable d&apos;environnement (LEVEL) </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Comments manageable by Doxygen</para>
+<para>Modified by Thierry DECHAIZE</para>
+<para>Date : 2023/03/05</para>
+<para><simplesect kind="author"><para>Thierry Dechaize </para>
+</simplesect>
+<simplesect kind="version"><para>2.0.1.0 </para>
+</simplesect>
+<simplesect kind="date"><para>5 mars 2023</para>
+</simplesect>
+Il s&apos;agit de pouvoir partager les deux fonctions utiles de cet utilitaire. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>LOGGER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>LOGGER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment"><sp/>/*************************************************************************</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/>Project<sp/>:<sp/>$logger.h</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/>Function<sp/>:<sp/>Utility<sp/>program<sp/>:<sp/>add<sp/>trace<sp/>in<sp/>text<sp/>file,<sp/>only<sp/>in<sp/>mode<sp/>Debug</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>**************************************************************************</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/>$Author:<sp/>Thierry<sp/>DECHAIZE</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/><sp/>$Name:<sp/><sp/>thierry.dechaize@gmail.com</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>***************************************************************</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/><sp/>Find<sp/>this<sp/>extract<sp/>after<sp/>navigate<sp/>on<sp/>Internet</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/><sp/>No<sp/>Copyright<sp/>:<sp/>public<sp/>domain</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/>Adapted<sp/>because<sp/>my<sp/>needs<sp/>are<sp/>specifics.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//logger.h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">//logger.h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdarg.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="logger_8h_1abd2d19eeef46a8184a2302d33c6c7397" kindref="member">log_print</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>filename,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>line,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fmt,...);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Borland<sp/>C/C++<sp/>don&apos;t<sp/>compile<sp/>with<sp/>this<sp/>define<sp/>!!!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>LOG_PRINT(...)<sp/>log_print(__FILE__,<sp/>__LINE__,<sp/>__VA_ARGS__<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>header<sp/>guard</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/logger.h"/>
+  </compounddef>
+</doxygen>

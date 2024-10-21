@@ -1,0 +1,384 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="logger_8c" kind="file" language="C++">
+    <compoundname>logger.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">time.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes refid="logger_8h" local="yes">logger.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>logger.c</label>
+        <link refid="logger_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>logger.h</label>
+        <link refid="logger_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>stdarg.h</label>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+      <node id="5">
+        <label>stdlib.h</label>
+      </node>
+      <node id="4">
+        <label>string.h</label>
+      </node>
+      <node id="3">
+        <label>time.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="logger_8c_1a0920890c442b665b0c6609fa796e9047" prot="public" static="no">
+        <name>DIR_SEPARATOR</name>
+        <initializer>&apos;/&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/logger.c" line="39" column="10" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/logger.c" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="logger_8c_1a256a5721249aa3309437212cc21a9fe4" prot="public" static="no">
+        <name>PATH_SEPARATOR</name>
+        <initializer>&apos;:&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/logger.c" line="40" column="10" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/logger.c" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="logger_8c_1a9062ad017719f7653eb498d61ed41d55" prot="public" static="no">
+        <name>IS_DIR_SEPARATOR</name>
+        <param><defname>ch</defname></param>
+        <initializer>((ch) == <ref refid="logger_8c_1a0920890c442b665b0c6609fa796e9047" kindref="member">DIR_SEPARATOR</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/logger.c" line="56" column="10" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/logger.c" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="logger_8c_1a48100cbe5f69905dca2b6bbc7a888d30" prot="public" static="no">
+        <name>IS_PATH_SEPARATOR</name>
+        <param><defname>ch</defname></param>
+        <initializer>((ch) == <ref refid="logger_8c_1a256a5721249aa3309437212cc21a9fe4" kindref="member">PATH_SEPARATOR</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/logger.c" line="63" column="10" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/logger.c" bodystart="63" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="logger_8c_1a724e7d2bbffb847aa6e987a006d4d13b" prot="public" static="no" mutable="no">
+        <type>FILE *</type>
+        <definition>FILE* ft</definition>
+        <argsstring></argsstring>
+        <name>ft</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/logger.c" line="79" column="6" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/logger.c" bodystart="79" bodyend="-1"/>
+        <referencedby refid="logger_8c_1abd2d19eeef46a8184a2302d33c6c7397" compoundref="logger_8c" startline="108" endline="190">log_print</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="logger_8c_1acd1f2f71070f2686e326c9f1ef4b3139" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int SESSION_TRACKER</definition>
+        <argsstring></argsstring>
+        <name>SESSION_TRACKER</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/logger.c" line="80" column="12" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/logger.c" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="logger_8c_1ae96a6c0e8a488e364c130057f28affcd" prot="public" static="yes" mutable="no">
+        <type>char</type>
+        <definition>char filedir[MAX_PATH]</definition>
+        <argsstring>[MAX_PATH]</argsstring>
+        <name>filedir</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/logger.c" line="81" column="13" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/logger.c" bodystart="81" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="logger_8c_1aeea85f0478e1d5c40a6293f63269ac03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * print_time</definition>
+        <argsstring>()</argsstring>
+        <name>print_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/logger.c" line="83" column="6" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/logger.c" bodystart="83" bodyend="107"/>
+        <referencedby refid="logger_8c_1abd2d19eeef46a8184a2302d33c6c7397" compoundref="logger_8c" startline="108" endline="190">log_print</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="logger_8c_1abd2d19eeef46a8184a2302d33c6c7397" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void log_print</definition>
+        <argsstring>(char *filename, int line, char *fmt,...)</argsstring>
+        <name>log_print</name>
+        <param>
+          <type>char *</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>fmt</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/logger.c" line="108" column="6" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/logger.c" bodystart="108" bodyend="190"/>
+        <references refid="logger_8c_1a724e7d2bbffb847aa6e987a006d4d13b" compoundref="logger_8c" startline="79">ft</references>
+        <references refid="logger_8c_1aeea85f0478e1d5c40a6293f63269ac03" compoundref="logger_8c" startline="83" endline="107">print_time</references>
+        <referencedby refid="_lesson10_8c_1ae5f043c9df9b9e5e0e26d567feeeb1bc" compoundref="_lesson10_8c" startline="573" endline="738">CreateGLWindow</referencedby>
+        <referencedby refid="_lesson10_8c_1aa4c387d3f1ebce6d57684b6a10c9b0ae" compoundref="_lesson10_8c" startline="417" endline="449">InitGL</referencedby>
+        <referencedby refid="_lesson10_8c_1a8dd15539ba90ae3670aa0a9f889d2236" compoundref="_lesson10_8c" startline="356" endline="377">LoadGLTextures</referencedby>
+        <referencedby refid="_lesson10_8c_1ae1c091a456680cc628759567198fe7ec" compoundref="_lesson10_8c" startline="300" endline="354">NeHeLoadBitmap3</referencedby>
+        <referencedby refid="_lesson10_8c_1a7f195c38a24eda1f207df6e094f9181e" compoundref="_lesson10_8c" startline="203" endline="239">readstr</referencedby>
+        <referencedby refid="_lesson10_8c_1a34e550eaac41bec549d492372e9dcbd7" compoundref="_lesson10_8c" startline="242" endline="288">SetupWorld</referencedby>
+        <referencedby refid="_lesson10_8c_1a661c2abc03926acfaeb93b4ae7db4943" compoundref="_lesson10_8c" startline="823" endline="1002">WinMain</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Ajout de fonction de &quot;logging&quot; (traces dans un fichier texte log.txt) uniquement en mode Debug et avec des niveaux de tracing définis dans une varaiable d&apos;environnement (LEVEL) </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Comments manageable by Doxygen</para>
+<para>Modified by Thierry DECHAIZE</para>
+<para>Date : 2024/10/20</para>
+<para><simplesect kind="author"><para>Thierry Dechaize </para>
+</simplesect>
+<simplesect kind="version"><para>2.0.1.0 </para>
+</simplesect>
+<simplesect kind="date"><para>5 mars 2023</para>
+</simplesect>
+L&apos;utilisation est très simple : #if define(DEBUG)</para>
+<para>if ((strcmp(level_debug,&quot;BASE&quot;) == 0) || (strcmp(level_debug,&quot;FULL&quot;) == 0)) [ || (strcmp(level_debug,&quot;OPENGL&quot;) == 0))]</para>
+<para>log_print( <bold>FILE</bold>, <bold>LINE</bold>, texte approprié);</para>
+<para>#endif</para>
+<para>Warning : la variable LEVEL doit être définie au niveau &quot;user&quot; et non au niveau &quot;system&quot; sous Windows. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment"><sp/>/*************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/><sp/>Project<sp/>:<sp/>$logger</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/><sp/>Function<sp/>:<sp/>Utility<sp/>program<sp/>:<sp/>add<sp/>trace<sp/>in<sp/>text<sp/>file,<sp/>only<sp/>in<sp/>mode<sp/>Debug</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>**************************************************************************</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/>$Author:<sp/>Thierry<sp/>DECHAIZE</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/>$Name:<sp/><sp/>thierry.dechaize@gmail.com</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>***************************************************************</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/>Find<sp/>this<sp/>extract<sp/>after<sp/>navigate<sp/>on<sp/>Internet</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/><sp/>No<sp/>Copyright<sp/>:<sp/>public<sp/>domain</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/>Adapted<sp/>because<sp/>my<sp/>needs<sp/>are<sp/>specifics.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>***************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//logger.c</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Discussion<sp/>about<sp/>PATH<sp/>separator<sp/>and<sp/>directory<sp/>separator<sp/>beetween<sp/>Linux/Unix<sp/>and<sp/>Windows<sp/>into<sp/>Libc<sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>path<sp/>handling<sp/>portability<sp/>macros<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DIR_SEPARATOR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="logger_8c_1a0920890c442b665b0c6609fa796e9047" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>DIR_SEPARATOR<sp/>&apos;/&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="logger_8c_1a256a5721249aa3309437212cc21a9fe4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>PATH_SEPARATOR<sp/>&apos;:&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined<sp/>(_WIN32)<sp/>||<sp/>defined<sp/>(__MSDOS__)<sp/>||<sp/>defined<sp/>(__DJGPP__)<sp/>||<sp/>\</highlight></codeline>
+<codeline lineno="44"><highlight class="preprocessor"><sp/><sp/>defined<sp/>(__OS2__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>HAVE_DOS_BASED_FILE_SYSTEM</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>FOPEN_WB<sp/>&quot;wb&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>ifndef<sp/>DIR_SEPARATOR_2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>DIR_SEPARATOR_2<sp/>&apos;\\&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>ifndef<sp/>PATH_SEPARATOR_2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/>define<sp/>PATH_SEPARATOR_2<sp/>&apos;;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DIR_SEPARATOR_2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="logger_8c_1a9062ad017719f7653eb498d61ed41d55" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>IS_DIR_SEPARATOR(ch)<sp/>((ch)<sp/>==<sp/>DIR_SEPARATOR)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">/*<sp/>DIR_SEPARATOR_2<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>IS_DIR_SEPARATOR(ch)<sp/>\</highlight></codeline>
+<codeline lineno="59"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(((ch)<sp/>==<sp/>DIR_SEPARATOR)<sp/>||<sp/>((ch)<sp/>==<sp/>DIR_SEPARATOR_2))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DIR_SEPARATOR_2<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>PATH_SEPARATOR_2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="logger_8c_1a48100cbe5f69905dca2b6bbc7a888d30" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>IS_PATH_SEPARATOR(ch)<sp/>((ch)<sp/>==<sp/>PATH_SEPARATOR)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/></highlight><highlight class="comment">/*<sp/>PATH_SEPARATOR_2<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>IS_PATH_SEPARATOR(ch)<sp/>((ch)<sp/>==<sp/>PATH_SEPARATOR_2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>PATH_SEPARATOR_2<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>End<sp/>discussion<sp/>about<sp/>PATH<sp/>separator<sp/>and<sp/>directory<sp/>separator<sp/>beetween<sp/>Linux/Unix<sp/>and<sp/>Windows<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;time.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined<sp/>(_WIN32)<sp/>||<sp/>defined(__CYGWIN__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;windows.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="logger_8h" kindref="compound">logger.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="logger_8c_1a724e7d2bbffb847aa6e987a006d4d13b" refkind="member"><highlight class="normal">FILE<sp/>*<ref refid="logger_8c_1a724e7d2bbffb847aa6e987a006d4d13b" kindref="member">ft</ref><sp/>;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>SESSION_TRACKER;<sp/></highlight><highlight class="comment">//Keeps<sp/>track<sp/>of<sp/>session</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>filedir[MAX_PATH];<sp/></highlight><highlight class="comment">//Keeps<sp/>track<sp/>of<sp/>full<sp/>path<sp/>of<sp/>log<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="logger_8c_1aeea85f0478e1d5c40a6293f63269ac03" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="logger_8c_1aeea85f0478e1d5c40a6293f63269ac03" kindref="member">print_time</ref>()</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>time_t<sp/>now;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*buf,timestr[37];</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">tm<sp/>*<sp/>tm;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Utilise<sp/>tm_year,<sp/>tm_mday,<sp/>tm_month,<sp/>tm_hour,<sp/>tm_min,<sp/>tm_sec<sp/>ou<sp/>strftime:<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>date[64];</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>now<sp/>=<sp/>time(NULL);<sp/></highlight><highlight class="comment">/*<sp/>get<sp/>current<sp/>calendar<sp/>time<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>tm<sp/>=<sp/>localtime(&amp;now);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>strftime(timestr,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal"><sp/>timestr,<sp/></highlight><highlight class="stringliteral">&quot;%A,<sp/>%d<sp/>%B<sp/>%Y,<sp/>%H:%M:%S<sp/>&quot;</highlight><highlight class="normal">,<sp/>tm);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>timestr[strlen(timestr)<sp/>-<sp/>1]<sp/>=<sp/>0;<sp/><sp/></highlight><highlight class="comment">//Getting<sp/>rid<sp/>of<sp/>\n</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>size<sp/>=<sp/>strlen(timestr)+<sp/>1<sp/>+<sp/>2;<sp/></highlight><highlight class="comment">//Additional<sp/>+2<sp/>for<sp/>square<sp/>braces</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>buf<sp/>=<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)malloc(size);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>memset(buf,<sp/>0x0,<sp/>size);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__SC__)<sp/>||<sp/>defined(__DMC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>_snprintf(buf,size,</highlight><highlight class="stringliteral">&quot;[%s]&quot;</highlight><highlight class="normal">,<sp/>timestr);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>snprintf(buf,size,</highlight><highlight class="stringliteral">&quot;[%s]&quot;</highlight><highlight class="normal">,<sp/>timestr);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>buf;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108" refid="logger_8c_1abd2d19eeef46a8184a2302d33c6c7397" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="logger_8c_1abd2d19eeef46a8184a2302d33c6c7397" kindref="member">log_print</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>filename,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>line,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*fmt,...)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>va_list<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*p,<sp/>*r;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>e,i,len<sp/>=<sp/>MAX_PATH;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pBuf[MAX_PATH]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pch;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_WIN32)<sp/>||<sp/>defined(__CYGWIN__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bytes<sp/>=<sp/>GetModuleFileName(NULL,<sp/>pBuf,<sp/>len);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dir_ch<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\\&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>defined(__linux__)<sp/>||<sp/>defined(__UNIX__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bytes<sp/>=<sp/>readlink(</highlight><highlight class="stringliteral">&quot;/proc/self/exe&quot;</highlight><highlight class="normal">,<sp/>pBuf,<sp/>len)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dir_ch<sp/>=<sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(SESSION_TRACKER<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>pch=strchr(pBuf,dir_ch);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(pch!=NULL)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>=<sp/>pch-pBuf+1;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pch=strchr(pch+1,dir_ch);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>strncpy(filedir,<sp/>pBuf,<sp/>i);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(_WIN32)<sp/>||<sp/>defined(__CYGWIN__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>filedir[i]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal"><sp/>;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>strcat(filedir,</highlight><highlight class="stringliteral">&quot;log.txt&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>printf(&quot;<sp/>Full<sp/>Path<sp/>of<sp/>log<sp/>:<sp/>%s\n&quot;,filedir);<sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*DEBUG<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(SESSION_TRACKER<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logger_8c_1a724e7d2bbffb847aa6e987a006d4d13b" kindref="member">ft</ref><sp/>=<sp/>fopen<sp/>(filedir,</highlight><highlight class="stringliteral">&quot;a+&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="logger_8c_1a724e7d2bbffb847aa6e987a006d4d13b" kindref="member">ft</ref><sp/>=<sp/>fopen<sp/>(filedir,</highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(<ref refid="logger_8c_1a724e7d2bbffb847aa6e987a006d4d13b" kindref="member">ft</ref>,</highlight><highlight class="stringliteral">&quot;%s<sp/>&quot;</highlight><highlight class="normal">,<ref refid="logger_8c_1aeea85f0478e1d5c40a6293f63269ac03" kindref="member">print_time</ref>());</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(<ref refid="logger_8c_1a724e7d2bbffb847aa6e987a006d4d13b" kindref="member">ft</ref>,</highlight><highlight class="stringliteral">&quot;[%s<sp/>,line:<sp/>%d]<sp/>&quot;</highlight><highlight class="normal">,filename,line);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>va_start(<sp/>list,<sp/>fmt<sp/>);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/>p<sp/>=<sp/>fmt<sp/>;<sp/>*p<sp/>;<sp/>++p<sp/>)</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>*p<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;%&apos;</highlight><highlight class="normal"><sp/>)</highlight><highlight class="comment">//If<sp/>simple<sp/>string</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fputc(<sp/>*p,<ref refid="logger_8c_1a724e7d2bbffb847aa6e987a006d4d13b" kindref="member">ft</ref><sp/>);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<sp/>*++p<sp/>)</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>string<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;s&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>r<sp/>=<sp/>va_arg(<sp/>list,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(<ref refid="logger_8c_1a724e7d2bbffb847aa6e987a006d4d13b" kindref="member">ft</ref>,</highlight><highlight class="stringliteral">&quot;%s&quot;</highlight><highlight class="normal">,<sp/>r);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>integer<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;d&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>e<sp/>=<sp/>va_arg(<sp/>list,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fprintf(<ref refid="logger_8c_1a724e7d2bbffb847aa6e987a006d4d13b" kindref="member">ft</ref>,</highlight><highlight class="stringliteral">&quot;%d&quot;</highlight><highlight class="normal">,<sp/>e);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fputc(<sp/>*p,<sp/><ref refid="logger_8c_1a724e7d2bbffb847aa6e987a006d4d13b" kindref="member">ft</ref><sp/>);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>va_end(<sp/>list<sp/>);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>fputc(<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">,<sp/><ref refid="logger_8c_1a724e7d2bbffb847aa6e987a006d4d13b" kindref="member">ft</ref><sp/>);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>SESSION_TRACKER++;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>fclose(<ref refid="logger_8c_1a724e7d2bbffb847aa6e987a006d4d13b" kindref="member">ft</ref>);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/logger.c"/>
+  </compounddef>
+</doxygen>

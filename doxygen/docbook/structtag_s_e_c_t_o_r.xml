@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structtag_s_e_c_t_o_r" xml:lang="fr">
+<title>Référence de la structure tagSECTOR</title>
+<indexterm><primary>tagSECTOR</primary></indexterm>
+Graphe de collaboration de tagSECTOR:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structtag_s_e_c_t_o_r__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Champs de données    </title>
+        <itemizedlist>
+            <listitem><para>int <link linkend="_structtag_s_e_c_t_o_r_1a968b0a267afb122aa6803e6df1455646">numtriangles</link></para>
+</listitem>
+            <listitem><para><link linkend="__lesson10_8c_1a878879116fcf5312db8fa898ce52e309">TRIANGLE</link> * <link linkend="_structtag_s_e_c_t_o_r_1ab0ebd575eb812eeab1fea363d3bf412b">triangle</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Documentation des champs</title>
+<anchor xml:id="_structtag_s_e_c_t_o_r_1a968b0a267afb122aa6803e6df1455646"/><section>
+    <title>numtriangles</title>
+<indexterm><primary>numtriangles</primary><secondary>tagSECTOR</secondary></indexterm>
+<indexterm><primary>tagSECTOR</primary><secondary>numtriangles</secondary></indexterm>
+<para><computeroutput>int numtriangles</computeroutput></para></section>
+<anchor xml:id="_structtag_s_e_c_t_o_r_1ab0ebd575eb812eeab1fea363d3bf412b"/><section>
+    <title>triangle</title>
+<indexterm><primary>triangle</primary><secondary>tagSECTOR</secondary></indexterm>
+<indexterm><primary>tagSECTOR</primary><secondary>triangle</secondary></indexterm>
+<para><computeroutput><link linkend="__lesson10_8c_1a878879116fcf5312db8fa898ce52e309">TRIANGLE</link>* triangle</computeroutput></para></section>
+<para>
+La documentation de cette structure a été générée à partir du fichier suivant :</para>
+<link linkend="__lesson10_8c">Lesson10.c</link></section>
+</section>

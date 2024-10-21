@@ -1,5 +1,3 @@
-#ifndef HEADER_7303ABF0EB3C0836
-#define HEADER_7303ABF0EB3C0836
 
 /*
 *
@@ -16,8 +14,8 @@
 *
 * \file            resource.h
 * \author          Created by Thierry Dechaize to verify paradigm : one source for multiple C Compilers
-* \version         2.0.1.0
-* \date            28 Octobre 2020
+* \version         2.0.4.0
+* \date            16 Octobre 2024
 * \brief           Les définitions utilisées par le programme et les ressources
 * \details         Rien à dire, il faut lire.
 *
@@ -28,6 +26,7 @@
 #define HEADER_RESOURCE__INCLUDED
 
 #define IDC_MYICON                      2
+#define IDR_MAINFRAME      				101
 #define IDD_TEXTDIALOGSAMPLE_DIALOG     102
 #define IDS_APP_TITLE                   103
 #define IDD_ABOUTBOX                    103
@@ -36,7 +35,7 @@
 #define IDI_TEXTDIALOGSAMPLE            107
 #define IDI_SMALL                       108
 #define IDC_TEXTDIALOGSAMPLE            109
-#define IDR_MAINFRAME                   128
+// #define IDR_MAINFRAME                   128
 #define IDI_MYICON 						201
 #define IDC_BUTTON1                     1000
 #define IDC_BUTTON2                     1001
@@ -65,11 +64,11 @@
 
 // 		Define strings for VERSIONINFO
 
-#define VER_FILEVERSION             2,0,1,0
-#define VER_FILEVERSION_STR         "2.0.1.0\0"
+#define VER_FILEVERSION             2,0,4,0
+#define VER_FILEVERSION_STR         "2.0.4.0\0"
 
-#define VER_PRODUCTVERSION          2,0,1,0
-#define VER_PRODUCTVERSION_STR      "2.0.1.0\0"
+#define VER_PRODUCTVERSION          2,0,4,0
+#define VER_PRODUCTVERSION_STR      "2.0.4.0\0"
 
 #if !defined(DEBUG) || !defined(_DEBUG)
 #define VER_DEBUG                   0
@@ -91,5 +90,5 @@
 #define VER_USERS 	                "Anyone, unlimited.\0"
 
 #endif   // HEADER_RESOURCE__INCLUDED
-#endif // header guard
+
 

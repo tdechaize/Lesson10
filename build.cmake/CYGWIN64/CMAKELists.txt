@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.9.1)
 # Toolchain File
 
 # The target of this operating systems is 
-SET(CMAKE_SYSTEM_NAME CYGWIN)
+# SET(CMAKE_SYSTEM_NAME CYGWIN)
 # set(CMAKE_CXX_EXTENSIONS  ON)
 
 # here is the target environment located
@@ -22,14 +22,14 @@ set(CMAKE_LINK_FLAGS "${CMAKE_LINK_FLAGS} -mwindows")
 include_directories(BEFORE "C:/cygwin64/usr/x86_64-w64-mingw32/sys-root/mingw/include" )
 
 if(${CMAKE_BUILD_TYPE} MATCHES Debug)
-    message("CMAKE Debug Build for GCC 64 bits included in CYGWIN64")
+    message("CMAKE Debug Build for GCC 64 bits included in MinGW64 of CYGWIN64")
 	set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -g -DDEBUG -D_DEBUG")
 	set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/binCYGWIN64/Debug")
     set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/binCYGWIN64/Debug")
     set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/binCYGWIN64/Debug")
 #	set(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} -llibstdc++")	
 elseif(${CMAKE_BUILD_TYPE} MATCHES Release)
-    message("CMAKE Release Build for GCC 64 bits included in CYGWIN64")
+    message("CMAKE Release Build for GCC 64 bits included in MinGW64 of CYGWIN64")
 	set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O2 -s -DNDEBUG")
 	set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/binCYGWIN64/Release")
     set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/binCYGWIN64/Release")

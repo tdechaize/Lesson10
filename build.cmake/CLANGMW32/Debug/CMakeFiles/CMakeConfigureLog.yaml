@@ -1,0 +1,213 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineSystem.cmake:200 (message)"
+      - "CMakeLists.txt:47 (project)"
+    message: |
+      The target system is: Windows -  - 
+      The host system is: Windows - 10.0.22631 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:47 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: C:/msys64/mingw32/bin/clang.exe 
+      Build flags: -m32;-target;i686-pc-windows-gnu
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+      
+      The C compiler identification is Clang, found in:
+        C:/src/OpenGL/NeHe_Lesson10-master/build.cmake/CLANGMW32/Debug/CMakeFiles/3.29.5/CompilerIdC/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:67 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:47 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/src/OpenGL/NeHe_Lesson10-master/build.cmake/CLANGMW32/Debug/CMakeFiles/CMakeScratch/TryCompile-g12bi8"
+      binary: "C:/src/OpenGL/NeHe_Lesson10-master/build.cmake/CLANGMW32/Debug/CMakeFiles/CMakeScratch/TryCompile-g12bi8"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -m32 -target i686-pc-windows-gnu"
+      CMAKE_C_FLAGS_DEBUG: " -g -DDEBUG -D_DEBUG"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/src/OpenGL/NeHe_Lesson10-master/build.cmake/CLANGMW32/Debug/CMakeFiles/CMakeScratch/TryCompile-g12bi8'
+        
+        Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw32/bin/mingw32-make.exe -f Makefile cmTC_3f90f/fast
+        C:/msys64/mingw32/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_3f90f.dir\\build.make CMakeFiles/cmTC_3f90f.dir/build
+        mingw32-make[1]: Entering directory 'C:/src/OpenGL/NeHe_Lesson10-master/build.cmake/CLANGMW32/Debug/CMakeFiles/CMakeScratch/TryCompile-g12bi8'
+        Building C object CMakeFiles/cmTC_3f90f.dir/CMakeCCompilerABI.c.obj
+        C:\\msys64\\mingw32\\bin\\clang.exe   -m32 -target i686-pc-windows-gnu    -v -MD -MT CMakeFiles/cmTC_3f90f.dir/CMakeCCompilerABI.c.obj -MF CMakeFiles\\cmTC_3f90f.dir\\CMakeCCompilerABI.c.obj.d -o CMakeFiles\\cmTC_3f90f.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
+        clang version 18.1.6
+        Target: i686-pc-windows-gnu
+        Thread model: posix
+        InstalledDir: C:/msys64/mingw32/bin
+         (in-process)
+         "C:/msys64/mingw32/bin/clang.exe" -cc1 -triple i686-pc-windows-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model static -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -fno-use-init-array -target-cpu pentium4 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=C:/src/OpenGL/NeHe_Lesson10-master/build.cmake/CLANGMW32/Debug/CMakeFiles/CMakeScratch/TryCompile-g12bi8 -v -fcoverage-compilation-dir=C:/src/OpenGL/NeHe_Lesson10-master/build.cmake/CLANGMW32/Debug/CMakeFiles/CMakeScratch/TryCompile-g12bi8 -resource-dir C:/msys64/mingw32/lib/clang/18 -dependency-file "CMakeFiles\\\\cmTC_3f90f.dir\\\\CMakeCCompilerABI.c.obj.d" -MT CMakeFiles/cmTC_3f90f.dir/CMakeCCompilerABI.c.obj -sys-header-deps -internal-isystem C:/msys64/mingw32/lib/clang/18/include -internal-isystem C:/msys64/mingw32/i686-w64-mingw32/include -internal-isystem C:/msys64/mingw32/i686-w64-mingw32/usr/include -internal-isystem C:/msys64/mingw32/include -ferror-limit 19 -femulated-tls -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -exception-model=dwarf -faddrsig -o "CMakeFiles\\\\cmTC_3f90f.dir\\\\CMakeCCompilerABI.c.obj" -x c "C:\\\\Program Files\\\\CMake\\\\share\\\\cmake-3.29\\\\Modules\\\\CMakeCCompilerABI.c"
+        clang -cc1 version 18.1.6 based upon LLVM 18.1.6 default target i686-w64-windows-gnu
+        ignoring nonexistent directory "C:/msys64/mingw32/i686-w64-mingw32/include"
+        ignoring nonexistent directory "C:/msys64/mingw32/i686-w64-mingw32/usr/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         C:/msys64/mingw32/lib/clang/18/include
+         C:/msys64/mingw32/include
+        End of search list.
+        Linking C executable cmTC_3f90f.exe
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_3f90f.dir\\link.txt --verbose=1
+        "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_3f90f.dir/objects.a
+        C:\\msys64\\mingw32\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_3f90f.dir/objects.a @CMakeFiles\\cmTC_3f90f.dir\\objects1.rsp
+        C:\\msys64\\mingw32\\bin\\clang.exe  -m32 -target i686-pc-windows-gnu   -v -Wl,-v -Wl,--whole-archive CMakeFiles\\cmTC_3f90f.dir/objects.a -Wl,--no-whole-archive -o cmTC_3f90f.exe -Wl,--out-implib,libcmTC_3f90f.dll.a -Wl,--major-image-version,0,--minor-image-version,0
+        clang version 18.1.6
+        Target: i686-pc-windows-gnu
+        Thread model: posix
+        InstalledDir: C:/msys64/mingw32/bin
+         "C:/msys64/mingw32/bin/ld" -m i386pe -Bdynamic -o cmTC_3f90f.exe C:/msys64/mingw32/lib/crt2.o C:/msys64/mingw32/lib/gcc/i686-w64-mingw32/14.1.0/crtbegin.o -LC:/msys64/mingw32/lib/gcc/i686-w64-mingw32/14.1.0 -LC:/msys64/mingw32/i686-w64-mingw32/lib -LC:/msys64/mingw32/i686-w64-mingw32/mingw/lib -LC:/msys64/mingw32/lib -v --whole-archive "CMakeFiles\\\\cmTC_3f90f.dir/objects.a" --no-whole-archive --out-implib libcmTC_3f90f.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/msys64/mingw32/lib/gcc/i686-w64-mingw32/14.1.0/crtend.o
+        GNU ld (GNU Binutils) 2.42
+        mingw32-make[1]: Leaving directory 'C:/src/OpenGL/NeHe_Lesson10-master/build.cmake/CLANGMW32/Debug/CMakeFiles/CMakeScratch/TryCompile-g12bi8'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:137 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:47 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [C:/msys64/mingw32/lib/clang/18/include]
+          add: [C:/msys64/mingw32/include]
+        end of search list found
+        collapse include dir [C:/msys64/mingw32/lib/clang/18/include] ==> [C:/msys64/mingw32/lib/clang/18/include]
+        collapse include dir [C:/msys64/mingw32/include] ==> [C:/msys64/mingw32/include]
+        implicit include dirs: [C:/msys64/mingw32/lib/clang/18/include;C:/msys64/mingw32/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:173 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:47 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: 'C:/src/OpenGL/NeHe_Lesson10-master/build.cmake/CLANGMW32/Debug/CMakeFiles/CMakeScratch/TryCompile-g12bi8']
+        ignore line: []
+        ignore line: [Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/msys64/mingw32/bin/mingw32-make.exe -f Makefile cmTC_3f90f/fast]
+        ignore line: [C:/msys64/mingw32/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_3f90f.dir\\build.make CMakeFiles/cmTC_3f90f.dir/build]
+        ignore line: [mingw32-make[1]: Entering directory 'C:/src/OpenGL/NeHe_Lesson10-master/build.cmake/CLANGMW32/Debug/CMakeFiles/CMakeScratch/TryCompile-g12bi8']
+        ignore line: [Building C object CMakeFiles/cmTC_3f90f.dir/CMakeCCompilerABI.c.obj]
+        ignore line: [C:\\msys64\\mingw32\\bin\\clang.exe   -m32 -target i686-pc-windows-gnu    -v -MD -MT CMakeFiles/cmTC_3f90f.dir/CMakeCCompilerABI.c.obj -MF CMakeFiles\\cmTC_3f90f.dir\\CMakeCCompilerABI.c.obj.d -o CMakeFiles\\cmTC_3f90f.dir\\CMakeCCompilerABI.c.obj -c "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"]
+        ignore line: [clang version 18.1.6]
+        ignore line: [Target: i686-pc-windows-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: C:/msys64/mingw32/bin]
+        ignore line: [ (in-process)]
+        ignore line: [ "C:/msys64/mingw32/bin/clang.exe" -cc1 -triple i686-pc-windows-gnu -emit-obj -mrelax-all -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model static -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -fno-use-init-array -target-cpu pentium4 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=C:/src/OpenGL/NeHe_Lesson10-master/build.cmake/CLANGMW32/Debug/CMakeFiles/CMakeScratch/TryCompile-g12bi8 -v -fcoverage-compilation-dir=C:/src/OpenGL/NeHe_Lesson10-master/build.cmake/CLANGMW32/Debug/CMakeFiles/CMakeScratch/TryCompile-g12bi8 -resource-dir C:/msys64/mingw32/lib/clang/18 -dependency-file "CMakeFiles\\\\cmTC_3f90f.dir\\\\CMakeCCompilerABI.c.obj.d" -MT CMakeFiles/cmTC_3f90f.dir/CMakeCCompilerABI.c.obj -sys-header-deps -internal-isystem C:/msys64/mingw32/lib/clang/18/include -internal-isystem C:/msys64/mingw32/i686-w64-mingw32/include -internal-isystem C:/msys64/mingw32/i686-w64-mingw32/usr/include -internal-isystem C:/msys64/mingw32/include -ferror-limit 19 -femulated-tls -fno-use-cxa-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -exception-model=dwarf -faddrsig -o "CMakeFiles\\\\cmTC_3f90f.dir\\\\CMakeCCompilerABI.c.obj" -x c "C:\\\\Program Files\\\\CMake\\\\share\\\\cmake-3.29\\\\Modules\\\\CMakeCCompilerABI.c"]
+        ignore line: [clang -cc1 version 18.1.6 based upon LLVM 18.1.6 default target i686-w64-windows-gnu]
+        ignore line: [ignoring nonexistent directory "C:/msys64/mingw32/i686-w64-mingw32/include"]
+        ignore line: [ignoring nonexistent directory "C:/msys64/mingw32/i686-w64-mingw32/usr/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ C:/msys64/mingw32/lib/clang/18/include]
+        ignore line: [ C:/msys64/mingw32/include]
+        ignore line: [End of search list.]
+        ignore line: [Linking C executable cmTC_3f90f.exe]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_3f90f.dir\\link.txt --verbose=1]
+        ignore line: ["C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_3f90f.dir/objects.a]
+        ignore line: [C:\\msys64\\mingw32\\bin\\llvm-ar.exe qc CMakeFiles\\cmTC_3f90f.dir/objects.a @CMakeFiles\\cmTC_3f90f.dir\\objects1.rsp]
+        ignore line: [C:\\msys64\\mingw32\\bin\\clang.exe  -m32 -target i686-pc-windows-gnu   -v -Wl -v -Wl --whole-archive CMakeFiles\\cmTC_3f90f.dir/objects.a -Wl --no-whole-archive -o cmTC_3f90f.exe -Wl --out-implib libcmTC_3f90f.dll.a -Wl --major-image-version 0 --minor-image-version 0]
+        ignore line: [clang version 18.1.6]
+        ignore line: [Target: i686-pc-windows-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: C:/msys64/mingw32/bin]
+        link line: [ "C:/msys64/mingw32/bin/ld" -m i386pe -Bdynamic -o cmTC_3f90f.exe C:/msys64/mingw32/lib/crt2.o C:/msys64/mingw32/lib/gcc/i686-w64-mingw32/14.1.0/crtbegin.o -LC:/msys64/mingw32/lib/gcc/i686-w64-mingw32/14.1.0 -LC:/msys64/mingw32/i686-w64-mingw32/lib -LC:/msys64/mingw32/i686-w64-mingw32/mingw/lib -LC:/msys64/mingw32/lib -v --whole-archive "CMakeFiles\\\\cmTC_3f90f.dir/objects.a" --no-whole-archive --out-implib libcmTC_3f90f.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 C:/msys64/mingw32/lib/gcc/i686-w64-mingw32/14.1.0/crtend.o]
+          arg [C:/msys64/mingw32/bin/ld] ==> ignore
+          arg [-m] ==> ignore
+          arg [i386pe] ==> ignore
+          arg [-Bdynamic] ==> search dynamic
+          arg [-o] ==> ignore
+          arg [cmTC_3f90f.exe] ==> ignore
+          arg [C:/msys64/mingw32/lib/crt2.o] ==> obj [C:/msys64/mingw32/lib/crt2.o]
+          arg [C:/msys64/mingw32/lib/gcc/i686-w64-mingw32/14.1.0/crtbegin.o] ==> obj [C:/msys64/mingw32/lib/gcc/i686-w64-mingw32/14.1.0/crtbegin.o]
+          arg [-LC:/msys64/mingw32/lib/gcc/i686-w64-mingw32/14.1.0] ==> dir [C:/msys64/mingw32/lib/gcc/i686-w64-mingw32/14.1.0]
+          arg [-LC:/msys64/mingw32/i686-w64-mingw32/lib] ==> dir [C:/msys64/mingw32/i686-w64-mingw32/lib]
+          arg [-LC:/msys64/mingw32/i686-w64-mingw32/mingw/lib] ==> dir [C:/msys64/mingw32/i686-w64-mingw32/mingw/lib]
+          arg [-LC:/msys64/mingw32/lib] ==> dir [C:/msys64/mingw32/lib]
+          arg [-v] ==> ignore
+          arg [--whole-archive] ==> ignore
+          arg [CMakeFiles\\\\cmTC_3f90f.dir/objects.a] ==> ignore
+          arg [--no-whole-archive] ==> ignore
+          arg [--out-implib] ==> ignore
+          arg [libcmTC_3f90f.dll.a] ==> ignore
+          arg [--major-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [--minor-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lgcc_eh] ==> lib [gcc_eh]
+          arg [-lmoldname] ==> lib [moldname]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lpthread] ==> lib [pthread]
+          arg [-ladvapi32] ==> lib [advapi32]
+          arg [-lshell32] ==> lib [shell32]
+          arg [-luser32] ==> lib [user32]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lgcc_eh] ==> lib [gcc_eh]
+          arg [-lmoldname] ==> lib [moldname]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [C:/msys64/mingw32/lib/gcc/i686-w64-mingw32/14.1.0/crtend.o] ==> obj [C:/msys64/mingw32/lib/gcc/i686-w64-mingw32/14.1.0/crtend.o]
+        linker tool for 'C': C:/msys64/mingw32/bin/ld
+        remove lib [gcc_eh]
+        remove lib [msvcrt]
+        remove lib [gcc_eh]
+        remove lib [msvcrt]
+        collapse library dir [C:/msys64/mingw32/lib/gcc/i686-w64-mingw32/14.1.0] ==> [C:/msys64/mingw32/lib/gcc/i686-w64-mingw32/14.1.0]
+        collapse library dir [C:/msys64/mingw32/i686-w64-mingw32/lib] ==> [C:/msys64/mingw32/i686-w64-mingw32/lib]
+        collapse library dir [C:/msys64/mingw32/i686-w64-mingw32/mingw/lib] ==> [C:/msys64/mingw32/i686-w64-mingw32/mingw/lib]
+        collapse library dir [C:/msys64/mingw32/lib] ==> [C:/msys64/mingw32/lib]
+        implicit libs: [mingw32;gcc;moldname;mingwex;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc;moldname;mingwex;kernel32]
+        implicit objs: [C:/msys64/mingw32/lib/crt2.o;C:/msys64/mingw32/lib/gcc/i686-w64-mingw32/14.1.0/crtbegin.o;C:/msys64/mingw32/lib/gcc/i686-w64-mingw32/14.1.0/crtend.o]
+        implicit dirs: [C:/msys64/mingw32/lib/gcc/i686-w64-mingw32/14.1.0;C:/msys64/mingw32/i686-w64-mingw32/lib;C:/msys64/mingw32/i686-w64-mingw32/mingw/lib;C:/msys64/mingw32/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:210 (cmake_determine_linker_id)"
+      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:47 (project)"
+    message: |
+      Running the C compiler's linker: "C:/msys64/mingw32/bin/ld" "-v"
+      GNU ld (GNU Binutils) 2.42
+...

@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_annotated" xml:lang="fr">
+<title>Structures de données</title>
+Liste des structures de données avec une brève description :<link linkend="_structtag_s_e_c_t_o_r">tagSECTOR</link><link linkend="_structtag_t_r_i_a_n_g_l_e">tagTRIANGLE</link><link linkend="_structtag_v_e_r_t_e_x">tagVERTEX</link></section>

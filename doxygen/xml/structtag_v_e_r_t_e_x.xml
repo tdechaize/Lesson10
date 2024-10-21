@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="structtag_v_e_r_t_e_x" kind="struct" language="C++" prot="public">
+    <compoundname>tagVERTEX</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtag_v_e_r_t_e_x_1ad0da36b2558901e21e7a30f6c227a45e" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>tagVERTEX::x</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/Lesson10.c" line="158" column="7" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/Lesson10.c" bodystart="158" bodyend="-1"/>
+        <referencedby refid="_lesson10_8c_1a52061247bdaeb770e3a1d59eefaad972" compoundref="_lesson10_8c" startline="460" endline="511">DrawGLScene</referencedby>
+        <referencedby refid="_lesson10_8c_1a7f195c38a24eda1f207df6e094f9181e" compoundref="_lesson10_8c" startline="203" endline="239">readstr</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structtag_v_e_r_t_e_x_1aa4f0d3eebc3c443f9be81bf48561a217" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>tagVERTEX::y</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/Lesson10.c" line="158" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/Lesson10.c" bodystart="158" bodyend="-1"/>
+        <referencedby refid="_lesson10_8c_1a52061247bdaeb770e3a1d59eefaad972" compoundref="_lesson10_8c" startline="460" endline="511">DrawGLScene</referencedby>
+        <referencedby refid="_lesson10_8c_1a7f195c38a24eda1f207df6e094f9181e" compoundref="_lesson10_8c" startline="203" endline="239">readstr</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structtag_v_e_r_t_e_x_1af73583b1e980b0aa03f9884812e9fd4d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <qualifiedname>tagVERTEX::z</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/Lesson10.c" line="158" column="11" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/Lesson10.c" bodystart="158" bodyend="-1"/>
+        <referencedby refid="_lesson10_8c_1a52061247bdaeb770e3a1d59eefaad972" compoundref="_lesson10_8c" startline="460" endline="511">DrawGLScene</referencedby>
+        <referencedby refid="_lesson10_8c_1a7f195c38a24eda1f207df6e094f9181e" compoundref="_lesson10_8c" startline="203" endline="239">readstr</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structtag_v_e_r_t_e_x_1a55831f7eab5ed2917a0191e858852f42" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float u</definition>
+        <argsstring></argsstring>
+        <name>u</name>
+        <qualifiedname>tagVERTEX::u</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/Lesson10.c" line="159" column="7" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/Lesson10.c" bodystart="159" bodyend="-1"/>
+        <referencedby refid="_lesson10_8c_1a52061247bdaeb770e3a1d59eefaad972" compoundref="_lesson10_8c" startline="460" endline="511">DrawGLScene</referencedby>
+        <referencedby refid="_lesson10_8c_1a7f195c38a24eda1f207df6e094f9181e" compoundref="_lesson10_8c" startline="203" endline="239">readstr</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structtag_v_e_r_t_e_x_1a48d9522e58fa05906c6dba23e5745a72" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float v</definition>
+        <argsstring></argsstring>
+        <name>v</name>
+        <qualifiedname>tagVERTEX::v</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/Lesson10.c" line="159" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/Lesson10.c" bodystart="159" bodyend="-1"/>
+        <referencedby refid="_lesson10_8c_1a52061247bdaeb770e3a1d59eefaad972" compoundref="_lesson10_8c" startline="460" endline="511">DrawGLScene</referencedby>
+        <referencedby refid="_lesson10_8c_1a7f195c38a24eda1f207df6e094f9181e" compoundref="_lesson10_8c" startline="203" endline="239">readstr</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/Lesson10.c" line="156" column="1" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/Lesson10.c" bodystart="157" bodyend="160"/>
+    <listofallmembers>
+      <member refid="structtag_v_e_r_t_e_x_1a55831f7eab5ed2917a0191e858852f42" prot="public" virt="non-virtual"><scope>tagVERTEX</scope><name>u</name></member>
+      <member refid="structtag_v_e_r_t_e_x_1a48d9522e58fa05906c6dba23e5745a72" prot="public" virt="non-virtual"><scope>tagVERTEX</scope><name>v</name></member>
+      <member refid="structtag_v_e_r_t_e_x_1ad0da36b2558901e21e7a30f6c227a45e" prot="public" virt="non-virtual"><scope>tagVERTEX</scope><name>x</name></member>
+      <member refid="structtag_v_e_r_t_e_x_1aa4f0d3eebc3c443f9be81bf48561a217" prot="public" virt="non-virtual"><scope>tagVERTEX</scope><name>y</name></member>
+      <member refid="structtag_v_e_r_t_e_x_1af73583b1e980b0aa03f9884812e9fd4d" prot="public" virt="non-virtual"><scope>tagVERTEX</scope><name>z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

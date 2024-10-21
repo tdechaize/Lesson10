@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="structtag_t_r_i_a_n_g_l_e" kind="struct" language="C++" prot="public">
+    <compoundname>tagTRIANGLE</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtag_t_r_i_a_n_g_l_e_1a7632b76d534b7c916965b7c94b1943b3" prot="public" static="no" mutable="no">
+        <type><ref refid="_lesson10_8c_1adfdb66b636e291c02c94c8ed35727ead" kindref="member">VERTEX</ref></type>
+        <definition>VERTEX vertex[3]</definition>
+        <argsstring>[3]</argsstring>
+        <name>vertex</name>
+        <qualifiedname>tagTRIANGLE::vertex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/Lesson10.c" line="164" column="8" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/Lesson10.c" bodystart="164" bodyend="-1"/>
+        <referencedby refid="_lesson10_8c_1a52061247bdaeb770e3a1d59eefaad972" compoundref="_lesson10_8c" startline="460" endline="511">DrawGLScene</referencedby>
+        <referencedby refid="_lesson10_8c_1a7f195c38a24eda1f207df6e094f9181e" compoundref="_lesson10_8c" startline="203" endline="239">readstr</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>tagTRIANGLE</label>
+        <link refid="structtag_t_r_i_a_n_g_l_e"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>vertex</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>tagVERTEX</label>
+        <link refid="structtag_v_e_r_t_e_x"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/Lesson10.c" line="162" column="1" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/Lesson10.c" bodystart="163" bodyend="165"/>
+    <listofallmembers>
+      <member refid="structtag_t_r_i_a_n_g_l_e_1a7632b76d534b7c916965b7c94b1943b3" prot="public" virt="non-virtual"><scope>tagTRIANGLE</scope><name>vertex</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

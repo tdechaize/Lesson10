@@ -1,0 +1,1462 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Lesson10 (from NeHe): Référence du fichier Lesson10.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Lesson10 (from NeHe)<span id="projectnumber">&#160;2.0.4.0</span>
+   </div>
+   <div id="projectbrief">Open simple window on Windows systems and create a 3D world in which you can navigated on click on &quot;arrows key&quot;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_lesson10_8c.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Définitions de type</a> &#124;
+<a href="#func-members">Fonctions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier Lesson10.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Open simple window on Windows systems and create a 3D world in which you can navigated on click on "arrows key".  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;windows.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;gl\gl.h&gt;</code><br />
+<code>#include &lt;gl\glu.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="logger_8h_source.html">logger.h</a>&quot;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="resource_8h_source.html">resource.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de Lesson10.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="_lesson10_8c__incl.png" border="0" usemap="#a_lesson10_8c" alt=""/></div>
+<map name="a_lesson10_8c" id="a_lesson10_8c">
+<area shape="rect" title="Open simple window on Windows systems and create a 3D world in which you can navigated on click on &quot;a..." alt="" coords="396,5,485,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,89,107"/>
+<area shape="poly" title=" " alt="" coords="396,30,103,82,102,77,395,25"/>
+<area shape="rect" title=" " alt="" coords="112,80,174,107"/>
+<area shape="poly" title=" " alt="" coords="396,33,189,82,187,77,395,27"/>
+<area shape="rect" title=" " alt="" coords="198,80,259,107"/>
+<area shape="poly" title=" " alt="" coords="404,35,273,80,271,75,403,30"/>
+<area shape="rect" title=" " alt="" coords="283,80,347,107"/>
+<area shape="poly" title=" " alt="" coords="420,35,351,75,348,70,417,30"/>
+<area shape="rect" title=" " alt="" coords="371,80,427,107"/>
+<area shape="poly" title=" " alt="" coords="435,34,416,68,411,66,431,31"/>
+<area shape="rect" title=" " alt="" coords="451,80,515,107"/>
+<area shape="poly" title=" " alt="" coords="450,31,471,66,466,68,445,34"/>
+<area shape="rect" title=" " alt="" coords="539,80,603,107"/>
+<area shape="poly" title=" " alt="" coords="464,30,537,70,534,75,462,35"/>
+<area shape="rect" href="logger_8h.html" title="Header de l&#39;ajout de fonction de &quot;logging&quot; (traces dans un fichier texte log.txt) uniquement en mode ..." alt="" coords="627,80,694,107"/>
+<area shape="poly" title=" " alt="" coords="479,30,613,74,612,79,478,35"/>
+<area shape="rect" title=" " alt="" coords="718,80,792,107"/>
+<area shape="poly" title=" " alt="" coords="486,27,704,77,703,82,484,32"/>
+<area shape="rect" href="resource_8h.html" title="Les définitions utilisées par le programme et les ressources." alt="" coords="817,80,899,107"/>
+<area shape="poly" title=" " alt="" coords="485,24,623,45,803,77,802,82,622,51,484,29"/>
+<area shape="rect" title=" " alt="" coords="626,155,695,181"/>
+<area shape="poly" title=" " alt="" coords="663,107,663,140,658,140,658,107"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtag_v_e_r_t_e_x.html">tagVERTEX</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtag_t_r_i_a_n_g_l_e.html">tagTRIANGLE</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtag_s_e_c_t_o_r.html">tagSECTOR</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ac7bef5d85e3dcd73eef56ad39ffc84a9" id="r_ac7bef5d85e3dcd73eef56ad39ffc84a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7bef5d85e3dcd73eef56ad39ffc84a9">WIN32_LEAN_AND_MEAN</a></td></tr>
+<tr class="separator:ac7bef5d85e3dcd73eef56ad39ffc84a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41f9c5fb8b08eb5dc3edce4dcb37fee7" id="r_a41f9c5fb8b08eb5dc3edce4dcb37fee7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41f9c5fb8b08eb5dc3edce4dcb37fee7">true</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a41f9c5fb8b08eb5dc3edce4dcb37fee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8cecfc5c5c054d2875c03e77b7be15d" id="r_aa8cecfc5c5c054d2875c03e77b7be15d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:aa8cecfc5c5c054d2875c03e77b7be15d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65e9886d74aaee76545e83dd09011727" id="r_a65e9886d74aaee76545e83dd09011727"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65e9886d74aaee76545e83dd09011727">false</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a65e9886d74aaee76545e83dd09011727"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa93f0eb578d23995850d61f7d61c55c1" id="r_aa93f0eb578d23995850d61f7d61c55c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:aa93f0eb578d23995850d61f7d61c55c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57e2e4402b0a1ec39bf04a8247063a5e" id="r_a57e2e4402b0a1ec39bf04a8247063a5e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57e2e4402b0a1ec39bf04a8247063a5e">CDS_FULLSCREEN</a>&#160;&#160;&#160;4									/* Compilers. By Defining It This Way,      */</td></tr>
+<tr class="separator:a57e2e4402b0a1ec39bf04a8247063a5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Définitions de type</h2></td></tr>
+<tr class="memitem:a1062901a7428fdd9c7f180f5e01ea056" id="r_a1062901a7428fdd9c7f180f5e01ea056"><td class="memItemLeft" align="right" valign="top">typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1062901a7428fdd9c7f180f5e01ea056">bool</a></td></tr>
+<tr class="separator:a1062901a7428fdd9c7f180f5e01ea056"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfdb66b636e291c02c94c8ed35727ead" id="r_adfdb66b636e291c02c94c8ed35727ead"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structtag_v_e_r_t_e_x.html">tagVERTEX</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfdb66b636e291c02c94c8ed35727ead">VERTEX</a></td></tr>
+<tr class="separator:adfdb66b636e291c02c94c8ed35727ead"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a878879116fcf5312db8fa898ce52e309" id="r_a878879116fcf5312db8fa898ce52e309"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structtag_t_r_i_a_n_g_l_e.html">tagTRIANGLE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a878879116fcf5312db8fa898ce52e309">TRIANGLE</a></td></tr>
+<tr class="separator:a878879116fcf5312db8fa898ce52e309"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa99a25bbda5687c0a5d1c4a426ec110c" id="r_aa99a25bbda5687c0a5d1c4a426ec110c"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structtag_s_e_c_t_o_r.html">tagSECTOR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa99a25bbda5687c0a5d1c4a426ec110c">SECTOR</a></td></tr>
+<tr class="separator:aa99a25bbda5687c0a5d1c4a426ec110c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:ae749e989b362e19783c7af4a2bf46c95" id="r_ae749e989b362e19783c7af4a2bf46c95"><td class="memItemLeft" align="right" valign="top">LRESULT CALLBACK&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae749e989b362e19783c7af4a2bf46c95">WndProc</a> (HWND <a class="el" href="#afec4341c234519e145bac6f0e5edaa51">hWnd</a>, UINT uMsg, WPARAM wParam, LPARAM lParam)</td></tr>
+<tr class="memdesc:ae749e989b362e19783c7af4a2bf46c95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction CALLBACK de traitement des messages Windows.  <br /></td></tr>
+<tr class="separator:ae749e989b362e19783c7af4a2bf46c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f195c38a24eda1f207df6e094f9181e" id="r_a7f195c38a24eda1f207df6e094f9181e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f195c38a24eda1f207df6e094f9181e">readstr</a> (char *string)</td></tr>
+<tr class="separator:a7f195c38a24eda1f207df6e094f9181e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34e550eaac41bec549d492372e9dcbd7" id="r_a34e550eaac41bec549d492372e9dcbd7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34e550eaac41bec549d492372e9dcbd7">SetupWorld</a> ()</td></tr>
+<tr class="separator:a34e550eaac41bec549d492372e9dcbd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1c091a456680cc628759567198fe7ec" id="r_ae1c091a456680cc628759567198fe7ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a1062901a7428fdd9c7f180f5e01ea056">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1c091a456680cc628759567198fe7ec">NeHeLoadBitmap3</a> (LPTSTR szFileName, GLuint *<a class="el" href="#a04b2088c33683580ff9664f8a35cef23">texid</a>)</td></tr>
+<tr class="memdesc:ae1c091a456680cc628759567198fe7ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction NeHeLoadBitmap3 : charge un fichier BMP en m�moire pour generer un tableau de trois textures.  <br /></td></tr>
+<tr class="separator:ae1c091a456680cc628759567198fe7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dd15539ba90ae3670aa0a9f889d2236" id="r_a8dd15539ba90ae3670aa0a9f889d2236"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8dd15539ba90ae3670aa0a9f889d2236">LoadGLTextures</a> ()</td></tr>
+<tr class="separator:a8dd15539ba90ae3670aa0a9f889d2236"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87bb84d489df61ed7b0c002584fd984f" id="r_a87bb84d489df61ed7b0c002584fd984f"><td class="memItemLeft" align="right" valign="top">GLvoid&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87bb84d489df61ed7b0c002584fd984f">ReSizeGLScene</a> (GLsizei width, GLsizei height)</td></tr>
+<tr class="memdesc:a87bb84d489df61ed7b0c002584fd984f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction ReSizeGLScene : redimensionnement de la fen�tre Windows g�rant OpenGL.  <br /></td></tr>
+<tr class="separator:a87bb84d489df61ed7b0c002584fd984f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4c387d3f1ebce6d57684b6a10c9b0ae" id="r_aa4c387d3f1ebce6d57684b6a10c9b0ae"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4c387d3f1ebce6d57684b6a10c9b0ae">InitGL</a> (GLvoid)</td></tr>
+<tr class="memdesc:aa4c387d3f1ebce6d57684b6a10c9b0ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction InitGL : Fin de l'initialisation de la fen�tre Windows g�rant OpenGL.  <br /></td></tr>
+<tr class="separator:aa4c387d3f1ebce6d57684b6a10c9b0ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52061247bdaeb770e3a1d59eefaad972" id="r_a52061247bdaeb770e3a1d59eefaad972"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52061247bdaeb770e3a1d59eefaad972">DrawGLScene</a> (GLvoid)</td></tr>
+<tr class="memdesc:a52061247bdaeb770e3a1d59eefaad972"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction DrawGLScene : Dessin sous OpenGL dans la fen�tre Windows.  <br /></td></tr>
+<tr class="separator:a52061247bdaeb770e3a1d59eefaad972"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af33a2273205c1491be5916d3091658e0" id="r_af33a2273205c1491be5916d3091658e0"><td class="memItemLeft" align="right" valign="top">GLvoid&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af33a2273205c1491be5916d3091658e0">KillGLWindow</a> (GLvoid)</td></tr>
+<tr class="memdesc:af33a2273205c1491be5916d3091658e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction KillGLWindow : Destruction de toutes les ressources du programme.  <br /></td></tr>
+<tr class="separator:af33a2273205c1491be5916d3091658e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5f043c9df9b9e5e0e26d567feeeb1bc" id="r_ae5f043c9df9b9e5e0e26d567feeeb1bc"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5f043c9df9b9e5e0e26d567feeeb1bc">CreateGLWindow</a> (char *title, int width, int height, int bits, BOOL fullscreenflag)</td></tr>
+<tr class="memdesc:ae5f043c9df9b9e5e0e26d567feeeb1bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creation of our OpenGL Window.  <br /></td></tr>
+<tr class="separator:ae5f043c9df9b9e5e0e26d567feeeb1bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a661c2abc03926acfaeb93b4ae7db4943" id="r_a661c2abc03926acfaeb93b4ae7db4943"><td class="memItemLeft" align="right" valign="top">int WINAPI&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a661c2abc03926acfaeb93b4ae7db4943">WinMain</a> (HINSTANCE <a class="el" href="#a74029128723095e7bf00a71d46af8b24">hInstance</a>, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)</td></tr>
+<tr class="memdesc:a661c2abc03926acfaeb93b4ae7db4943"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creation of our application on Windows System (not console application) *.  <br /></td></tr>
+<tr class="separator:a661c2abc03926acfaeb93b4ae7db4943"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a78f6446a0e13adc7b7b2f239112ac785" id="r_a78f6446a0e13adc7b7b2f239112ac785"><td class="memItemLeft" align="right" valign="top">HDC&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78f6446a0e13adc7b7b2f239112ac785">hDC</a> =NULL</td></tr>
+<tr class="separator:a78f6446a0e13adc7b7b2f239112ac785"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a874963259c7cd998acfe6e187fbdb4c1" id="r_a874963259c7cd998acfe6e187fbdb4c1"><td class="memItemLeft" align="right" valign="top">HGLRC&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a874963259c7cd998acfe6e187fbdb4c1">hRC</a> =NULL</td></tr>
+<tr class="separator:a874963259c7cd998acfe6e187fbdb4c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afec4341c234519e145bac6f0e5edaa51" id="r_afec4341c234519e145bac6f0e5edaa51"><td class="memItemLeft" align="right" valign="top">HWND&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afec4341c234519e145bac6f0e5edaa51">hWnd</a> =NULL</td></tr>
+<tr class="separator:afec4341c234519e145bac6f0e5edaa51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74029128723095e7bf00a71d46af8b24" id="r_a74029128723095e7bf00a71d46af8b24"><td class="memItemLeft" align="right" valign="top">HINSTANCE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74029128723095e7bf00a71d46af8b24">hInstance</a></td></tr>
+<tr class="separator:a74029128723095e7bf00a71d46af8b24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55a8351b704275ad12988864918abb2a" id="r_a55a8351b704275ad12988864918abb2a"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55a8351b704275ad12988864918abb2a">keys</a> [256]</td></tr>
+<tr class="separator:a55a8351b704275ad12988864918abb2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22389371583c4b8843e06da43399d6d9" id="r_a22389371583c4b8843e06da43399d6d9"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22389371583c4b8843e06da43399d6d9">active</a> =<a class="el" href="#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></td></tr>
+<tr class="separator:a22389371583c4b8843e06da43399d6d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab15a33c0173f2c5b6ac806c55cf7f0ba" id="r_ab15a33c0173f2c5b6ac806c55cf7f0ba"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab15a33c0173f2c5b6ac806c55cf7f0ba">fullscreen</a> =<a class="el" href="#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></td></tr>
+<tr class="separator:ab15a33c0173f2c5b6ac806c55cf7f0ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3d0c623676f78dff5a84bc436095550" id="r_af3d0c623676f78dff5a84bc436095550"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3d0c623676f78dff5a84bc436095550">blend</a></td></tr>
+<tr class="separator:af3d0c623676f78dff5a84bc436095550"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81fe5d48ae6cf5016dfc24c0835dee10" id="r_a81fe5d48ae6cf5016dfc24c0835dee10"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81fe5d48ae6cf5016dfc24c0835dee10">bp</a></td></tr>
+<tr class="separator:a81fe5d48ae6cf5016dfc24c0835dee10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a351433969208eaa89b942d3e587fcc9c" id="r_a351433969208eaa89b942d3e587fcc9c"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a351433969208eaa89b942d3e587fcc9c">fp</a></td></tr>
+<tr class="separator:a351433969208eaa89b942d3e587fcc9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9fb3d4767f6255c70dcd5123bbf2f54" id="r_ae9fb3d4767f6255c70dcd5123bbf2f54"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9fb3d4767f6255c70dcd5123bbf2f54">level_debug</a></td></tr>
+<tr class="separator:ae9fb3d4767f6255c70dcd5123bbf2f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a73c6d2f29511093b6a39513c379926" id="r_a1a73c6d2f29511093b6a39513c379926"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a1062901a7428fdd9c7f180f5e01ea056">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a73c6d2f29511093b6a39513c379926">level_def</a> = <a class="el" href="#a41f9c5fb8b08eb5dc3edce4dcb37fee7">true</a></td></tr>
+<tr class="separator:a1a73c6d2f29511093b6a39513c379926"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a6535285fc9406de04538e1200d8ed3" id="r_a1a6535285fc9406de04538e1200d8ed3"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a6535285fc9406de04538e1200d8ed3">piover180</a> = 0.0174532925f</td></tr>
+<tr class="separator:a1a6535285fc9406de04538e1200d8ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5682e48513a771560df50e3b213e61a" id="r_ac5682e48513a771560df50e3b213e61a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5682e48513a771560df50e3b213e61a">heading</a></td></tr>
+<tr class="separator:ac5682e48513a771560df50e3b213e61a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adad239fcacf5c59997872bd0c12bdfd1" id="r_adad239fcacf5c59997872bd0c12bdfd1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adad239fcacf5c59997872bd0c12bdfd1">xpos</a></td></tr>
+<tr class="separator:adad239fcacf5c59997872bd0c12bdfd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1145c2d616cccd00793eb0b60929a3b3" id="r_a1145c2d616cccd00793eb0b60929a3b3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1145c2d616cccd00793eb0b60929a3b3">zpos</a></td></tr>
+<tr class="separator:a1145c2d616cccd00793eb0b60929a3b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9549138cf4d209303566523d805d8525" id="r_a9549138cf4d209303566523d805d8525"><td class="memItemLeft" align="right" valign="top">GLfloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9549138cf4d209303566523d805d8525">yrot</a></td></tr>
+<tr class="separator:a9549138cf4d209303566523d805d8525"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac52295b1c86ab1c35431a1f02382bad1" id="r_ac52295b1c86ab1c35431a1f02382bad1"><td class="memItemLeft" align="right" valign="top">GLfloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac52295b1c86ab1c35431a1f02382bad1">walkbias</a> = 0</td></tr>
+<tr class="separator:ac52295b1c86ab1c35431a1f02382bad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad839b78305422c269907845c11f19321" id="r_ad839b78305422c269907845c11f19321"><td class="memItemLeft" align="right" valign="top">GLfloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad839b78305422c269907845c11f19321">walkbiasangle</a> = 0</td></tr>
+<tr class="separator:ad839b78305422c269907845c11f19321"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab253ae37d6b80578f7883bbd03657a59" id="r_ab253ae37d6b80578f7883bbd03657a59"><td class="memItemLeft" align="right" valign="top">GLfloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab253ae37d6b80578f7883bbd03657a59">lookupdown</a> = 0.0f</td></tr>
+<tr class="separator:ab253ae37d6b80578f7883bbd03657a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfde595878f838c910907ec90d040114" id="r_acfde595878f838c910907ec90d040114"><td class="memItemLeft" align="right" valign="top">GLfloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acfde595878f838c910907ec90d040114">z</a> =0.0f</td></tr>
+<tr class="separator:acfde595878f838c910907ec90d040114"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abaab572c2d38c9839d1b9831155cb3f3" id="r_abaab572c2d38c9839d1b9831155cb3f3"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abaab572c2d38c9839d1b9831155cb3f3">filter</a> =0</td></tr>
+<tr class="separator:abaab572c2d38c9839d1b9831155cb3f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae303c167c23691bbf165ab05813e5713" id="r_ae303c167c23691bbf165ab05813e5713"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae303c167c23691bbf165ab05813e5713">texture</a> [3]</td></tr>
+<tr class="separator:ae303c167c23691bbf165ab05813e5713"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04b2088c33683580ff9664f8a35cef23" id="r_a04b2088c33683580ff9664f8a35cef23"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04b2088c33683580ff9664f8a35cef23">texid</a> [3]</td></tr>
+<tr class="separator:a04b2088c33683580ff9664f8a35cef23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a196a466e0a51460be93ca4f32c313eff" id="r_a196a466e0a51460be93ca4f32c313eff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa99a25bbda5687c0a5d1c4a426ec110c">SECTOR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a196a466e0a51460be93ca4f32c313eff">sector1</a></td></tr>
+<tr class="separator:a196a466e0a51460be93ca4f32c313eff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad667f040f2932c8097435492fbd10d76" id="r_ad667f040f2932c8097435492fbd10d76"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad667f040f2932c8097435492fbd10d76">loop</a> = 0</td></tr>
+<tr class="separator:ad667f040f2932c8097435492fbd10d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a816a7bb71de16d574a2aac953f57f918" id="r_a816a7bb71de16d574a2aac953f57f918"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a816a7bb71de16d574a2aac953f57f918">vert</a> = -1</td></tr>
+<tr class="separator:a816a7bb71de16d574a2aac953f57f918"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Open simple window on Windows systems and create a 3D world in which you can navigated on click on "arrows key". </p>
+<p>Comments manageable by Doxygen</p>
+<p>Modified smoothly by Thierry DECHAIZE.</p>
+<p>Paradigm : obtain one source (only one !) compatible for multiple free C Compilers (many GCC compilers included in MinGW, Mingw32, Mingw64, MSYS2, CYGWIN64, TDM, and another Visual C/C++ included in Visual Studio + kits Windows, LCC, WATCOM, DMC, Borland, OneAPI Intel compiler, many CLANG compilers, etc..) and provide for all users an development environment on Windows 11 64 bits the great Code::Blocks IDE (improved version "nightly build" 23.06), and don't use glaux.lib or glaux.dll (old and buggy library).</p>
+<p>a) Mingw 32 bits, official version, with version gcc 9.2.0 (very old !) : downloadable on <a href="http://sourceforge.net/projects/mingw/">http://sourceforge.net/projects/mingw/</a> (dead branch ?) b) Mingw 64 bits included in new IDE Red Panda Cpp varsion 3.1, version gcc 12.2.0 : donwloadable on <a href="https://sourceforge.net/projects/redpanda-cpp/files/">https://sourceforge.net/projects/redpanda-cpp/files/</a> c) Mingw 64 bits included in package Code::Blocks (version 20.03 with mingw), downloadable on <a href="http://sourceforge.net/projects/codeblocks/files/Binaries/20.03/Windows/">http://sourceforge.net/projects/codeblocks/files/Binaries/20.03/Windows/</a> but improved with most recent version of MinGW64 + gcc (version gcc 13.1.0) with "nightly build" dated of 4 june 2023 downloadable on : <a href="https://sourceforge.net/projects/codeblocks/files/Binaries/Nightlies/2023/CB_20230604_rev13311_win64-setup-MinGW.exe">https://sourceforge.net/projects/codeblocks/files/Binaries/Nightlies/2023/CB_20230604_rev13311_win64-setup-MinGW.exe</a> d) Mingw 32 and 64 bits packaged, version gcc 14.2.0 : downloadable on <a href="https://winlibs.com/">https://winlibs.com/</a> (and CLANG included in, 32 and 64 bits), two kits :</p><ul>
+<li>winlibs-i686-posix-dwarf-gcc-14.2.0-llvm-19.1.1-mingw-w64ucrt-12.0.0-r2.7z (32 bits)</li>
+<li>winlibs-x86_64-posix-seh-gcc-14.2.0-llvm-19.1.1-mingw-w64ucrt-12.0.0-r2.7z (64 bits) e) Cygwin64 with three compilers, "native" GCC 64 bits and GCC in MinGW32 + MinGW64, versions gcc 12.4.0 : downloadable on <a href="http://www.cygwin.com/install.html">http://www.cygwin.com/install.html</a> (tool for install : setup-x86_64.exe) f) TDM GCC, 32 and 64 bits, version 10.3.0 : downloadable on <a href="http://sourceforge.net/projects/TDM-GCC">http://sourceforge.net/projects/TDM-GCC</a> g) MSYS2 environment MINGW32 and MINGW64, 32 et 64 bits, version de 2024 (msys2-x86_64-20240727.exe), version gcc 14.2.0 : downloadable on <a href="https://repo.msys2.org/distrib/x86_64/msys2-x86_64-20240727.exe">https://repo.msys2.org/distrib/x86_64/msys2-x86_64-20240727.exe</a> h) Visual Studio 2022, 32 and 64 bit, community edition for free : downloadable on <a href="https://visualstudio.microsoft.com/fr/vs/community/">https://visualstudio.microsoft.com/fr/vs/community/</a> i) Borland C/C++ 32 bit, version 5.5.1 : downloadable on <a href="https://developerinsider.co/download-and-install-borland-c-compiler-on-windows-10/">https://developerinsider.co/download-and-install-borland-c-compiler-on-windows-10/</a> j) Digital Mars Compiler C 32 bits, installation package version 8.57 : downloadable on <a href="http://www.digitalmars.com">http://www.digitalmars.com</a> (the more old compiler, the more bugged, dead branch !) k) OpenWatcom 32 and 64 bit, version 2.0 (frequently rebuild) : downloadable on <a href="https://github.com/open-watcom/open-watcom-v2/releases/tag/Current-build">https://github.com/open-watcom/open-watcom-v2/releases/tag/Current-build</a> l) Lcc and Lcc64, 32 and 64 bit : downloadable <a href="http://www.cs.virginia.edu/~lcc-win32/">http://www.cs.virginia.edu/~lcc-win32/</a> (not really free !) m) PELLES C, 32 and 64 bit, version 12.0 : downloadable on <a href="http://www.smorgasbordet.com/pellesc/">http://www.smorgasbordet.com/pellesc/</a> o) CLANG 32 and 64 bit included in version WinLibs, leaned at environments MINGW64 et MINGW32, version 19.1.1 (version gcc 14.2.0) : downloadable on <a href="https://winlibs.com/">https://winlibs.com/</a> p) CLANG 32 and 64 bit leaned at environments Visual Studio 2022 (+ kits Microsoft), version 19.1.1 : downloadable on <a href="https://releases.llvm.org/download.html">https://releases.llvm.org/download.html</a> q) CLANG 32 and 64 bit included in version MSYS2, leaned at environments MINGW64 et MINGW32, version 18.1.8 (version gcc 14.2.0) : downloadable on <a href="https://repo.msys2.org/distrib/x86_64/msys2-x86_64-20220118.exe">https://repo.msys2.org/distrib/x86_64/msys2-x86_64-20220118.exe</a> r) CLANG 32 bit of version CYGWIN64, adoss� aux environnements MINGW64 et MINGW32, version 8.0.0, very old (version gcc 12.4.0) : downloadable <a href="http://www.cygwin.com/install.html">http://www.cygwin.com/install.html</a> (tool for install : setup-x86_64.exe) s) OneAPI Intel C/C++ compiler 32 and 64 bit, version 2024.2.1 downloadable on site <a href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html">https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html</a></li>
+</ul>
+<p>TDE -&gt; Add resource file end resource header for restitute version + icon OpenGL.ico for fun, because versionning is important, same for freeware :-) !</p>
+<p>62 generations with "All build" target into IDE Code::Blocks, or with CMAKE (and "make" tools with compilers don't supported with CMAKE), or, finally, with "command files" (versions 32 or 64 bits, "Debug" or "Release"), just "for fun" or "academic demonstration" of these tools.</p>
+<p>Date : 2024/10/16</p>
+<dl class="section author"><dt>Auteur</dt><dd>Jeff Molofee ( NeHe ) originely, Modified for LCCWin32 compiler by Robert Wishlaw 2002/11/23 </dd>
+<dd>
+After adapted by Thierry Dechaize to verify paradigm : one source for multiple C Compilers </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>2.0.4.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>16 octobre 2024</dd></dl>
+<p>This program manage only three "Windows" events : click on "arrows key" on keyboard, click on button "Close" of open windows or exit by touch "ESC",</p>
+<p>but manage also "Fullscreen" or not.</p>
+<p>WARNING : Bug detected with Pelles C Compiler : filein = fopen("../../data/world.txt", "rt"); fail because option "rt" is undefined in any std reference of</p>
+<p>language C. It's only a "tolerance" supported by many compiler on Windows ... except Pelles C. It's a major reason of rewrite of functions "SetWorld"</p>
+<p>and "readstr" in this source =&gt; it's not the orginally source of NeHe Lesson10. Tested with success with all free compilers described below or in "Notes"</p>
+<p>into CB project. </p>
+</div><h2 class="groupheader">Documentation des macros</h2>
+<a id="a57e2e4402b0a1ec39bf04a8247063a5e" name="a57e2e4402b0a1ec39bf04a8247063a5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57e2e4402b0a1ec39bf04a8247063a5e">&#9670;&#160;</a></span>CDS_FULLSCREEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CDS_FULLSCREEN&#160;&#160;&#160;4									/* Compilers. By Defining It This Way,      */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa93f0eb578d23995850d61f7d61c55c1" name="aa93f0eb578d23995850d61f7d61c55c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa93f0eb578d23995850d61f7d61c55c1">&#9670;&#160;</a></span>FALSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FALSE&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a65e9886d74aaee76545e83dd09011727" name="a65e9886d74aaee76545e83dd09011727"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65e9886d74aaee76545e83dd09011727">&#9670;&#160;</a></span>false</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define false&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa8cecfc5c5c054d2875c03e77b7be15d" name="aa8cecfc5c5c054d2875c03e77b7be15d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8cecfc5c5c054d2875c03e77b7be15d">&#9670;&#160;</a></span>TRUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TRUE&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a41f9c5fb8b08eb5dc3edce4dcb37fee7" name="a41f9c5fb8b08eb5dc3edce4dcb37fee7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41f9c5fb8b08eb5dc3edce4dcb37fee7">&#9670;&#160;</a></span>true</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define true&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac7bef5d85e3dcd73eef56ad39ffc84a9" name="ac7bef5d85e3dcd73eef56ad39ffc84a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7bef5d85e3dcd73eef56ad39ffc84a9">&#9670;&#160;</a></span>WIN32_LEAN_AND_MEAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define WIN32_LEAN_AND_MEAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des définitions de type</h2>
+<a id="a1062901a7428fdd9c7f180f5e01ea056" name="a1062901a7428fdd9c7f180f5e01ea056"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1062901a7428fdd9c7f180f5e01ea056">&#9670;&#160;</a></span>bool</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int <a class="el" href="#a1062901a7428fdd9c7f180f5e01ea056">bool</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa99a25bbda5687c0a5d1c4a426ec110c" name="aa99a25bbda5687c0a5d1c4a426ec110c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa99a25bbda5687c0a5d1c4a426ec110c">&#9670;&#160;</a></span>SECTOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structtag_s_e_c_t_o_r.html">tagSECTOR</a> <a class="el" href="#aa99a25bbda5687c0a5d1c4a426ec110c">SECTOR</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a878879116fcf5312db8fa898ce52e309" name="a878879116fcf5312db8fa898ce52e309"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a878879116fcf5312db8fa898ce52e309">&#9670;&#160;</a></span>TRIANGLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structtag_t_r_i_a_n_g_l_e.html">tagTRIANGLE</a> <a class="el" href="#a878879116fcf5312db8fa898ce52e309">TRIANGLE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adfdb66b636e291c02c94c8ed35727ead" name="adfdb66b636e291c02c94c8ed35727ead"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfdb66b636e291c02c94c8ed35727ead">&#9670;&#160;</a></span>VERTEX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structtag_v_e_r_t_e_x.html">tagVERTEX</a> <a class="el" href="#adfdb66b636e291c02c94c8ed35727ead">VERTEX</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="ae5f043c9df9b9e5e0e26d567feeeb1bc" name="ae5f043c9df9b9e5e0e26d567feeeb1bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5f043c9df9b9e5e0e26d567feeeb1bc">&#9670;&#160;</a></span>CreateGLWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL CreateGLWindow </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>title</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>height</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>bits</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BOOL</td>          <td class="paramname"><span class="paramname"><em>fullscreenflag</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creation of our OpenGL Window. </p>
+<p>This Code Creates Our OpenGL Window. Parameters Are: * </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>- Title To Appear At The Top Of The Window * </td></tr>
+    <tr><td class="paramname">width</td><td>- Width Of The GL Window Or Fullscreen Mode * </td></tr>
+    <tr><td class="paramname">height</td><td>- Height Of The GL Window Or Fullscreen Mode * </td></tr>
+    <tr><td class="paramname">bits</td><td>- Number Of Bits To Use For Color (8/16/24/32) * </td></tr>
+    <tr><td class="paramname">fullscreenflag</td><td>- Use Fullscreen Mode (TRUE) Or Windowed Mode (FALSE) * </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>BOOL - un entier booleen (OK ou non). </dd></dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="_lesson10_8c_ae5f043c9df9b9e5e0e26d567feeeb1bc_cgraph.png" border="0" usemap="#a_lesson10_8c_ae5f043c9df9b9e5e0e26d567feeeb1bc_cgraph" alt=""/></div>
+<map name="a_lesson10_8c_ae5f043c9df9b9e5e0e26d567feeeb1bc_cgraph" id="a_lesson10_8c_ae5f043c9df9b9e5e0e26d567feeeb1bc_cgraph">
+<area shape="rect" title="Creation of our OpenGL Window." alt="" coords="5,287,129,313"/>
+<area shape="rect" href="_lesson10_8c.html#aa4c387d3f1ebce6d57684b6a10c9b0ae" title="Fonction InitGL : Fin de l&#39;initialisation de la fenêtre Windows gérant OpenGL." alt="" coords="200,109,256,136"/>
+<area shape="poly" title=" " alt="" coords="79,284,203,145,207,149,83,288"/>
+<area shape="rect" href="logger_8c.html#abd2d19eeef46a8184a2302d33c6c7397" title=" " alt="" coords="673,109,743,136"/>
+<area shape="poly" title=" " alt="" coords="122,284,176,272,245,264,305,263,409,270,458,271,508,265,562,250,623,222,645,207,663,188,691,148,695,151,667,191,648,211,626,226,564,255,509,271,458,276,409,275,305,269,246,269,177,277,123,289"/>
+<area shape="rect" href="_lesson10_8c.html#af33a2273205c1491be5916d3091658e0" title="Fonction KillGLWindow : Destruction de toutes les ressources du programme." alt="" coords="177,287,279,313"/>
+<area shape="poly" title=" " alt="" coords="129,297,162,297,162,303,129,303"/>
+<area shape="rect" href="_lesson10_8c.html#a87bb84d489df61ed7b0c002584fd984f" title="Fonction ReSizeGLScene : redimensionnement de la fenêtre Windows gérant OpenGL." alt="" coords="327,363,445,389"/>
+<area shape="poly" title=" " alt="" coords="127,311,313,356,312,361,126,317"/>
+<area shape="rect" href="_lesson10_8c.html#ae749e989b362e19783c7af4a2bf46c95" title="Fonction CALLBACK de traitement des messages Windows." alt="" coords="190,388,266,415"/>
+<area shape="poly" title=" " alt="" coords="91,312,194,378,192,382,88,316"/>
+<area shape="rect" href="_lesson10_8c.html#a8dd15539ba90ae3670aa0a9f889d2236" title=" " alt="" coords="329,33,444,60"/>
+<area shape="poly" title=" " alt="" coords="255,107,342,65,345,69,258,112"/>
+<area shape="poly" title=" " alt="" coords="256,119,413,113,625,113,658,116,658,121,625,119,413,118,257,124"/>
+<area shape="rect" href="_lesson10_8c.html#a34e550eaac41bec549d492372e9dcbd7" title=" " alt="" coords="342,135,430,161"/>
+<area shape="poly" title=" " alt="" coords="257,125,328,136,327,141,256,130"/>
+<area shape="poly" title=" " alt="" coords="419,30,462,16,515,6,571,5,599,9,626,19,649,34,668,54,696,95,691,97,664,57,645,38,623,24,598,15,571,10,515,11,463,22,421,35"/>
+<area shape="rect" href="_lesson10_8c.html#ae1c091a456680cc628759567198fe7ec" title="Fonction NeHeLoadBitmap3 : charge un fichier BMP en mémoire pour generer un tableau de trois textures." alt="" coords="493,33,625,60"/>
+<area shape="poly" title=" " alt="" coords="444,44,478,44,478,49,444,49"/>
+<area shape="rect" href="logger_8c.html#aeea85f0478e1d5c40a6293f63269ac03" title=" " alt="" coords="791,109,869,136"/>
+<area shape="poly" title=" " alt="" coords="743,120,776,120,776,125,743,125"/>
+<area shape="poly" title=" " alt="" coords="590,58,626,76,670,100,667,104,623,81,587,63"/>
+<area shape="poly" title=" " alt="" coords="430,142,658,124,658,129,431,147"/>
+<area shape="rect" href="_lesson10_8c.html#a7f195c38a24eda1f207df6e094f9181e" title=" " alt="" coords="528,185,590,212"/>
+<area shape="poly" title=" " alt="" coords="432,158,515,183,513,188,430,164"/>
+<area shape="poly" title=" " alt="" coords="587,183,623,164,667,141,670,146,626,169,590,187"/>
+<area shape="poly" title=" " alt="" coords="266,393,312,385,313,390,266,398"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="_lesson10_8c_ae5f043c9df9b9e5e0e26d567feeeb1bc_icgraph.png" border="0" usemap="#a_lesson10_8c_ae5f043c9df9b9e5e0e26d567feeeb1bc_icgraph" alt=""/></div>
+<map name="a_lesson10_8c_ae5f043c9df9b9e5e0e26d567feeeb1bc_icgraph" id="a_lesson10_8c_ae5f043c9df9b9e5e0e26d567feeeb1bc_icgraph">
+<area shape="rect" title="Creation of our OpenGL Window." alt="" coords="126,5,249,32"/>
+<area shape="rect" href="_lesson10_8c.html#a661c2abc03926acfaeb93b4ae7db4943" title="Creation of our application on Windows System (not console application) *." alt="" coords="5,5,78,32"/>
+<area shape="poly" title=" " alt="" coords="111,21,78,21,78,16,111,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a52061247bdaeb770e3a1d59eefaad972" name="a52061247bdaeb770e3a1d59eefaad972"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52061247bdaeb770e3a1d59eefaad972">&#9670;&#160;</a></span>DrawGLScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DrawGLScene </td>
+          <td>(</td>
+          <td class="paramtype">GLvoid</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction DrawGLScene : Dessin sous OpenGL dans la fen�tre Windows. </p>
+<p>This Code draw the scene OpenGL in the main window.</p>
+<p>Rien </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">GLvoid</td><td>un void OpenGL. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int un entier (booleen) </dd></dl>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="_lesson10_8c_a52061247bdaeb770e3a1d59eefaad972_icgraph.png" border="0" usemap="#a_lesson10_8c_a52061247bdaeb770e3a1d59eefaad972_icgraph" alt=""/></div>
+<map name="a_lesson10_8c_a52061247bdaeb770e3a1d59eefaad972_icgraph" id="a_lesson10_8c_a52061247bdaeb770e3a1d59eefaad972_icgraph">
+<area shape="rect" title="Fonction DrawGLScene : Dessin sous OpenGL dans la fenêtre Windows." alt="" coords="126,5,232,32"/>
+<area shape="rect" href="_lesson10_8c.html#a661c2abc03926acfaeb93b4ae7db4943" title="Creation of our application on Windows System (not console application) *." alt="" coords="5,5,78,32"/>
+<area shape="poly" title=" " alt="" coords="111,21,78,21,78,16,111,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa4c387d3f1ebce6d57684b6a10c9b0ae" name="aa4c387d3f1ebce6d57684b6a10c9b0ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4c387d3f1ebce6d57684b6a10c9b0ae">&#9670;&#160;</a></span>InitGL()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int InitGL </td>
+          <td>(</td>
+          <td class="paramtype">GLvoid</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction InitGL : Fin de l'initialisation de la fen�tre Windows g�rant OpenGL. </p>
+<p>This Code finish the initialization OpenGL of the main window.</p>
+<p>Rien </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">GLvoid</td><td>un void OpenGL. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int un entier (booleen) </dd></dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="_lesson10_8c_aa4c387d3f1ebce6d57684b6a10c9b0ae_cgraph.png" border="0" usemap="#a_lesson10_8c_aa4c387d3f1ebce6d57684b6a10c9b0ae_cgraph" alt=""/></div>
+<map name="a_lesson10_8c_aa4c387d3f1ebce6d57684b6a10c9b0ae_cgraph" id="a_lesson10_8c_aa4c387d3f1ebce6d57684b6a10c9b0ae_cgraph">
+<area shape="rect" title="Fonction InitGL : Fin de l&#39;initialisation de la fenêtre Windows gérant OpenGL." alt="" coords="5,81,62,108"/>
+<area shape="rect" href="_lesson10_8c.html#a8dd15539ba90ae3670aa0a9f889d2236" title=" " alt="" coords="110,30,225,57"/>
+<area shape="poly" title=" " alt="" coords="61,81,115,60,117,65,63,86"/>
+<area shape="rect" href="logger_8c.html#abd2d19eeef46a8184a2302d33c6c7397" title=" " alt="" coords="452,81,523,108"/>
+<area shape="poly" title=" " alt="" coords="62,92,437,92,437,97,62,97"/>
+<area shape="rect" href="_lesson10_8c.html#a34e550eaac41bec549d492372e9dcbd7" title=" " alt="" coords="123,132,212,158"/>
+<area shape="poly" title=" " alt="" coords="63,102,117,123,115,128,61,107"/>
+<area shape="poly" title=" " alt="" coords="204,27,246,15,297,5,352,4,379,8,405,16,442,39,469,67,466,71,438,43,403,21,378,13,351,9,297,11,247,20,205,32"/>
+<area shape="rect" href="_lesson10_8c.html#ae1c091a456680cc628759567198fe7ec" title="Fonction NeHeLoadBitmap3 : charge un fichier BMP en mémoire pour generer un tableau de trois textures." alt="" coords="273,30,404,57"/>
+<area shape="poly" title=" " alt="" coords="225,41,258,41,258,46,225,46"/>
+<area shape="rect" href="logger_8c.html#aeea85f0478e1d5c40a6293f63269ac03" title=" " alt="" coords="571,81,649,108"/>
+<area shape="poly" title=" " alt="" coords="523,92,556,92,556,97,523,97"/>
+<area shape="poly" title=" " alt="" coords="381,55,439,75,437,80,379,60"/>
+<area shape="poly" title=" " alt="" coords="211,138,404,110,438,103,439,109,405,116,212,143"/>
+<area shape="rect" href="_lesson10_8c.html#a7f195c38a24eda1f207df6e094f9181e" title=" " alt="" coords="308,182,369,209"/>
+<area shape="poly" title=" " alt="" coords="213,156,294,180,293,185,211,161"/>
+<area shape="poly" title=" " alt="" coords="368,180,403,161,460,116,463,120,406,166,371,185"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="_lesson10_8c_aa4c387d3f1ebce6d57684b6a10c9b0ae_icgraph.png" border="0" usemap="#a_lesson10_8c_aa4c387d3f1ebce6d57684b6a10c9b0ae_icgraph" alt=""/></div>
+<map name="a_lesson10_8c_aa4c387d3f1ebce6d57684b6a10c9b0ae_icgraph" id="a_lesson10_8c_aa4c387d3f1ebce6d57684b6a10c9b0ae_icgraph">
+<area shape="rect" title="Fonction InitGL : Fin de l&#39;initialisation de la fenêtre Windows gérant OpenGL." alt="" coords="297,5,353,32"/>
+<area shape="rect" href="_lesson10_8c.html#ae5f043c9df9b9e5e0e26d567feeeb1bc" title="Creation of our OpenGL Window." alt="" coords="126,5,249,32"/>
+<area shape="poly" title=" " alt="" coords="282,21,249,21,249,16,282,16"/>
+<area shape="rect" href="_lesson10_8c.html#a661c2abc03926acfaeb93b4ae7db4943" title="Creation of our application on Windows System (not console application) *." alt="" coords="5,5,78,32"/>
+<area shape="poly" title=" " alt="" coords="111,21,78,21,78,16,111,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af33a2273205c1491be5916d3091658e0" name="af33a2273205c1491be5916d3091658e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af33a2273205c1491be5916d3091658e0">&#9670;&#160;</a></span>KillGLWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLvoid KillGLWindow </td>
+          <td>(</td>
+          <td class="paramtype">GLvoid</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction KillGLWindow : Destruction de toutes les ressources du programme. </p>
+<p>This Code destroy all resources of this program.</p>
+<p>Rien </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">GLvoid</td><td>un void OpenGL. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>GLvoid un void OpenGL. </dd></dl>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="_lesson10_8c_af33a2273205c1491be5916d3091658e0_icgraph.png" border="0" usemap="#a_lesson10_8c_af33a2273205c1491be5916d3091658e0_icgraph" alt=""/></div>
+<map name="a_lesson10_8c_af33a2273205c1491be5916d3091658e0_icgraph" id="a_lesson10_8c_af33a2273205c1491be5916d3091658e0_icgraph">
+<area shape="rect" title="Fonction KillGLWindow : Destruction de toutes les ressources du programme." alt="" coords="297,31,399,57"/>
+<area shape="rect" href="_lesson10_8c.html#ae5f043c9df9b9e5e0e26d567feeeb1bc" title="Creation of our OpenGL Window." alt="" coords="126,5,249,32"/>
+<area shape="poly" title=" " alt="" coords="281,36,249,31,250,26,282,31"/>
+<area shape="rect" href="_lesson10_8c.html#a661c2abc03926acfaeb93b4ae7db4943" title="Creation of our application on Windows System (not console application) *." alt="" coords="5,31,78,57"/>
+<area shape="poly" title=" " alt="" coords="282,47,78,47,78,41,282,41"/>
+<area shape="poly" title=" " alt="" coords="112,35,78,40,77,35,111,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8dd15539ba90ae3670aa0a9f889d2236" name="a8dd15539ba90ae3670aa0a9f889d2236"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dd15539ba90ae3670aa0a9f889d2236">&#9670;&#160;</a></span>LoadGLTextures()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int LoadGLTextures </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="_lesson10_8c_a8dd15539ba90ae3670aa0a9f889d2236_cgraph.png" border="0" usemap="#a_lesson10_8c_a8dd15539ba90ae3670aa0a9f889d2236_cgraph" alt=""/></div>
+<map name="a_lesson10_8c_a8dd15539ba90ae3670aa0a9f889d2236_cgraph" id="a_lesson10_8c_a8dd15539ba90ae3670aa0a9f889d2236_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,121,32"/>
+<area shape="rect" href="logger_8c.html#abd2d19eeef46a8184a2302d33c6c7397" title=" " alt="" coords="348,5,418,32"/>
+<area shape="poly" title=" " alt="" coords="121,16,333,16,333,21,121,21"/>
+<area shape="rect" href="_lesson10_8c.html#ae1c091a456680cc628759567198fe7ec" title="Fonction NeHeLoadBitmap3 : charge un fichier BMP en mémoire pour generer un tableau de trois textures." alt="" coords="169,31,300,57"/>
+<area shape="poly" title=" " alt="" coords="121,25,154,29,153,35,121,30"/>
+<area shape="rect" href="logger_8c.html#aeea85f0478e1d5c40a6293f63269ac03" title=" " alt="" coords="466,5,545,32"/>
+<area shape="poly" title=" " alt="" coords="418,16,451,16,451,21,418,21"/>
+<area shape="poly" title=" " alt="" coords="300,30,333,24,334,30,301,35"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="_lesson10_8c_a8dd15539ba90ae3670aa0a9f889d2236_icgraph.png" border="0" usemap="#a_lesson10_8c_a8dd15539ba90ae3670aa0a9f889d2236_icgraph" alt=""/></div>
+<map name="a_lesson10_8c_a8dd15539ba90ae3670aa0a9f889d2236_icgraph" id="a_lesson10_8c_a8dd15539ba90ae3670aa0a9f889d2236_icgraph">
+<area shape="rect" title=" " alt="" coords="401,5,517,32"/>
+<area shape="rect" href="_lesson10_8c.html#aa4c387d3f1ebce6d57684b6a10c9b0ae" title="Fonction InitGL : Fin de l&#39;initialisation de la fenêtre Windows gérant OpenGL." alt="" coords="297,5,353,32"/>
+<area shape="poly" title=" " alt="" coords="386,21,354,21,354,16,386,16"/>
+<area shape="rect" href="_lesson10_8c.html#ae5f043c9df9b9e5e0e26d567feeeb1bc" title="Creation of our OpenGL Window." alt="" coords="126,5,249,32"/>
+<area shape="poly" title=" " alt="" coords="282,21,249,21,249,16,282,16"/>
+<area shape="rect" href="_lesson10_8c.html#a661c2abc03926acfaeb93b4ae7db4943" title="Creation of our application on Windows System (not console application) *." alt="" coords="5,5,78,32"/>
+<area shape="poly" title=" " alt="" coords="111,21,78,21,78,16,111,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae1c091a456680cc628759567198fe7ec" name="ae1c091a456680cc628759567198fe7ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1c091a456680cc628759567198fe7ec">&#9670;&#160;</a></span>NeHeLoadBitmap3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a1062901a7428fdd9c7f180f5e01ea056">bool</a> NeHeLoadBitmap3 </td>
+          <td>(</td>
+          <td class="paramtype">LPTSTR</td>          <td class="paramname"><span class="paramname"><em>szFileName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint *</td>          <td class="paramname"><span class="paramname"><em>texid</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction NeHeLoadBitmap3 : charge un fichier BMP en m�moire pour generer un tableau de trois textures. </p>
+<p>This Code Creates Texture From a Bitmap File.</p>
+<p>En entr�e le nom du fichier Bitmap et en sortie le tableau des trois textures utilisables avec OpenGL </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">szFileName</td><td>nom du fichier BMP * </td></tr>
+    <tr><td class="paramname">*texid</td><td>un pointeur sur lae tableau des trois textures g�n�r�es * </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>bool un booleen, le tableau des trois textures cr�� ou non. </dd></dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="_lesson10_8c_ae1c091a456680cc628759567198fe7ec_cgraph.png" border="0" usemap="#a_lesson10_8c_ae1c091a456680cc628759567198fe7ec_cgraph" alt=""/></div>
+<map name="a_lesson10_8c_ae1c091a456680cc628759567198fe7ec_cgraph" id="a_lesson10_8c_ae1c091a456680cc628759567198fe7ec_cgraph">
+<area shape="rect" title="Fonction NeHeLoadBitmap3 : charge un fichier BMP en mémoire pour generer un tableau de trois textures." alt="" coords="5,5,137,32"/>
+<area shape="rect" href="logger_8c.html#abd2d19eeef46a8184a2302d33c6c7397" title=" " alt="" coords="185,5,255,32"/>
+<area shape="poly" title=" " alt="" coords="137,16,170,16,170,21,137,21"/>
+<area shape="rect" href="logger_8c.html#aeea85f0478e1d5c40a6293f63269ac03" title=" " alt="" coords="303,5,381,32"/>
+<area shape="poly" title=" " alt="" coords="255,16,288,16,288,21,255,21"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="_lesson10_8c_ae1c091a456680cc628759567198fe7ec_icgraph.png" border="0" usemap="#a_lesson10_8c_ae1c091a456680cc628759567198fe7ec_icgraph" alt=""/></div>
+<map name="a_lesson10_8c_ae1c091a456680cc628759567198fe7ec_icgraph" id="a_lesson10_8c_ae1c091a456680cc628759567198fe7ec_icgraph">
+<area shape="rect" title="Fonction NeHeLoadBitmap3 : charge un fichier BMP en mémoire pour generer un tableau de trois textures." alt="" coords="565,5,696,32"/>
+<area shape="rect" href="_lesson10_8c.html#a8dd15539ba90ae3670aa0a9f889d2236" title=" " alt="" coords="401,5,517,32"/>
+<area shape="poly" title=" " alt="" coords="550,21,517,21,517,16,550,16"/>
+<area shape="rect" href="_lesson10_8c.html#aa4c387d3f1ebce6d57684b6a10c9b0ae" title="Fonction InitGL : Fin de l&#39;initialisation de la fenêtre Windows gérant OpenGL." alt="" coords="297,5,353,32"/>
+<area shape="poly" title=" " alt="" coords="386,21,354,21,354,16,386,16"/>
+<area shape="rect" href="_lesson10_8c.html#ae5f043c9df9b9e5e0e26d567feeeb1bc" title="Creation of our OpenGL Window." alt="" coords="126,5,249,32"/>
+<area shape="poly" title=" " alt="" coords="282,21,249,21,249,16,282,16"/>
+<area shape="rect" href="_lesson10_8c.html#a661c2abc03926acfaeb93b4ae7db4943" title="Creation of our application on Windows System (not console application) *." alt="" coords="5,5,78,32"/>
+<area shape="poly" title=" " alt="" coords="111,21,78,21,78,16,111,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7f195c38a24eda1f207df6e094f9181e" name="a7f195c38a24eda1f207df6e094f9181e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f195c38a24eda1f207df6e094f9181e">&#9670;&#160;</a></span>readstr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void readstr </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>string</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="_lesson10_8c_a7f195c38a24eda1f207df6e094f9181e_cgraph.png" border="0" usemap="#a_lesson10_8c_a7f195c38a24eda1f207df6e094f9181e_cgraph" alt=""/></div>
+<map name="a_lesson10_8c_a7f195c38a24eda1f207df6e094f9181e_cgraph" id="a_lesson10_8c_a7f195c38a24eda1f207df6e094f9181e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,67,32"/>
+<area shape="rect" href="logger_8c.html#abd2d19eeef46a8184a2302d33c6c7397" title=" " alt="" coords="115,5,185,32"/>
+<area shape="poly" title=" " alt="" coords="67,16,100,16,100,21,67,21"/>
+<area shape="rect" href="logger_8c.html#aeea85f0478e1d5c40a6293f63269ac03" title=" " alt="" coords="233,5,311,32"/>
+<area shape="poly" title=" " alt="" coords="185,16,218,16,218,21,185,21"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="_lesson10_8c_a7f195c38a24eda1f207df6e094f9181e_icgraph.png" border="0" usemap="#a_lesson10_8c_a7f195c38a24eda1f207df6e094f9181e_icgraph" alt=""/></div>
+<map name="a_lesson10_8c_a7f195c38a24eda1f207df6e094f9181e_icgraph" id="a_lesson10_8c_a7f195c38a24eda1f207df6e094f9181e_icgraph">
+<area shape="rect" title=" " alt="" coords="538,5,599,32"/>
+<area shape="rect" href="_lesson10_8c.html#a34e550eaac41bec549d492372e9dcbd7" title=" " alt="" coords="401,5,490,32"/>
+<area shape="poly" title=" " alt="" coords="523,21,490,21,490,16,523,16"/>
+<area shape="rect" href="_lesson10_8c.html#aa4c387d3f1ebce6d57684b6a10c9b0ae" title="Fonction InitGL : Fin de l&#39;initialisation de la fenêtre Windows gérant OpenGL." alt="" coords="297,5,353,32"/>
+<area shape="poly" title=" " alt="" coords="386,21,354,21,354,16,386,16"/>
+<area shape="rect" href="_lesson10_8c.html#ae5f043c9df9b9e5e0e26d567feeeb1bc" title="Creation of our OpenGL Window." alt="" coords="126,5,249,32"/>
+<area shape="poly" title=" " alt="" coords="282,21,249,21,249,16,282,16"/>
+<area shape="rect" href="_lesson10_8c.html#a661c2abc03926acfaeb93b4ae7db4943" title="Creation of our application on Windows System (not console application) *." alt="" coords="5,5,78,32"/>
+<area shape="poly" title=" " alt="" coords="111,21,78,21,78,16,111,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a87bb84d489df61ed7b0c002584fd984f" name="a87bb84d489df61ed7b0c002584fd984f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87bb84d489df61ed7b0c002584fd984f">&#9670;&#160;</a></span>ReSizeGLScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLvoid ReSizeGLScene </td>
+          <td>(</td>
+          <td class="paramtype">GLsizei</td>          <td class="paramname"><span class="paramname"><em>width</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLsizei</td>          <td class="paramname"><span class="paramname"><em>height</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction ReSizeGLScene : redimensionnement de la fen�tre Windows g�rant OpenGL. </p>
+<p>This Code Resize the main window.</p>
+<p>En entr�e les deux nouvelles dimensions de la fen�tre </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>Width of the GL Window Or Fullscreen Mode * </td></tr>
+    <tr><td class="paramname">height</td><td>Height of the GL Window Or Fullscreen Mode * </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>GLvoid un void OpenGL. </dd></dl>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="_lesson10_8c_a87bb84d489df61ed7b0c002584fd984f_icgraph.png" border="0" usemap="#a_lesson10_8c_a87bb84d489df61ed7b0c002584fd984f_icgraph" alt=""/></div>
+<map name="a_lesson10_8c_a87bb84d489df61ed7b0c002584fd984f_icgraph" id="a_lesson10_8c_a87bb84d489df61ed7b0c002584fd984f_icgraph">
+<area shape="rect" title="Fonction ReSizeGLScene : redimensionnement de la fenêtre Windows gérant OpenGL." alt="" coords="420,5,539,32"/>
+<area shape="rect" href="_lesson10_8c.html#ae5f043c9df9b9e5e0e26d567feeeb1bc" title="Creation of our OpenGL Window." alt="" coords="126,5,249,32"/>
+<area shape="poly" title=" " alt="" coords="405,21,249,21,249,16,405,16"/>
+<area shape="rect" href="_lesson10_8c.html#ae749e989b362e19783c7af4a2bf46c95" title="Fonction CALLBACK de traitement des messages Windows." alt="" coords="297,31,372,57"/>
+<area shape="poly" title=" " alt="" coords="406,34,373,40,372,35,405,29"/>
+<area shape="rect" href="_lesson10_8c.html#a661c2abc03926acfaeb93b4ae7db4943" title="Creation of our application on Windows System (not console application) *." alt="" coords="5,5,78,32"/>
+<area shape="poly" title=" " alt="" coords="111,21,78,21,78,16,111,16"/>
+<area shape="poly" title=" " alt="" coords="282,38,249,32,250,27,283,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a34e550eaac41bec549d492372e9dcbd7" name="a34e550eaac41bec549d492372e9dcbd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34e550eaac41bec549d492372e9dcbd7">&#9670;&#160;</a></span>SetupWorld()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SetupWorld </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="_lesson10_8c_a34e550eaac41bec549d492372e9dcbd7_cgraph.png" border="0" usemap="#a_lesson10_8c_a34e550eaac41bec549d492372e9dcbd7_cgraph" alt=""/></div>
+<map name="a_lesson10_8c_a34e550eaac41bec549d492372e9dcbd7_cgraph" id="a_lesson10_8c_a34e550eaac41bec549d492372e9dcbd7_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,94,32"/>
+<area shape="rect" href="logger_8c.html#abd2d19eeef46a8184a2302d33c6c7397" title=" " alt="" coords="251,5,321,32"/>
+<area shape="poly" title=" " alt="" coords="94,16,236,16,236,21,94,21"/>
+<area shape="rect" href="_lesson10_8c.html#a7f195c38a24eda1f207df6e094f9181e" title=" " alt="" coords="142,31,203,57"/>
+<area shape="poly" title=" " alt="" coords="95,25,128,32,127,37,94,30"/>
+<area shape="rect" href="logger_8c.html#aeea85f0478e1d5c40a6293f63269ac03" title=" " alt="" coords="369,5,448,32"/>
+<area shape="poly" title=" " alt="" coords="321,16,354,16,354,21,321,21"/>
+<area shape="poly" title=" " alt="" coords="203,35,236,27,237,32,204,40"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="_lesson10_8c_a34e550eaac41bec549d492372e9dcbd7_icgraph.png" border="0" usemap="#a_lesson10_8c_a34e550eaac41bec549d492372e9dcbd7_icgraph" alt=""/></div>
+<map name="a_lesson10_8c_a34e550eaac41bec549d492372e9dcbd7_icgraph" id="a_lesson10_8c_a34e550eaac41bec549d492372e9dcbd7_icgraph">
+<area shape="rect" title=" " alt="" coords="401,5,490,32"/>
+<area shape="rect" href="_lesson10_8c.html#aa4c387d3f1ebce6d57684b6a10c9b0ae" title="Fonction InitGL : Fin de l&#39;initialisation de la fenêtre Windows gérant OpenGL." alt="" coords="297,5,353,32"/>
+<area shape="poly" title=" " alt="" coords="386,21,354,21,354,16,386,16"/>
+<area shape="rect" href="_lesson10_8c.html#ae5f043c9df9b9e5e0e26d567feeeb1bc" title="Creation of our OpenGL Window." alt="" coords="126,5,249,32"/>
+<area shape="poly" title=" " alt="" coords="282,21,249,21,249,16,282,16"/>
+<area shape="rect" href="_lesson10_8c.html#a661c2abc03926acfaeb93b4ae7db4943" title="Creation of our application on Windows System (not console application) *." alt="" coords="5,5,78,32"/>
+<area shape="poly" title=" " alt="" coords="111,21,78,21,78,16,111,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a661c2abc03926acfaeb93b4ae7db4943" name="a661c2abc03926acfaeb93b4ae7db4943"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a661c2abc03926acfaeb93b4ae7db4943">&#9670;&#160;</a></span>WinMain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int WINAPI WinMain </td>
+          <td>(</td>
+          <td class="paramtype">HINSTANCE</td>          <td class="paramname"><span class="paramname"><em>hInstance</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">HINSTANCE</td>          <td class="paramname"><span class="paramname"><em>hPrevInstance</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPSTR</td>          <td class="paramname"><span class="paramname"><em>lpCmdLine</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nCmdShow</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creation of our application on Windows System (not console application) *. </p>
+<p>This Code is mandatory to create windows application (function WinMain) * </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hInstance</td><td>- Header de l'instance Windows * </td></tr>
+    <tr><td class="paramname">hPrevInstance</td><td>- Header de l'instance pr�c�dente de Windows * </td></tr>
+    <tr><td class="paramname">lpCmdLine</td><td>- Un pointeur sur la ligne de commande * </td></tr>
+    <tr><td class="paramname">nCmdShow</td><td>- Un indicateur d'�tat * </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int - un entier booleen (OK ou non). *<ul>
+<li></li>
+</ul>
+</dd></dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="_lesson10_8c_a661c2abc03926acfaeb93b4ae7db4943_cgraph.png" border="0" usemap="#a_lesson10_8c_a661c2abc03926acfaeb93b4ae7db4943_cgraph" alt=""/></div>
+<map name="a_lesson10_8c_a661c2abc03926acfaeb93b4ae7db4943_cgraph" id="a_lesson10_8c_a661c2abc03926acfaeb93b4ae7db4943_cgraph">
+<area shape="rect" title="Creation of our application on Windows System (not console application) *." alt="" coords="5,416,78,442"/>
+<area shape="rect" href="_lesson10_8c.html#ae5f043c9df9b9e5e0e26d567feeeb1bc" title="Creation of our OpenGL Window." alt="" coords="126,314,249,341"/>
+<area shape="poly" title=" " alt="" coords="61,413,153,347,156,352,64,417"/>
+<area shape="rect" href="logger_8c.html#abd2d19eeef46a8184a2302d33c6c7397" title=" " alt="" coords="793,137,863,164"/>
+<area shape="poly" title=" " alt="" coords="79,431,197,444,347,452,508,452,537,449,565,443,617,419,664,384,706,342,742,296,772,251,812,176,817,178,777,253,746,299,710,345,668,388,620,424,566,448,538,455,508,457,347,457,197,450,78,437"/>
+<area shape="rect" href="_lesson10_8c.html#af33a2273205c1491be5916d3091658e0" title="Fonction KillGLWindow : Destruction de toutes les ressources du programme." alt="" coords="297,390,399,417"/>
+<area shape="poly" title=" " alt="" coords="78,423,282,406,282,412,79,429"/>
+<area shape="rect" href="_lesson10_8c.html#a52061247bdaeb770e3a1d59eefaad972" title="Fonction DrawGLScene : Dessin sous OpenGL dans la fenêtre Windows." alt="" coords="134,492,241,518"/>
+<area shape="poly" title=" " alt="" coords="70,441,127,471,149,482,146,487,124,475,68,445"/>
+<area shape="rect" href="_lesson10_8c.html#aa4c387d3f1ebce6d57684b6a10c9b0ae" title="Fonction InitGL : Fin de l&#39;initialisation de la fenêtre Windows gérant OpenGL." alt="" coords="320,112,376,138"/>
+<area shape="poly" title=" " alt="" coords="197,312,325,148,330,151,202,315"/>
+<area shape="poly" title=" " alt="" coords="249,314,546,262,744,224,778,200,805,173,809,177,781,205,746,229,547,267,250,320"/>
+<area shape="poly" title=" " alt="" coords="219,339,306,381,304,386,217,344"/>
+<area shape="rect" href="_lesson10_8c.html#a87bb84d489df61ed7b0c002584fd984f" title="Fonction ReSizeGLScene : redimensionnement de la fenêtre Windows gérant OpenGL." alt="" coords="447,314,566,341"/>
+<area shape="poly" title=" " alt="" coords="249,325,433,325,433,330,249,330"/>
+<area shape="rect" href="_lesson10_8c.html#ae749e989b362e19783c7af4a2bf46c95" title="Fonction CALLBACK de traitement des messages Windows." alt="" coords="311,340,386,366"/>
+<area shape="poly" title=" " alt="" coords="250,335,296,342,295,347,249,340"/>
+<area shape="rect" href="_lesson10_8c.html#a8dd15539ba90ae3670aa0a9f889d2236" title=" " alt="" coords="449,36,564,62"/>
+<area shape="poly" title=" " alt="" coords="376,109,463,67,465,72,378,114"/>
+<area shape="poly" title=" " alt="" coords="377,121,534,117,639,120,745,129,779,135,778,140,745,134,639,125,534,122,377,126"/>
+<area shape="rect" href="_lesson10_8c.html#a34e550eaac41bec549d492372e9dcbd7" title=" " alt="" coords="462,137,551,164"/>
+<area shape="poly" title=" " alt="" coords="377,127,448,138,447,144,377,132"/>
+<area shape="poly" title=" " alt="" coords="538,33,581,18,634,6,692,5,720,10,746,21,773,42,794,68,820,121,816,124,789,71,769,46,744,26,718,16,691,10,635,11,582,23,539,38"/>
+<area shape="rect" href="_lesson10_8c.html#ae1c091a456680cc628759567198fe7ec" title="Fonction NeHeLoadBitmap3 : charge un fichier BMP en mémoire pour generer un tableau de trois textures." alt="" coords="614,36,745,62"/>
+<area shape="poly" title=" " alt="" coords="564,46,599,46,599,52,564,52"/>
+<area shape="rect" href="logger_8c.html#aeea85f0478e1d5c40a6293f63269ac03" title=" " alt="" coords="911,137,990,164"/>
+<area shape="poly" title=" " alt="" coords="863,148,896,148,896,153,863,153"/>
+<area shape="poly" title=" " alt="" coords="714,60,746,79,804,125,801,129,744,83,711,65"/>
+<area shape="poly" title=" " alt="" coords="551,148,778,148,778,153,551,153"/>
+<area shape="rect" href="_lesson10_8c.html#a7f195c38a24eda1f207df6e094f9181e" title=" " alt="" coords="649,188,710,214"/>
+<area shape="poly" title=" " alt="" coords="552,161,635,185,634,191,550,166"/>
+<area shape="poly" title=" " alt="" coords="710,188,778,164,780,169,711,193"/>
+<area shape="poly" title=" " alt="" coords="386,344,433,337,434,342,387,350"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae749e989b362e19783c7af4a2bf46c95" name="ae749e989b362e19783c7af4a2bf46c95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae749e989b362e19783c7af4a2bf46c95">&#9670;&#160;</a></span>WndProc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LRESULT CALLBACK WndProc </td>
+          <td>(</td>
+          <td class="paramtype">HWND</td>          <td class="paramname"><span class="paramname"><em>hWnd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT</td>          <td class="paramname"><span class="paramname"><em>uMsg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">WPARAM</td>          <td class="paramname"><span class="paramname"><em>wParam</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPARAM</td>          <td class="paramname"><span class="paramname"><em>lParam</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction CALLBACK de traitement des messages Windows. </p>
+<p>Comments manageable by Doxygen</p>
+<p>Traitement de la boucle infinie des messages Windows </p><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hWnd</td><td>L'header de la fen�tre principale. </td></tr>
+    <tr><td class="paramname">uMsg</td><td>Un entier non sign�. </td></tr>
+    <tr><td class="paramname">wParam</td><td>Les param�tres en entr�e. </td></tr>
+    <tr><td class="paramname">lParam</td><td>Autres param�tres en entr�e. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>LRESULT Un LRESULT donnant le status du traitement du message. </dd></dl>
+<div class="dynheader">
+Voici le graphe d'appel pour cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="_lesson10_8c_ae749e989b362e19783c7af4a2bf46c95_cgraph.png" border="0" usemap="#a_lesson10_8c_ae749e989b362e19783c7af4a2bf46c95_cgraph" alt=""/></div>
+<map name="a_lesson10_8c_ae749e989b362e19783c7af4a2bf46c95_cgraph" id="a_lesson10_8c_ae749e989b362e19783c7af4a2bf46c95_cgraph">
+<area shape="rect" title="Fonction CALLBACK de traitement des messages Windows." alt="" coords="5,5,81,32"/>
+<area shape="rect" href="_lesson10_8c.html#a87bb84d489df61ed7b0c002584fd984f" title="Fonction ReSizeGLScene : redimensionnement de la fenêtre Windows gérant OpenGL." alt="" coords="129,5,247,32"/>
+<area shape="poly" title=" " alt="" coords="81,16,114,16,114,21,81,21"/>
+</map>
+</div>
+<div class="dynheader">
+Voici le graphe des appelants de cette fonction :</div>
+<div class="dyncontent">
+<div class="center"><img src="_lesson10_8c_ae749e989b362e19783c7af4a2bf46c95_icgraph.png" border="0" usemap="#a_lesson10_8c_ae749e989b362e19783c7af4a2bf46c95_icgraph" alt=""/></div>
+<map name="a_lesson10_8c_ae749e989b362e19783c7af4a2bf46c95_icgraph" id="a_lesson10_8c_ae749e989b362e19783c7af4a2bf46c95_icgraph">
+<area shape="rect" title="Fonction CALLBACK de traitement des messages Windows." alt="" coords="297,5,372,32"/>
+<area shape="rect" href="_lesson10_8c.html#ae5f043c9df9b9e5e0e26d567feeeb1bc" title="Creation of our OpenGL Window." alt="" coords="126,5,249,32"/>
+<area shape="poly" title=" " alt="" coords="282,21,250,21,250,16,282,16"/>
+<area shape="rect" href="_lesson10_8c.html#a661c2abc03926acfaeb93b4ae7db4943" title="Creation of our application on Windows System (not console application) *." alt="" coords="5,5,78,32"/>
+<area shape="poly" title=" " alt="" coords="111,21,78,21,78,16,111,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des variables</h2>
+<a id="a22389371583c4b8843e06da43399d6d9" name="a22389371583c4b8843e06da43399d6d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22389371583c4b8843e06da43399d6d9">&#9670;&#160;</a></span>active</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL active =<a class="el" href="#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af3d0c623676f78dff5a84bc436095550" name="af3d0c623676f78dff5a84bc436095550"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3d0c623676f78dff5a84bc436095550">&#9670;&#160;</a></span>blend</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL blend</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a81fe5d48ae6cf5016dfc24c0835dee10" name="a81fe5d48ae6cf5016dfc24c0835dee10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81fe5d48ae6cf5016dfc24c0835dee10">&#9670;&#160;</a></span>bp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL bp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abaab572c2d38c9839d1b9831155cb3f3" name="abaab572c2d38c9839d1b9831155cb3f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abaab572c2d38c9839d1b9831155cb3f3">&#9670;&#160;</a></span>filter</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint filter =0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a351433969208eaa89b942d3e587fcc9c" name="a351433969208eaa89b942d3e587fcc9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a351433969208eaa89b942d3e587fcc9c">&#9670;&#160;</a></span>fp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL fp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab15a33c0173f2c5b6ac806c55cf7f0ba" name="ab15a33c0173f2c5b6ac806c55cf7f0ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab15a33c0173f2c5b6ac806c55cf7f0ba">&#9670;&#160;</a></span>fullscreen</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL fullscreen =<a class="el" href="#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a78f6446a0e13adc7b7b2f239112ac785" name="a78f6446a0e13adc7b7b2f239112ac785"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78f6446a0e13adc7b7b2f239112ac785">&#9670;&#160;</a></span>hDC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HDC hDC =NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac5682e48513a771560df50e3b213e61a" name="ac5682e48513a771560df50e3b213e61a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5682e48513a771560df50e3b213e61a">&#9670;&#160;</a></span>heading</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float heading</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a74029128723095e7bf00a71d46af8b24" name="a74029128723095e7bf00a71d46af8b24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74029128723095e7bf00a71d46af8b24">&#9670;&#160;</a></span>hInstance</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HINSTANCE hInstance</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a874963259c7cd998acfe6e187fbdb4c1" name="a874963259c7cd998acfe6e187fbdb4c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a874963259c7cd998acfe6e187fbdb4c1">&#9670;&#160;</a></span>hRC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HGLRC hRC =NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afec4341c234519e145bac6f0e5edaa51" name="afec4341c234519e145bac6f0e5edaa51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afec4341c234519e145bac6f0e5edaa51">&#9670;&#160;</a></span>hWnd</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HWND hWnd =NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a55a8351b704275ad12988864918abb2a" name="a55a8351b704275ad12988864918abb2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55a8351b704275ad12988864918abb2a">&#9670;&#160;</a></span>keys</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL keys[256]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae9fb3d4767f6255c70dcd5123bbf2f54" name="ae9fb3d4767f6255c70dcd5123bbf2f54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9fb3d4767f6255c70dcd5123bbf2f54">&#9670;&#160;</a></span>level_debug</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* level_debug</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1a73c6d2f29511093b6a39513c379926" name="a1a73c6d2f29511093b6a39513c379926"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a73c6d2f29511093b6a39513c379926">&#9670;&#160;</a></span>level_def</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a1062901a7428fdd9c7f180f5e01ea056">bool</a> level_def = <a class="el" href="#a41f9c5fb8b08eb5dc3edce4dcb37fee7">true</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab253ae37d6b80578f7883bbd03657a59" name="ab253ae37d6b80578f7883bbd03657a59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab253ae37d6b80578f7883bbd03657a59">&#9670;&#160;</a></span>lookupdown</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLfloat lookupdown = 0.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad667f040f2932c8097435492fbd10d76" name="ad667f040f2932c8097435492fbd10d76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad667f040f2932c8097435492fbd10d76">&#9670;&#160;</a></span>loop</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int loop = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1a6535285fc9406de04538e1200d8ed3" name="a1a6535285fc9406de04538e1200d8ed3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a6535285fc9406de04538e1200d8ed3">&#9670;&#160;</a></span>piover180</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float piover180 = 0.0174532925f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a196a466e0a51460be93ca4f32c313eff" name="a196a466e0a51460be93ca4f32c313eff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a196a466e0a51460be93ca4f32c313eff">&#9670;&#160;</a></span>sector1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#aa99a25bbda5687c0a5d1c4a426ec110c">SECTOR</a> sector1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a04b2088c33683580ff9664f8a35cef23" name="a04b2088c33683580ff9664f8a35cef23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04b2088c33683580ff9664f8a35cef23">&#9670;&#160;</a></span>texid</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint texid[3]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae303c167c23691bbf165ab05813e5713" name="ae303c167c23691bbf165ab05813e5713"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae303c167c23691bbf165ab05813e5713">&#9670;&#160;</a></span>texture</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint texture[3]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a816a7bb71de16d574a2aac953f57f918" name="a816a7bb71de16d574a2aac953f57f918"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a816a7bb71de16d574a2aac953f57f918">&#9670;&#160;</a></span>vert</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int vert = -1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac52295b1c86ab1c35431a1f02382bad1" name="ac52295b1c86ab1c35431a1f02382bad1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac52295b1c86ab1c35431a1f02382bad1">&#9670;&#160;</a></span>walkbias</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLfloat walkbias = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad839b78305422c269907845c11f19321" name="ad839b78305422c269907845c11f19321"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad839b78305422c269907845c11f19321">&#9670;&#160;</a></span>walkbiasangle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLfloat walkbiasangle = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adad239fcacf5c59997872bd0c12bdfd1" name="adad239fcacf5c59997872bd0c12bdfd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adad239fcacf5c59997872bd0c12bdfd1">&#9670;&#160;</a></span>xpos</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float xpos</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9549138cf4d209303566523d805d8525" name="a9549138cf4d209303566523d805d8525"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9549138cf4d209303566523d805d8525">&#9670;&#160;</a></span>yrot</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLfloat yrot</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acfde595878f838c910907ec90d040114" name="acfde595878f838c910907ec90d040114"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfde595878f838c910907ec90d040114">&#9670;&#160;</a></span>z</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLfloat z =0.0f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1145c2d616cccd00793eb0b60929a3b3" name="a1145c2d616cccd00793eb0b60929a3b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1145c2d616cccd00793eb0b60929a3b3">&#9670;&#160;</a></span>zpos</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float zpos</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="_lesson10_8c.html">Lesson10.c</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

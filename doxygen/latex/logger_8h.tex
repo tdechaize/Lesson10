@@ -1,0 +1,70 @@
+\doxysection{Référence du fichier logger.\+h}
+\hypertarget{logger_8h}{}\label{logger_8h}\index{logger.h@{logger.h}}
+
+
+Header de l\textquotesingle{}ajout de fonction de "{}logging"{} (traces dans un fichier texte log.\+txt) uniquement en mode Debug et avec des niveaux de tracing d�finis dans une varaiable d\textquotesingle{}environnement (LEVEL)  
+
+
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+Graphe des dépendances par inclusion de logger.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=131pt]{logger_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{logger_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{logger_8h_abd2d19eeef46a8184a2302d33c6c7397}{log\+\_\+print}} (char \texorpdfstring{$\ast$}{*}filename, int line, char \texorpdfstring{$\ast$}{*}fmt,...)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Header de l\textquotesingle{}ajout de fonction de "{}logging"{} (traces dans un fichier texte log.\+txt) uniquement en mode Debug et avec des niveaux de tracing d�finis dans une varaiable d\textquotesingle{}environnement (LEVEL) 
+
+Comments manageable by Doxygen
+
+Modified by Thierry DECHAIZE
+
+Date \+: 2023/03/05
+
+\begin{DoxyAuthor}{Auteur}
+Thierry Dechaize 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0.\+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+5 mars 2023
+\end{DoxyDate}
+Il s\textquotesingle{}agit de pouvoir partager les deux fonctions utiles de cet utilitaire. 
+
+\doxysubsection{Documentation des fonctions}
+\Hypertarget{logger_8h_abd2d19eeef46a8184a2302d33c6c7397}\index{logger.h@{logger.h}!log\_print@{log\_print}}
+\index{log\_print@{log\_print}!logger.h@{logger.h}}
+\doxysubsubsection{\texorpdfstring{log\_print()}{log\_print()}}
+{\footnotesize\ttfamily \label{logger_8h_abd2d19eeef46a8184a2302d33c6c7397} 
+void log\+\_\+print (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{int}]{line}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{fmt}{, }\item[{}]{...}{}\end{DoxyParamCaption})}
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{logger_8h_abd2d19eeef46a8184a2302d33c6c7397_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{logger_8h_abd2d19eeef46a8184a2302d33c6c7397_icgraph}
+\end{center}
+\end{figure}

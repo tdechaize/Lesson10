@@ -1,0 +1,15 @@
+<map id="logger.c" name="logger.c">
+<area shape="rect" id="Node000001" title="Ajout de fonction de &quot;logging&quot; (traces dans un fichier texte log.txt) uniquement en mode Debug et ave..." alt="" coords="170,5,237,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,80,66,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,35,80,76,77,71,173,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="90,80,147,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="190,35,145,72,142,68,187,31"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="171,80,236,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="206,33,206,65,201,65,201,33"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="260,80,323,107"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="221,30,267,68,263,72,217,35"/>
+<area shape="rect" id="Node000006" href="$logger_8h.html" title="Header de l&#39;ajout de fonction de &quot;logging&quot; (traces dans un fichier texte log.txt) uniquement en mode ..." alt="" coords="347,80,415,107"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="235,30,337,71,335,76,233,35"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="347,155,415,181"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="384,107,384,140,378,140,378,107"/>
+</map>

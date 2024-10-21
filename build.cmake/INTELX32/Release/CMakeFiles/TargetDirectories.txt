@@ -1,0 +1,3 @@
+C:/src/OpenGL/NeHe_Lesson10-master/build.cmake/INTELX32/Release/CMakeFiles/Lesson10.dir
+C:/src/OpenGL/NeHe_Lesson10-master/build.cmake/INTELX32/Release/CMakeFiles/edit_cache.dir
+C:/src/OpenGL/NeHe_Lesson10-master/build.cmake/INTELX32/Release/CMakeFiles/rebuild_cache.dir

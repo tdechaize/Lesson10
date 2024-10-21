@@ -1,0 +1,746 @@
+\doxysection{RÃ©fÃ©rence du fichier Lesson10.\+c}
+\hypertarget{_lesson10_8c}{}\label{_lesson10_8c}\index{Lesson10.c@{Lesson10.c}}
+
+
+Open simple window on Windows systems and create a 3D world in which you can navigated on click on "{}arrows key"{}.  
+
+
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$gl\textbackslash{}gl.\+h$>$}\newline
+{\ttfamily \#include $<$gl\textbackslash{}glu.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}logger.\+h"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include "{}resource.\+h"{}}\newline
+Graphe des dÃ©pendances par inclusion de Lesson10.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_lesson10_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Structures de donnÃ©es}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtag_v_e_r_t_e_x}{tag\+VERTEX}}
+\item 
+struct \mbox{\hyperlink{structtag_t_r_i_a_n_g_l_e}{tag\+TRIANGLE}}
+\item 
+struct \mbox{\hyperlink{structtag_s_e_c_t_o_r}{tag\+SECTOR}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_lesson10_8c_ac7bef5d85e3dcd73eef56ad39ffc84a9}{WIN32\+\_\+\+LEAN\+\_\+\+AND\+\_\+\+MEAN}}
+\item 
+\#define \mbox{\hyperlink{_lesson10_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}{true}}~1
+\item 
+\#define \mbox{\hyperlink{_lesson10_8c_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}~1
+\item 
+\#define \mbox{\hyperlink{_lesson10_8c_a65e9886d74aaee76545e83dd09011727}{false}}~0
+\item 
+\#define \mbox{\hyperlink{_lesson10_8c_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}~0
+\item 
+\#define \mbox{\hyperlink{_lesson10_8c_a57e2e4402b0a1ec39bf04a8247063a5e}{CDS\+\_\+\+FULLSCREEN}}~4         /\texorpdfstring{$\ast$}{*} Compilers. By Defining It This Way,      \texorpdfstring{$\ast$}{*}/
+\end{DoxyCompactItemize}
+\doxysubsubsection*{DÃ©finitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef int \mbox{\hyperlink{_lesson10_8c_a1062901a7428fdd9c7f180f5e01ea056}{bool}}
+\item 
+typedef struct \mbox{\hyperlink{structtag_v_e_r_t_e_x}{tag\+VERTEX}} \mbox{\hyperlink{_lesson10_8c_adfdb66b636e291c02c94c8ed35727ead}{VERTEX}}
+\item 
+typedef struct \mbox{\hyperlink{structtag_t_r_i_a_n_g_l_e}{tag\+TRIANGLE}} \mbox{\hyperlink{_lesson10_8c_a878879116fcf5312db8fa898ce52e309}{TRIANGLE}}
+\item 
+typedef struct \mbox{\hyperlink{structtag_s_e_c_t_o_r}{tag\+SECTOR}} \mbox{\hyperlink{_lesson10_8c_aa99a25bbda5687c0a5d1c4a426ec110c}{SECTOR}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+LRESULT CALLBACK \mbox{\hyperlink{_lesson10_8c_ae749e989b362e19783c7af4a2bf46c95}{Wnd\+Proc}} (HWND \mbox{\hyperlink{_lesson10_8c_afec4341c234519e145bac6f0e5edaa51}{h\+Wnd}}, UINT u\+Msg, WPARAM w\+Param, LPARAM l\+Param)
+\begin{DoxyCompactList}\small\item\em Fonction CALLBACK de traitement des messages Windows. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_lesson10_8c_a7f195c38a24eda1f207df6e094f9181e}{readstr}} (char \texorpdfstring{$\ast$}{*}string)
+\item 
+void \mbox{\hyperlink{_lesson10_8c_a34e550eaac41bec549d492372e9dcbd7}{Setup\+World}} ()
+\item 
+\mbox{\hyperlink{_lesson10_8c_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{_lesson10_8c_ae1c091a456680cc628759567198fe7ec}{Ne\+He\+Load\+Bitmap3}} (LPTSTR sz\+File\+Name, GLuint \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_lesson10_8c_a04b2088c33683580ff9664f8a35cef23}{texid}})
+\begin{DoxyCompactList}\small\item\em Fonction Ne\+He\+Load\+Bitmap3 \+: charge un fichier BMP en mémoire pour generer un tableau de trois textures. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_lesson10_8c_a8dd15539ba90ae3670aa0a9f889d2236}{Load\+GLTextures}} ()
+\item 
+GLvoid \mbox{\hyperlink{_lesson10_8c_a87bb84d489df61ed7b0c002584fd984f}{Re\+Size\+GLScene}} (GLsizei width, GLsizei height)
+\begin{DoxyCompactList}\small\item\em Fonction Re\+Size\+GLScene \+: redimensionnement de la fenêtre Windows gérant Open\+GL. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_lesson10_8c_aa4c387d3f1ebce6d57684b6a10c9b0ae}{Init\+GL}} (GLvoid)
+\begin{DoxyCompactList}\small\item\em Fonction Init\+GL \+: Fin de l\textquotesingle{}initialisation de la fenêtre Windows gérant Open\+GL. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_lesson10_8c_a52061247bdaeb770e3a1d59eefaad972}{Draw\+GLScene}} (GLvoid)
+\begin{DoxyCompactList}\small\item\em Fonction Draw\+GLScene \+: Dessin sous Open\+GL dans la fenêtre Windows. \end{DoxyCompactList}\item 
+GLvoid \mbox{\hyperlink{_lesson10_8c_af33a2273205c1491be5916d3091658e0}{Kill\+GLWindow}} (GLvoid)
+\begin{DoxyCompactList}\small\item\em Fonction Kill\+GLWindow \+: Destruction de toutes les ressources du programme. \end{DoxyCompactList}\item 
+BOOL \mbox{\hyperlink{_lesson10_8c_ae5f043c9df9b9e5e0e26d567feeeb1bc}{Create\+GLWindow}} (char \texorpdfstring{$\ast$}{*}title, int width, int height, int bits, BOOL fullscreenflag)
+\begin{DoxyCompactList}\small\item\em Creation of our Open\+GL Window. \end{DoxyCompactList}\item 
+int WINAPI \mbox{\hyperlink{_lesson10_8c_a661c2abc03926acfaeb93b4ae7db4943}{Win\+Main}} (HINSTANCE \mbox{\hyperlink{_lesson10_8c_a74029128723095e7bf00a71d46af8b24}{h\+Instance}}, HINSTANCE h\+Prev\+Instance, LPSTR lp\+Cmd\+Line, int n\+Cmd\+Show)
+\begin{DoxyCompactList}\small\item\em Creation of our application on Windows System (not console application) \texorpdfstring{$\ast$}{*}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+HDC \mbox{\hyperlink{_lesson10_8c_a78f6446a0e13adc7b7b2f239112ac785}{h\+DC}} =NULL
+\item 
+HGLRC \mbox{\hyperlink{_lesson10_8c_a874963259c7cd998acfe6e187fbdb4c1}{h\+RC}} =NULL
+\item 
+HWND \mbox{\hyperlink{_lesson10_8c_afec4341c234519e145bac6f0e5edaa51}{h\+Wnd}} =NULL
+\item 
+HINSTANCE \mbox{\hyperlink{_lesson10_8c_a74029128723095e7bf00a71d46af8b24}{h\+Instance}}
+\item 
+BOOL \mbox{\hyperlink{_lesson10_8c_a55a8351b704275ad12988864918abb2a}{keys}} \mbox{[}256\mbox{]}
+\item 
+BOOL \mbox{\hyperlink{_lesson10_8c_a22389371583c4b8843e06da43399d6d9}{active}} =\mbox{\hyperlink{_lesson10_8c_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}
+\item 
+BOOL \mbox{\hyperlink{_lesson10_8c_ab15a33c0173f2c5b6ac806c55cf7f0ba}{fullscreen}} =\mbox{\hyperlink{_lesson10_8c_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}
+\item 
+BOOL \mbox{\hyperlink{_lesson10_8c_af3d0c623676f78dff5a84bc436095550}{blend}}
+\item 
+BOOL \mbox{\hyperlink{_lesson10_8c_a81fe5d48ae6cf5016dfc24c0835dee10}{bp}}
+\item 
+BOOL \mbox{\hyperlink{_lesson10_8c_a351433969208eaa89b942d3e587fcc9c}{fp}}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_lesson10_8c_ae9fb3d4767f6255c70dcd5123bbf2f54}{level\+\_\+debug}}
+\item 
+\mbox{\hyperlink{_lesson10_8c_a1062901a7428fdd9c7f180f5e01ea056}{bool}} \mbox{\hyperlink{_lesson10_8c_a1a73c6d2f29511093b6a39513c379926}{level\+\_\+def}} = \mbox{\hyperlink{_lesson10_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}{true}}
+\item 
+const float \mbox{\hyperlink{_lesson10_8c_a1a6535285fc9406de04538e1200d8ed3}{piover180}} = 0.\+0174532925f
+\item 
+float \mbox{\hyperlink{_lesson10_8c_ac5682e48513a771560df50e3b213e61a}{heading}}
+\item 
+float \mbox{\hyperlink{_lesson10_8c_adad239fcacf5c59997872bd0c12bdfd1}{xpos}}
+\item 
+float \mbox{\hyperlink{_lesson10_8c_a1145c2d616cccd00793eb0b60929a3b3}{zpos}}
+\item 
+GLfloat \mbox{\hyperlink{_lesson10_8c_a9549138cf4d209303566523d805d8525}{yrot}}
+\item 
+GLfloat \mbox{\hyperlink{_lesson10_8c_ac52295b1c86ab1c35431a1f02382bad1}{walkbias}} = 0
+\item 
+GLfloat \mbox{\hyperlink{_lesson10_8c_ad839b78305422c269907845c11f19321}{walkbiasangle}} = 0
+\item 
+GLfloat \mbox{\hyperlink{_lesson10_8c_ab253ae37d6b80578f7883bbd03657a59}{lookupdown}} = 0.\+0f
+\item 
+GLfloat \mbox{\hyperlink{_lesson10_8c_acfde595878f838c910907ec90d040114}{z}} =0.\+0f
+\item 
+GLuint \mbox{\hyperlink{_lesson10_8c_abaab572c2d38c9839d1b9831155cb3f3}{filter}} =0
+\item 
+GLuint \mbox{\hyperlink{_lesson10_8c_ae303c167c23691bbf165ab05813e5713}{texture}} \mbox{[}3\mbox{]}
+\item 
+GLuint \mbox{\hyperlink{_lesson10_8c_a04b2088c33683580ff9664f8a35cef23}{texid}} \mbox{[}3\mbox{]}
+\item 
+\mbox{\hyperlink{_lesson10_8c_aa99a25bbda5687c0a5d1c4a426ec110c}{SECTOR}} \mbox{\hyperlink{_lesson10_8c_a196a466e0a51460be93ca4f32c313eff}{sector1}}
+\item 
+int \mbox{\hyperlink{_lesson10_8c_ad667f040f2932c8097435492fbd10d76}{loop}} = 0
+\item 
+int \mbox{\hyperlink{_lesson10_8c_a816a7bb71de16d574a2aac953f57f918}{vert}} = -\/1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description dÃ©taillÃ©e}
+Open simple window on Windows systems and create a 3D world in which you can navigated on click on "{}arrows key"{}. 
+
+Comments manageable by Doxygen
+
+Modified smoothly by Thierry DECHAIZE.
+
+Paradigm \+: obtain one source (only one !) compatible for multiple free C Compilers (many GCC compilers included in Min\+GW, Mingw32, Mingw64, MSYS2, CYGWIN64, TDM, and another Visual C/\+C++ included in Visual Studio + kits Windows, LCC, WATCOM, DMC, Borland, One\+API Intel compiler, many CLANG compilers, etc..) and provide for all users an development environment on Windows 11 64 bits the great Code\+::\+Blocks IDE (improved version "{}nightly build"{} 23.\+06), and don\textquotesingle{}t use glaux.\+lib or glaux.\+dll (old and buggy library).
+
+a) Mingw 32 bits, official version, with version gcc 9.\+2.\+0 (very old !) \+: downloadable on \href{http://sourceforge.net/projects/mingw/}{\texttt{ http\+://sourceforge.\+net/projects/mingw/}} (dead branch ?) b) Mingw 64 bits included in new IDE Red Panda Cpp varsion 3.\+1, version gcc 12.\+2.\+0 \+: donwloadable on \href{https://sourceforge.net/projects/redpanda-cpp/files/}{\texttt{ https\+://sourceforge.\+net/projects/redpanda-\/cpp/files/}} c) Mingw 64 bits included in package Code\+::\+Blocks (version 20.\+03 with mingw), downloadable on \href{http://sourceforge.net/projects/codeblocks/files/Binaries/20.03/Windows/}{\texttt{ http\+://sourceforge.\+net/projects/codeblocks/files/\+Binaries/20.\+03/\+Windows/}} but improved with most recent version of Min\+GW64 + gcc (version gcc 13.\+1.\+0) with "{}nightly build"{} dated of 4 june 2023 downloadable on \+: \href{https://sourceforge.net/projects/codeblocks/files/Binaries/Nightlies/2023/CB_20230604_rev13311_win64-setup-MinGW.exe}{\texttt{ https\+://sourceforge.\+net/projects/codeblocks/files/\+Binaries/\+Nightlies/2023/\+CB\+\_\+20230604\+\_\+rev13311\+\_\+win64-\/setup-\/\+Min\+GW.\+exe}} d) Mingw 32 and 64 bits packaged, version gcc 14.\+2.\+0 \+: downloadable on \href{https://winlibs.com/}{\texttt{ https\+://winlibs.\+com/}} (and CLANG included in, 32 and 64 bits), two kits \+:
+\begin{DoxyItemize}
+\item winlibs-\/i686-\/posix-\/dwarf-\/gcc-\/14.\+2.\+0-\/llvm-\/19.\+1.\+1-\/mingw-\/w64ucrt-\/12.\+0.\+0-\/r2.\+7z (32 bits)
+\item winlibs-\/x86\+\_\+64-\/posix-\/seh-\/gcc-\/14.\+2.\+0-\/llvm-\/19.\+1.\+1-\/mingw-\/w64ucrt-\/12.\+0.\+0-\/r2.\+7z (64 bits) e) Cygwin64 with three compilers, "{}native"{} GCC 64 bits and GCC in Min\+GW32 + Min\+GW64, versions gcc 12.\+4.\+0 \+: downloadable on \href{http://www.cygwin.com/install.html}{\texttt{ http\+://www.\+cygwin.\+com/install.\+html}} (tool for install \+: setup-\/x86\+\_\+64.\+exe) f) TDM GCC, 32 and 64 bits, version 10.\+3.\+0 \+: downloadable on \href{http://sourceforge.net/projects/TDM-GCC}{\texttt{ http\+://sourceforge.\+net/projects/\+TDM-\/\+GCC}} g) MSYS2 environment MINGW32 and MINGW64, 32 et 64 bits, version de 2024 (msys2-\/x86\+\_\+64-\/20240727.\+exe), version gcc 14.\+2.\+0 \+: downloadable on \href{https://repo.msys2.org/distrib/x86_64/msys2-x86_64-20240727.exe}{\texttt{ https\+://repo.\+msys2.\+org/distrib/x86\+\_\+64/msys2-\/x86\+\_\+64-\/20240727.\+exe}} h) Visual Studio 2022, 32 and 64 bit, community edition for free \+: downloadable on \href{https://visualstudio.microsoft.com/fr/vs/community/}{\texttt{ https\+://visualstudio.\+microsoft.\+com/fr/vs/community/}} i) Borland C/\+C++ 32 bit, version 5.\+5.\+1 \+: downloadable on \href{https://developerinsider.co/download-and-install-borland-c-compiler-on-windows-10/}{\texttt{ https\+://developerinsider.\+co/download-\/and-\/install-\/borland-\/c-\/compiler-\/on-\/windows-\/10/}} j) Digital Mars Compiler C 32 bits, installation package version 8.\+57 \+: downloadable on \href{http://www.digitalmars.com}{\texttt{ http\+://www.\+digitalmars.\+com}} (the more old compiler, the more bugged, dead branch !) k) Open\+Watcom 32 and 64 bit, version 2.\+0 (frequently rebuild) \+: downloadable on \href{https://github.com/open-watcom/open-watcom-v2/releases/tag/Current-build}{\texttt{ https\+://github.\+com/open-\/watcom/open-\/watcom-\/v2/releases/tag/\+Current-\/build}} l) Lcc and Lcc64, 32 and 64 bit \+: downloadable \href{http://www.cs.virginia.edu/~lcc-win32/}{\texttt{ http\+://www.\+cs.\+virginia.\+edu/\texorpdfstring{$\sim$}{\string~}lcc-\/win32/}} (not really free !) m) PELLES C, 32 and 64 bit, version 12.\+0 \+: downloadable on \href{http://www.smorgasbordet.com/pellesc/}{\texttt{ http\+://www.\+smorgasbordet.\+com/pellesc/}} o) CLANG 32 and 64 bit included in version Win\+Libs, leaned at environments MINGW64 et MINGW32, version 19.\+1.\+1 (version gcc 14.\+2.\+0) \+: downloadable on \href{https://winlibs.com/}{\texttt{ https\+://winlibs.\+com/}} p) CLANG 32 and 64 bit leaned at environments Visual Studio 2022 (+ kits Microsoft), version 19.\+1.\+1 \+: downloadable on \href{https://releases.llvm.org/download.html}{\texttt{ https\+://releases.\+llvm.\+org/download.\+html}} q) CLANG 32 and 64 bit included in version MSYS2, leaned at environments MINGW64 et MINGW32, version 18.\+1.\+8 (version gcc 14.\+2.\+0) \+: downloadable on \href{https://repo.msys2.org/distrib/x86_64/msys2-x86_64-20220118.exe}{\texttt{ https\+://repo.\+msys2.\+org/distrib/x86\+\_\+64/msys2-\/x86\+\_\+64-\/20220118.\+exe}} r) CLANG 32 bit of version CYGWIN64, adossé aux environnements MINGW64 et MINGW32, version 8.\+0.\+0, very old (version gcc 12.\+4.\+0) \+: downloadable \href{http://www.cygwin.com/install.html}{\texttt{ http\+://www.\+cygwin.\+com/install.\+html}} (tool for install \+: setup-\/x86\+\_\+64.\+exe) s) One\+API Intel C/\+C++ compiler 32 and 64 bit, version 2024.\+2.\+1 downloadable on site \href{https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html}{\texttt{ https\+://www.\+intel.\+com/content/www/us/en/developer/tools/oneapi/base-\/toolkit-\/download.\+html}}
+\end{DoxyItemize}
+
+TDE -\/\texorpdfstring{$>$}{>} Add resource file end resource header for restitute version + icon Open\+GL.\+ico for fun, because versionning is important, same for freeware \+:-\/) !
+
+62 generations with "{}\+All build"{} target into IDE Code\+::\+Blocks, or with CMAKE (and "{}make"{} tools with compilers don\textquotesingle{}t supported with CMAKE), or, finally, with "{}command files"{} (versions 32 or 64 bits, "{}\+Debug"{} or "{}\+Release"{}), just "{}for fun"{} or "{}academic demonstration"{} of these tools.
+
+Date \+: 2024/10/16
+
+\begin{DoxyAuthor}{Auteur}
+Jeff Molofee ( Ne\+He ) originely, Modified for LCCWin32 compiler by Robert Wishlaw 2002/11/23 
+
+After adapted by Thierry Dechaize to verify paradigm \+: one source for multiple C Compilers 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0.\+4.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16 octobre 2024
+\end{DoxyDate}
+This program manage only three "{}\+Windows"{} events \+: click on "{}arrows key"{} on keyboard, click on button "{}\+Close"{} of open windows or exit by touch "{}\+ESC"{},
+
+but manage also "{}\+Fullscreen"{} or not.
+
+WARNING \+: Bug detected with Pelles C Compiler \+: filein = fopen("{}../../data/world.\+txt"{}, "{}rt"{}); fail because option "{}rt"{} is undefined in any std reference of
+
+language C. It\textquotesingle{}s only a "{}tolerance"{} supported by many compiler on Windows ... except Pelles C. It\textquotesingle{}s a major reason of rewrite of functions "{}\+Set\+World"{}
+
+and "{}readstr"{} in this source =\texorpdfstring{$>$}{>} it\textquotesingle{}s not the orginally source of Ne\+He Lesson10. Tested with success with all free compilers described below or in "{}\+Notes"{}
+
+into CB project. 
+
+\doxysubsection{Documentation des macros}
+\Hypertarget{_lesson10_8c_a57e2e4402b0a1ec39bf04a8247063a5e}\index{Lesson10.c@{Lesson10.c}!CDS\_FULLSCREEN@{CDS\_FULLSCREEN}}
+\index{CDS\_FULLSCREEN@{CDS\_FULLSCREEN}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{CDS\_FULLSCREEN}{CDS\_FULLSCREEN}}
+{\footnotesize\ttfamily \label{_lesson10_8c_a57e2e4402b0a1ec39bf04a8247063a5e} 
+\#define CDS\+\_\+\+FULLSCREEN~4         /\texorpdfstring{$\ast$}{*} Compilers. By Defining It This Way,      \texorpdfstring{$\ast$}{*}/}
+
+\Hypertarget{_lesson10_8c_aa93f0eb578d23995850d61f7d61c55c1}\index{Lesson10.c@{Lesson10.c}!FALSE@{FALSE}}
+\index{FALSE@{FALSE}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{FALSE}{FALSE}}
+{\footnotesize\ttfamily \label{_lesson10_8c_aa93f0eb578d23995850d61f7d61c55c1} 
+\#define FALSE~0}
+
+\Hypertarget{_lesson10_8c_a65e9886d74aaee76545e83dd09011727}\index{Lesson10.c@{Lesson10.c}!false@{false}}
+\index{false@{false}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{false}{false}}
+{\footnotesize\ttfamily \label{_lesson10_8c_a65e9886d74aaee76545e83dd09011727} 
+\#define false~0}
+
+\Hypertarget{_lesson10_8c_aa8cecfc5c5c054d2875c03e77b7be15d}\index{Lesson10.c@{Lesson10.c}!TRUE@{TRUE}}
+\index{TRUE@{TRUE}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{TRUE}{TRUE}}
+{\footnotesize\ttfamily \label{_lesson10_8c_aa8cecfc5c5c054d2875c03e77b7be15d} 
+\#define TRUE~1}
+
+\Hypertarget{_lesson10_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}\index{Lesson10.c@{Lesson10.c}!true@{true}}
+\index{true@{true}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{true}{true}}
+{\footnotesize\ttfamily \label{_lesson10_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7} 
+\#define true~1}
+
+\Hypertarget{_lesson10_8c_ac7bef5d85e3dcd73eef56ad39ffc84a9}\index{Lesson10.c@{Lesson10.c}!WIN32\_LEAN\_AND\_MEAN@{WIN32\_LEAN\_AND\_MEAN}}
+\index{WIN32\_LEAN\_AND\_MEAN@{WIN32\_LEAN\_AND\_MEAN}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{WIN32\_LEAN\_AND\_MEAN}{WIN32\_LEAN\_AND\_MEAN}}
+{\footnotesize\ttfamily \label{_lesson10_8c_ac7bef5d85e3dcd73eef56ad39ffc84a9} 
+\#define WIN32\+\_\+\+LEAN\+\_\+\+AND\+\_\+\+MEAN}
+
+
+
+\doxysubsection{Documentation des dÃ©finitions de type}
+\Hypertarget{_lesson10_8c_a1062901a7428fdd9c7f180f5e01ea056}\index{Lesson10.c@{Lesson10.c}!bool@{bool}}
+\index{bool@{bool}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{bool}{bool}}
+{\footnotesize\ttfamily \label{_lesson10_8c_a1062901a7428fdd9c7f180f5e01ea056} 
+typedef int \mbox{\hyperlink{_lesson10_8c_a1062901a7428fdd9c7f180f5e01ea056}{bool}}}
+
+\Hypertarget{_lesson10_8c_aa99a25bbda5687c0a5d1c4a426ec110c}\index{Lesson10.c@{Lesson10.c}!SECTOR@{SECTOR}}
+\index{SECTOR@{SECTOR}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{SECTOR}{SECTOR}}
+{\footnotesize\ttfamily \label{_lesson10_8c_aa99a25bbda5687c0a5d1c4a426ec110c} 
+typedef struct \mbox{\hyperlink{structtag_s_e_c_t_o_r}{tag\+SECTOR}} \mbox{\hyperlink{_lesson10_8c_aa99a25bbda5687c0a5d1c4a426ec110c}{SECTOR}}}
+
+\Hypertarget{_lesson10_8c_a878879116fcf5312db8fa898ce52e309}\index{Lesson10.c@{Lesson10.c}!TRIANGLE@{TRIANGLE}}
+\index{TRIANGLE@{TRIANGLE}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{TRIANGLE}{TRIANGLE}}
+{\footnotesize\ttfamily \label{_lesson10_8c_a878879116fcf5312db8fa898ce52e309} 
+typedef struct \mbox{\hyperlink{structtag_t_r_i_a_n_g_l_e}{tag\+TRIANGLE}} \mbox{\hyperlink{_lesson10_8c_a878879116fcf5312db8fa898ce52e309}{TRIANGLE}}}
+
+\Hypertarget{_lesson10_8c_adfdb66b636e291c02c94c8ed35727ead}\index{Lesson10.c@{Lesson10.c}!VERTEX@{VERTEX}}
+\index{VERTEX@{VERTEX}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{VERTEX}{VERTEX}}
+{\footnotesize\ttfamily \label{_lesson10_8c_adfdb66b636e291c02c94c8ed35727ead} 
+typedef struct \mbox{\hyperlink{structtag_v_e_r_t_e_x}{tag\+VERTEX}} \mbox{\hyperlink{_lesson10_8c_adfdb66b636e291c02c94c8ed35727ead}{VERTEX}}}
+
+
+
+\doxysubsection{Documentation des fonctions}
+\Hypertarget{_lesson10_8c_ae5f043c9df9b9e5e0e26d567feeeb1bc}\index{Lesson10.c@{Lesson10.c}!CreateGLWindow@{CreateGLWindow}}
+\index{CreateGLWindow@{CreateGLWindow}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{CreateGLWindow()}{CreateGLWindow()}}
+{\footnotesize\ttfamily \label{_lesson10_8c_ae5f043c9df9b9e5e0e26d567feeeb1bc} 
+BOOL Create\+GLWindow (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{title}{, }\item[{int}]{width}{, }\item[{int}]{height}{, }\item[{int}]{bits}{, }\item[{BOOL}]{fullscreenflag}{}\end{DoxyParamCaption})}
+
+
+
+Creation of our Open\+GL Window. 
+
+This Code Creates Our Open\+GL Window. Parameters Are\+: \texorpdfstring{$\ast$}{*} 
+\begin{DoxyParams}{ParamÃ¨tres}
+{\em title} & -\/ Title To Appear At The Top Of The Window \texorpdfstring{$\ast$}{*} \\
+\hline
+{\em width} & -\/ Width Of The GL Window Or Fullscreen Mode \texorpdfstring{$\ast$}{*} \\
+\hline
+{\em height} & -\/ Height Of The GL Window Or Fullscreen Mode \texorpdfstring{$\ast$}{*} \\
+\hline
+{\em bits} & -\/ Number Of Bits To Use For Color (8/16/24/32) \texorpdfstring{$\ast$}{*} \\
+\hline
+{\em fullscreenflag} & -\/ Use Fullscreen Mode (TRUE) Or Windowed Mode (FALSE) \texorpdfstring{$\ast$}{*} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+BOOL -\/ un entier booleen (OK ou non). 
+\end{DoxyReturn}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_lesson10_8c_ae5f043c9df9b9e5e0e26d567feeeb1bc_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{_lesson10_8c_ae5f043c9df9b9e5e0e26d567feeeb1bc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_lesson10_8c_a52061247bdaeb770e3a1d59eefaad972}\index{Lesson10.c@{Lesson10.c}!DrawGLScene@{DrawGLScene}}
+\index{DrawGLScene@{DrawGLScene}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{DrawGLScene()}{DrawGLScene()}}
+{\footnotesize\ttfamily \label{_lesson10_8c_a52061247bdaeb770e3a1d59eefaad972} 
+int Draw\+GLScene (\begin{DoxyParamCaption}\item[{GLvoid}]{}{}\end{DoxyParamCaption})}
+
+
+
+Fonction Draw\+GLScene \+: Dessin sous Open\+GL dans la fenêtre Windows. 
+
+This Code draw the scene Open\+GL in the main window.
+
+Rien 
+\begin{DoxyParams}{ParamÃ¨tres}
+{\em GLvoid} & un void Open\+GL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int un entier (booleen) 
+\end{DoxyReturn}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{_lesson10_8c_a52061247bdaeb770e3a1d59eefaad972_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_lesson10_8c_aa4c387d3f1ebce6d57684b6a10c9b0ae}\index{Lesson10.c@{Lesson10.c}!InitGL@{InitGL}}
+\index{InitGL@{InitGL}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{InitGL()}{InitGL()}}
+{\footnotesize\ttfamily \label{_lesson10_8c_aa4c387d3f1ebce6d57684b6a10c9b0ae} 
+int Init\+GL (\begin{DoxyParamCaption}\item[{GLvoid}]{}{}\end{DoxyParamCaption})}
+
+
+
+Fonction Init\+GL \+: Fin de l\textquotesingle{}initialisation de la fenêtre Windows gérant Open\+GL. 
+
+This Code finish the initialization Open\+GL of the main window.
+
+Rien 
+\begin{DoxyParams}{ParamÃ¨tres}
+{\em GLvoid} & un void Open\+GL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int un entier (booleen) 
+\end{DoxyReturn}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_lesson10_8c_aa4c387d3f1ebce6d57684b6a10c9b0ae_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{_lesson10_8c_aa4c387d3f1ebce6d57684b6a10c9b0ae_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_lesson10_8c_af33a2273205c1491be5916d3091658e0}\index{Lesson10.c@{Lesson10.c}!KillGLWindow@{KillGLWindow}}
+\index{KillGLWindow@{KillGLWindow}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{KillGLWindow()}{KillGLWindow()}}
+{\footnotesize\ttfamily \label{_lesson10_8c_af33a2273205c1491be5916d3091658e0} 
+GLvoid Kill\+GLWindow (\begin{DoxyParamCaption}\item[{GLvoid}]{}{}\end{DoxyParamCaption})}
+
+
+
+Fonction Kill\+GLWindow \+: Destruction de toutes les ressources du programme. 
+
+This Code destroy all resources of this program.
+
+Rien 
+\begin{DoxyParams}{ParamÃ¨tres}
+{\em GLvoid} & un void Open\+GL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+GLvoid un void Open\+GL. 
+\end{DoxyReturn}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_lesson10_8c_af33a2273205c1491be5916d3091658e0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_lesson10_8c_a8dd15539ba90ae3670aa0a9f889d2236}\index{Lesson10.c@{Lesson10.c}!LoadGLTextures@{LoadGLTextures}}
+\index{LoadGLTextures@{LoadGLTextures}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{LoadGLTextures()}{LoadGLTextures()}}
+{\footnotesize\ttfamily \label{_lesson10_8c_a8dd15539ba90ae3670aa0a9f889d2236} 
+int Load\+GLTextures (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_lesson10_8c_a8dd15539ba90ae3670aa0a9f889d2236_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_lesson10_8c_a8dd15539ba90ae3670aa0a9f889d2236_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_lesson10_8c_ae1c091a456680cc628759567198fe7ec}\index{Lesson10.c@{Lesson10.c}!NeHeLoadBitmap3@{NeHeLoadBitmap3}}
+\index{NeHeLoadBitmap3@{NeHeLoadBitmap3}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{NeHeLoadBitmap3()}{NeHeLoadBitmap3()}}
+{\footnotesize\ttfamily \label{_lesson10_8c_ae1c091a456680cc628759567198fe7ec} 
+\mbox{\hyperlink{_lesson10_8c_a1062901a7428fdd9c7f180f5e01ea056}{bool}} Ne\+He\+Load\+Bitmap3 (\begin{DoxyParamCaption}\item[{LPTSTR}]{sz\+File\+Name}{, }\item[{GLuint \texorpdfstring{$\ast$}{*}}]{texid}{}\end{DoxyParamCaption})}
+
+
+
+Fonction Ne\+He\+Load\+Bitmap3 \+: charge un fichier BMP en mémoire pour generer un tableau de trois textures. 
+
+This Code Creates Texture From a Bitmap File.
+
+En entrée le nom du fichier Bitmap et en sortie le tableau des trois textures utilisables avec Open\+GL 
+\begin{DoxyParams}{ParamÃ¨tres}
+{\em sz\+File\+Name} & nom du fichier BMP \texorpdfstring{$\ast$}{*} \\
+\hline
+{\em \texorpdfstring{$\ast$}{*}texid} & un pointeur sur lae tableau des trois textures générées \texorpdfstring{$\ast$}{*} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+bool un booleen, le tableau des trois textures créé ou non. 
+\end{DoxyReturn}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_lesson10_8c_ae1c091a456680cc628759567198fe7ec_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_lesson10_8c_ae1c091a456680cc628759567198fe7ec_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_lesson10_8c_a7f195c38a24eda1f207df6e094f9181e}\index{Lesson10.c@{Lesson10.c}!readstr@{readstr}}
+\index{readstr@{readstr}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{readstr()}{readstr()}}
+{\footnotesize\ttfamily \label{_lesson10_8c_a7f195c38a24eda1f207df6e094f9181e} 
+void readstr (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{string}{}\end{DoxyParamCaption})}
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{_lesson10_8c_a7f195c38a24eda1f207df6e094f9181e_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_lesson10_8c_a7f195c38a24eda1f207df6e094f9181e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_lesson10_8c_a87bb84d489df61ed7b0c002584fd984f}\index{Lesson10.c@{Lesson10.c}!ReSizeGLScene@{ReSizeGLScene}}
+\index{ReSizeGLScene@{ReSizeGLScene}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{ReSizeGLScene()}{ReSizeGLScene()}}
+{\footnotesize\ttfamily \label{_lesson10_8c_a87bb84d489df61ed7b0c002584fd984f} 
+GLvoid Re\+Size\+GLScene (\begin{DoxyParamCaption}\item[{GLsizei}]{width}{, }\item[{GLsizei}]{height}{}\end{DoxyParamCaption})}
+
+
+
+Fonction Re\+Size\+GLScene \+: redimensionnement de la fenêtre Windows gérant Open\+GL. 
+
+This Code Resize the main window.
+
+En entrée les deux nouvelles dimensions de la fenêtre 
+\begin{DoxyParams}{ParamÃ¨tres}
+{\em width} & Width of the GL Window Or Fullscreen Mode \texorpdfstring{$\ast$}{*} \\
+\hline
+{\em height} & Height of the GL Window Or Fullscreen Mode \texorpdfstring{$\ast$}{*} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+GLvoid un void Open\+GL. 
+\end{DoxyReturn}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_lesson10_8c_a87bb84d489df61ed7b0c002584fd984f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_lesson10_8c_a34e550eaac41bec549d492372e9dcbd7}\index{Lesson10.c@{Lesson10.c}!SetupWorld@{SetupWorld}}
+\index{SetupWorld@{SetupWorld}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{SetupWorld()}{SetupWorld()}}
+{\footnotesize\ttfamily \label{_lesson10_8c_a34e550eaac41bec549d492372e9dcbd7} 
+void Setup\+World (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_lesson10_8c_a34e550eaac41bec549d492372e9dcbd7_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_lesson10_8c_a34e550eaac41bec549d492372e9dcbd7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_lesson10_8c_a661c2abc03926acfaeb93b4ae7db4943}\index{Lesson10.c@{Lesson10.c}!WinMain@{WinMain}}
+\index{WinMain@{WinMain}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{WinMain()}{WinMain()}}
+{\footnotesize\ttfamily \label{_lesson10_8c_a661c2abc03926acfaeb93b4ae7db4943} 
+int WINAPI Win\+Main (\begin{DoxyParamCaption}\item[{HINSTANCE}]{h\+Instance}{, }\item[{HINSTANCE}]{h\+Prev\+Instance}{, }\item[{LPSTR}]{lp\+Cmd\+Line}{, }\item[{int}]{n\+Cmd\+Show}{}\end{DoxyParamCaption})}
+
+
+
+Creation of our application on Windows System (not console application) \texorpdfstring{$\ast$}{*}. 
+
+This Code is mandatory to create windows application (function Win\+Main) \texorpdfstring{$\ast$}{*} 
+\begin{DoxyParams}{ParamÃ¨tres}
+{\em h\+Instance} & -\/ Header de l\textquotesingle{}instance Windows \texorpdfstring{$\ast$}{*} \\
+\hline
+{\em h\+Prev\+Instance} & -\/ Header de l\textquotesingle{}instance précédente de Windows \texorpdfstring{$\ast$}{*} \\
+\hline
+{\em lp\+Cmd\+Line} & -\/ Un pointeur sur la ligne de commande \texorpdfstring{$\ast$}{*} \\
+\hline
+{\em n\+Cmd\+Show} & -\/ Un indicateur d\textquotesingle{}état \texorpdfstring{$\ast$}{*} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int -\/ un entier booleen (OK ou non). \texorpdfstring{$\ast$}{*}
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize}
+\end{DoxyReturn}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_lesson10_8c_a661c2abc03926acfaeb93b4ae7db4943_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_lesson10_8c_ae749e989b362e19783c7af4a2bf46c95}\index{Lesson10.c@{Lesson10.c}!WndProc@{WndProc}}
+\index{WndProc@{WndProc}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{WndProc()}{WndProc()}}
+{\footnotesize\ttfamily \label{_lesson10_8c_ae749e989b362e19783c7af4a2bf46c95} 
+LRESULT CALLBACK Wnd\+Proc (\begin{DoxyParamCaption}\item[{HWND}]{h\+Wnd}{, }\item[{UINT}]{u\+Msg}{, }\item[{WPARAM}]{w\+Param}{, }\item[{LPARAM}]{l\+Param}{}\end{DoxyParamCaption})}
+
+
+
+Fonction CALLBACK de traitement des messages Windows. 
+
+Comments manageable by Doxygen
+
+Traitement de la boucle infinie des messages Windows 
+\begin{DoxyParams}{ParamÃ¨tres}
+{\em h\+Wnd} & L\textquotesingle{}header de la fenêtre principale. \\
+\hline
+{\em u\+Msg} & Un entier non signé. \\
+\hline
+{\em w\+Param} & Les paramétres en entrée. \\
+\hline
+{\em l\+Param} & Autres paramétres en entrée. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+LRESULT Un LRESULT donnant le status du traitement du message. 
+\end{DoxyReturn}
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{_lesson10_8c_ae749e989b362e19783c7af4a2bf46c95_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_lesson10_8c_ae749e989b362e19783c7af4a2bf46c95_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Documentation des variables}
+\Hypertarget{_lesson10_8c_a22389371583c4b8843e06da43399d6d9}\index{Lesson10.c@{Lesson10.c}!active@{active}}
+\index{active@{active}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{active}{active}}
+{\footnotesize\ttfamily \label{_lesson10_8c_a22389371583c4b8843e06da43399d6d9} 
+BOOL active =\mbox{\hyperlink{_lesson10_8c_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}}
+
+\Hypertarget{_lesson10_8c_af3d0c623676f78dff5a84bc436095550}\index{Lesson10.c@{Lesson10.c}!blend@{blend}}
+\index{blend@{blend}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{blend}{blend}}
+{\footnotesize\ttfamily \label{_lesson10_8c_af3d0c623676f78dff5a84bc436095550} 
+BOOL blend}
+
+\Hypertarget{_lesson10_8c_a81fe5d48ae6cf5016dfc24c0835dee10}\index{Lesson10.c@{Lesson10.c}!bp@{bp}}
+\index{bp@{bp}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{bp}{bp}}
+{\footnotesize\ttfamily \label{_lesson10_8c_a81fe5d48ae6cf5016dfc24c0835dee10} 
+BOOL bp}
+
+\Hypertarget{_lesson10_8c_abaab572c2d38c9839d1b9831155cb3f3}\index{Lesson10.c@{Lesson10.c}!filter@{filter}}
+\index{filter@{filter}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{filter}{filter}}
+{\footnotesize\ttfamily \label{_lesson10_8c_abaab572c2d38c9839d1b9831155cb3f3} 
+GLuint filter =0}
+
+\Hypertarget{_lesson10_8c_a351433969208eaa89b942d3e587fcc9c}\index{Lesson10.c@{Lesson10.c}!fp@{fp}}
+\index{fp@{fp}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{fp}{fp}}
+{\footnotesize\ttfamily \label{_lesson10_8c_a351433969208eaa89b942d3e587fcc9c} 
+BOOL fp}
+
+\Hypertarget{_lesson10_8c_ab15a33c0173f2c5b6ac806c55cf7f0ba}\index{Lesson10.c@{Lesson10.c}!fullscreen@{fullscreen}}
+\index{fullscreen@{fullscreen}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{fullscreen}{fullscreen}}
+{\footnotesize\ttfamily \label{_lesson10_8c_ab15a33c0173f2c5b6ac806c55cf7f0ba} 
+BOOL fullscreen =\mbox{\hyperlink{_lesson10_8c_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}}
+
+\Hypertarget{_lesson10_8c_a78f6446a0e13adc7b7b2f239112ac785}\index{Lesson10.c@{Lesson10.c}!hDC@{hDC}}
+\index{hDC@{hDC}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{hDC}{hDC}}
+{\footnotesize\ttfamily \label{_lesson10_8c_a78f6446a0e13adc7b7b2f239112ac785} 
+HDC h\+DC =NULL}
+
+\Hypertarget{_lesson10_8c_ac5682e48513a771560df50e3b213e61a}\index{Lesson10.c@{Lesson10.c}!heading@{heading}}
+\index{heading@{heading}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{heading}{heading}}
+{\footnotesize\ttfamily \label{_lesson10_8c_ac5682e48513a771560df50e3b213e61a} 
+float heading}
+
+\Hypertarget{_lesson10_8c_a74029128723095e7bf00a71d46af8b24}\index{Lesson10.c@{Lesson10.c}!hInstance@{hInstance}}
+\index{hInstance@{hInstance}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{hInstance}{hInstance}}
+{\footnotesize\ttfamily \label{_lesson10_8c_a74029128723095e7bf00a71d46af8b24} 
+HINSTANCE h\+Instance}
+
+\Hypertarget{_lesson10_8c_a874963259c7cd998acfe6e187fbdb4c1}\index{Lesson10.c@{Lesson10.c}!hRC@{hRC}}
+\index{hRC@{hRC}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{hRC}{hRC}}
+{\footnotesize\ttfamily \label{_lesson10_8c_a874963259c7cd998acfe6e187fbdb4c1} 
+HGLRC h\+RC =NULL}
+
+\Hypertarget{_lesson10_8c_afec4341c234519e145bac6f0e5edaa51}\index{Lesson10.c@{Lesson10.c}!hWnd@{hWnd}}
+\index{hWnd@{hWnd}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{hWnd}{hWnd}}
+{\footnotesize\ttfamily \label{_lesson10_8c_afec4341c234519e145bac6f0e5edaa51} 
+HWND h\+Wnd =NULL}
+
+\Hypertarget{_lesson10_8c_a55a8351b704275ad12988864918abb2a}\index{Lesson10.c@{Lesson10.c}!keys@{keys}}
+\index{keys@{keys}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{keys}{keys}}
+{\footnotesize\ttfamily \label{_lesson10_8c_a55a8351b704275ad12988864918abb2a} 
+BOOL keys\mbox{[}256\mbox{]}}
+
+\Hypertarget{_lesson10_8c_ae9fb3d4767f6255c70dcd5123bbf2f54}\index{Lesson10.c@{Lesson10.c}!level\_debug@{level\_debug}}
+\index{level\_debug@{level\_debug}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{level\_debug}{level\_debug}}
+{\footnotesize\ttfamily \label{_lesson10_8c_ae9fb3d4767f6255c70dcd5123bbf2f54} 
+char\texorpdfstring{$\ast$}{*} level\+\_\+debug}
+
+\Hypertarget{_lesson10_8c_a1a73c6d2f29511093b6a39513c379926}\index{Lesson10.c@{Lesson10.c}!level\_def@{level\_def}}
+\index{level\_def@{level\_def}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{level\_def}{level\_def}}
+{\footnotesize\ttfamily \label{_lesson10_8c_a1a73c6d2f29511093b6a39513c379926} 
+\mbox{\hyperlink{_lesson10_8c_a1062901a7428fdd9c7f180f5e01ea056}{bool}} level\+\_\+def = \mbox{\hyperlink{_lesson10_8c_a41f9c5fb8b08eb5dc3edce4dcb37fee7}{true}}}
+
+\Hypertarget{_lesson10_8c_ab253ae37d6b80578f7883bbd03657a59}\index{Lesson10.c@{Lesson10.c}!lookupdown@{lookupdown}}
+\index{lookupdown@{lookupdown}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{lookupdown}{lookupdown}}
+{\footnotesize\ttfamily \label{_lesson10_8c_ab253ae37d6b80578f7883bbd03657a59} 
+GLfloat lookupdown = 0.\+0f}
+
+\Hypertarget{_lesson10_8c_ad667f040f2932c8097435492fbd10d76}\index{Lesson10.c@{Lesson10.c}!loop@{loop}}
+\index{loop@{loop}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{loop}{loop}}
+{\footnotesize\ttfamily \label{_lesson10_8c_ad667f040f2932c8097435492fbd10d76} 
+int loop = 0}
+
+\Hypertarget{_lesson10_8c_a1a6535285fc9406de04538e1200d8ed3}\index{Lesson10.c@{Lesson10.c}!piover180@{piover180}}
+\index{piover180@{piover180}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{piover180}{piover180}}
+{\footnotesize\ttfamily \label{_lesson10_8c_a1a6535285fc9406de04538e1200d8ed3} 
+const float piover180 = 0.\+0174532925f}
+
+\Hypertarget{_lesson10_8c_a196a466e0a51460be93ca4f32c313eff}\index{Lesson10.c@{Lesson10.c}!sector1@{sector1}}
+\index{sector1@{sector1}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{sector1}{sector1}}
+{\footnotesize\ttfamily \label{_lesson10_8c_a196a466e0a51460be93ca4f32c313eff} 
+\mbox{\hyperlink{_lesson10_8c_aa99a25bbda5687c0a5d1c4a426ec110c}{SECTOR}} sector1}
+
+\Hypertarget{_lesson10_8c_a04b2088c33683580ff9664f8a35cef23}\index{Lesson10.c@{Lesson10.c}!texid@{texid}}
+\index{texid@{texid}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{texid}{texid}}
+{\footnotesize\ttfamily \label{_lesson10_8c_a04b2088c33683580ff9664f8a35cef23} 
+GLuint texid\mbox{[}3\mbox{]}}
+
+\Hypertarget{_lesson10_8c_ae303c167c23691bbf165ab05813e5713}\index{Lesson10.c@{Lesson10.c}!texture@{texture}}
+\index{texture@{texture}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{texture}{texture}}
+{\footnotesize\ttfamily \label{_lesson10_8c_ae303c167c23691bbf165ab05813e5713} 
+GLuint texture\mbox{[}3\mbox{]}}
+
+\Hypertarget{_lesson10_8c_a816a7bb71de16d574a2aac953f57f918}\index{Lesson10.c@{Lesson10.c}!vert@{vert}}
+\index{vert@{vert}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{vert}{vert}}
+{\footnotesize\ttfamily \label{_lesson10_8c_a816a7bb71de16d574a2aac953f57f918} 
+int vert = -\/1}
+
+\Hypertarget{_lesson10_8c_ac52295b1c86ab1c35431a1f02382bad1}\index{Lesson10.c@{Lesson10.c}!walkbias@{walkbias}}
+\index{walkbias@{walkbias}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{walkbias}{walkbias}}
+{\footnotesize\ttfamily \label{_lesson10_8c_ac52295b1c86ab1c35431a1f02382bad1} 
+GLfloat walkbias = 0}
+
+\Hypertarget{_lesson10_8c_ad839b78305422c269907845c11f19321}\index{Lesson10.c@{Lesson10.c}!walkbiasangle@{walkbiasangle}}
+\index{walkbiasangle@{walkbiasangle}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{walkbiasangle}{walkbiasangle}}
+{\footnotesize\ttfamily \label{_lesson10_8c_ad839b78305422c269907845c11f19321} 
+GLfloat walkbiasangle = 0}
+
+\Hypertarget{_lesson10_8c_adad239fcacf5c59997872bd0c12bdfd1}\index{Lesson10.c@{Lesson10.c}!xpos@{xpos}}
+\index{xpos@{xpos}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{xpos}{xpos}}
+{\footnotesize\ttfamily \label{_lesson10_8c_adad239fcacf5c59997872bd0c12bdfd1} 
+float xpos}
+
+\Hypertarget{_lesson10_8c_a9549138cf4d209303566523d805d8525}\index{Lesson10.c@{Lesson10.c}!yrot@{yrot}}
+\index{yrot@{yrot}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{yrot}{yrot}}
+{\footnotesize\ttfamily \label{_lesson10_8c_a9549138cf4d209303566523d805d8525} 
+GLfloat yrot}
+
+\Hypertarget{_lesson10_8c_acfde595878f838c910907ec90d040114}\index{Lesson10.c@{Lesson10.c}!z@{z}}
+\index{z@{z}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{z}{z}}
+{\footnotesize\ttfamily \label{_lesson10_8c_acfde595878f838c910907ec90d040114} 
+GLfloat z =0.\+0f}
+
+\Hypertarget{_lesson10_8c_a1145c2d616cccd00793eb0b60929a3b3}\index{Lesson10.c@{Lesson10.c}!zpos@{zpos}}
+\index{zpos@{zpos}!Lesson10.c@{Lesson10.c}}
+\doxysubsubsection{\texorpdfstring{zpos}{zpos}}
+{\footnotesize\ttfamily \label{_lesson10_8c_a1145c2d616cccd00793eb0b60929a3b3} 
+float zpos}
+

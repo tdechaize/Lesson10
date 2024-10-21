@@ -1,0 +1,152 @@
+\doxysection{RÃ©fÃ©rence du fichier logger.\+c}
+\hypertarget{logger_8c}{}\label{logger_8c}\index{logger.c@{logger.c}}
+
+
+Ajout de fonction de "{}logging"{} (traces dans un fichier texte log.\+txt) uniquement en mode Debug et avec des niveaux de tracing définis dans une varaiable d\textquotesingle{}environnement (LEVEL)  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}logger.\+h"{}}\newline
+Graphe des dÃ©pendances par inclusion de logger.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{logger_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{logger_8c_a0920890c442b665b0c6609fa796e9047}{DIR\+\_\+\+SEPARATOR}}~\textquotesingle{}/\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{logger_8c_a256a5721249aa3309437212cc21a9fe4}{PATH\+\_\+\+SEPARATOR}}~\textquotesingle{}\+:\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{logger_8c_a9062ad017719f7653eb498d61ed41d55}{IS\+\_\+\+DIR\+\_\+\+SEPARATOR}}(ch)
+\item 
+\#define \mbox{\hyperlink{logger_8c_a48100cbe5f69905dca2b6bbc7a888d30}{IS\+\_\+\+PATH\+\_\+\+SEPARATOR}}(ch)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{logger_8c_aeea85f0478e1d5c40a6293f63269ac03}{print\+\_\+time}} ()
+\item 
+void \mbox{\hyperlink{logger_8c_abd2d19eeef46a8184a2302d33c6c7397}{log\+\_\+print}} (char \texorpdfstring{$\ast$}{*}filename, int line, char \texorpdfstring{$\ast$}{*}fmt,...)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+FILE \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{logger_8c_a724e7d2bbffb847aa6e987a006d4d13b}{ft}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description dÃ©taillÃ©e}
+Ajout de fonction de "{}logging"{} (traces dans un fichier texte log.\+txt) uniquement en mode Debug et avec des niveaux de tracing définis dans une varaiable d\textquotesingle{}environnement (LEVEL) 
+
+Comments manageable by Doxygen
+
+Modified by Thierry DECHAIZE
+
+Date \+: 2024/10/20
+
+\begin{DoxyAuthor}{Auteur}
+Thierry Dechaize 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0.\+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+5 mars 2023
+\end{DoxyDate}
+L\textquotesingle{}utilisation est très simple \+: \#if define(\+DEBUG)
+
+if ((strcmp(level\+\_\+debug,"{}\+BASE"{}) == 0) \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (strcmp(level\+\_\+debug,"{}\+FULL"{}) == 0)) \mbox{[} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (strcmp(level\+\_\+debug,"{}\+OPENGL"{}) == 0))\mbox{]}
+
+log\+\_\+print( {\bfseries{FILE}}, {\bfseries{LINE}}, texte approprié);
+
+\#endif
+
+Warning \+: la variable LEVEL doit être définie au niveau "{}user"{} et non au niveau "{}system"{} sous Windows. 
+
+\doxysubsection{Documentation des macros}
+\Hypertarget{logger_8c_a0920890c442b665b0c6609fa796e9047}\index{logger.c@{logger.c}!DIR\_SEPARATOR@{DIR\_SEPARATOR}}
+\index{DIR\_SEPARATOR@{DIR\_SEPARATOR}!logger.c@{logger.c}}
+\doxysubsubsection{\texorpdfstring{DIR\_SEPARATOR}{DIR\_SEPARATOR}}
+{\footnotesize\ttfamily \label{logger_8c_a0920890c442b665b0c6609fa796e9047} 
+\#define DIR\+\_\+\+SEPARATOR~\textquotesingle{}/\textquotesingle{}}
+
+\Hypertarget{logger_8c_a9062ad017719f7653eb498d61ed41d55}\index{logger.c@{logger.c}!IS\_DIR\_SEPARATOR@{IS\_DIR\_SEPARATOR}}
+\index{IS\_DIR\_SEPARATOR@{IS\_DIR\_SEPARATOR}!logger.c@{logger.c}}
+\doxysubsubsection{\texorpdfstring{IS\_DIR\_SEPARATOR}{IS\_DIR\_SEPARATOR}}
+{\footnotesize\ttfamily \label{logger_8c_a9062ad017719f7653eb498d61ed41d55} 
+\#define IS\+\_\+\+DIR\+\_\+\+SEPARATOR(\begin{DoxyParamCaption}\item[{}]{ch}{}\end{DoxyParamCaption})}
+
+{\bfseries Valeur \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{((ch)\ ==\ \mbox{\hyperlink{logger_8c_a0920890c442b665b0c6609fa796e9047}{DIR\_SEPARATOR}})}
+
+\end{DoxyCode}
+\Hypertarget{logger_8c_a48100cbe5f69905dca2b6bbc7a888d30}\index{logger.c@{logger.c}!IS\_PATH\_SEPARATOR@{IS\_PATH\_SEPARATOR}}
+\index{IS\_PATH\_SEPARATOR@{IS\_PATH\_SEPARATOR}!logger.c@{logger.c}}
+\doxysubsubsection{\texorpdfstring{IS\_PATH\_SEPARATOR}{IS\_PATH\_SEPARATOR}}
+{\footnotesize\ttfamily \label{logger_8c_a48100cbe5f69905dca2b6bbc7a888d30} 
+\#define IS\+\_\+\+PATH\+\_\+\+SEPARATOR(\begin{DoxyParamCaption}\item[{}]{ch}{}\end{DoxyParamCaption})}
+
+{\bfseries Valeur \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{((ch)\ ==\ \mbox{\hyperlink{logger_8c_a256a5721249aa3309437212cc21a9fe4}{PATH\_SEPARATOR}})}
+
+\end{DoxyCode}
+\Hypertarget{logger_8c_a256a5721249aa3309437212cc21a9fe4}\index{logger.c@{logger.c}!PATH\_SEPARATOR@{PATH\_SEPARATOR}}
+\index{PATH\_SEPARATOR@{PATH\_SEPARATOR}!logger.c@{logger.c}}
+\doxysubsubsection{\texorpdfstring{PATH\_SEPARATOR}{PATH\_SEPARATOR}}
+{\footnotesize\ttfamily \label{logger_8c_a256a5721249aa3309437212cc21a9fe4} 
+\#define PATH\+\_\+\+SEPARATOR~\textquotesingle{}\+:\textquotesingle{}}
+
+
+
+\doxysubsection{Documentation des fonctions}
+\Hypertarget{logger_8c_abd2d19eeef46a8184a2302d33c6c7397}\index{logger.c@{logger.c}!log\_print@{log\_print}}
+\index{log\_print@{log\_print}!logger.c@{logger.c}}
+\doxysubsubsection{\texorpdfstring{log\_print()}{log\_print()}}
+{\footnotesize\ttfamily \label{logger_8c_abd2d19eeef46a8184a2302d33c6c7397} 
+void log\+\_\+print (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{int}]{line}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{fmt}{, }\item[{}]{...}{}\end{DoxyParamCaption})}
+
+Voici le graphe d\textquotesingle{}appel pour cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{logger_8c_abd2d19eeef46a8184a2302d33c6c7397_cgraph}
+\end{center}
+\end{figure}
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{logger_8c_abd2d19eeef46a8184a2302d33c6c7397_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{logger_8c_aeea85f0478e1d5c40a6293f63269ac03}\index{logger.c@{logger.c}!print\_time@{print\_time}}
+\index{print\_time@{print\_time}!logger.c@{logger.c}}
+\doxysubsubsection{\texorpdfstring{print\_time()}{print\_time()}}
+{\footnotesize\ttfamily \label{logger_8c_aeea85f0478e1d5c40a6293f63269ac03} 
+char \texorpdfstring{$\ast$}{*} print\+\_\+time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Voici le graphe des appelants de cette fonction \+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{logger_8c_aeea85f0478e1d5c40a6293f63269ac03_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Documentation des variables}
+\Hypertarget{logger_8c_a724e7d2bbffb847aa6e987a006d4d13b}\index{logger.c@{logger.c}!ft@{ft}}
+\index{ft@{ft}!logger.c@{logger.c}}
+\doxysubsubsection{\texorpdfstring{ft}{ft}}
+{\footnotesize\ttfamily \label{logger_8c_a724e7d2bbffb847aa6e987a006d4d13b} 
+FILE\texorpdfstring{$\ast$}{*} ft}
+

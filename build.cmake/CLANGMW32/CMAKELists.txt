@@ -19,7 +19,7 @@ SET(CMAKE_RC_COMPILER "C:/msys64/mingw32/bin/windres.exe" )
 # set(CMAKE_RC_COMPILER "rc.exe")
 
 message(STATUS "Setting CLANG flags with MSYS/Mingw32")
-set(CMAKE_C_FLAGS "${CMAKE_CXX_FLAGS} -m32 -target i686-pc-windows-gnu")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -m32 -target i686-pc-windows-gnu")
 set(CMAKE_LINK_FLAGS "${CMAKE_LINK_FLAGS} -target i686-pc-windows-gnu")  
 
 # set(CMAKE_LINK_FLAGS "${CMAKE_LINK_FLAGS} -nostdlib")

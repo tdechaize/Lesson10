@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structtag_t_r_i_a_n_g_l_e" xml:lang="fr">
+<title>Référence de la structure tagTRIANGLE</title>
+<indexterm><primary>tagTRIANGLE</primary></indexterm>
+Graphe de collaboration de tagTRIANGLE:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="structtag_t_r_i_a_n_g_l_e__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Champs de données    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="__lesson10_8c_1adfdb66b636e291c02c94c8ed35727ead">VERTEX</link> <link linkend="_structtag_t_r_i_a_n_g_l_e_1a7632b76d534b7c916965b7c94b1943b3">vertex</link> [3]</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Documentation des champs</title>
+<anchor xml:id="_structtag_t_r_i_a_n_g_l_e_1a7632b76d534b7c916965b7c94b1943b3"/><section>
+    <title>vertex</title>
+<indexterm><primary>vertex</primary><secondary>tagTRIANGLE</secondary></indexterm>
+<indexterm><primary>tagTRIANGLE</primary><secondary>vertex</secondary></indexterm>
+<para><computeroutput><link linkend="__lesson10_8c_1adfdb66b636e291c02c94c8ed35727ead">VERTEX</link> vertex[3]</computeroutput></para></section>
+<para>
+La documentation de cette structure a été générée à partir du fichier suivant :</para>
+<link linkend="__lesson10_8c">Lesson10.c</link></section>
+</section>

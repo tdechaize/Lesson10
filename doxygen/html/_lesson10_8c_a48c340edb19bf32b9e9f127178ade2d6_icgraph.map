@@ -1,0 +1,11 @@
+<map id="readstr" name="readstr">
+<area shape="rect" id="Node000001" title=" " alt="" coords="538,5,599,32"/>
+<area shape="rect" id="Node000002" href="$_lesson10_8c.html#a34e550eaac41bec549d492372e9dcbd7" title=" " alt="" coords="401,5,490,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="523,21,490,21,490,16,523,16"/>
+<area shape="rect" id="Node000003" href="$_lesson10_8c.html#aa4c387d3f1ebce6d57684b6a10c9b0ae" title="Fonction InitGL : Fin de l&#39;initialisation de la fenêtre Windows gérant OpenGL." alt="" coords="297,5,353,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="386,21,354,21,354,16,386,16"/>
+<area shape="rect" id="Node000004" href="$_lesson10_8c.html#ae5f043c9df9b9e5e0e26d567feeeb1bc" title="Creation of our OpenGL Window." alt="" coords="126,5,249,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="282,21,249,21,249,16,282,16"/>
+<area shape="rect" id="Node000005" href="$_lesson10_8c.html#a661c2abc03926acfaeb93b4ae7db4943" title="Creation of our application on Windows System (not console application) *." alt="" coords="5,5,78,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="111,21,78,21,78,16,111,16"/>
+</map>

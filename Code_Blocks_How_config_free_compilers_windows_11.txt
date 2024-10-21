@@ -1,11 +1,201 @@
 
-						Code::Blocks : the best and great free IDE 
-	 
-Tutorial : How config all free C/C++ compilers (32bits or 64bits) on Windows 11 64 bits with Code::Blocks.
+Nom du tutoriel : Comment configurer tous les compilateurs C/C++(32 bits ou 64 bits) "free" dans Code::Blocks sous Windows 11 64 bits.
 
+Auteur 			  :    	Thierry DECHAIZE
+Date création 	  :	   	2017/11/19	 
+Date modification :	   	2024/10/08	
+Reason modif. 	  :		Nouvelles versions de compilateurs C/C++ deployes. 
+														
+				Code::Blocks : the best and great free IDE for Windows, Linux and ... Mac OS
+	
 Tout d'abord, il peut y avoir une détection automatique de certains compilateurs installés lors du lancement de Code::Blocks.
 C'est un plus indéniable, mais parfois il faut un "peu" forcer les configurations des compilateurs dans cet outil.
 Ce qui suit permet donc d'obtenir une configuration opérationnelle pour chaque compilateur [pré]installé sur un Windows 11 64 bits.
+
+Rappel des différentes versions de compilateurs installés :
+
+******************			Begin of listing of all "free" compilers C/C++ installed 			*****************
+
+Borland C/C++ compiler (32 bit only) :
+	- Ident of compiler : bcc32, version 5.5.1 for Win32 Copyright (c) 1993, 2000 Borland, 
+	- InstalledDir: 			C:\BCC55\bin 			(Not ... C:\Borland\BCC55\bin)
+	- Identification of this compiler by preprocessor : __BORLANDC__     (or __TURBOC__ much old ident)
+	
+Two CLANG compilers leaned at MinGW32 or MinGW64 of package MSYS2 
+	- Ident of compiler : clang (32 bit) version 18.1.8, Target: i686-w64-windows-gnu, Thread model: posix, 
+	- InstalledDir : 			C:/msys64/mingw32/bin
+	- Identification of this compiler by preprocessor : __clang__ and __MINGW32__
+	
+	- Ident of compiler : clang (64 bit) version 18.1.8, Target: x86_64-w64-windows-gnu, Thread model: posix, 
+	- InstalledDir : 			C:/msys64/mingw64/bin
+	- Identification of this compiler by preprocessor : __clang__ and __MINGW64__
+
+Two CLANG compilers leaned at MinGW32/ucrt or MinGW64/ucrt of package WinLibs
+	- Ident of compiler : clang (32 bit), version 19.1.1 (built by Brecht Sanders, r2), Target: i686-w64-windows-gnu, 
+		Thread model: posix,
+	- InstalledDir : 			C:/mingw32/bin
+	- Identification of this compiler by preprocessor : __clang__ and __MINGW32__
+	
+	- Ident of compiler : clang (64 bit), version 19.1.1 (built by Brecht Sanders, r2), Target: x86_64-w64-windows-gnu, 
+		Thread model: posix,
+	- InstalledDir : 			C:/mingw64/bin
+	- Identification of this compiler by preprocessor : __clang__ and __MINGW64__
+
+Two CLANG compilers leaned at MS Visual C/C++ (installed with Visual Studio Community 2022 + SDK Windows in versions 
+	32 and 64 bit):
+	- Ident of compiler : clang (32 bit),version 19.1.1, Target: i686-pc-windows-msvc, Thread model: posix, 
+	- InstalledDir : 			C:\Program Files (x86)\LLVM\bin
+	- Identification of this compiler by preprocessor : __clang__ and _MSC_VER
+	
+	- Ident of compiler : clang (64 bit),version 19.1.1, Target: x86_64-pc-windows-msvc, Thread model: posix, 
+	- InstalledDir : 			C:\Program Files\LLVM\bin	
+	- Identification of this compiler by preprocessor : __clang__ and _MSC_VER
+	
+Digital Mars Compiler C\C++ (32 bit only, version of installation package : 8.57c) 
+	- Ident of compiler : dmc, Digital Mars Compiler Version 8.42n. Copyright (C) Digital Mars 2000-2004, 
+	- InstalledDir : 			C:\dm\bin
+	- Identification of this compiler by preprocessor : __DMC__
+	
+Three GCC compilers into CYGWIN64 version 64 bits, with additionals installations of MinGW32 and MinGW64 package, 
+	and also tool "make" : 
+	- Ident of compiler : x86_64-w64-pc-gcc ou gcc ("native" version of GCC on Cygwin) 12.4.0 (64 bit), 
+	- InstalledDir : 			C:/Cygwin64/bin
+	- Identification of this compiler by preprocessor : __GNUC__ and __CYGWIN__ 
+	
+	- Ident of compiler : i686-w64-mingw32-gcc (GCC of MinGW32) 12.4.0 (32 bit), 
+	- InstalledDir : 			C:/Cygwin64/bin,
+	- Identification of this compiler by preprocessor : __GNUC__ 
+	
+	- Ident of compiler : x86_64-w64-mingw32-gcc (GCC of MinGW64) 12.4.0 (64 bit),
+	- InstalledDir : 			C:/Cygwin64/bin
+	- Identification of this compiler by preprocessor : __GNUC__ and __MINGW64__ 
+
+GCC compiler included in development package MinGW64/ucrt provided with improved version CodeBlocks (IDE),
+	 nigthly build june 2023 :
+	- Ident of compiler : gcc (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders) 13.1.0 (64 bits),
+	- InstalledDir : 			C:/CodeBlocks/MinGW/bin
+	- Identification of this compiler by preprocessor : __GNUC__ and __MINGW64__
+	
+GCC included in "official" development package MinGW (32 bits) (Teams MinGW want not migrate to 64 bit !!!)
+	- Ident of compiler : gcc (MinGW.org GCC Build-2) 9.2.0, 
+	- InstalledDir: 			C:/MinGW/bin
+	- Identification of this compiler by preprocessor : __GNUC__  
+
+GCC included in "official" development package MinGW64 (64 bits) (fork 64 bit of "official" version MinGW)
+	- Ident of compiler : gcc (x86_64-win32-seh-rev1, Built by MinGW-Builds project) 13.2.0, 
+	- InstalledDir: 			C:/niXman/mingw64/bin
+	- Identification of this compiler by preprocessor : __GNUC__ and __MINGW64__
+
+Three GCC compilers included in development package MinGW32/mscrt, MinGW64/mscrt and MinGW64/ucrt into 
+	"global" package MSYS2 :
+	- Ident of compiler : gcc (32 bit) (Rev1, Built by MSYS2 project) 14.2.0, 
+	- InstalledDir : 			C:/msys64/mingw32/bin
+	- Identification of this compiler by preprocessor : __GNUC__ 
+	
+	- Ident of compiler : gcc (64 bit) (Rev1, Built by MSYS2 project) 14.2.0, 
+	- InstalledDir : 			C:/msys64/mingw64/bin
+	- Identification of this compiler by preprocessor : __GNUC__ and __MINGW64__
+	
+	- Ident of compiler : gcc (64 bit) (Rev1, Built by MSYS2 project) 14.2.0, 
+	- InstalledDir : 			C:/msys64/ucrt64/bin
+	- Identification of this compiler by preprocessor : __GNUC__ and __MINGW64__
+
+Two GCC compilers included in development package MinGW32/ucrt and MinGW64/ucrt into "global" package 
+	Winlibs :
+	- Ident of compiler : gcc (MinGW-W64 i686-ucrt-posix-dwarf, built by Brecht Sanders, r1) 14.2.0, 
+	- InstalledDir : 			C:/mingw32/bin
+	- Identification of this compiler by preprocessor : __GNUC__ 
+	
+	- Ident of compiler : gcc (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r1) 14.2.0, 
+	- InstalledDir : 			C:/mingw64/bin
+	- Identification of this compiler by preprocessor : __GNUC__ and __MINGW64__
+
+GCC included in development package MinGW64 provided with Red-Panda Cpp (IDE) (64 bits), fork of Dev-Cpp 
+	unmaintained since 2016 :
+	- Ident of compiler : gcc (x86_64-posix-seh, Built by MinGW-Builds project) 11.4.0, 
+	- InstalledDir : 			C:\RedPanda-Cpp\MinGW64\bin  (not C:\Program File\RedPanda-Cpp\MinGW64\bin)
+	- Identification of this compiler by preprocessor : __GNUC__ and __MINGW64__  
+
+Two GCC compilers include in development package TDM/MinGW32 and TDM/MinGW64 (32 and 64 bit) :
+	- Ident of compiler : gcc (tdm-1) 10.3.0, 
+	- InstalledDir : 			C:/TDM-GCC-32/bin
+	- Identification of this compiler by preprocessor : __GNUC__ 
+	
+	- Ident of compiler : gcc (tdm64-1) 10.3.0, 
+	- InstalledDir : 			C:/TDM-GCC-64/bin
+	- Identification of this compiler by preprocessor : __GNUC__ and __MINGW64__
+	
+Two compilers LCC (versions 32 and 64 bit, only C compilers)
+	- Ident of compiler : lcc, Logiciels/Informatique lcc-win32 version 3.8. Compilation date: Mar 29 2013 13:11:27, 
+	- InstalledDir : 			C:\lcc\bin
+	- Identification of this compiler by preprocessor : __LCC__ 
+			
+	- Ident of compiler : lcc64, Logiciels/Informatique lcc-win (64 bits) version 4.1. Compilation date: Oct 27 2016 16:34:50,
+	- InstalledDir : 			C:\lcc64\bin
+	- Identification of this compiler by preprocessor : __LCC__ 
+
+Two OpenAPI Intel C/C++ compilers (32 and 64 bit)
+	- Ident of compiler : icx.exe + icpx.exe : Intel(R) oneAPI DPC++/C++ Compiler 2024.2.0 (2024.2.0.20240602), 
+		Target: x86_64-pc-windows-msvc,
+	- InstalledDir : 			C:\Program Files (X86)\Intel\oneAPI\compiler\latest\bin 
+			(warning, and also, ..\bin32 if you select 32 bit version with "-m32" flag during compilation)
+	- Identification of this compiler by preprocessor : __INTEL_LLVM_COMPILER
+	
+		(NB : Previous identification of classic Intel compiler by preprocessor : __INTEL_COMPILER or __ILC)
+		(NB2 : Unlike the icc driver, icx does not use the file extension to determine whether to compile as 
+		 C or C+. Users must invoke icpx to compile C++ files.) 
+		(Here, it's the same executable that manage version 32 or 64 bit with two different options, and with 
+		differentiation of directories beetween "include" files and librairies files, 32 or 64 bit)
+
+Pelles C compiler (32 and 64 bit, only C compiler) :
+	- Ident of compiler : pocc.exe, Pelles ISO C Compiler, Version 12.00.1, Copyright (c) Pelle Orinius 1999-2023, 
+	- InstalledDir : 			C:\PellesC\bin
+	- Identification of this compiler by preprocessor : __POCC__ 
+	
+		(Here, it's the same executable that manage version 32 or 64 bit with two different options, and with 
+		differentiation of directories beetween "include" files and librairies files, 32 or 64 bit)
+
+Two compilers MS Visual C/C++ issued of installation of Visual Studio 2022 Community, version 17.11.4 and SDK
+ Windows version 10.0.22621.0 (32 and 64 bit, updated "many times" with tool "Visual Studio Installer") :
+	- Ident of compiler : cl, Compilateur d'optimisation Microsoft (R) C/C++ version 19.41.34120 pour x86, (32 bits)
+	- InstalledDir : 			C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\bin\HostX86\x86
+	- Identification of this compiler by preprocessor :  _MSC_VER 
+	
+	- Ident of compiler : cl, Compilateur d'optimisation Microsoft (R) C/C++ version 19.41.34120 pour x64, (64 bits)
+	- InstalledDir : 			C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\bin\HostX64\x64
+	- Identification of this compiler by preprocessor :  _MSC_VER 
+
+Two compilers Open Watcom C/C++ (celle disponible sur GitHub, pas celle de Sourceforge) (32 ou 64 bits)
+	- Ident of compiler : wcl386, Open Watcom C/C++ x86 32-bit Compile and Link Utility, Version 2.0 beta Nov  8 2023 02:00:11 
+	- InstalledDir : 			C:\WATCOM\binnt  		(32-bit)
+	- Identification of this compiler by preprocessor :  __WATCOMC__ 
+	
+	- Ident of compiler : wcl386, Open Watcom C/C++ x86 32-bit Compile and Link Utility, Version 2.0 beta Nov  8 2023 02:45:53 
+	- InstalledDir : 			C:\WATCOM\binnt64		(not really 64-bit ...)
+	- Identification of this compiler by preprocessor :  __WATCOMC__ 
+	
+WARNING : Same with compiler Open Watcom version in directory "64 bit", you can't generate an target (exe or dll) in version 64 
+  bit on Windows (or on Linux). All tools generate 32 bit version only ...  Then, why distinguish 32 or 64 bit version ???
+
+GENERAL REMARK : With compilers that support "real" 64 bit version on Windows systems (exclude Borland C/C++, DMC and Open WATCOM), 
+ if you want distinguish in your code if you construct targets to 32 bit or 64 bit, you can test variable "#ifdef _WIN64". If test
+ is positive, you build targets to 64 bit version.
+ In all case, if you want test if you build targets on Windows system, only test like "#ifdef _WIN32" be enougth.
+ The logic is next : always define _WIN32 for all compilers (32 or 64 bit), and only if 64 bit, define _WIN64.
+ With GCC/MinGW, same principle : always define __MINGW32__ for 32 or 64 bit, and only if 64 bit, define __MINGW64__.
+ Only "native" GCC compiler of CYGWIN64 define __CYGWIN__ only, nothing about _WIN32 or _WIN64, and ... it's normal ! 
+ Note that "native" GCC compiler can generate an "Windows" compatible target ... (applications with GUI Win32 or DLL).
+ Note also that this explanation is only true on Windows systems, if you want test support of 64 bit of your targets out of Windows,
+ another principes and tests must be used.
+	
+******************			End of listing of all "free" compilers C/C++ installed 			*****************
+
+And for memory, cmake version 3.30.4 (version "native" Windows), cmake is also installed with package CYGWIN64, MSYS2 
+	and WinLibs.
+
+And to terminate, notepad++ version 8.7.0 64 bits, my prefered text editor ... otherwise Obsidian to MarkDown file.
+
+******************		  End of listing of all tools installed on Windows 11 64 bit		 *****************
 	 
 A) GNU GCC Compiler C/C++/ObjC lié à la distibution Mingw32 officielle (version gcc 9.2.0) : 
 
@@ -29,45 +219,26 @@ Search directories :
 	b) linker : 			C:\MinGW\lib
 	a) resource compiler : 	C:\MinGW\include
 
-Affichage de la commande : "g++.exe -v" ->
-Using built-in specs.
-COLLECT_GCC=g++
-COLLECT_LTO_WRAPPER=c:/mingw/bin/../libexec/gcc/mingw32/9.2.0/lto-wrapper.exe
-Target: mingw32
-Configured with: ../src/gcc-9.2.0/configure --build=x86_64-pc-linux-gnu --host=mingw32 --target=mingw32 --disable-win32-registry --with-arch=i586 
---with-tune=generic --enable-static --enable-shared --enable-threads --enable-languages=c,c++,objc,obj-c++,fortran,ada --with-dwarf2 --disable-sjlj-exceptions 
---enable-version-specific-runtime-libs --enable-libgomp --disable-libvtv --with-libiconv-prefix=/mingw --with-libintl-prefix=/mingw --enable-libstdcxx-debug 
---disable-build-format-warnings --prefix=/mingw --with-gmp=/mingw --with-mpfr=/mingw --with-mpc=/mingw --with-isl=/mingw --enable-nls --with-pkgversion='MinGW.org GCC Build-2'
-Thread model: win32
-gcc version 9.2.0 (MinGW.org GCC Build-2)
+Affichage de la commande : "C:\MinGW\bin\g++.exe --version" ->
+g++.exe (MinGW.org GCC Build-2) 9.2.0
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-Tests :
-	a) test n° 1 : 
-		Un programme C standard tout simple, projet stocké sous C:\src\EssaiC\EssaiC.cbp
-		source sous C:\src\EssaiC\EssaiC.c
-		Deux configurations utilisées : "Debug Mingw32 official" et "Release Mingw32 official"
-		Ok, ca fonctionne avec le compilateur MingW officiel.
-		
-	b) test n° 2 :
-		Un programme C++ standard tout simple, projet stocké sous C:\src\EssaiCpp\EssaiCpp.cbp
-		source sous C:\src\EssaiCpp\main.cpp
-		Deux configurations utilisées : "Debug Mingw32 official" et "Release Mingw32 official"
-		Ok, ca fonctionne avec le compilateur MingW officiel.
+NB : Il est juste dommage, qu'à priori, les auteurs de cette déclinaison refuse son portage vers du "vrai" 64 bits,
+ ce qui en fait une version "un peu morte", et ce qui explique la raison d'un "fork" vers la déclinaison MINGW64 plus à jour.
 
-B) GNU GCC Compiler Mingw64 CB (version 8.1.0, version 64 bits) 
+B) GNU GCC Compiler Mingw64 CB (GCC version 13.1.0, version 64 bits, à noter la base du langage C en UCRT) 
 
 Celui de la version officielle site Web de Sourceforge :
-	https://sourceforge.net/projects/codeblocks/files/Binaries/20.03/Windows/codeblocks-20.03mingw-setup.exe
+	https://sourceforge.net/projects/codeblocks/files/Binaries/Nightlies/2023/CB_20230604_rev13311_win64-setup-MinGW.exe/download
 
-Il faut procéder à l'installation de Code::Blocks version 20.03 intégrant Mingw, mais avec une mise à jour de GCC en 64 bits.
-
-Prérequis : On installe Code::Blocks + un compilateur GCC 64 bits sur le répertoire proposé par défaut C:\Program Files\CodeBlocks
-	Puis, dans Code::Blocks, il faut modifier la configuration du nouveau compilateur dans le menu "Settings" puis "Compiler".
-	On procède alors à une copie du "nom du compilateur" référencé par défaut (GCC de Mingw), et on le renomme en indiquant 
-	par exemple "GNU GCC Compiler CB"
+En effet, lors du processus de "Nigthly Build" qui ne concerne que la version de CB, sans toucher à MinGW, la version du 4 juin 2023
+a permis une mise à jour complète de MINGW64/GCC en version 64 bits directement adossé à l'IDE Code::Blocks (car portage issu de WinLibs).
+J'ai conservé le même répertoire d'installation : C:\CodeBlocks
 
 Toolchain executables 
-	C:\Program Files\CodeBlocks\MinGW (puis répertoire \bin recherché automatiquement)
+	C:\CodeBlocks\MinGW (puis répertoire \bin recherché automatiquement)
 	compilateur C : 			gcc.exe
 	compilateur C++ : 			g++.exe	
 	linker for dynamic lib : 	g++.exe
@@ -77,53 +248,27 @@ Toolchain executables
 	make program : 				mingw32-make.exe
 	
 Search directories :
-	a) compiler : 			C:\Program Files\CodeBlocks\MinGW\x86_64-w64-mingw32\include
-	b) linker : 			C:\Program Files\CodeBlocks\MinGW\x86_64-w64-mingw32\lib  puis C:\Program Files\CodeBlocks\MinGW\lib
-	a) resource compiler : 	C:\Program Files\CodeBlocks\MinGW\x86_64-w64-mingw32\include
+	a) compiler : 			C:\CodeBlocks\MinGW\x86_64-w64-mingw32\include	et C:\CodeBlocks\MinGW\include
+	b) linker : 			C:\CodeBlocks\MinGW\x86_64-w64-mingw32\lib  	et C:\CodeBlocks\MinGW\lib
+	a) resource compiler : 	C:\CodeBlocks\MinGW\x86_64-w64-mingw32\include	et C:\CodeBlocks\MinGW\include
 
-Affichage de la commande : "g++.exe -v" ->
-Using built-in specs.
-COLLECT_GCC=g++
-COLLECT_LTO_WRAPPER=C:/CodeBlocks/MinGW/bin/../libexec/gcc/x86_64-w64-mingw32/8.1.0/lto-wrapper.exe
-Target: x86_64-w64-mingw32
-Configured with: ../../../src/gcc-8.1.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 
---prefix=/mingw64 --with-sysroot=/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64 --enable-shared --enable-static --disable-multilib 
---enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto 
---enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --disable-libstdcxx-pch 
---disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers 
---with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/c/mingw810/prerequisites/x86_64-w64-mingw32-static 
---with-mpfr=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-mpc=/c/mingw810/prerequisites/x86_64-w64-mingw32-static 
---with-isl=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-posix-seh-rev0, Built by MinGW-W64 project' 
---with-bugurl=https://sourceforge.net/projects/mingw-w64 CFLAGS='-O2 -pipe -fno-ident -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include 
--I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident 
--I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include 
--I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include 
--I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident 
--L/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/lib -L/c/mingw810/prerequisites/x86_64-zlib-static/lib -L/c/mingw810/prerequisites/x86_64-w64-mingw32-static/lib '
-Thread model: posix
-gcc version 8.1.0 (x86_64-posix-seh-rev0, Built by MinGW-W64 project)
-	
-Tests :
-	a) test n° 1 : 
-		Un programme C standard tout simple, projet stocké sous C:\src\EssaiC\EssaiC.cbp
-		source sous C:\src\EssaiC\EssaiC.c
-		Deux configurations utilisées : "Debug Mingw32 CB" et "Release MingW32 CB"
-		Ok, ca fonctionne avec le compilateur MingW de l'installation par défaut.
-		
-	b) test n° 2 :
-		Un programme C++ standard tout simple, projet stocké sous C:\src\EssaiCpp\EssaiCpp.cbp
-		source sous C:\src\EssaiCpp\main.cpp
-		Deux configurations utilisées : "Debug Mingw32 CB" et "Release MingW32 CB"
-		Ok, ca fonctionne avec le compilateur MingW de l'installation par défaut.
+Affichage de la commande : "C:\CodeBlocks\MinGW\\bin\g++.exe --version" ->
+g++.exe (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders) 13.1.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-C) Red Panda Dev-Cpp (version gcc 10.3.0) (64 bits) 
+C) MinGW64 inclus dans l'IDE Red Panda Cpp v 3.1 (version gcc 11.4.0) (64 bits) 
 
-L'outil Dev-Cpp n'étant plus maintenu depuis 2016, je me suis tourné vers la version repackagé de cet outil daté de 2022.
-La version officielle site Web de SourceForge : https://sourceforge.net/projects/redpanda-cpp/files/1.0.0/RedPanda.C++.1.0.0.win64.MinGW-w64.X86_64.GCC.10.3.Setup.exe
-Prérequis : on installe "Red Panda" Dev-Cpp sur le répertoire par défaut C:\Program Files\RedPanda-Cpp avec une version de GCC 64 bits, version 10.3
+L'outil Dev-Cpp n'étant plus maintenu depuis 2016, je me suis tourné vers la version 3.1 repackagé de cet outil daté de 2024.
+La version officielle site Web de SourceForge : 
+	https://sourceforge.net/projects/redpanda-cpp/files/v3.1/RedPanda.C++.3.1.win64.MinGW64_11.4.Setup.exe
+
+En cliquant sur cet exécutable, vous installez "Red Panda" Cpp sur le répertoire par défaut C:\RedPanda-Cpp avec une 
+version de GCC 64 bits, version 11.4.0 de MinGW64.
 			
 Toolchain executables : 
-	C:\Dev-Cpp\MinGW64 (puis répertoire \bin )
+	C:\RedPanda-Cpp\MinGW64 (puis répertoire \bin )
 	compilateur C : 			gcc.exe  
 	compilateur C++ : 			g++.exe  
 	linker for dynamic lib : 	g++.exe 
@@ -133,191 +278,110 @@ Toolchain executables :
 	make program : 				mingw32-make.exe
 
 Search directories :
-	a) compiler : 			C:\Dev-Cpp\MinGW64\x86_64-w64-mingw32\include
-	b) linker : 			C:\Dev-Cpp\MinGW64\x86_64-w64-mingw32\lib
-	a) resource compiler : 	C:\Dev-Cpp\MinGW64\x86_64-w64-mingw32\include
+	a) compiler : 			C:\RedPanda-Cpp\MinGW64\x86_64-w64-mingw32\include	et C:\RedPanda-Cpp\MinGW64\include
+	b) linker : 			C:\RedPanda-Cpp\MinGW64\x86_64-w64-mingw32\lib		et C:\RedPanda-Cpp\MinGW64\lib
+	a) resource compiler : 	C:\RedPanda-Cpp\MinGW64\x86_64-w64-mingw32\include	et C:\RedPanda-Cpp\MinGW64\include
 	
-Affichage de la commande : "g++.exe -v" ->
-Using built-in specs.
-COLLECT_GCC=g++
-COLLECT_LTO_WRAPPER=C:/Program\ Files/RedPanda-Cpp/MinGW64/bin/../lib/gcc/x86_64-w64-mingw32/10.3.0/lto-wrapper.exe
-Target: x86_64-w64-mingw32
-Configured with: ../gcc-10.3.0/configure --prefix=/mingw64 --with-local-prefix=/mingw64/local --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32
- --target=x86_64-w64-mingw32 --with-native-system-header-dir=/mingw64/x86_64-w64-mingw32/include --libexecdir=/mingw64/lib --enable-bootstrap --enable-checking=release
- --with-arch=x86-64 --with-tune=generic --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic 
- --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts=yes --enable-libstdcxx-time=yes 
- --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-lto --enable-libgomp --disable-multilib --disable-rpath --disable-win32-registry 
- --disable-nls --disable-werror --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/mingw64 --with-mpfr=/mingw64 --with-mpc=/mingw64 
- --with-isl=/mingw64 --with-pkgversion='Rev5, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as 
- --with-gnu-ld --with-boot-ldflags='-pipe -Wl,--dynamicbase,--high-entropy-va,--nxcompat,--default-image-base-high -Wl,--disable-dynamicbase 
- -static-libstdc++ -static-libgcc' 'LDFLAGS_FOR_TARGET=-pipe -Wl,--dynamicbase,--high-entropy-va,--nxcompat,--default-image-base-high' 
- --enable-linker-plugin-flags='LDFLAGS=-static-libstdc++\ -static-libgcc\ -pipe\ -Wl,--dynamicbase,--high-entropy-va,--nxcompat,--default-image-base-high\ -Wl,--stack,12582912'
-Thread model: posix
-Supported LTO compression algorithms: zlib zstd
-gcc version 10.3.0 (Rev5, Built by MSYS2 project)
+Affichage de la commande : "C:\RedPanda-Cpp\MinGW64\bin\g++.exe --version" ->
+g++ (x86_64-posix-seh-rev1, Built by MinGW-W64 project) 11.2.0
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-Tests :
-	a) test n° 1 : 
-		Un programme C standard tout simple, projet stocké sous C:\src\EssaiC\EssaiC.cbp
-		source sous C:\src\EssaiC\EssaiC.c
-		Deux configurations utilisées : "Debug Mingw32 Dev-Cpp" et "Release Mingw32 Dev-Cpp"
-		Ok, ca fonctionne avec le compilateur TDM GCC de Dev-Cpp.
-		
-	b) test n° 2 :
-		Un programme C++ standard tout simple, projet stocké sous C:\src\EssaiCpp\EssaiCpp.cbp
-		source sous C:\src\EssaiCpp\main.cpp
-		Deux configurations utilisées : "Debug Mingw32 Dev-Cpp" et "Release Mingw32 Dev-Cpp"
-		Ok, ca fonctionne avec le compilateur MingW de Dev-Cpp.
-
-D) CYGWIN64 (version setup 2.918 64 bits avec les compilateurs gcc 32 bits et 64 bits, version GCC 11.3) 
+D) CYGWIN64 (avec les environnements MinGW32 et MinGW64, version GCC 11.4.0) 
 
 Celui de la version officielle site Web : https://cygwin.com/index.html
-Il faut telecharger l'utilitaire d'installation setup-x86_64.exe, qui sert aussi d'utilitaire de mise à jour (lui même mise à jour fréquemment).
-La version la plus récente de la DLL Cygwin (Cygwin1.dll obligatoire pour le lancement d'un exécutable généré sous CYGWIN) est la 3.2.0.
+Il faut telecharger l'utilitaire d'installation setup-x86_64.exe, qui sert aussi d'utilitaire de mise à jour (lui même mis à jour fréquemment).
+La version la plus récente de la DLL Cygwin (cygwin1.dll obligatoire pour le lancement d'un exécutable généré sous CYGWIN par défaut avec GCC 
+"natif") est la 3.5.3.
+"This DLL which provides substantial POSIX API functionality on Windows systems."
 
-Prérequis : on installe CYGWIN64 sur le répertoire proposé par défaut : C:\cygwin64, avec les deux compilateurs GCC récents (version x86 et X64). 
-Ces deux compilateurs sont configrés sous Code::Blocks, j'ai renommé le deuxième compilateur en "Cygwin GCC 64"
-au niveau du menu "Settings" puis "Compiler"
-			
-Toolchain executables :
+Prérequis : on installe CYGWIN64 sur le répertoire proposé par défaut : C:\cygwin64, avec les deux environnements MinGW32 et MinGW64 (version x86 
+et X64), ainsi que l'utilitaire "make" avec l'outil de mise à jour : setup-x86_64.exe. En tout, vous pouvez utiliser trois compilateurs GCC, celui 
+de la version "native" de CYGWIN64 et les deux compilateurs GCC qui viennent avec les version MinGW32/64.
+ 
+Ces trois compilateurs sont configurés sous Code::Blocks, en faisant des copies successives du compilateur GCC "natif" proposé par défaut, pour
+ensuite les renommer en "Cygwin GCC natif 64", puis en "Cygwin GCC 32" et enfin en "Cygwin GCC 64" au niveau du menu "Settings" puis "Compiler"
+de Code::Bloacks.
+
+Et pour chacune de ces versions de compilateurs, il faut alors compléter les valeurs attendues de la façon suivante :
+
+Toolchain executables (pour la version GCC native de Cygwin) :
 	C:\cygwin64 (puis répertoire \bin )
-	compilateur C : 			gcc.exe  
+	compilateur C : 			gcc.exe 
 	compilateur C++ : 			g++.exe
 	linker for dynamic lib : 	g++.exe  (idem)
 	linker for static lib : 	ar.exe
 	debugger :					gdb.exe
 	resource compiler :			windres.exe
-	make program : 				make.exe   (penser à l'installer avec l'outil setup-x86_64.exe !)
+	make program : 				make.exe       (attention "make" n'est pas installé par défaut, il faut le rajouter avec l'outil de mise à jour)
 
 Search directories :
-	a) compiler : 			C:\cygwin64\usr\include\w32api
-	b) linker : 			C:\cygwin\usr\x86_64-pc-cygwin\sys-root\usr\lib\w32api et/ou C:\cygwin\usr\x86_64-pc-cygwin\sys-root\usr\lib
-	a) resource compiler : 	C:\cygwin\usr\x86_64-pc-cygwin\sys-root\usr\include\w32api et/ou C:\cygwin\usr\x86_64-pc-cygwin\sys-root\usr\include
-
-Affichage de la commande : "g++.exe -v" ->
-Using built-in specs.
-COLLECT_GCC=g++
-COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-cygwin/11/lto-wrapper.exe
-Target: x86_64-pc-cygwin
-Configured with: /mnt/share/cygpkgs/gcc/gcc.x86_64/src/gcc-11.3.0/configure --srcdir=/mnt/share/cygpkgs/gcc/gcc.x86_64/src/gcc-11.3.0 --prefix=/usr 
---exec-prefix=/usr --localstatedir=/var --sysconfdir=/etc --docdir=/usr/share/doc/gcc --htmldir=/usr/share/doc/gcc/html -C --build=x86_64-pc-cygwin 
---host=x86_64-pc-cygwin --target=x86_64-pc-cygwin --without-libiconv-prefix --without-libintl-prefix --libexecdir=/usr/lib --with-gcc-major-version-only 
---enable-shared --enable-shared-libgcc --enable-static --enable-version-specific-runtime-libs --enable-bootstrap --enable-__cxa_atexit --with-dwarf2 
---with-tune=generic --disable-bootstrap --enable-languages=c,c++,fortran,lto,objc,obj-c++,jit --enable-graphite --enable-threads=posix --enable-libatomic 
---enable-libgomp --enable-libquadmath --enable-libquadmath-support --disable-libssp --enable-libada --disable-symvers --with-gnu-ld --with-gnu-as 
---with-cloog-include=/usr/include/cloog-isl --without-libiconv-prefix --without-libintl-prefix --with-system-zlib --enable-linker-build-id 
---with-default-libstdcxx-abi=gcc4-compatible --enable-libstdcxx-filesystem-ts
-Thread model: posix
-Supported LTO compression algorithms: zlib zstd
-gcc version 11.3.0 (GCC)
-
-Affichage de la commande : "i686-w64-mingw32-g++.exe -v"  ->  (pour mémoire)
-Using built-in specs.
-COLLECT_GCC=i686-w64-mingw32-g++
-COLLECT_LTO_WRAPPER=/usr/lib/gcc/i686-w64-mingw32/11/lto-wrapper.exe
-Target: i686-w64-mingw32
-Configured with: /mnt/share/cygpkgs/mingw64-i686-gcc/mingw64-i686-gcc.x86_64/src/gcc-11.3.0/configure --srcdir=/mnt/share/cygpkgs/mingw64-i686-gcc/mingw64-i686-gcc.x86_64/src/gcc-11.3.0 
---prefix=/usr --exec-prefix=/usr --localstatedir=/var --sysconfdir=/etc --docdir=/usr/share/doc/mingw64-i686-gcc --htmldir=/usr/share/doc/mingw64-i686-gcc/html 
--C --build=x86_64-pc-cygwin --host=x86_64-pc-cygwin --target=i686-w64-mingw32 --without-libiconv-prefix --without-libintl-prefix --with-sysroot=/usr/i686-w64-mingw32/sys-root 
---with-build-sysroot=/usr/i686-w64-mingw32/sys-root --disable-multilib --disable-win32-registry --enable-languages=c,c++,fortran,lto,objc,obj-c++ 
---enable-fully-dynamic-string --enable-graphite --enable-libgomp --enable-libquadmath --enable-libquadmath-support --enable-libssp --enable-version-specific-runtime-libs --with-dwarf2 
---with-gnu-ld --with-gnu-as --with-gcc-major-version-only --with-tune=generic --with-cloog-include=/usr/include/cloog-isl --with-system-zlib --enable-threads=posix --libexecdir=/usr/lib
-Thread model: posix
-Supported LTO compression algorithms: zlib zstd
-gcc version 11.3.0 (GCC)
-
-Tests :
-	a) test n° 1 : 
-		Un programme C standard tout simple, projet stocké sous C:\src\EssaiC\EssaiC.cbp
-		source sous C:\src\EssaiC\EssaiC.c
-		Deux configurations utilisées : "Debug CYGWIN" et "Release CYGWIN"
-		Ok, ca fonctionne avec le compilateur CYGWIN (mais attention, il réinstalle à chaque "setup" cygwin1.dll sous C:\Windows\system32)
-		
-	b) test n° 2 :
-		Un programme C++ standard tout simple, projet stocké sous C:\src\EssaiCpp\EssaiCpp.cbp
-		source sous C:\src\EssaiCpp\main.cpp
-		Deux configurations utilisées : "Debug CYGWIN" et "Release CYGWIN"
-		Attention : il manque l'accès à la DLL "cygwin1.dll" => A rajouter dans le PATH sous C:\windows\sysWOW64
-		Ok, ca fonctionne avec le compilateur CYGWIN (attention, il réinstalle à chaque "setup" cygwin1.dll sous C:\Windows\system32)
-
-Attention : Avec la version GCC 32 bits de CYGWIN, il manque l'accès à la DLL "cygwin1.dll" quand on lance l'exécutable généré.
-Trois solutions : 
-	- Soit copier la version "ad hoc" de cygwin1.dll (version 32 bits) sous C:\Windows\SysWOW64
-	- Soit mettre un accès à cette DLL (32 bits) dans le PATH (modification de la variable PATH)
-	- Soit indiquer cette library "cygwin1.dll" dans la liste des DLL avec il faut linker le programme et regenérer l'exécutable.
-
-E) Installation d'une version de MINGW32 "packagée" Winlibs (version GCC 12.2.0 32 bits)
-
-Pour mémoire, j'ai installé la version officielle de Mingw32 avec l'exécutable "mingw-get-setup.exe" sur C:\MingW
-Et, j'ai installé un environnement CMingw32 avec la récupération d'un fichier zip disponible sur : https://winlibs.com/
-Cette archive a pour nom : winlibs-i686-posix-dwarf-gcc-12.2.0-llvm-14.0.6-mingw-w64ucrt-10.0.0-r2.7z, je la décompresse sur
-le répertoire C:\mingw32 (j'ai lu quelque part qu'il fallait conserver ce nom de répertoire), avec une version ucrt.
-On a ainsi installé les dernières versions "packagées" de GCC 12.2.0 + MinGW-w64 9.0.0 + (+ LLVM/Clang/LLD/LLDB llvm-14.0.6 )
-
-Toolchain executables : 
-	C:\mingw32 (puis répertoire \bin)
-	compilateur C : 			gcc.exe
-	compilateur C++ : 			g++.exe
-	linker for dynamic lib : 	g++.exe
-	linker for static lib : 	ar.exe
-	debugger :					gdb.exe
-	resource compiler :			windres.exe
-	make program : 				mingw32-make
-
-Search directories :
-	a) compiler : 			C:\mingw32\i686-w64-mingw32\include
-	b) linker : 			C:\mingw32\i686-w64-mingw32\lib
-	a) resource compiler : 	C:\mingw32\i686-w64-mingw32\include
-
-Tests :
-	a) test n° 1 : 
-		Un programme C standard tout simple, projet stocké sous C:\src\EssaiC\EssaiC.cbp
-		source sous C:\src\EssaiC\EssaiC.c
-		Deux configurations utilisées : "Debug CLANG W32" et "Release CLANG W32"
-		Ok, ca fonctionne avec le compilateur CLANG sous MINGW64 avec GCC 32 bits. 
-		
-	b) test n° 2 :
-		Un programme C++ standard tout simple, projet stocké sous C:\src\EssaiCpp\EssaiCpp.cbp
-		source sous C:\src\EssaiCpp\main.cpp
-		Deux configurations utilisées : "Debug CLANG W32" et "Release CLANG W32"
-		Ok, ca fonctionne avec le compilateur CLANG++ sous MINGW64 avec GCC 32 bits. 
-
-F) Installation d'une version de MINGW64 "packagée" winlibs (version GCC 12.2.0 64 bits)
-
-Je redétaille à nouveau ci-dessous, en me focalisant sur le package 64 bits disponible sur https://winlibs.com/
-Cette archive a pour nom : winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-llvm-14.0.6-mingw-w64ucrt-10.0.0-r2.7z, je la décompresse sur
-le répertoire C:\mingw64 (j'ai lu quelque part qu'il fallait conserver ce nom de répertoire).
-On a ainsi installé les dernières versions "packagées" de GCC 12.2.0 + MinGW-w64 9.0.0 avec une version ucrt ( + LLVM/Clang/LLD/LLDB llvm-14.0.6)
-
-Toolchain executables : 
-	C:\mingw64 (puis répertoire \bin)
-	compilateur C : 			gcc.exe
-	compilateur C++ : 			g++.exe
-	linker for dynamic lib : 	g++.exe
-	linker for static lib : 	ar.exe
-	debugger :					gdb.exe
-	resource compiler :			windres.exe
-	make program : 				mingw32-make
-
-Search directories :
-	a) compiler : 			C:\mingw64\x86_64-w64-mingw32\include
-	b) linker : 			C:\mingw64\x86_64-w64-mingw32\lib
-	a) resource compiler : 	C:\mingw64\x86_64-w64-mingw32\include
-
-Tests :
-	a) test n° 1 : 
-		Un programme C standard tout simple, projet stocké sous C:\src\EssaiC\EssaiC.cbp
-		source sous C:\src\EssaiC\EssaiC.c
-		Deux configurations utilisées : "Debug CLANG W64" et "Release CLANG W64"
-		Ok, ca fonctionne avec le compilateur CLANG sous MINGW64 avec GCC 64 bits. 
-		
-	b) test n° 2 :
-		Un programme C++ standard tout simple, projet stocké sous C:\src\EssaiCpp\EssaiCpp.cbp
-		source sous C:\src\EssaiCpp\main.cpp
-		Deux configurations utilisées : "Debug CLANG W64" et "Release CLANG W64"
-		Ok, ca fonctionne avec le compilateur CLANG++ sous MINGW64 avec GCC 64 bits. 	
+	a) compiler : 			C:\cygwin64\usr\include\w32api 	et/ou C:\cygwin\usr\include
+	b) linker : 			C:\cygwin64\lib\w32api 	 		et/ou C:\cygwin\lib
+	a) resource compiler : 	C:\cygwin64\usr\include\w32api 	et/ou C:\cygwin\usr\include
 			
-G) TDM GCC 32 bits (version officielle, TDM gcc 10.3.0)
+Toolchain executables (pour MinGW32) :
+	C:\cygwin64 (puis répertoire \bin )
+	compilateur C : 			i686-w64-mingw32-gcc.exe 
+	compilateur C++ : 			i686-w64-mingw32-g++.exe
+	linker for dynamic lib : 	i686-w64-mingw32-g++.exe  (idem)
+	linker for static lib : 	i686-w64-mingw32-ar.exe
+	debugger :					gdb.exe
+	resource compiler :			i686-w64-mingw32-windres.exe
+	make program : 				make.exe
+
+Search directories :
+	a) compiler : 			C:\cygwin64\usr\i686-w64-mingw32\sys-root\usr\include\w32api et/ou C:\cygwin\usr\i686-w64-mingw32\sys-root\usr\include
+	b) linker : 			C:\cygwin64\usr\i686-w64-mingw32\sys-root\usr\lib\w32api 	 et/ou C:\cygwin\usr\i686-w64-mingw32\sys-root\usr\lib
+	a) resource compiler : 	C:\cygwin64\usr\i686-w64-mingw32\sys-root\usr\include\w32api et/ou C:\cygwin\usr\i686-w64-mingw32\sys-root\usr\include
+
+Toolchain executables (pour MinGW64) :
+	C:\cygwin64 (puis répertoire \bin )
+	compilateur C : 			x86_64-w64-mingw32-gcc.exe 
+	compilateur C++ : 			x86_64-w64-mingw32-g++.exe
+	linker for dynamic lib : 	x86_64-w64-mingw32-g++.exe  (idem)
+	linker for static lib : 	x86_64-w64-mingw32-ar.exe
+	debugger :					gdb.exe
+	resource compiler :			x86_64-w64-mingw32-windres.exe
+	make program : 				make.exe
+
+Search directories :
+	a) compiler : 			C:\cygwin64\usr\x86_64-w64-mingw32\sys-root\usr\include\w32api et/ou C:\cygwin\usr\x86_64-w64-mingw32\sys-root\usr\include
+	b) linker : 			C:\cygwin64\usr\x86_64-w64-mingw32\sys-root\usr\lib\w32api     et/ou C:\cygwin\usr\x86_64-w64-mingw32\sys-root\usr\lib
+	a) resource compiler : 	C:\cygwin64\usr\x86_64-w64-mingw32\sys-root\usr\include\w32api et/ou C:\cygwin\usr\x86_64-w64-mingw32\sys-root\usr\include
+
+Affichage de la commande : "C:\cygwin64\bin\gcc.exe --version" -> (par défaut, le même exécutable que "x86_64-pc-cygwin-gcc.exe")
+gcc (GCC) 12.4.0
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Cette version "native" du compilateur GCC sert à produire des executables dépendants de la DLL "cygwin1.dll", mais elle 
+permet aussi de produire des exécutables dépendant de la couche graphique X11 par exemple, contrairement aux deux suivants.
+ 
+Affichage de la commande : "C:\cygwin64\bin\i686-w64-mingw32-g++.exe --version"  ->  (pour mémoire)
+i686-w64-mingw32-g++ (GCC) 12.4.0
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Affichage de la commande : "C:\cygwin64\bin\x86_64-w64-mingw32-g++.exe --version"  ->  (pour mémoire)
+i686-w64-mingw32-g++ (GCC) 12.4.0
+Copyright (C) 2021 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Les deux versions MinGW de GCC definissent une variable __MINGW32__ et _WIN32 utilisables en pre-processing.
+La version "native" de GCC ("x86_64-pc-cygwin-gcc.exe") definit une variable __CYGWIN__ utilisable en pre-processing,
+mais ne définit pas de variable __MINGW32__, ni de variable _WIN32.
+
+Attention : Pour le compilateur GCC "natif", il faut prévoir l'accès à la DLL "cygwin1.dll" si vous souhaitez tester 
+		vos résultats. => Il faut donc, pensez à rajouter dans votre PATH le répertoire C:\windows\system32 
+		(si Windows 64 bits et Cygwin 64 bits) ou sous C:\windows\SysWOW64 (si Windows 64 bits mais Cygwin 32 bits,
+		mais attention configuration "unsupported" ... ) 
+
+E) TDM GCC 32 bits (version officielle, TDM gcc 10.3.0)
 
 On télécharge la version officielle sur le site Web SourceForge : https://sourceforge.net/projects/tdm-gcc/files/v10.3.0-tdm-1/
 
@@ -338,36 +402,13 @@ Search directories :
 	b) linker : 			C:\TDM-GCC-32\lib
 	a) resource compiler : 	C:\TDM-GCC-32\include 
 
-Utilisation de la commande : "g++.exe -v" ->
-Utilisation des specs internes.
-COLLECT_GCC=g++.exe
-COLLECT_LTO_WRAPPER=C:/TDM-GCC-32/bin/../libexec/gcc/mingw32/10.3.0/lto-wrapper.exe
-Cible : mingw32
-Configuré avec: ../../../src/gcc-git-10.3.0/configure --build=mingw32 --enable-languages=ada,c,c++,fortran,jit,lto,objc,obj-c++ 
---enable-libgomp --enable-lto --enable-graphite --enable-libstdcxx-debug --enable-threads=posix --enable-version-specific-runtime-libs 
---enable-fully-dynamic-string --enable-libstdcxx-threads --disable-build-format-warnings --with-gnu-ld --disable-werror 
---enable-nls --enable-mingw-wildcard --disable-win32-registry --disable-symvers --enable-large-address-aware 
---enable-cxx-flags='-fno-function-sections -fno-data-sections -DWINPTHREAD_STATIC' --enable-libstdcxx-filesystem-ts=yes 
---enable-libstdcxx-time=yes --enable-checking=release --prefix=/mingw32tdm --with-local-prefix=/mingw32tdm 
---with-pkgversion=tdm-1 --enable-sjlj-exceptions --with-bugurl=https://github.com/jmeubank/tdm-gcc/issues
-Modèle de thread: posix
-Algorithmes de compression LTO supportés: zlib zstd
-gcc version 10.3.0 (tdm-1)
-
-Tests :
-	a) test n° 1 : 
-		Un programme C standard tout simple, projet stocké sous C:\src\EssaiC\EssaiC.cbp
-		source sous C:\src\EssaiC\EssaiC.c
-		Deux configurations utilisées : "Debug TDM 32" et "Release TDM 32"
-		Ok, ca fonctionne avec le compilateur gcc de TDM en 64bits.
+Utilisation de la commande : "g++.exe --version" ->
+g++ (tdm-1) 10.3.0
+Copyright © 2020 Free Software Foundation, Inc.
+Ce logiciel est un logiciel libre; voir les sources pour les conditions de copie.  Il n'y a
+AUCUNE GARANTIE, pas même pour la COMMERCIALISATION ni L'ADÉQUATION À UNE TÂCHE PARTICULIÈRE.
 		
-	b) test n° 2 :
-		Un programme C++ standard tout simple, projet stocké sous C:\src\EssaiCpp\EssaiCpp.cbp
-		source sous C:\src\EssaiCpp\main.cpp
-		Deux configurations utilisées : "Debug TDM 32" et "Release TDM 32"
-		Ok, ca fonctionne avec le compilateur gcc de TDM en 64bits.
-		
-H) TDM GCC 64 bits (version officielle, TDM gcc 10.3.0)
+F) TDM GCC 64 bits (version officielle, TDM gcc 10.3.0)
 
 On télécharge la version officielle sur le site Web SourceForge : https://sourceforge.net/projects/tdm-gcc/files/v10.3.0-tdm64-1/
 
@@ -389,45 +430,23 @@ Search directories :
 	a) resource compiler : 	C:\TDM-GCC-64\x86_64-w64-mingw32\include 
 
 Affichage de la commande : "g++.exe -v" ->
-Utilisation des specs internes.
-COLLECT_GCC=g++.exe
-COLLECT_LTO_WRAPPER=C:/TDM-GCC-64/bin/../libexec/gcc/x86_64-w64-mingw32/10.3.0/lto-wrapper.exe
-Cible : x86_64-w64-mingw32
-Configuré avec: ../../../src/gcc-git-10.3.0/configure --build=x86_64-w64-mingw32 --enable-targets=all 
---enable-languages=ada,c,c++,fortran,jit,lto,objc,obj-c++ --enable-libgomp --enable-lto --enable-graphite 
---enable-cxx-flags=-DWINPTHREAD_STATIC --disable-build-with-cxx --disable-build-poststage1-with-cxx 
---enable-libstdcxx-debug --enable-threads=posix --enable-version-specific-runtime-libs --enable-fully-dynamic-string 
---enable-libstdcxx-filesystem-ts=yes --disable-libstdcxx-pch --enable-libstdcxx-threads --enable-libstdcxx-time=yes 
---enable-mingw-wildcard --with-gnu-ld --disable-werror --enable-nls --disable-win32-registry --enable-large-address-aware 
---disable-rpath --disable-symvers --prefix=/mingw64tdm --with-local-prefix=/mingw64tdm --with-pkgversion=tdm64-1 
---with-bugurl=https://github.com/jmeubank/tdm-gcc/issues
-Modèle de thread: posix
-Algorithmes de compression LTO supportés: zlib zstd
-gcc version 10.3.0 (tdm64-1)
+g++ (tdm64-1) 10.3.0
+Copyright © 2020 Free Software Foundation, Inc.
+Ce logiciel est un logiciel libre; voir les sources pour les conditions de copie.  Il n'y a
+AUCUNE GARANTIE, pas même pour la COMMERCIALISATION ni L'ADÉQUATION À UNE TÂCHE PARTICULIÈRE.
 
-Tests :
-	a) test n° 1 : 
-		Un programme C standard tout simple, projet stocké sous C:\src\EssaiC\EssaiC.cbp
-		source sous C:\src\EssaiC\EssaiC.c
-		Deux configurations utilisées : "Debug TDM 64" et "Release TDM 64"
-		Ok, ca fonctionne avec le compilateur gcc de TDM en 64bits.
-		
-	b) test n° 2 :
-		Un programme C++ standard tout simple, projet stocké sous C:\src\EssaiCpp\EssaiCpp.cbp
-		source sous C:\src\EssaiCpp\main.cpp
-		Deux configurations utilisées : "Debug TDM 64" et "Release TDM 64"
-		Ok, ca fonctionne avec le compilateur gcc de TDM en 64bits.
-
-I) Installation de MINGW64 et de MINGW32 version GCC 12.2.0 (et de CLANG aussi en version 15.0.0)) avec l'outil MSYS2
+G) Installation de MINGW64 et de MINGW32 version GCC 14.2.0 (et de CLANG aussi en version 18.0.8) avec l'outil MSYS2
 
 La version officielle est téléchargeable sur le site Web : https://www.msys2.org/
-Le fichier de téléchargement est le suivant (à date) : msys2-x86_64-20220603.exe
+Le fichier de téléchargement est le suivant (à date) : msys2-x86_64-20240727.exe (version souvent mise à jour).
 
-J'ai été conquis par cette nouvelle installation de MSYS qui historiquement était plutôt lié à CYGWIN.
+J'ai été conquis par cette nouvelle installation de MSYS2 qui historiquement était plutôt lié à CYGWIN.
 En effet, il est très facile de la mettre à niveau avec l'utilitaire fourni PACMAN, et la version de GCC en 32 bits ou 64 bits
 est vraiment la plus à jour possible  -> commande "magique" de mise à jour dans une console MSYS2 : "pacman -Syuu"
  
-Prérequis : on installe MSYS2 sur le répertoire suivant : C:\msys64 (par exemple)
+Prérequis : on installe MSYS2 sur le répertoire suivant : C:\msys64 (par exemple) et sous CB, il faut dupliquer le compilateur
+MINGW afin de pouvoir créer les deux instances de compilateurs en version 32 et en version 64 bits. Parfois, ces versions sont
+détectées par défaut. 
 			
 Toolchain executables : 
 	C:\msys64\mingw32  (puis répertoire \bin ,    ou alors C:\msys64\mingw64 si c'est la configuration X64 qui est recherchée)
@@ -440,82 +459,53 @@ Toolchain executables :
 	make program : 				mingw32-make.exe
 
 Search directories :
-	a) compiler : 			C:\msys64\mingw32\include  (ou alors C:\msys64\mingw64\include si option X64)
-	b) linker : 			C:\msys64\mingw32\lib      (ou alors C:\msys64\mingw64\lib si option X64)
-	a) resource compiler : 	C:\msys64\mingw32\include  (ou alors C:\msys64\mingw64\include si option X64)
+	a) compiler : 			C:\msys64\mingw32\i686-w64-mingw32\include  et C:\msys64\mingw32\include 
+							(ou C:\msys64\mingw64\x86_64-w64-mingw32\include et C:\msys64\mingw64\include	si option x64)
+	b) linker : 			C:\msys64\mingw32\i686-w64-mingw32\lib      et C:\msys64\mingw32\lib 
+							(ou C:\msys64\mingw64\x86_64-w64-mingw32\lib 	  et C:\msys64\mingw64\lib 	    si option x64)
+	a) resource compiler : 	C:\msys64\mingw32\i686-w64-mingw32\include  et C:\msys64\mingw32\include 
+							(ou C:\msys64\mingw64\x86_64-w64-mingw32\include  et C:\msys64\mingw64\include  si option x64)
 
-Affichage de la commande : "g++.exe -v" pour mingw32 ->
-Using built-in specs.
-COLLECT_GCC=gcc
-COLLECT_LTO_WRAPPER=C:/msys64/mingw32/bin/../lib/gcc/i686-w64-mingw32/12.2.0/lto-wrapper.exe
-Target: i686-w64-mingw32
-Configured with: ../gcc-11.2.0/configure --prefix=/mingw32 --with-local-prefix=/mingw32/local --build=i686-w64-mingw32 --host=i686-w64-mingw32
- --target=i686-w64-mingw32 --with-native-system-header-dir=/mingw32/include --libexecdir=/mingw32/lib --enable-bootstrap --enable-checking=release
- --with-arch=i686 --with-tune=generic --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic
- --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch
- --disable-libstdcxx-debug --enable-lto --enable-libgomp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror 
- --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/mingw32 --with-mpfr=/mingw32 --with-mpc=/mingw32 --with-isl=/mingw32 
- --with-pkgversion='Rev10, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld 
- --with-boot-ldflags='-pipe -Wl,--no-seh -Wl,--large-address-aware -Wl,--disable-dynamicbase -static-libstdc++ -static-libgcc' 
- 'LDFLAGS_FOR_TARGET=-pipe -Wl,--no-seh -Wl,--large-address-aware' --enable-linker-plugin-flags='LDFLAGS=-static-libstdc++\ -static-libgcc\ 
- -pipe\ -Wl,--no-seh\ -Wl,--large-address-aware\ -Wl,--stack,12582912' --disable-sjlj-exceptions --with-dwarf2
-Thread model: posix
-Supported LTO compression algorithms: zlib zstd
-gcc version 12.2.0 (Rev10, Built by MSYS2 project)
+Affichage de la commande : "g++.exe --version" pour mingw32 ->
+g++ (Rev1, Built by MSYS2 project) 14.2.0
+Copyright (C) 2024 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-Affichage de la commande : "g++.exe -v" pour mingw64 ->
-Using built-in specs.
-COLLECT_GCC=gcc
-COLLECT_LTO_WRAPPER=C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/lto-wrapper.exe
-Target: x86_64-w64-mingw32
-Configured with: ../gcc-11.2.0/configure --prefix=/mingw64 --with-local-prefix=/mingw64/local --build=x86_64-w64-mingw32 --host=x86_64-w64-mingw32
- --target=x86_64-w64-mingw32 --with-native-system-header-dir=/mingw64/include --libexecdir=/mingw64/lib --enable-bootstrap --enable-checking=release
- --with-arch=x86-64 --with-tune=generic --enable-languages=c,lto,c++,fortran,ada,objc,obj-c++,jit --enable-shared --enable-static --enable-libatomic
- --enable-threads=posix --enable-graphite --enable-fully-dynamic-string --enable-libstdcxx-filesystem-ts --enable-libstdcxx-time --disable-libstdcxx-pch
- --disable-libstdcxx-debug --enable-lto --enable-libgomp --disable-multilib --disable-rpath --disable-win32-registry --disable-nls --disable-werror
- --disable-symvers --with-libiconv --with-system-zlib --with-gmp=/mingw64 --with-mpfr=/mingw64 --with-mpc=/mingw64 --with-isl=/mingw64 
- --with-pkgversion='Rev10, Built by MSYS2 project' --with-bugurl=https://github.com/msys2/MINGW-packages/issues --with-gnu-as --with-gnu-ld 
- --with-boot-ldflags='-pipe -Wl,--disable-dynamicbase -static-libstdc++ -static-libgcc' LDFLAGS_FOR_TARGET=-pipe 
- --enable-linker-plugin-flags='LDFLAGS=-static-libstdc++\ -static-libgcc\ -pipe\ -Wl,--stack,12582912'
-Thread model: posix
-Supported LTO compression algorithms: zlib zstd
-gcc version 12.2.0 (Rev10, Built by MSYS2 project)
-
-Tests :
-	a) test n° 1 : 
-		Un programme C standard tout simple, projet stocké sous C:\src\EssaiC\EssaiC.cbp
-		source sous C:\src\EssaiC\EssaiC.c
-		Deux configurations utilisées : "Debug Msys2w64" et "Release Msys2w64"
-		Ok, ca fonctionne avec le compilateur GCC de Mingw64. 
+Affichage de la commande : "g++.exe --version" pour mingw64 ->
+g++ (Rev1, Built by MSYS2 project) 14.2.0
+Copyright (C) 2024 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 		
-	b) test n° 2 :
-		Un programme C++ standard tout simple, projet stocké sous C:\src\EssaiCpp\EssaiCpp.cbp
-		source sous C:\src\EssaiCpp\main.cpp
-		Deux configurations utilisées : "Debug Msys2w64" et "Release Msys2w64"
-		Ok, ca fonctionne avec le compilateur GCC de Mingw64. 
-		
-J) VS2022 (version Visual C++) (32 bits)
+H) VS2022 (version Visual C++) (32 bits)
 
 La version installée de Visual Studio est la version "Community" 64 bits disponible en freeware sur le site M$.
 
 Prérequis : on installe VS2022 sur le répertoire proposé par défaut : C:\Program Files\Microsoft Visual Studio\2022\Community\
 	Et, ne pas oublier d'installer aussi le dernier SDK de M$ pour la version Windows 11 dans C:\Program Files (x86)\Windows Kits\10
-	Il y a aussi une installation en sus de "Visual Studio Installer" qui permet par la suite, les configurations
-	et les mises à jour "automatiques" de cet IDE via cet outil.
+	Il y a aussi une installation en sus de "Visual Studio Installer" qui permet par la suite, les configurations et les mises 
+	à jour "automatiques" de cet IDE via cet outil.
 	Attention, en cas d'upgrade de Visual Studio, il faudra reprendre les configurations des "Search Directories" indiquées 
-	ci dessous. Les n° évoluants, il faut reprendre l'affectation de chaque répertoire (merci M$, ?§!/!?).
-	J'ai donc affecté des variables d'environnement pour gérer (plus facilement !) ces évolutions :
-		KIT_WIN_NUM  valant à date 		10.0.22621.0
-		KIT_WIN_VERSION  valant à date 	10
-		VS_NUM valant à date			14.33.31629
+	ci dessous. Les n° de version évoluants, il faut reprendre l'affectation de chaque répertoire (merci M$, GRRRRRR ?§!/!?).
+	Pour éviter cela, j'ai décidé d'affecter plusieurs variables d'environnement pour gérer (plus facilement !) ces évolutions :
+		KIT_WIN_VERSION valant à date 	10
+		KIT_WIN_NUM valant à date 		10.0.22621.0
 		VS_VERSION valant à date		2022
-		
+		VS_NUM valant à date			14.41.34120
+
+
+J'ai configuré les deux possibilitès de compilation en version X86 et X64 pour deux déclinaisons différentes de ce compilateur VS2022 sous CB,
+en mettant les bonnes options de compilation et d'édition des liens dans la configuration globale de CB (celle définit dans le menu "Settings" 
+puis "Compilers") :
+    /MACHINE:X86 ou /MACHINE:X64 pour les deux identifiants différents de "compilateurs" définis dans CB.
+	
 Toolchain executables : 
-	C:\Program Files (x86)\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\bin\Hostx86\x86
+	C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\bin\Hostx86\x86
 	compilateur C : 			cl.exe  
 	compilateur C++ : 			cl.exe  
 	linker for dynamic lib : 	link.exe  
-	linker for static lib : 	link.exe 
+	linker for static lib : 	lib.exe 
 	debugger :					?
 	resource compiler :			rc.exe
 	make program : 				nmake.exe
@@ -533,34 +523,21 @@ Search directories :
 							C:\Program Files (X86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\ucrt      puis
 							C:\Program Files (X86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\um		  puis
 							C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\include							
-	
-Tests :
-	a) test n° 1 : 
-		Un programme C standard tout simple, projet stocké sous C:\src\EssaiC\EssaiC.cbp
-		source sous C:\src\EssaiC\EssaiC.c
-		Deux configurations utilisées : "Debug VS2022 X32" et "Release VS2022 X32"
-		Ok, ca fonctionne avec le compilateur C de Microsoft de VS2019.
-		
-	b) test n° 2 :
-		Un programme C++ standard tout simple, projet stocké sous C:\src\EssaiCpp\EssaiCpp.cbp
-		source sous C:\src\EssaiCpp\main.cpp
-		Deux configurations utilisées : "Debug VS2022 X32" et "Release VS2022 X32"
-		Ok, ca fonctionne avec le compilateur C de Microsoft de VS2005.
 
-K) VS2022 (version Visual C++ ) (64 bits) 
+I) VS2022 (version Visual C++ ) (64 bits) 
 
-En fait, il s'agit d'une configuration de VS2022 déjà installé pour l'usage d'exécutables en version 64 bits et non en 32 bits
+En fait, il s'agit d'une configuration de VS2022 déjà installé pour la génération d'exécutables en version 64 bits et non en 32 bits
 
 Prérequis : les mêmes que pour l'installation précédente.	
-		Il faut juste rajouter /MACHINE:X64 dans les options du linker au niveau "global" de CB (dans la configuration "compilers").
+		Il faut juste ajuster /MACHINE:X64 dans les options du linker au niveau "global" de CB (dans la configuration "compilers").
 		Et aussi reprendre la même remarque que ci-dessus, en cas de changement de version ...   Merci qui ?
 			
 Toolchain executables : 
-	C:\Program Files (x86)\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\bin\Hostx64\x64
+	C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\bin\Hostx64\x64
 	compilateur C : 			cl.exe  
 	compilateur C++ : 			cl.exe  
 	linker for dynamic lib : 	link.exe  
-	linker for static lib : 	link.exe 
+	linker for static lib : 	lib.exe 
 	debugger :					?
 	resource compiler :			rc.exe
 	make program : 				nmake.exe
@@ -571,32 +548,35 @@ Search directories :
 							C:\Program Files (X86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\um		  puis
 							C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\include
 	b) linker : 			C:\Program Files (X86)\Windows Kits\%KIT_WIN_VERSION%\lib\%KIT_WIN_NUM%\um\x64		  puis
-							C:\Program Files (x86)\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x64
+							C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x64
 							C:\Program Files (X86)\Windows Kits\%KIT_WIN_VERSION%\lib\%KIT_WIN_NUM%\ucrt\x64	  puis
 							C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x64\store
 	a) resource compiler : 	C:\Program Files (X86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\shared    puis 
 							C:\Program Files (X86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\ucrt      puis
 							C:\Program Files (X86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\um		  puis
 							C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\include								
-Tests :
-	a) test n° 1 : 
-		Un programme C standard tout simple, projet stocké sous C:\src\EssaiC\EssaiC.cbp
-		source sous C:\src\EssaiC\EssaiC.c
-		Deux configurations utilisées : "Debug VS2022 X64" et "Release VS2022 X64"
-		Ok, ca fonctionne avec le compilateur C 64 bits VS2022 de Microsoft.
-		
-	b) test n° 2 :
-		Un programme C++ standard tout simple, projet stocké sous C:\src\EssaiCpp\EssaiCpp.cbp
-		source sous C:\src\EssaiCpp\main.cpp
-		Deux configurations utilisées : "Debug VS2022 X64" et "Release VS2022 X64"
-		Ok, ca fonctionne avec le compilateur C 64 bits VS2022 de Microsoft.
 
-L) Borland C/C++ (version 5.5)(32 bits)
+Les deux commandes montrent les resultats suivants :
+
+"C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\bin\Hostx86\x86\cl"
+Compilateur d'optimisation Microsoft (R) C/C++ version 19.41.34120 pour x86
+Copyright (C) Microsoft Corporation. Tous droits réservés.
+
+utilisation : cl [ option... ] nom de fichier... [ /link linkoption... ]
+
+"C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\bin\Hostx64\x64\cl"
+Compilateur d'optimisation Microsoft (R) C/C++ version 19.41.34120 pour x64
+Copyright (C) Microsoft Corporation. Tous droits réservés.
+
+utilisation : cl [ option... ] nom de fichier... [ /link linkoption... ]
+
+J) Borland C/C++ (version 5.5.1)(32 bits uniquement)
 
 Celui de la version officielle site Web : https://www.embarcadero.com/fr/free-tools/ccompiler/free-download
 Il faut quand même s'identifier pour obtenir cette version free ... fichier telechargé : BorlandCPP.zip
 
-Prérequis : on installe ce produit Borland (repris depuis par Embarcadero) sur le répertoire C:\BCC55 (par exemple, j'ai supprimé le répertoire BORLAND).
+Prérequis : on installe ce produit Borland (repris depuis par Embarcadero) sur le répertoire C:\BCC55 (j'ai supprimé un niveau 
+	du répertoire proposé C:\BORLAND\BCC55).
 			
 Toolchain executables : 
 	C:\BCC55 (puis répertoire \bin)
@@ -612,21 +592,8 @@ Search directories :
 	a) compiler : 			C:\BCC55\include	
 	b) linker : 			C:\BCC55\lib\psdk et C:\BCC55\lib
 	a) resource compiler : 	C:\BCC55\include
-	
-Tests :
-	a) test n° 1 : 
-		Un programme C standard tout simple, projet stocké sous C:\src\EssaiC\EssaiC.cbp
-		source sous C:\src\EssaiC\EssaiC.c
-		Deux configurations utilisées : "Debug Borland" et "Release Borland"
-		Ok, ca fonctionne avec le compilateur Digital Mars Compiler.
-		
-	b) test n° 2 :
-		Un programme C++ standard tout simple, projet stocké sous C:\src\EssaiCpp\EssaiCpp.cbp
-		source sous C:\src\EssaiCpp\main.cpp
-		Deux configurations utilisées : "Debug Borland" et "Release Borland"
-		Ok, ca fonctionne avec le compilateur Digital Mars Compiler.
 
-M) Digital Mars Compiler (version 8.57)(32 bits)
+K) Digital Mars Compiler (version 8.57c)(32 bits)
 
 Celui de la version officielle site Web : https://digitalmars.com/download/freecompiler.html
 Il faut non seulement téléchargé le compilateur mais aussi les STLPORT et les utilitaires (BUP) :
@@ -635,8 +602,9 @@ Il faut non seulement téléchargé le compilateur mais aussi les STLPORT et les ut
 Hypothèses : on installe Digital Mars Compiler sur le répertoire proposé par défaut C:\dm
 	Point d'attention, pour les applications graphiques sous OpenGL, il faut reconstruire les librairies et les DLL spécifiques 
 	à ce compilateur, ainsi que déposer aux endroits "ad hoc" les fichiers d'include correspondants.
-	J'ai donc du refabriquer ces librairies et ces DLL en m'aidant de l'utilitaire IMPLIB de Borland C/C++... Galère !!!
-	Exemples de fichiers manquants : glaux.h, glext.h, glu32.lib, opengl32.lib, glut.h, glut.lib/glut32.lib.
+	J'ai ensuite dû refabriquer ces librairies et ces DLL en m'aidant de l'utilitaire IMPLIB de Borland C/C++... car ces librairies
+	sont au format OMF et non au format COFF (un peu modifié par M$ comme d'habitude ... !!!). Galère !!!
+	Exemples de fichiers manquants : glaux.h, glext.h, glu32.lib, opengl32.lib, glut.h, glut.lib et glut32.lib.
 			
 Toolchain executables : 
 	C:\dm (puis répertoire \bin)
@@ -646,34 +614,21 @@ Toolchain executables :
 	linker for static lib : 	lib.exe
 	debugger :					 
 	resource compiler :			rcc.exe
-	make program : 				make.exe (voir si mingw32-make ne ferait pas mieux l'affaire)
+	make program : 				make.exe (voir si mingw32-make ne ferait pas mieux l'affaire, mais CMAKE sait utiliser cette version)
 
 Search directories :
-	a) compiler : 			C:\dm\include\win32 puis C:\dm\stlport\stlport et enfin C:\dm\include	
+	a) compiler : 			C:\dm\include\win32 puis C:\dm\stlport\stlport (si vous souhaitez utiliser C++) et enfin C:\dm\include	
 	b) linker : 			C:\dm\lib
 	a) resource compiler : 	C:\dm\include\win32 puis C:\dm\include
-	
-Tests :
-	a) test n° 1 : 
-		Un programme C standard tout simple, projet stocké sous C:\src\EssaiC\EssaiC.cbp
-		source sous C:\src\EssaiC\EssaiC.c
-		Deux configurations utilisées : "Debug DMC" et "Release DMC"
-		Ok, ca fonctionne avec le compilateur Digital Mars Compiler.
-		
-	b) test n° 2 :
-		Un programme C++ standard tout simple, projet stocké sous C:\src\EssaiCpp\EssaiCpp.cbp
-		source sous C:\src\EssaiCpp\main.cpp
-		Deux configurations utilisées : "Debug DMC" et "Release DMC"
-		Ok, ca fonctionne avec le compilateur Digital Mars Compiler.
 
-O) lcc (version 3.8) (32 bits)
+L) lcc (version 3.8) (32 bits)
 
 Celui de la version officielle site Web : https://lcc-win32.fr.uptodown.com/windows
 
-Prérequis : on installe lcc sur le répertoire proposé par défaut C:\lcc
+Prérequis : on installe lcc sur le répertoire  C:\lcc
 			
 Toolchain executables : 
-	C:\lcc (puis répertoire \bin, on peut installer d'abord la version 32 bits puis la version 64 bits)
+	C:\lcc32 (puis répertoire \bin, on peut installer d'abord la version 32 bits puis la version 64 bits)
 	compilateur C : 			lcc.exe  
 	compilateur C++ : 			inexistant avec ce compilateur, par défaut lcc.exe   
 	linker for dynamic lib : 	lcclnk.exe  
@@ -683,30 +638,18 @@ Toolchain executables :
 	make program : 				make.exe
 
 Search directories :
-	a) compiler : 			C:\lcc\include 
-	b) linker : 			C:\lcc\lib
-	a) resource compiler : 	C:\lcc\include  
+	a) compiler : 			C:\lcc32\include 
+	b) linker : 			C:\lcc32\lib
+	a) resource compiler : 	C:\lcc32\include  
 
 Affichage de la commande : "lcc.exe -v"  ->
 Logiciels/Informatique lcc-win32 version 3.8. Compilation date: Mar 29 2013 13:11:27
-	
-Tests :
-	a) test n° 1 : 
-		Un programme C standard tout simple, projet stocké sous C:\src\EssaiC\EssaiC.cbp
-		source sous C:\src\EssaiC\EssaiC.c
-		Deux configurations utilisées : "Debug lcc" et "Release lcc"
-		Ok, ca fonctionne avec le compilateur lcc.
 		
-	b) test n° 2 :
-		Un programme C++ standard tout simple, projet stocké sous C:\src\EssaiCpp\EssaiCpp.cbp
-		source sous C:\src\EssaiCpp\main.cpp
-		Le compilateur lcc ne gère pas le C++. Non OK.
-		
-P) lcc64 (version 4.1) (64 bits) : celui de la version officielle site Web
+M) lcc64 (version 4.1) (64 bits) : celui de la version officielle site Web
 
 Celui de la version officielle site Web : https://lcc-win32.fr.uptodown.com/windows
 
-Prérequis : on installe lcc64 sur le répertoire proposé par défaut.
+Prérequis : on installe lcc64 sur le répertoire proposé par défaut C:\lcc64
 	On fait une copie de la configuration lcc vers lcc 64 dans "Global Compiler Settings" et on renomme par exemple en "LCC 64"
 			
 Toolchain executables : 
@@ -727,31 +670,21 @@ Search directories :
 Affichage de la commande : "lcc64.exe -v" ->
 Logiciels/Informatique lcc-win (64 bits) version 4.1.
 Compilation date: Oct 27 2016 16:34:50
-	
-Tests :
-	a) test n° 1 : 
-		Un programme C standard tout simple, projet stocké sous C:\src\EssaiC\EssaiC.cbp
-		source sous C:\src\EssaiC\EssaiC.c
-		Deux configurations utilisées : "Debug lcc64" et "Release lcc64"
-		Ok, ca fonctionne avec le compilateur lcc64.
-		
-	b) test n° 2 :
-		Un programme C++ standard tout simple, projet stocké sous C:\src\EssaiCpp\EssaiCpp.cbp
-		source sous C:\src\EssaiCpp\main.cpp
-		Le compilateur lcc64 ne gère pas le C++. Non OK.
 
-Q) Open WATCOM (version 2.0-2017-11-01) (version 32/64 bits)
+N) Open WATCOM (version 2.0c-2024-05-14) (version 32/64 bits continuellement remise à jour par une chaîne CI sur GitHub)
 
-Version officielle téléchargée sur le site Web de SourceForge : https://sourceforge.net/projects/openwatcom/files/open-watcom-2.0-2017-11-01/
+Version téléchargée sur le site Web GitHub : https://github.com/open-watcom/open-watcom-v2/releases/tag/Current-build)
 
-Prérequis : on installe Open WATCOM sur le répertoire proposé par défaut C:\Watcom.
-Normalement détecté par défaut dans Code//Blocks : "OpenWatcom (W32) Compiler"
+Prérequis : on installe "open-watcom-2_0-c-win-x64.exe" sur le répertoire proposé par défaut C:\Watcom, normalement détecté par défaut dans Code::Blocks : 
+"OpenWatcom (W32) Compiler" 
 J'ai configuré les deux possibilitès de compilation en version X86 et X64 pour deux déclinaisons différentes de ce compilateur sous CB,
-en mettant les bonnes options de compilation et d'édition des liens dans la configuration globale de CB (celle définit dans le menu "Settings" puis "Compilers"):
+en mettant les bonnes options de compilation et d'édition des liens dans la configuration globale de CB (celle définit dans le menu "Settings" 
+puis "Compilers"):
     /MACHINE=X86 ou /MACHINE=X64 pour deux identifiants différents de "compilateurs".
 			
 Toolchain executables : 
-	C:\WATCOM (puis répertoire \binnt  ou \binnt64 pour la version X64 <- Attention, il doit être présent dans les répertoires supplémentaires à configurer en sus dans Code::Blocks)
+	C:\WATCOM (puis répertoire \binnt  ou \binnt64 pour la version X64 <- Attention, il doivent être présents dans les répertoires supplémentaires 
+		pour les binaires à configurer en sus dans Code::Blocks)
 	compilateur C : 			wcl386.exe
 	compilateur C++ : 			wcl386.exe
 	linker for dynamic lib : 	wlink.exe
@@ -767,23 +700,10 @@ Search directories :
 							C:\WATCOM\lib386
 	a) resource compiler : 	C:\WATCOM\h\nt    puis
 							C:\WATCOM\h
-	
-Tests :
-	a) test n° 1 : 
-		Un programme C standard tout simple, projet stocké sous C:\src\EssaiC\EssaiC.cbp
-		source sous C:\src\EssaiC\EssaiC.c
-		Deux configurations utilisées : "Debug Open WATCOM" et "Release Open WATCOM"
-		Ok, ca fonctionne avec le compilateur Open WATCOM.
-		
-	b) test n° 2 :
-		Un programme C++ standard tout simple, projet stocké sous C:\src\EssaiCpp\EssaiCpp.cbp
-		source sous C:\src\EssaiCpp\main.cpp
-		Deux configurations utilisées : "Debug Open WATCOM" et "Release Open WATCOM"
-		Ok, ca fonctionne avec le compilateur Open WATCOM.
 
-Attention : l'usage du compilateur WATCOM en 64 bits ne fonctionne pas toujours, pour les DLL notamment.
+Attention : l'usage du compilateur WATCOM en version 64 bits ne génère que des exécutables en 32 bits.
 
-R) Pelles C (version 11.0) (32 bits et 64 bits)
+O) Pelles C (version 12.0) (32 bits et 64 bits)
 
 Une version officielle téléchargeable sur le site Web : http://www.smorgasbordet.com/pellesc/
 
@@ -810,27 +730,16 @@ Search directories :
 							C:\PellesC\lib 
 	a) resource compiler : 	C:\PellesC\include\Win 	puis 
 							C:\PellesC\include   
-				
-Tests :
-	a) test n° 1 : 
-		Un programme C standard tout simple, projet stocké sous C:\src\EssaiC\EssaiC.cbp
-		source sous C:\src\EssaiC\EssaiC.c
-		Deux configurations utilisées : "Debug Pelles C" et "Release Pelles C"
-		Ok, ca fonctionne avec le compilateur Pelles C.
-		
-	b) test n° 2 :
-		Un programme C++ standard tout simple, projet stocké sous C:\src\EssaiCpp\EssaiCpp.cbp
-		source sous C:\src\EssaiCpp\main.cpp
-		Deux configurations utilisées : "Debug Pelles C" et "Release Pelles C"
-		Le compilateur Pelles C ne gère pas le C++. Non OK.
 
-S) Installation de CLANG 32 bits (version llvm-14.0.6) avec une version de MINGW32 "packagée" Winlibs (version GCC 12.2.0 32 bits)
+P) Installation de CLANG 32 bits (version 18.1.5) avec une version de MINGW32 "packagée" Winlibs (version GCC 14.1.0 32 bits)
 
 Pour mémoire, j'ai installé la version officielle de Mingw32 avec l'exécutable "mingw-get-setup.exe" sur C:\MingW
 Et, j'ai installé un environnement CLANG complet avec Mingw32 avec la récupération d'un fichier zip disponible sur : https://winlibs.com/
-Cette archive a pour nom : winlibs-i686-posix-dwarf-gcc-12.2.0-llvm-llvm-14.0.6-mingw-w64ucrt-10.0.0-r2.7z, je la décompresse sur
-le répertoire C:\mingw32 (j'ai lu quelque part qu'il fallait conserver ce nom de répertoire), avec une version ucrt.
-On a ainsi installé les dernières versions "packagées" de GCC 12.2.0 + LLVM/Clang/LLD/LLDB 14.0.6 + MinGW-w64 9.0.0
+
+Cette archive a pour nom : winlibs-i686-posix-dwarf-gcc-14.2.0-llvm-19.1.1-mingw-w64ucrt-12.0.0-r2.7z (attention ce nom change
+à chaque évolution), et je la décompresse surle répertoire C:\mingw32 (j'ai lu quelque part qu'il fallait conserver ce nom de répertoire), 
+avec une version du runtime C en "ucrt".
+On a ainsi installé les dernières versions "packagées" de GCC 14.2.0 + LLVM/Clang/LLD/LLDB 19.1.1 + MinGW-w64 12.0.0 en 32 bits.
 
 Toolchain executables : 
 	C:\mingw32 (puis répertoire \bin)
@@ -840,33 +749,20 @@ Toolchain executables :
 	linker for static lib : 	llvm-ar.exe
 	debugger :					gdb.exe
 	resource compiler :			windres.exe
-	make program : 				?
+	make program : 				mingw32-make.exe
 
 Search directories :
-	a) compiler : 			C:\mingw32\i686-w64-mingw32\include
-	b) linker : 			C:\mingw32\i686-w64-mingw32\lib
-	a) resource compiler : 	C:\mingw32\i686-w64-mingw32\include
+	a) compiler : 			C:\mingw32\i686-w64-mingw32\include et C:\mingw32\include
+	b) linker : 			C:\mingw32\i686-w64-mingw32\lib		et C:\mingw32\lib
+	a) resource compiler : 	C:\mingw32\i686-w64-mingw32\include et C:\mingw32\include
 
-Tests :
-	a) test n° 1 : 
-		Un programme C standard tout simple, projet stocké sous C:\src\EssaiC\EssaiC.cbp
-		source sous C:\src\EssaiC\EssaiC.c
-		Deux configurations utilisées : "Debug CLANG W32" et "Release CLANG W32"
-		Ok, ca fonctionne avec le compilateur CLANG sous MINGW64 avec GCC 32 bits. 
-		
-	b) test n° 2 :
-		Un programme C++ standard tout simple, projet stocké sous C:\src\EssaiCpp\EssaiCpp.cbp
-		source sous C:\src\EssaiCpp\main.cpp
-		Deux configurations utilisées : "Debug CLANG W32" et "Release CLANG W32"
-		Ok, ca fonctionne avec le compilateur CLANG++ sous MINGW64 avec GCC 32 bits. 
+Q) Installation de CLANG 64 bits (version 18.1.5) avec une version de MINGW64 "packagée" Winlibs (version GCC 14.1.0 64 bits)
 
-T) Installation de CLANG 64 bits (version llvm-14.0.6) avec une version de MINGW64 "packagée" winlibs (version GCC 12.2.0 64 bits)
+Je re-détaille à nouveau ci-dessous, en me focalisant sur le package 64 bits disponible sur https://winlibs.com/
 
-Je redétaille à nouveau ci-dessous, en me focalisant sur le package 64 bits disponible sur https://winlibs.com/
-
-Cette archive a pour nom : winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-llvm-14.0.6-mingw-w64ucrt-10.0.0-r2.7z, je la décompresse sur
+Cette archive a pour nom : winlibs-x86_64-posix-seh-gcc-14.2.0-llvm-19.1.1-mingw-w64ucrt-12.0.0-r2.7z, je la décompresse sur
 le répertoire C:\mingw64 (j'ai lu quelque part qu'il fallait conserver ce nom de répertoire).
-On a ainsi installé les dernières versions "packagées" de GCC 12.1.0 + LLVM/Clang/LLD/LLDB 14.0.6 + MinGW-w64 9.0.0 avec une version ucrt.
+On a ainsi installé les dernières versions "packagées" de GCC 14.2.0 + LLVM/Clang/LLD/LLDB 19.1.1 + MinGW-w64 12.0.0 en 64 bits.
 
 Toolchain executables : 
 	C:\mingw64 (puis répertoire \bin)
@@ -876,35 +772,22 @@ Toolchain executables :
 	linker for static lib : 	llvm-ar.exe
 	debugger :					gdb.exe
 	resource compiler :			windres.exe
-	make program : 				?
+	make program : 				mingw32-make.exe
 
 Search directories :
-	a) compiler : 			C:\mingw64\x86_64-w64-mingw32\include
-	b) linker : 			C:\mingw64\x86_64-w64-mingw32\lib
-	a) resource compiler : 	C:\mingw64\x86_64-w64-mingw32\include
+	a) compiler : 			C:\mingw64\x86_64-w64-mingw32\include et C:\mingw64\include
+	b) linker : 			C:\mingw64\x86_64-w64-mingw32\lib 	  et C:\mingw64\lib
+	a) resource compiler : 	C:\mingw64\x86_64-w64-mingw32\include et C:\mingw64\include
 
-Tests :
-	a) test n° 1 : 
-		Un programme C standard tout simple, projet stocké sous C:\src\EssaiC\EssaiC.cbp
-		source sous C:\src\EssaiC\EssaiC.c
-		Deux configurations utilisées : "Debug CLANG W64" et "Release CLANG W64"
-		Ok, ca fonctionne avec le compilateur CLANG sous MINGW64 avec GCC 64 bits. 
-		
-	b) test n° 2 :
-		Un programme C++ standard tout simple, projet stocké sous C:\src\EssaiCpp\EssaiCpp.cbp
-		source sous C:\src\EssaiCpp\main.cpp
-		Deux configurations utilisées : "Debug CLANG W64" et "Release CLANG W64"
-		Ok, ca fonctionne avec le compilateur CLANG++ sous MINGW64 avec GCC 64 bits. 	
-
-U) Installation de CLANG + LLVM 32 bits (version 15.0.0) avec une version de Visual Studio 2022 + un windows Kits W10/W11 (version Visual C/C++ 32 bits)
+R) Installation de CLANG + LLVM 32 bits (version 19.1.1) avec une version de Visual Studio 2022 + un windows Kits W10/W11 (version Visual C 32 bits)
 
 J'ai déjà présenté l'installation de VS 2022 et d'un Kit Windows 10, mais on doit alors rajouter celle de LLVM (+ CLANG) disponible
-sur le site Web : https://github.com/llvm/llvm-project/releases/tag/llvmorg-15.0.0
+sur le site Web : https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.1
 
-L'installateur a pour nom "LLVM-15.0.0-win32.exe", je l'installe sur le répertoire proposé par défaut : C:\Program Files (x86)\LLVM
-On a ainsi installé les dernières versions "packagées" de LLVM/Clang/LLD/LLDB 15.0.0 win32 liées aux environnements Windows.
+L'installateur a pour nom "LLVM-19.1.1-win32.exe", je l'installe sur le répertoire proposé par défaut : C:\Program Files (x86)\LLVM
+On a ainsi installé les dernières versions "packagées" de LLVM/Clang/LLD/LLDB 19.1.1 win32 liées aux environnements Windows.
 J'ai aussi affecté deux nouvelles variables d'environnement pour gérer les évolutions de CLANG/LLVM :
-		CLANG_VERSION  valant à date 		15.0.0
+		CLANG_VERSION  valant à date 		19.1.1
 		LLVM								C:\Program Files (x86)\LLVM
 		
 Toolchain executables : 
@@ -934,25 +817,12 @@ Search directories :
 							C:\Program Files (X86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\um		  puis
 							C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\include
 
-Tests :
-	a) test n° 1 : 
-		Un programme C standard tout simple, projet stocké sous C:\src\EssaiC\EssaiC.cbp
-		source sous C:\src\EssaiC\EssaiC.c
-		Deux configurations utilisées : "Debug CLANG X32" et "Release CLANG X32"
-		Ok, ca fonctionne avec le compilateur CLANG sous l'environnement Windows et Visual C 32 bits. 
-		
-	b) test n° 2 :
-		Un programme C++ standard tout simple, projet stocké sous C:\src\EssaiCpp\EssaiCpp.cbp
-		source sous C:\src\EssaiCpp\main.cpp
-		Deux configurations utilisées : "Debug CLANG X32" et "Release CLANG X32"
-		Ok, ca fonctionne avec le compilateur CLANG sous l'environnement Windows et Visual C 32 bits. 	
+S) Installation de CLANG + LLVM 64 bits (version 19.1.1) avec une version de Visual Studio 2022 + un windows Kits W10 (version Visual C 64 bits)
 
-V) Installation de CLANG + LLVM 64 bits (version 15.0.0) avec une version de Visual Studio 2022 + un windows Kits W10 (version Visual C 64 bits)
+Il faut ici récupérer l'environnement 64 bits de LLVM (+ CLANG) disponible sur le site Web : https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.1
 
-Il faut ici récupérer l'environnement 64 bits de LLVM (+ CLANG) disponible sur le site Web : https://github.com/llvm/llvm-project/releases/tag/llvmorg-15.0.0
-
-L'installateur a pour nom "LLVM-15.0.0-win64.exe", je l'installe sur le répertoire proposé par défaut : C:\Program Files\LLVM
-On a ainsi installé les dernières versions "packagées" de LLVM/Clang/LLD/LLDB 15.0.0 win64 liées aux environnements Windows.
+L'installateur a pour nom "LLVM-19.1.1-win64.exe", je l'installe sur le répertoire proposé par défaut : C:\Program Files\LLVM
+On a ainsi installé les dernières versions "packagées" de LLVM/Clang/LLD/LLDB 19.1.1 win64 liées aux environnements Windows.
 J'ai aussi affecté une nouvelle variable d'environnement pour gérer les évolutions de CLANG/LLVM :
 		LLVM64								C:\Program Files\LLVM
 		
@@ -983,26 +853,13 @@ Search directories :
 							C:\Program Files (X86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\um		  puis
 							C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\include
 
-Tests :
-	a) test n° 1 : 
-		Un programme C standard tout simple, projet stocké sous C:\src\EssaiC\EssaiC.cbp
-		source sous C:\src\EssaiC\EssaiC.c
-		Deux configurations utilisées : "Debug CLANG X64" et "Release CLANG X64"
-		Ok, ca fonctionne avec le compilateur CLANG sous l'environnement Windows et Visual C 64 bits. 
-		
-	b) test n° 2 :
-		Un programme C++ standard tout simple, projet stocké sous C:\src\EssaiCpp\EssaiCpp.cbp
-		source sous C:\src\EssaiCpp\main.cpp
-		Deux configurations utilisées : "Debug CLANG X64" et "Release CLANG X64"
-		Ok, ca fonctionne avec le compilateur CLANG sous l'environnement Windows et Visual C 64 bits. 	
-
-W) Installation de CLANG 32 bits (version 15.0.0) avec une version de MINGW32 sous MSYS2 (version GCC 12.2.0 32 bits)
+T) Installation de CLANG 32 bits (version 18.1.8) avec une version de MINGW32 sous MSYS2 (version GCC 14.2.0 32 bits)
 
 Pour mémoire, j'ai installé la version officielle de MINGW32 avec l'exécutable "mingw-get-setup.exe" sur le répetoire par défaut C:\MinGW
-Et en complément, j'ai installé un environnement MSYS2 complet avec Mingw32 et CLANG 32 bits avec la récupération d'un fichier "msys2-x86_64-20220603.exe"
+Et en complément, j'ai installé un environnement MSYS2 complet avec Mingw32 et CLANG 32 bits avec la récupération d'un fichier "msys2-x86_64-20240507.exe"
 disponible sur :	https://repo.msys2.org/distrib/x86_64/   sur le répetoire par défaut C:\msys64
 Il y a ensuite des installations supplémentaires, avec l'utilitaire PACMAN, pour les versions de mingw32, CLANG32 et mingw64 et CLANG64.
-On a ainsi installé les dernières versions sous MSYS2 de GCC 12.2.0 + LLVM/Clang/LLD/LLDB 15.0.0 + MinGW-w64 9.0.0 en 32 bits.
+On a ainsi installé les dernières versions sous MSYS2 de GCC 14.2.0 + LLVM/Clang/LLD/LLDB 18.1.6 + MinGW-w64 11.0.0 en 32 bits.
 
 Toolchain executables : 
 	C:\msys64\mingw32 (puis répertoire \bin)
@@ -1012,33 +869,20 @@ Toolchain executables :
 	linker for static lib : 	llvm-ar.exe
 	debugger :					gdb.exe
 	resource compiler :			windres.exe
-	make program : 				?
+	make program : 				make.exe
 
 Search directories :
-	a) compiler : 			C:\msys64\mingw32\lib\clang\%CLANG_VERSION%\include    puis
-							C:\msys64\mingw32\include
+	a) compiler : 			C:\msys64\mingw32\lib\clang\18\include    puis
+							C:\msys64\mingw32\i686-w64-mingw32\include et C:\msys64\mingw32\include
 	b) linker : 			C:\msys64\mingw32\lib
-	a) resource compiler : 	C:\msys64\mingw32\lib\clang\%CLANG_VERSION%\include    puis
-							C:\msys64\mingw32\include
+	a) resource compiler : 	C:\msys64\mingw32\lib\clang\18\include    puis
+							C:\msys64\mingw32\i686-w64-mingw32\include et C:\msys64\mingw32\include
 
-Tests :
-	a) test n° 1 : 
-		Un programme C standard tout simple, projet stocké sous C:\src\EssaiC\EssaiC.cbp
-		source sous C:\src\EssaiC\EssaiC.c
-		Deux configurations utilisées : "Debug CLANG W32" et "Release CLANG W32"
-		Ok, ca fonctionne avec le compilateur CLANG sous MINGW64 avec GCC 32 bits. 
-		
-	b) test n° 2 :
-		Un programme C++ standard tout simple, projet stocké sous C:\src\EssaiCpp\EssaiCpp.cbp
-		source sous C:\src\EssaiCpp\main.cpp
-		Deux configurations utilisées : "Debug CLANG W32" et "Release CLANG W32"
-		Ok, ca fonctionne avec le compilateur CLANG++ sous MINGW64 avec GCC 32 bits. 
+U) Installation de CLANG 64 bits (version 18.1.8) avec une version de MINGW64 sous MSYS2 (version GCC 14.2.0 64 bits)
 
-X) Installation de CLANG 64 bits (version 15.0.0) avec une version de MINGW64 sous MSYS2 (version GCC 12.2.0 64 bits)
-
-Pour mémloire, j'ai installé, avec l'utilitaire PACMAN, un environnement MSYS2 complet avec Mingw64 et CLANG 64 bits avec la récupération 
-d'un fichier "msys2-x86_64-20220603.exe"disponible sur :	https://repo.msys2.org/distrib/x86_64/   sur le répetoire par défaut C:\msys64.
-On a ainsi installé les dernières versions sous MSYS2 de GCC 12.2.0 + LLVM/Clang/LLD/LLDB 15.0.0 + MinGW-w64 9.0.0 en 64 bits.
+Pour mémoire, j'ai installé, avec l'utilitaire PACMAN, un environnement MSYS2 complet avec Mingw64 et CLANG 64 bits avec la récupération 
+d'un fichier "msys2-x86_64-20240507.exe" disponible sur :	https://repo.msys2.org/distrib/x86_64/   sur le répetoire par défaut C:\msys64.
+On a ainsi installé les dernières versions sous MSYS2 de GCC 14.2.0 + LLVM/Clang/LLD/LLDB 18.1.6 + MinGW-w64 11.0.0 en 64 bits.
 
 Toolchain executables : 
 	C:\msys64\mingw64 (puis répertoire \bin)
@@ -1048,46 +892,162 @@ Toolchain executables :
 	linker for static lib : 	llvm-ar.exe
 	debugger :					gdb.exe
 	resource compiler :			windres.exe
-	make program : 				?
+	make program : 				make.exe
 
 Search directories :
-	a) compiler : 			C:\msys64\mingw64\lib\clang\%CLANG_VERSION%\include     puis  
-							C:\msys64\mingw64\include
+	a) compiler : 			C:\msys64\mingw64\lib\clang\18\include     puis  
+							C:\msys64\mingw64\x86_64-w64-mingw32\include et C:\msys64\mingw64\include
 	b) linker : 			C:\msys64\mingw64\lib
-	a) resource compiler : 	C:\msys64\mingw64\lib\clang\%CLANG_VERSION%\include     puis
-							C:\msys64\mingw64\include
+	a) resource compiler : 	C:\msys64\mingw64\lib\clang\18\include     puis
+							C:\msys64\mingw64\x86_64-w64-mingw32\include et C:\msys64\mingw64\include
 
-Tests :
-	a) test n° 1 : 
-		Un programme C standard tout simple, projet stocké sous C:\src\EssaiC\EssaiC.cbp
-		source sous C:\src\EssaiC\EssaiC.c
-		Deux configurations utilisées : "Debug CLANG W64" et "Release CLANG W64"
-		Ok, ca fonctionne avec le compilateur CLANG sous MINGW64 avec GCC 64 bits. 
-		
-	b) test n° 2 :
-		Un programme C++ standard tout simple, projet stocké sous C:\src\EssaiCpp\EssaiCpp.cbp
-		source sous C:\src\EssaiCpp\main.cpp
-		Deux configurations utilisées : "Debug CLANG W64" et "Release CLANG W64"
-		Ok, ca fonctionne avec le compilateur CLANG++ sous MINGW64 avec GCC 64 bits. 	
-		
-Exemple de projet cbp de Code::Blocks avec TOUTES les différentes compilations en mode Debug/Release + 32 Bits/64 bits : Lesson05.cbp
+V) Installation du compilateur OpenAPI Intel C/C++ (32 et 64 bits)
+
+Il faut au préalable avoir téléchargé les différents fichiers disponibles sur le site d'Intel :
+	https://www.intel.com/content/www/us/en/developer/articles/tool/oneapi-standalone-components.html#dpcpp-cpp
+	
+	- soit l'installateur "online" du compilateur OneAPI -> "w_dpcpp-cpp-compiler_p_2024.2.1.101.exe"  ou
+	- soit l'installateur "offline" du compilateur OneAPI -> "w_dpcpp-cpp-compiler_p_2024.2.1.101_offline.exe"	et
+	- le "base kit" version 32 bits : "w_BaseKit_32bit_p_2024.2.1.7.exe" et
+	- le "base kit" version 64 bits : "w_BaseKit_p_2024.2.1.7.exe" et
+	- et enfin un complément : "w_oneDPL_p_2022.5.0.220.exe".
+	
+Puis, il suffit de procéder à l'installation de l'environnement du compilateur OpenAPI Intel C/C++ en cliquant
+sur ces différents exécutables.
+
+Sous CB, il faut se positionner dans le menu général "Setting" puis "compilers ...". On trouve par défaut le compilateur
+"Intel C/C++ compiler", mais il faut l'adapter fortement au nouveau contexte. En effet, maintenant ce compilateur
+suit la même démarche que LLVM/CLANG, il appelle par exemple un autre linker (par exemple celui de Visual Studio).
+Il faut donc adjoindre aux répertoires "ad hoc" de ce compilateur, les répertoires permettant l'accès aux répertoires 
+binaires de Visual Studio (qui diffèrent entre la version 32 et la version 64 bits), mais aussi l'accès aux répertoires 
+des fichiers d'include, et des librariries de Visual Studio. La même galère que pour le paramétrage de Visual Studio ...
+
+Cela nous donne la configuration suivante en version 32 bits (j'ai renommé ce compilateur en "Intel C/C++ compiler (32 bits)")
+
+Toolchain executables : 
+	C:\Program Files (x86)\Intel\oneAPI\compiler\latest (puis il faut configurer beaucoup de répertoires de binaires en "sus" sous CB :
+						C:\Program Files (x86)\Intel\oneAPI\tbb\latest\env\..\bin32 puis
+						C:\Program Files (x86)\Intel\oneAPI\ocloc\latest\bin
+						C:\Program Files (x86)\Intel\oneAPI\dev-utilities\latest\bin
+						C:\Program Files (x86)\Intel\oneAPI\debugger\latest\opt\debugger\bin
+						C:\Program Files (x86)\Intel\oneAPI\compiler\latest\bin32
+						C:\Program Files (x86)\Intel\oneAPI\compiler\latest\lib\ocloc
+						C:\Program Files (x86)\Intel\oneAPI\compiler\latest\opt\oclfpga\host\windows64\bin  (oui aussi en 32 bits)
+						C:\Program Files (x86)\Intel\oneAPI\compiler\latest\opt\oclfpga\bin
+						C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\bin\Hostx86\x86
+						C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\bin\%KIT_WIN_NUM%\x86
+	compilateur C : 			icx.exe
+	compilateur C++ : 			icpx.exe
+	linker for dynamic lib : 	xilink.exe
+	linker for static lib : 	xilib.exe
+	debugger :					?
+	resource compiler :			windres.exe
+	make program : 				nmake.exe
+
+Search directories :
+	a) compiler : 			C:\Program Files (x86)\Intel\oneAPI\compiler\latest\lib\clang\18\include    					puis  
+							C:\Program Files (x86)\Intel\oneAPI\compiler\latest\include										puis ...
+							C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\include
+							C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Auxiliary\VS\include
+							C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\ucrt
+							C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\um
+							C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\shared
+							C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\winrt
+							C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\cppwinrt				
+	b) linker : 			C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x86   puis
+							C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Lib\%KIT_WIN_NUM%\ucrt\x86				 puis ...
+							C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x86\store
+							C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Lib\%KIT_WIN_NUM%\um\x86
+							C:\Program Files (x86)\Intel\oneAPI\compiler\latest\lib32
+	a) resource compiler : 	C:\Program Files (x86)\Intel\oneAPI\compiler\latest\lib\clang\18\include    					puis  
+							C:\Program Files (x86)\Intel\oneAPI\compiler\latest\include										puis ...
+							C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\include
+							C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Auxiliary\VS\include
+							C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\ucrt
+							C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\um
+							C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\shared
+							C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\winrt
+							C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\cppwinrt
+
+Et après avoir "copier" ce compilateur et puis l'avoir renommer en "Intel C/C++ compiler (64 bits)" sous CB, voici la configuration
+en 64 bits :
+
+Toolchain executables : 
+	C:\Program Files (x86)\Intel\oneAPI\compiler\latest (puis il faut configurer beaucoup de répertoires de binaires en "sus" sous CB :
+						C:\Program Files (x86)\Intel\oneAPI\tbb\latest\env\..\bin puis
+						C:\Program Files (x86)\Intel\oneAPI\ocloc\latest\bin
+						C:\Program Files (x86)\Intel\oneAPI\dev-utilities\latest\bin
+						C:\Program Files (x86)\Intel\oneAPI\debugger\latest\opt\debugger\bin
+						C:\Program Files (x86)\Intel\oneAPI\compiler\latest\bin
+						C:\Program Files (x86)\Intel\oneAPI\compiler\latest\lib\ocloc
+						C:\Program Files (x86)\Intel\oneAPI\compiler\latest\opt\oclfpga\host\windows64\bin 
+						C:\Program Files (x86)\Intel\oneAPI\compiler\latest\opt\oclfpga\bin
+						C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\bin\Hostx64\x64
+						C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\bin\%KIT_WIN_NUM%\x64)
+	compilateur C : 			icx.exe
+	compilateur C++ : 			icpx.exe
+	linker for dynamic lib : 	xilink.exe
+	linker for static lib : 	xilib.exe
+	debugger :					?
+	resource compiler :			windres.exe
+	make program : 				nmake.exe
+
+Search directories :
+	a) compiler : 			C:\Program Files (x86)\Intel\oneAPI\compiler\latest\lib\clang\18\include    					puis  
+							C:\Program Files (x86)\Intel\oneAPI\compiler\latest\include										puis ...
+							C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\include
+							C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Auxiliary\VS\include
+							C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\ucrt
+							C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\um
+							C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\shared
+							C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\winrt
+							C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\cppwinrt				
+	b) linker : 			C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x64   puis
+							C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Lib\%KIT_WIN_NUM%\ucrt\x64				 puis ...
+							C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\lib\x64\store
+							C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Lib\%KIT_WIN_NUM%\um\x64
+							C:\Program Files (x86)\Intel\oneAPI\compiler\latest\lib
+	a) resource compiler : 	C:\Program Files (x86)\Intel\oneAPI\compiler\latest\lib\clang\18\include    					puis  
+							C:\Program Files (x86)\Intel\oneAPI\compiler\latest\include										puis ...
+							C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\include
+							C:\Program Files\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Auxiliary\VS\include
+							C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\ucrt
+							C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\um
+							C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\shared
+							C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\winrt
+							C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\Include\%KIT_WIN_NUM%\cppwinrt
+
+Il faut bien avouer que c'est le compilateur C/C++ le "plus compliqué" à configurer dans CB. Il y a tellement de répertoires différents,
+ne serait-ce que pour simplement les "binaires" du compilateur, et avec l'adossement à Visual Studio 2022 qui porte "intrinséquement" en
+lui sa propre diversité de répertoires, c'est un peu "le parcours du combattant" ... mais on y arrive avec de la persévérance ...
+
+NB : Je n'ai pas exploré la possibilité de créer des fichiers de configuration "icx.cfg" et "icpx.cfg", ni "xilink.cfg" non plus ...
+Cela pourrait (comme pour le compilateur Borland C/C++) simplfier "grandement" les différentes configurations dans CB notamment.
+ 
+Juste une dernière remarque, il est impossible d'accèder "facilement" aux identifiants internes des différents compilateurs configurés
+dans CB. Seule, la manipulation d'un projet dans CB permet de sélectionner le compilateur dans la liste de sélection proposée et alors,
+après sauvegarde du projet (ou du workspace), on peut retrouver cet identifiant dans le fichier d'extension "*.cbp" qui est juste une 
+description des caractéristiques du projet sous forme XML (le plus souvent sous forme de balises encadrantes).
+
+
+Exemple de projet cbp de Code::Blocks avec TOUTES les différentes compilations en mode Debug/Release + 32 Bits/64 bits : Lesson09.cbp
 
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="Lesson05" />
+		<Option title="Lesson09" />
 		<Option platforms="Windows;" />
 		<Option makefile="makefile" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Option show_notes="0">
 			<notes>
-				<![CDATA[OpenGL Tutorial #5.
+				<![CDATA[OpenGL Tutorial #9.
 
 Project Name: Jeff Molofee's OpenGL Tutorial
 
-Project Description: Solid Object Tutorial
+Project Description: Animated Blended Textures Tutorial
 
 Authors Name: Jeff Molofee (aka NeHe)
 
@@ -1104,40 +1064,38 @@ COPYRIGHT AND DISCLAIMER: (c)2000 Jeff Molofee
 
  Modified smoothly by Thierry DECHAIZE
 
- Modified smoothly by Thierry DECHAIZE
+ Paradigm : obtain one source (only one !) compatible for multiple free C Compilers (MinGW, Mingw32, Mingw64, MSYS2, CYGWIN64, TDM, Visual Studio 
+     + kits Windows, LCC, WATCOM, DMC, Borland, etc..) and provide for all users an development environment on Windows 11 64 bits
+    the great Code::Blocks manager (version 23.06), and don't use glaux.lib or glaux.dll (old and buggy library).
 
-Paradigm : obtain one source (only one !) compatible for multiple free C Compilers
-    and provide for all users an development environment on Windows 11 64 bits
-    the great Code::Blocks manager (version 20.3), and don't use glaux.lib or glaux.dll.
-
-	a) Mingw 32 bits, version officielle gcc 6.3.0 (very old !) : downloadable on http://sourceforge.net/projects/mingw/ (official) 
-	b) Mingw 64 bits included in new IDE Red Panda Dev-Cpp, version gcc 10.3.0 : donwloadable on http://sourceforge.net/projects/dev-cpp-2020/
-	c) Mingw 64 bits included in package Code::Blocks (version 20.03), version gcc 8.1.0 : downloadable on http://sourceforge.net/projects/codeblocks/files/Binaries/20.03/Windows/
-	d) Mingw 32 and 64 bits packagés, version gcc 11.2.0 : downloadable on  https://winlibs.com/ (and CLANG included in, 32 and 64 bits), two kits :
-			- winlibs-i686-posix-dwarf-gcc-11.2.0-llvm-13.0.0-mingw-w64ucrt-9.0.0-r2.7z (32 bits)
-			- winlibs-x86_64-posix-seh-gcc-11.2.0-llvm-13.0.0-mingw-w64ucrt-9.0.0-r2.7z (64 bits)
-	e) Cygwin64, 32 et 64 bits, version gcc 11.0.0 : downloadable on http://www.cygwin.com/install.html (tool for install : setup-x86_64.exe)
-	f) TDM GCC, 32 et 64 bits, version 10.3.0 : downloadable on http://sourceforge.net/projects/TDM-GCC
-	g) MSYS2 environnement MINGW32 and MINGW64, 32 et 64 bits, version de 2022 (msys2-x86_64-20220118.exe), version gcc 11.2.0 : downloadable on https://repo.msys2.org/distrib/x86_64/msys2-x86_64-20220118.exe
+	a) Mingw 32 bits, version officielle gcc 9.2.0 (very old !) : downloadable on http://sourceforge.net/projects/mingw/ (official ?)
+	b) Mingw 64 bits included in new IDE Red Panda Dev-Cpp, version gcc 11.2.0 : donwloadable on https://sourceforge.net/projects/redpanda-cpp/files/
+	c) Mingw 64 bits included in package Code::Blocks (version 23.06 with mingw), version gcc 13.1.0 : downloadable on http://sourceforge.net/projects/codeblocks/files/Binaries/Nightly
+	d) Mingw 32 and 64 bits packagés, version gcc 14.1.0 : downloadable on  https://winlibs.com/ (and CLANG 18.1.5 included in, 32 and 64 bits), two kits :
+			- winlibs-i686-posix-dwarf-gcc-14.1.0-llvm-18.1.5-mingw-w64ucrt-11.0.1-r1.7z (32 bits)
+			- winlibs-x86_64-posix-seh-gcc-14.1.0-llvm-18.1.5-mingw-w64ucrt-11.0.1-r1.7z (64 bits)
+	e) Cygwin64, 32 et 64 bits, version gcc 11.4.0 : downloadable on http://www.cygwin.com/install.html (tool for install and update : setup-x86_64.exe)
+	f) TDM GCC, 32 et 64 bits, version gcc 10.3.0 : downloadable on http://sourceforge.net/projects/TDM-GCC
+	g) MSYS2 environnement MINGW32, MINGW64 and UCRT64, 32 et 64 bits, version de 2024 (msys2-x86_64-20240507.exe), version gcc 14.1.0 : downloadable on https://repo.msys2.org/distrib/x86_64/msys2-x86_64-20240507.exe
 	h) Visual Studio 2022, 32 et 64 bits, community edition for free : downloadable on https://visualstudio.microsoft.com/fr/thank-you-downloading-visual-studio/?sku=Community&rel=17
-	i) Borland C/C++ 32 bits, version 5.5 : downloadable on https://developerinsider.co/download-and-install-borland-c-compiler-on-windows-10/
+	i) Borland C/C++ 32 bits, version 5.51 : downloadable on https://developerinsider.co/download-and-install-borland-c-compiler-on-windows-10/
 	j) Digital Mars Compiler C 32 bits version 8.57 : downloadable on http://www.digitalmars.com (the more old compiler, the more bugged, dead branch !)
-	k) OpenWatcom 32 et 64 bits, version 2.0 : downloadable on http://openwatcom.mirror.fr/ (only 32 bits version run correctly !)
+	k) OpenWatcom 32 et 64 bits, version 2.0 : downloadable on https://github.com/open-watcom/open-watcom-v2/releases/tag/Current-build  the must up to date) 
 	l) Lcc and Lcc64, 32 et 64 bits: downloadable http://www.cs.virginia.edu/~lcc-win32/
-	m) PELLES C, 32 et 64 bits, version 11.0 : downloadable on http://www.smorgasbordet.com/pellesc/
-	o) CLANG, adossé aux environnements MINGW64 et MINGW32, version 13.0.0 (version gcc 12.0.0) : downloadable on https://winlibs.com/ 
-	p) CLANG, adossé aux environnements Visual Studio 2022 (+ kits Microsoft), version 13.0.0 : downloadable on https://releases.llvm.org/download.html
-	q) CLANG de la version MSYS2, adossé aux environnements MINGW64 et MINGW32, version 13.0.0 (version gcc 11.2.0) : downloadable on https://repo.msys2.org/distrib/x86_64/msys2-x86_64-20220118.exe
-	r) CLANG de la version CYGWIN, adossé aux environnements MINGW64 et MINGW32, version 8.0.0 (version gcc 11.0.0) : downloadable http://www.cygwin.com/install.html (tool for install : setup-x86_64.exe)	
-
-    TDE -> Add resource file and resource header for restitute version + icon OpenGL.ico for fun
-			because versionning is important, same for freeware :-) !]]>
+	m) PELLES C, 32 et 64 bits, version 12.0 : downloadable on http://www.smorgasbordet.com/pellesc/
+	o) CLANG, adossé aux environnements MINGW64 et MINGW32, version 18.1.5 (version gcc 14.1.0) : downloadable on https://winlibs.com/
+	p) CLANG, adossé aux environnements Visual Studio 2022 (+ kits Microsoft), version 18.1.6 : downloadable on https://releases.llvm.org/download.html
+	q) CLANG de la version MSYS2, adossé aux environnements MINGW64 et MINGW32, version 18.1.6 (version gcc 14.1.0) : downloadable on https://repo.msys2.org/distrib/x86_64/msys2-x86_64-20231026.exe
+	r) CLANG de la version CYGWIN, adossé aux environnements MINGW64 et MINGW32, version 8.0.0 (version gcc 11.4.0) : downloadable http://www.cygwin.com/install.html (tool for install : setup-x86_64.exe)
+	
+  Add resource file and resource header for restitute version + icon OpenGL.ico for fun
+  because versionning is important, same for freeware :-) !]]>
 			</notes>
 		</Option>
 		<Build>
 			<Target title="Debug Mingw32 official">
 				<Option platforms="Windows;" />
-				<Option output="binMingW32of/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binMingW32of/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objMingW32of/Debug/" />
 				<Option type="0" />
 				<Option compiler="gcc" />
@@ -1157,7 +1115,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Release Mingw32 official">
 				<Option platforms="Windows;" />
-				<Option output="binMingw32of/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binMingw32of/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objMingw32of/Release/" />
 				<Option type="0" />
 				<Option compiler="gcc" />
@@ -1177,7 +1135,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Debug Mingw64 CB">
 				<Option platforms="Windows;" />
-				<Option output="binMingw64CB/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binMingw64CB/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objMingw64CB/Debug/" />
 				<Option type="0" />
 				<Option compiler="gnu_gcc_compiler_cb" />
@@ -1198,7 +1156,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Release Mingw64 CB">
 				<Option platforms="Windows;" />
-				<Option output="binMingw64CB/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binMingw64CB/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objMingw64CB/Release/" />
 				<Option type="0" />
 				<Option compiler="gnu_gcc_compiler_cb" />
@@ -1218,7 +1176,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Debug Mingw64 Dev-Cpp">
 				<Option platforms="Windows;" />
-				<Option output="binDevCpp/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binDevCpp/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objDevCpp/Debug/" />
 				<Option type="0" />
 				<Option compiler="gnu_gcc_compiler_dev" />
@@ -1238,7 +1196,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Release Mingw64 Dev-Cpp">
 				<Option platforms="Windows;" />
-				<Option output="binDevCpp/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binDevCpp/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objDevCpp/Release/" />
 				<Option type="0" />
 				<Option compiler="gnu_gcc_compiler_dev" />
@@ -1258,7 +1216,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Debug CYGWIN 32">
 				<Option platforms="Windows;" />
-				<Option output="binCYGWIN32/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binCYGWIN32/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objCYGWIN32/Debug" />
 				<Option type="0" />
 				<Option compiler="cygwin_gcc_32" />
@@ -1276,7 +1234,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Release CYGWIN 32">
 				<Option platforms="Windows;" />
-				<Option output="binCYGWIN32/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binCYGWIN32/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objCYGWIN32/Release/" />
 				<Option type="0" />
 				<Option compiler="cygwin_gcc_32" />
@@ -1292,7 +1250,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Debug CYGWIN 64">
 				<Option platforms="Windows;" />
-				<Option output="binCYGWIN64/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binCYGWIN64/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objCYGWIN64/Debug" />
 				<Option type="0" />
 				<Option compiler="cygwin" />
@@ -1310,7 +1268,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Release CYGWIN 64">
 				<Option platforms="Windows;" />
-				<Option output="binCYGWIN64/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binCYGWIN64/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objCYGWIN64/Release/" />
 				<Option type="0" />
 				<Option compiler="cygwin" />
@@ -1326,7 +1284,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Debug Mingw32 wl">
 				<Option platforms="Windows;" />
-				<Option output="binMingw32wl/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binMingw32wl/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objMingw32wl/Debug/" />
 				<Option type="0" />
 				<Option compiler="gnu_gcc_mingw32_compiler" />
@@ -1349,7 +1307,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Release Mingw32 wl">
 				<Option platforms="Windows;" />
-				<Option output="binMingw32wl/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binMingw32wl/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objMingw32wl/Release/" />
 				<Option type="0" />
 				<Option compiler="gnu_gcc_mingw32_compiler" />
@@ -1370,7 +1328,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Debug Mingw64 wl">
 				<Option platforms="Windows;" />
-				<Option output="binMingw64wl/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binMingw64wl/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objMingw64wl/Debug/" />
 				<Option type="0" />
 				<Option compiler="gcc-mingw64" />
@@ -1391,7 +1349,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Release Mingw64 wl">
 				<Option platforms="Windows;" />
-				<Option output="binMingw64wl/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binMingw64wl/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objMingw64wl/Release/" />
 				<Option type="0" />
 				<Option compiler="gcc-mingw64" />
@@ -1412,7 +1370,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Debug TDM MinGW32">
 				<Option platforms="Windows;" />
-				<Option output="binTDMW32/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binTDMW32/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objTDMW32/Debug" />
 				<Option type="0" />
 				<Option compiler="tdm_gcc_compiler" />
@@ -1434,7 +1392,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Release TDM MinGW32">
 				<Option platforms="Windows;" />
-				<Option output="binTDMW32/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binTDMW32/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objTDMW32/Release" />
 				<Option type="0" />
 				<Option compiler="tdm_gcc_compiler" />
@@ -1456,7 +1414,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Debug TDM MinGW64">
 				<Option platforms="Windows;" />
-				<Option output="binTDMW64/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binTDMW64/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objTDMW64/Debug" />
 				<Option type="0" />
 				<Option compiler="tdm_gcc_x64_compiler" />
@@ -1478,7 +1436,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Release TDM MinGW64">
 				<Option platforms="Windows;" />
-				<Option output="binTDMW64/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binTDMW64/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objTDMW64/Release" />
 				<Option type="0" />
 				<Option compiler="tdm_gcc_x64_compiler" />
@@ -1500,7 +1458,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Debug MSYS2W32">
 				<Option platforms="Windows;" />
-				<Option output="binMSYS2W32/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binMSYS2W32/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objMSYS2W32/Debug/" />
 				<Option type="0" />
 				<Option compiler="gcc-msys2-mingw32" />
@@ -1521,7 +1479,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Release MSYS2W32">
 				<Option platforms="Windows;" />
-				<Option output="binMSYS2W32/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binMSYS2W32/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objMSYS2W32/Release/" />
 				<Option type="0" />
 				<Option compiler="gcc-msys2-mingw32" />
@@ -1541,7 +1499,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Debug MSYS2W64">
 				<Option platforms="Windows;" />
-				<Option output="binMSYS2W64/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binMSYS2W64/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objMSYS2W64/Debug/" />
 				<Option type="0" />
 				<Option compiler="gcc-msys2-mingw64" />
@@ -1562,7 +1520,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Release MSYS2W64">
 				<Option platforms="Windows;" />
-				<Option output="binMSYS2W64/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binMSYS2W64/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objMSYS2W64/Release/" />
 				<Option type="0" />
 				<Option compiler="gcc-msys2-mingw64" />
@@ -1580,9 +1538,50 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 					<Add library="libwinmm" />
 				</Linker>
 			</Target>
+			<Target title="Debug MSYS2 UCRT64">
+				<Option platforms="Windows;" />
+				<Option output="binMSYS2U64/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objMSYS2U64/Debug/" />
+				<Option type="0" />
+				<Option compiler="gnu_gcc_msys_ucrt64_compiler" />
+				<Compiler>
+					<Add option="-march=core2" />
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="libglu32" />
+					<Add library="libopengl32" />
+					<Add library="libadvapi32" />
+					<Add library="libcomdlg32" />
+					<Add library="libgdi32" />
+					<Add library="libwinmm" />
+				</Linker>
+			</Target>
+			<Target title="Release MSYS2 UCRT64">
+				<Option platforms="Windows;" />
+				<Option output="binMSYS2U64/Release/Lesson09" prefix_auto="1" extension_auto="1" />
+				<Option object_output="objMSYS2U64/Release/" />
+				<Option type="0" />
+				<Option compiler="gnu_gcc_msys_ucrt64_compiler" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="libglu32" />
+					<Add library="libopengl32" />
+					<Add library="libadvapi32" />
+					<Add library="libcomdlg32" />
+					<Add library="libgdi32" />
+					<Add library="libwinmm" />
+				</Linker>
+			</Target>
 			<Target title="Debug VS2022 X32">
 				<Option platforms="Windows;" />
-				<Option output="binVS2022X32/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binVS2022X32/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objVS2022X32/Debug" />
 				<Option type="0" />
 				<Option compiler="microsoft_visual_c_2022" />
@@ -1608,7 +1607,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Release VS2022 X32">
 				<Option platforms="Windows;" />
-				<Option output="binVS2022X32/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binVS2022X32/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objVS2022X32/Release/" />
 				<Option type="0" />
 				<Option compiler="microsoft_visual_c_2022" />
@@ -1629,7 +1628,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 				</Linker>
 			</Target>
 			<Target title="Debug VS2022 X64">
-				<Option output="binVS2022X64/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binVS2022X64/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objVS2022X64/Debug/" />
 				<Option type="0" />
 				<Option compiler="microsoft_visual_c_2022_x64" />
@@ -1654,7 +1653,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 				</Linker>
 			</Target>
 			<Target title="Release VS2022 X64">
-				<Option output="binVS2022X64/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binVS2022X64/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objVS2022X64/Release/" />
 				<Option type="0" />
 				<Option compiler="microsoft_visual_c_2022_x64" />
@@ -1677,7 +1676,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Debug DMC">
 				<Option platforms="Windows;" />
-				<Option output="binDMC/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binDMC/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objDMC/Debug" />
 				<Option type="0" />
 				<Option compiler="dmc" />
@@ -1699,7 +1698,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Release DMC">
 				<Option platforms="Windows;" />
-				<Option output="binDMC/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binDMC/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objDMC/Release/" />
 				<Option type="0" />
 				<Option compiler="dmc" />
@@ -1720,7 +1719,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Debug lcc">
 				<Option platforms="Windows;" />
-				<Option output="binlcc32/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binlcc32/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objlcc32/Debug" />
 				<Option type="0" />
 				<Option compiler="lcc" />
@@ -1738,12 +1737,12 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 					<Add library="winmm" />
 				</Linker>
 				<ExtraCommands>
-					<Add before="lrc.exe -IC:\lcc\include -foobjlcc32\Debug\src\Lesson05.res  src\Lesson05.rc" />
+					<Add before="lrc.exe -IC:\lcc\include -foobjlcc32\Debug\src\Lesson09.res  src\Lesson09.rc" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Release lcc">
 				<Option platforms="Windows;" />
-				<Option output="binlcc32/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binlcc32/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objlcc32/Release/" />
 				<Option type="0" />
 				<Option compiler="lcc" />
@@ -1759,12 +1758,12 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 					<Add library="winmm" />
 				</Linker>
 				<ExtraCommands>
-					<Add before="lrc.exe -IC:\lcc\include -foobjlcc32\Release\src\Lesson05.res  src\Lesson05.rc" />
+					<Add before="lrc.exe -IC:\lcc\include -foobjlcc32\Release\src\Lesson09.res  src\Lesson09.rc" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Debug lcc64">
 				<Option platforms="Windows;" />
-				<Option output="binlcc64/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binlcc64/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objlcc64/Debug" />
 				<Option type="0" />
 				<Option compiler="lcc_compiler_64" />
@@ -1782,12 +1781,12 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 					<Add library="winmm" />
 				</Linker>
 				<ExtraCommands>
-					<Add before="lrc.exe -IC:\lcc64\include64 -foobjlcc64\Debug\src\Lesson05.res  src\Lesson05.rc" />
+					<Add before="lrc.exe -IC:\lcc64\include64 -foobjlcc64\Debug\src\Lesson09.res  src\Lesson09.rc" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Release lcc64">
 				<Option platforms="Windows;" />
-				<Option output="binlcc64/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binlcc64/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objlcc64/Release/" />
 				<Option type="0" />
 				<Option compiler="lcc_compiler_64" />
@@ -1804,12 +1803,12 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 					<Add library="winmm" />
 				</Linker>
 				<ExtraCommands>
-					<Add before="lrc.exe -IC:\lcc64\include64 -foobjlcc64\Release\src\Lesson05.res  src\Lesson05.rc" />
+					<Add before="lrc.exe -IC:\lcc64\include64 -foobjlcc64\Release\src\Lesson09.res  src\Lesson09.rc" />
 				</ExtraCommands>
 			</Target>
 			<Target title="Debug BorlandC">
 				<Option platforms="Windows;" />
-				<Option output="binBC55/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binBC55/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objBC55/Debug" />
 				<Option type="0" />
 				<Option compiler="bcc" />
@@ -1836,7 +1835,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Release BorlandC">
 				<Option platforms="Windows;" />
-				<Option output="binBC55/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binBC55/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objBC55/Release/" />
 				<Option type="0" />
 				<Option compiler="bcc" />
@@ -1861,7 +1860,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Debug OW 32">
 				<Option platforms="Windows;" />
-				<Option output="binOW32/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binOW32/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objOW32/Debug" />
 				<Option type="0" />
 				<Option compiler="ow" />
@@ -1882,7 +1881,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Release OW 32">
 				<Option platforms="Windows;" />
-				<Option output="binOW32/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binOW32/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objOW32/Release/" />
 				<Option type="0" />
 				<Option compiler="ow" />
@@ -1901,13 +1900,12 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Debug OW 64">
 				<Option platforms="Windows;" />
-				<Option output="binOW64/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binOW64/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objOW64/Debug" />
 				<Option type="0" />
 				<Option compiler="openwatcom_w64_compiler" />
 				<Compiler>
 					<Add option="-d2" />
-					<Add option="-bcl=nt" />
 					<Add option="-d_DEBUG" />
 					<Add option="-dDEBUG" />
 				</Compiler>
@@ -1922,12 +1920,11 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Release OW 64">
 				<Option platforms="Windows;" />
-				<Option output="binOW64/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binOW64/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objOW64/Release/" />
 				<Option type="0" />
-				<Option compiler="ow" />
+				<Option compiler="openwatcom_w64_compiler" />
 				<Compiler>
-					<Add option="-bcl=nt" />
 					<Add option="-dNDEBUG" />
 				</Compiler>
 				<Linker>
@@ -1941,7 +1938,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Debug PELLES C">
 				<Option platforms="Windows;" />
-				<Option output="binPELLESC32/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binPELLESC32/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objPELLESC32/Debug" />
 				<Option type="0" />
 				<Option compiler="pelles_c_2021" />
@@ -1971,7 +1968,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Release PELLES C">
 				<Option platforms="Windows;" />
-				<Option output="binPELLESC32/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binPELLESC32/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objPELLESC32/Release/" />
 				<Option type="0" />
 				<Option compiler="pelles_c_2021" />
@@ -1998,7 +1995,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Debug PELLES C 64">
 				<Option platforms="Windows;" />
-				<Option output="binPELLESC64/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binPELLESC64/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objPELLESC64/Debug" />
 				<Option type="0" />
 				<Option compiler="pelles_c_2021_64b" />
@@ -2029,7 +2026,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Release PELLES C 64">
 				<Option platforms="Windows;" />
-				<Option output="binPELLESC64/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binPELLESC64/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objPELLESC64/Release/" />
 				<Option type="0" />
 				<Option compiler="pelles_c_2021_64b" />
@@ -2056,7 +2053,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 				</Linker>
 			</Target>
 			<Target title="Debug CLANG Mingw32">
-				<Option output="binCLANGW32/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binCLANGW32/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objCLANGW32/Debug/" />
 				<Option type="0" />
 				<Option compiler="llvm_clang_compiler_w32" />
@@ -2075,7 +2072,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 				</Linker>
 			</Target>
 			<Target title="Release CLANG Mingw32">
-				<Option output="binCLANGW32/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binCLANGW32/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objCLANGW32/release/" />
 				<Option type="0" />
 				<Option compiler="llvm_clang_compiler_w32" />
@@ -2090,7 +2087,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Debug CLANG Mingw64">
 				<Option platforms="Windows;" />
-				<Option output="binCLANGW64/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binCLANGW64/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objCLANGW64/Debug/" />
 				<Option type="0" />
 				<Option compiler="clang" />
@@ -2110,7 +2107,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Release CLANG Mingw64">
 				<Option platforms="Windows;" />
-				<Option output="binCLANGW64/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binCLANGW64/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objCLANGW64/Release/" />
 				<Option type="0" />
 				<Option compiler="clang" />
@@ -2128,7 +2125,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Debug CLANG MSX32">
 				<Option platforms="Windows;" />
-				<Option output="binCLANGX32/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binCLANGX32/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objCLANGX32/Debug/" />
 				<Option type="1" />
 				<Option compiler="llvm_clang_compiler_x32" />
@@ -2139,10 +2136,9 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 					<Add option="-DDEBUG" />
 				</Compiler>
 				<ResourceCompiler>
-					<Add option="/FO objCLANGX32\Debug\Lesson05.res" />
+					<Add option="/FO objCLANGX32\Debug\Lesson09.res" />
 				</ResourceCompiler>
 				<Linker>
-					<Add option="-target i686-pc-windows-msvc" />
 					<Add library="glu32" />
 					<Add library="opengl32" />
 					<Add library="user32" />
@@ -2154,25 +2150,23 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 					<Add library="kernel32" />
 				</Linker>
 				<ExtraCommands>
-					<Add before='rc.exe -I&quot;%LLVM%\lib\clang\%CLANG_VERSION%\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\um&quot; -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\include&quot; /fo &quot;C:\src\OpenGL\NeHe_Lesson05-master\objCLANGX32\Debug\src\Lesson05.res&quot; src\Lesson05.rc' />
+					<Add before='rc.exe -I&quot;%LLVM%\lib\clang\%CLANG_VERSION%\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\um&quot; -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\include&quot; /fo &quot;C:\src\OpenGL\NeHe_Lesson09-master\objCLANGX32\Debug\src\Lesson09.res&quot; src\Lesson09.rc' />
 				</ExtraCommands>
 			</Target>
 			<Target title="Release CLANG MSX32">
 				<Option platforms="Windows;" />
-				<Option output="binCLANGX32/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binCLANGX32/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objCLANGX32/Release/" />
 				<Option type="1" />
 				<Option compiler="llvm_clang_compiler_x32" />
 				<Option use_console_runner="0" />
 				<Compiler>
-					<Add option="-target i686-pc-windows-msvc" />
 					<Add option="-DNDEBUG" />
 				</Compiler>
 				<ResourceCompiler>
-					<Add option="/FO objCLANGX32\Debug\Lesson05.res" />
+					<Add option="/FO objCLANGX32\Debug\Lesson09.res" />
 				</ResourceCompiler>
 				<Linker>
-					<Add option="-target i686-pc-windows-msvc" />
 					<Add library="glu32" />
 					<Add library="opengl32" />
 					<Add library="user32" />
@@ -2184,24 +2178,22 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 					<Add library="kernel32" />
 				</Linker>
 				<ExtraCommands>
-					<Add before='rc.exe -I&quot;%LLVM%\lib\clang\%CLANG_VERSION%\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\um&quot; -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\include&quot; /fo &quot;C:\src\OpenGL\NeHe_Lesson05-master\objCLANGX32\Release\src\Lesson05.res&quot; src\Lesson05.rc' />
+					<Add before='rc.exe -I&quot;%LLVM%\lib\clang\%CLANG_VERSION%\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\um&quot; -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\include&quot; /fo &quot;C:\src\OpenGL\NeHe_Lesson09-master\objCLANGX32\Release\src\Lesson09.res&quot; src\Lesson09.rc' />
 				</ExtraCommands>
 			</Target>
 			<Target title="Debug CLANG MSX64">
 				<Option platforms="Windows;" />
-				<Option output="binCLANGX64/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binCLANGX64/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objCLANGX64/Debug/" />
 				<Option type="1" />
 				<Option compiler="llvm_clang_compiler_x64" />
 				<Option use_console_runner="0" />
 				<Compiler>
 					<Add option="-g" />
-					<Add option="-target x86_64-pc-windows-msvc" />
 					<Add option="-D_DEBUG" />
 					<Add option="-DDEBUG" />
 				</Compiler>
 				<Linker>
-					<Add option="-target x86_64-pc-windows-msvc" />
 					<Add library="glu32" />
 					<Add library="opengl32" />
 					<Add library="user32" />
@@ -2213,25 +2205,23 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 					<Add library="kernel32" />
 				</Linker>
 				<ExtraCommands>
-					<Add before='rc.exe -I&quot;%LLVM64%\lib\clang\%CLANG_VERSION%\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\um&quot; -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\include&quot; /fo &quot;C:\src\OpenGL\NeHe_Lesson05-master\objCLANGX64\Debug\src\Lesson05.res&quot; src\Lesson05.rc' />
+					<Add before='rc.exe -I&quot;%LLVM64%\lib\clang\%CLANG_VERSION%\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\um&quot; -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\include&quot; /fo &quot;C:\src\OpenGL\NeHe_Lesson09-master\objCLANGX64\Debug\src\Lesson09.res&quot; src\Lesson09.rc' />
 				</ExtraCommands>
 			</Target>
 			<Target title="Release CLANG MSX64">
 				<Option platforms="Windows;" />
-				<Option output="binCLANGX64/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binCLANGX64/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objCLANGX64/Release/" />
 				<Option type="1" />
 				<Option compiler="llvm_clang_compiler_x64" />
 				<Option use_console_runner="0" />
 				<Compiler>
-					<Add option="-target x86_64-pc-windows-msvc" />
 					<Add option="-DNDEBUG" />
 				</Compiler>
 				<ResourceCompiler>
-					<Add option="/FO objCLANGX64\Release\Lesson05.res" />
+					<Add option="/FO objCLANGX64\Release\Lesson09.res" />
 				</ResourceCompiler>
 				<Linker>
-					<Add option="-target x86_64-pc-windows-msvc" />
 					<Add library="glu32" />
 					<Add library="opengl32" />
 					<Add library="user32" />
@@ -2243,11 +2233,11 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 					<Add library="kernel32" />
 				</Linker>
 				<ExtraCommands>
-					<Add before='rc.exe -I&quot;%LLVM64%\lib\clang\%CLANG_VERSION%\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\um&quot; -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\include&quot; /fo &quot;C:\src\OpenGL\NeHe_Lesson05-master\objCLANGX64\Release\src\Lesson05.res&quot; src\Lesson05.rc' />
+					<Add before='rc.exe -I&quot;%LLVM64%\lib\clang\%CLANG_VERSION%\include&quot; -I&quot;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\shared&quot; -I&quot;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\ucrt&quot; -I&quot;C:\Program Files (x86)\Windows Kits\%KIT_WIN_VERSION%\include\%KIT_WIN_NUM%\um&quot; -I&quot;C:\Program Files (x86)\Microsoft Visual Studio\%VS_VERSION%\Community\VC\Tools\MSVC\%VS_NUM%\include&quot; /fo &quot;C:\src\OpenGL\NeHe_Lesson09-master\objCLANGX64\Release\src\Lesson09.res&quot; src\Lesson09.rc' />
 				</ExtraCommands>
 			</Target>
 			<Target title="Debug CLANG MSYS W32">
-				<Option output="binCLANGMW32/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binCLANGMW32/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objCLANGMW32/Debug/" />
 				<Option type="0" />
 				<Option compiler="clang_msys_w32_compiler" />
@@ -2266,7 +2256,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 				</Linker>
 			</Target>
 			<Target title="Release CLANG MSYS W32">
-				<Option output="binCLANGMW32/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binCLANGMW32/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objCLANGMW32/release/" />
 				<Option type="0" />
 				<Option compiler="clang_msys_w32_compiler" />
@@ -2280,7 +2270,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 				</Linker>
 			</Target>
 			<Target title="Debug CLANG MSYS W64">
-				<Option output="binCLANGMW64/Debug/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binCLANGMW64/Debug/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objCLANGMW64/Debug/" />
 				<Option type="0" />
 				<Option compiler="clang_msys_w64_compiler" />
@@ -2299,7 +2289,7 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 				</Linker>
 			</Target>
 			<Target title="Release CLANG MSYS W64">
-				<Option output="binCLANGMW64/Release/Lesson05" prefix_auto="1" extension_auto="1" />
+				<Option output="binCLANGMW64/Release/Lesson09" prefix_auto="1" extension_auto="1" />
 				<Option object_output="objCLANGMW64/release/" />
 				<Option type="0" />
 				<Option compiler="clang_msys_w64_compiler" />
@@ -2314,27 +2304,25 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			</Target>
 			<Target title="Archive">
 				<Option platforms="Windows;" />
-				<Option output="Lesson05_src" prefix_auto="1" extension_auto="1" />
+				<Option output="Lesson09_src" prefix_auto="1" extension_auto="1" />
 				<Option type="0" />
 				<Option compiler="gcc" />
 				<ExtraCommands>
 					<Add before="cmd /c del *.7z" />
-					<Add before="cmd /c del *.tgz" />
 					<Add before="cmd /c del *.tar" />
-					<Add before='&quot;C:\CodeBlocks\cbp2make.exe&quot; --local -in $(project_dir)$(project_filename) -out makefile' />
 					<Add before="%PYTHON64% ..\..\tools\Size_exec.py $(PROJECT_NAME)" />
 					<Add before="%PYTHON64% ..\..\tools\Calc_checksums.py $(PROJECT_NAME)" />
-					<Add after='C:\Program Files\7-Zip\7z a  $(PROJECT_NAME)_$(TODAY)_src.7z src\*.* res\*.* data\*.* build.cmake\* *.bat *.txt *.html *.md doxygen\*.* doc\* *.cbp *.workspace -x!*.bak -p&quot;$(PROJECT_NAME)_tde&quot;' />
+					<Add after='C:\Program Files\7-Zip\7z a $(PROJECT_NAME)_$(TODAY)_src.7z src\*.* res\*.* data\*.* build.cmake\*  build.batch\*  *.bat *.txt *.html *.md doxygen\* doc\* *.cbp *.workspace -x!*.bak README makefile -mhe -p&quot;$(PROJECT_NAME)_tde@03!&quot;' />
 					<Add after="C:\Program Files\7-Zip\7z a -ttar $(PROJECT_NAME)_$(TODAY)_all.tar * -x!*.7z -x!*.bak" />
-					<Add after="C:\Program Files\7-Zip\7z a -tgzip $(PROJECT_NAME)_$(TODAY)_all.tgz *.tar" />
+					<Add after='C:\Program Files\7-Zip\7z a $(PROJECT_NAME)_$(TODAY)_all.7z *.tar -mhe -p&quot;$(PROJECT_NAME)_tde@03!&quot;' />
 					<Add after="cmd /c del *.tar" />
 				</ExtraCommands>
 			</Target>
 		</Build>
 		<VirtualTargets>
-			<Add alias="All build" targets="Debug Mingw32 official;Release Mingw32 official;Debug Mingw64 CB;Release Mingw64 CB;Debug Mingw64 Dev-Cpp;Release Mingw64 Dev-Cpp;Debug CYGWIN 32;Release CYGWIN 32;Debug CYGWIN 64;Release CYGWIN 64;Debug Mingw32 wl;Release Mingw32 wl;Debug Mingw64 wl;Release Mingw64 wl;Debug TDM MinGW32;Release TDM MinGW32;Debug TDM MinGW64;Release TDM MinGW64;Debug MSYS2W32;Release MSYS2W32;Debug MSYS2W64;Release MSYS2W64;Debug VS2022 X32;Release VS2022 X32;Debug VS2022 X64;Release VS2022 X64;Debug DMC;Release DMC;Debug lcc;Release lcc;Debug lcc64;Release lcc64;Debug BorlandC;Release BorlandC;Debug OW 32;Release OW 32;Debug PELLES C;Release PELLES C;Debug PELLES C 64;Release PELLES C 64;Debug CLANG Mingw32;Release CLANG Mingw32;Debug CLANG Mingw64;Release CLANG Mingw64;Debug CLANG MSX32;Release CLANG MSX32;Debug CLANG MSX64;Release CLANG MSX64;Debug CLANG MSYS W32;Release CLANG MSYS W32;Debug CLANG MSYS W64;Release CLANG MSYS W64;Archive;" />
+			<Add alias="All build" targets="Debug Mingw32 official;Release Mingw32 official;Debug Mingw64 CB;Release Mingw64 CB;Debug Mingw64 Dev-Cpp;Release Mingw64 Dev-Cpp;Debug CYGWIN 32;Release CYGWIN 32;Debug CYGWIN 64;Release CYGWIN 64;Debug Mingw32 wl;Release Mingw32 wl;Debug Mingw64 wl;Release Mingw64 wl;Debug TDM MinGW32;Release TDM MinGW32;Debug TDM MinGW64;Release TDM MinGW64;Debug MSYS2W32;Release MSYS2W32;Debug MSYS2W64;Release MSYS2W64;Debug MSYS2 UCRT64;Release MSYS2 UCRT64;Debug VS2022 X32;Release VS2022 X32;Debug VS2022 X64;Release VS2022 X64;Debug DMC;Release DMC;Debug lcc;Release lcc;Debug lcc64;Release lcc64;Debug BorlandC;Release BorlandC;Debug OW 32;Release OW 32;Debug OW 64;Release OW 64;Debug PELLES C;Release PELLES C;Debug PELLES C 64;Release PELLES C 64;Debug CLANG Mingw32;Release CLANG Mingw32;Debug CLANG Mingw64;Release CLANG Mingw64;Debug CLANG MSX32;Release CLANG MSX32;Debug CLANG MSX64;Release CLANG MSX64;Debug CLANG MSYS W32;Release CLANG MSYS W32;Debug CLANG MSYS W64;Release CLANG MSYS W64;Archive;" />
 		</VirtualTargets>
-		<Unit filename="src/Lesson05.c">
+		<Unit filename="src/Lesson09.c">
 			<Option compilerVar="CC" />
 			<Option target="Debug Mingw32 official" />
 			<Option target="Release Mingw32 official" />
@@ -2372,6 +2360,8 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			<Option target="Release BorlandC" />
 			<Option target="Debug OW 32" />
 			<Option target="Release OW 32" />
+			<Option target="Debug OW 64" />
+			<Option target="Release OW 64" />
 			<Option target="Debug PELLES C" />
 			<Option target="Release PELLES C" />
 			<Option target="Debug PELLES C 64" />
@@ -2388,8 +2378,10 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			<Option target="Release CLANG MSYS W32" />
 			<Option target="Debug CLANG MSYS W64" />
 			<Option target="Release CLANG MSYS W64" />
+			<Option target="Debug MSYS2 UCRT64" />
+			<Option target="Release MSYS2 UCRT64" />
 		</Unit>
-		<Unit filename="src/Lesson05.rc">
+		<Unit filename="src/Lesson09.rc">
 			<Option compilerVar="WINDRES" />
 			<Option target="Debug Mingw32 official" />
 			<Option target="Release Mingw32 official" />
@@ -2427,6 +2419,8 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			<Option target="Release BorlandC" />
 			<Option target="Debug OW 32" />
 			<Option target="Release OW 32" />
+			<Option target="Debug OW 64" />
+			<Option target="Release OW 64" />
 			<Option target="Debug PELLES C" />
 			<Option target="Release PELLES C" />
 			<Option target="Debug PELLES C 64" />
@@ -2443,6 +2437,8 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			<Option target="Release CLANG MSYS W32" />
 			<Option target="Debug CLANG MSYS W64" />
 			<Option target="Release CLANG MSYS W64" />
+			<Option target="Debug MSYS2 UCRT64" />
+			<Option target="Release MSYS2 UCRT64" />
 		</Unit>
 		<Unit filename="src/resource.h">
 			<Option target="Debug Mingw32 official" />
@@ -2481,6 +2477,8 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			<Option target="Release BorlandC" />
 			<Option target="Debug OW 32" />
 			<Option target="Release OW 32" />
+			<Option target="Debug OW 64" />
+			<Option target="Release OW 64" />
 			<Option target="Debug PELLES C" />
 			<Option target="Release PELLES C" />
 			<Option target="Debug PELLES C 64" />
@@ -2497,6 +2495,8 @@ Paradigm : obtain one source (only one !) compatible for multiple free C Compile
 			<Option target="Release CLANG MSYS W32" />
 			<Option target="Debug CLANG MSYS W64" />
 			<Option target="Release CLANG MSYS W64" />
+			<Option target="Debug MSYS2 UCRT64" />
+			<Option target="Release MSYS2 UCRT64" />
 		</Unit>
 		<Extensions>
 			<lib_finder disable_auto="1" />

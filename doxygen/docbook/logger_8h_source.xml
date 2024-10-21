@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_logger_8h_source" xml:lang="fr">
+<title>logger.h</title>
+<indexterm><primary>logger.h</primary></indexterm>
+Aller à la documentation de ce fichier.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;LOGGER_H</emphasis>
+2 <emphasis role="preprocessor">#define&#32;LOGGER_H</emphasis>
+3 
+4 <emphasis role="comment">&#32;/*************************************************************************</emphasis>
+5 <emphasis role="comment">&#32;*&#32;&#32;Project&#32;:&#32;$logger.h</emphasis>
+6 <emphasis role="comment">&#32;*&#32;&#32;Function&#32;:&#32;Utility&#32;program&#32;:&#32;add&#32;trace&#32;in&#32;text&#32;file,&#32;only&#32;in&#32;mode&#32;Debug</emphasis>
+7 <emphasis role="comment">&#32;**************************************************************************</emphasis>
+8 <emphasis role="comment">&#32;*&#32;&#32;$Author:&#32;Thierry&#32;DECHAIZE</emphasis>
+9 <emphasis role="comment">&#32;*&#32;&#32;$Name:&#32;&#32;thierry.dechaize@gmail.com</emphasis>
+10 <emphasis role="comment">&#32;***************************************************************</emphasis>
+11 <emphasis role="comment">&#32;*&#32;&#32;Find&#32;this&#32;extract&#32;after&#32;navigate&#32;on&#32;Internet</emphasis>
+12 <emphasis role="comment">&#32;*&#32;&#32;No&#32;Copyright&#32;:&#32;public&#32;domain</emphasis>
+13 <emphasis role="comment">&#32;*&#32;&#32;Adapted&#32;because&#32;my&#32;needs&#32;are&#32;specifics.</emphasis>
+14 <emphasis role="comment">&#32;***************************************************************/</emphasis>
+15 
+16 <emphasis role="comment">//logger.h</emphasis>
+17 
+34 <emphasis role="comment">//logger.h</emphasis>
+35 
+36 <emphasis role="preprocessor">#include&#32;&lt;stdarg.h&gt;</emphasis>
+37 
+38 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_logger_8h_1abd2d19eeef46a8184a2302d33c6c7397">log_print</link>(<emphasis role="keywordtype">char</emphasis>*&#32;filename,&#32;<emphasis role="keywordtype">int</emphasis>&#32;line,&#32;<emphasis role="keywordtype">char</emphasis>&#32;*fmt,...);
+39 <emphasis role="comment">//&#32;Borland&#32;C/C++&#32;don&apos;t&#32;compile&#32;with&#32;this&#32;define&#32;!!!</emphasis>
+40 <emphasis role="comment">//&#32;#define&#32;LOG_PRINT(...)&#32;log_print(__FILE__,&#32;__LINE__,&#32;__VA_ARGS__&#32;)</emphasis>
+41 
+42 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;header&#32;guard</emphasis>
+43 
+44 
+</programlisting></section>

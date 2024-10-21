@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_68267d1309a1af8e8297ef4c3efbcdba" xml:lang="fr">
+<title>RÃ©pertoire de rÃ©fÃ©rence de src</title>
+<indexterm><primary>RÃ©pertoire de rÃ©fÃ©rence de src</primary></indexterm>
+<simplesect>
+    <title>Fichiers    </title>
+        <itemizedlist>
+            <listitem><para>fichier <link linkend="__lesson10_8c">Lesson10.c</link></para>
+
+<para>Open simple window on Windows systems and create a 3D world in which you can navigated on click on &quot;arrows key&quot;. </para>
+</listitem>
+            <listitem><para>fichier <link linkend="_logger_8c">logger.c</link></para>
+
+<para>Ajout de fonction de &quot;logging&quot; (traces dans un fichier texte log.txt) uniquement en mode Debug et avec des niveaux de tracing définis dans une varaiable d&apos;environnement (LEVEL) </para>
+</listitem>
+            <listitem><para>fichier <link linkend="_logger_8h">logger.h</link></para>
+
+<para>Header de l&apos;ajout de fonction de &quot;logging&quot; (traces dans un fichier texte log.txt) uniquement en mode Debug et avec des niveaux de tracing définis dans une varaiable d&apos;environnement (LEVEL) </para>
+</listitem>
+            <listitem><para>fichier <link linkend="_resource_8h">resource.h</link></para>
+
+<para>Les définitions utilisées par le programme et les ressources. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

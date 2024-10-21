@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_logger_8c" xml:lang="fr">
+<title>RÃ©fÃ©rence du fichier logger.c</title>
+<indexterm><primary>logger.c</primary></indexterm>
+<para>
+
+<para>Ajout de fonction de &quot;logging&quot; (traces dans un fichier texte log.txt) uniquement en mode Debug et avec des niveaux de tracing définis dans une varaiable d&apos;environnement (LEVEL) </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;stdio.h&gt;<?linebreak?>#include &lt;time.h&gt;<?linebreak?>#include &lt;string.h&gt;<?linebreak?>#include &lt;stdlib.h&gt;<?linebreak?>#include &quot;logger.h&quot;<?linebreak?></programlisting>Graphe des dÃ©pendances par inclusion de logger.c:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="logger_8c__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para>#define <link linkend="_logger_8c_1a0920890c442b665b0c6609fa796e9047">DIR_SEPARATOR</link>&#160;&#160;&#160;&apos;/&apos;</para>
+</listitem>
+            <listitem><para>#define <link linkend="_logger_8c_1a256a5721249aa3309437212cc21a9fe4">PATH_SEPARATOR</link>&#160;&#160;&#160;&apos;:&apos;</para>
+</listitem>
+            <listitem><para>#define <link linkend="_logger_8c_1a9062ad017719f7653eb498d61ed41d55">IS_DIR_SEPARATOR</link>(ch)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_logger_8c_1a48100cbe5f69905dca2b6bbc7a888d30">IS_PATH_SEPARATOR</link>(ch)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Fonctions    </title>
+        <itemizedlist>
+            <listitem><para>char * <link linkend="_logger_8c_1aeea85f0478e1d5c40a6293f63269ac03">print_time</link> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_logger_8c_1abd2d19eeef46a8184a2302d33c6c7397">log_print</link> (char *filename, int line, char *fmt,...)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para>FILE * <link linkend="_logger_8c_1a724e7d2bbffb847aa6e987a006d4d13b">ft</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Description dÃ©taillÃ©e</title>
+
+<para>Ajout de fonction de &quot;logging&quot; (traces dans un fichier texte log.txt) uniquement en mode Debug et avec des niveaux de tracing définis dans une varaiable d&apos;environnement (LEVEL) </para>
+
+<para>Comments manageable by Doxygen</para>
+
+<para>Modified by Thierry DECHAIZE</para>
+
+<para>Date : 2024/10/20</para>
+
+<para><formalpara><title>Auteur</title>
+
+<para>Thierry Dechaize </para>
+</formalpara>
+<formalpara><title>Version</title>
+
+<para>2.0.1.0 </para>
+</formalpara>
+<formalpara><title>Date</title>
+
+<para>5 mars 2023</para>
+</formalpara>
+L&apos;utilisation est très simple : #if define(DEBUG)</para>
+
+<para>if ((strcmp(level_debug,&quot;BASE&quot;) == 0) || (strcmp(level_debug,&quot;FULL&quot;) == 0)) [ || (strcmp(level_debug,&quot;OPENGL&quot;) == 0))]</para>
+
+<para>log_print( <emphasis role="bold">FILE</emphasis>, <emphasis role="bold">LINE</emphasis>, texte approprié);</para>
+
+<para>#endif</para>
+
+<para>Warning : la variable LEVEL doit être définie au niveau &quot;user&quot; et non au niveau &quot;system&quot; sous Windows. </para>
+</section>
+<section>
+<title>Documentation des macros</title>
+<anchor xml:id="_logger_8c_1a0920890c442b665b0c6609fa796e9047"/><section>
+    <title>DIR_SEPARATOR</title>
+<indexterm><primary>DIR_SEPARATOR</primary><secondary>logger.c</secondary></indexterm>
+<indexterm><primary>logger.c</primary><secondary>DIR_SEPARATOR</secondary></indexterm>
+<para><computeroutput>#define DIR_SEPARATOR&#160;&#160;&#160;&apos;/&apos;</computeroutput></para></section>
+<anchor xml:id="_logger_8c_1a9062ad017719f7653eb498d61ed41d55"/><section>
+    <title>IS_DIR_SEPARATOR</title>
+<indexterm><primary>IS_DIR_SEPARATOR</primary><secondary>logger.c</secondary></indexterm>
+<indexterm><primary>logger.c</primary><secondary>IS_DIR_SEPARATOR</secondary></indexterm>
+<para><computeroutput>#define IS_DIR_SEPARATOR( ch)</computeroutput></para><emphasis role="strong">Valeur :</emphasis><programlisting linenumbering="unnumbered">((ch)&#32;==&#32;<link linkend="_logger_8c_1a0920890c442b665b0c6609fa796e9047">DIR_SEPARATOR</link>)
+</programlisting></section>
+<anchor xml:id="_logger_8c_1a48100cbe5f69905dca2b6bbc7a888d30"/><section>
+    <title>IS_PATH_SEPARATOR</title>
+<indexterm><primary>IS_PATH_SEPARATOR</primary><secondary>logger.c</secondary></indexterm>
+<indexterm><primary>logger.c</primary><secondary>IS_PATH_SEPARATOR</secondary></indexterm>
+<para><computeroutput>#define IS_PATH_SEPARATOR( ch)</computeroutput></para><emphasis role="strong">Valeur :</emphasis><programlisting linenumbering="unnumbered">((ch)&#32;==&#32;<link linkend="_logger_8c_1a256a5721249aa3309437212cc21a9fe4">PATH_SEPARATOR</link>)
+</programlisting></section>
+<anchor xml:id="_logger_8c_1a256a5721249aa3309437212cc21a9fe4"/><section>
+    <title>PATH_SEPARATOR</title>
+<indexterm><primary>PATH_SEPARATOR</primary><secondary>logger.c</secondary></indexterm>
+<indexterm><primary>logger.c</primary><secondary>PATH_SEPARATOR</secondary></indexterm>
+<para><computeroutput>#define PATH_SEPARATOR&#160;&#160;&#160;&apos;:&apos;</computeroutput></para></section>
+</section>
+<section>
+<title>Documentation des fonctions</title>
+<anchor xml:id="_logger_8c_1abd2d19eeef46a8184a2302d33c6c7397"/><section>
+    <title>log_print()</title>
+<indexterm><primary>log_print</primary><secondary>logger.c</secondary></indexterm>
+<indexterm><primary>logger.c</primary><secondary>log_print</secondary></indexterm>
+<para><computeroutput>void log_print (char * filename, int line, char * fmt,  ...)</computeroutput></para>Voici le graphe d&apos;appel pour cette fonction :<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="logger_8c_abd2d19eeef46a8184a2302d33c6c7397_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Voici le graphe des appelants de cette fonction :<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="logger_8c_abd2d19eeef46a8184a2302d33c6c7397_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_logger_8c_1aeea85f0478e1d5c40a6293f63269ac03"/><section>
+    <title>print_time()</title>
+<indexterm><primary>print_time</primary><secondary>logger.c</secondary></indexterm>
+<indexterm><primary>logger.c</primary><secondary>print_time</secondary></indexterm>
+<para><computeroutput>char * print_time ( )</computeroutput></para>Voici le graphe des appelants de cette fonction :<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="logger_8c_aeea85f0478e1d5c40a6293f63269ac03_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Documentation des variables</title>
+<anchor xml:id="_logger_8c_1a724e7d2bbffb847aa6e987a006d4d13b"/><section>
+    <title>ft</title>
+<indexterm><primary>ft</primary><secondary>logger.c</secondary></indexterm>
+<indexterm><primary>logger.c</primary><secondary>ft</secondary></indexterm>
+<para><computeroutput>FILE* ft</computeroutput></para></section>
+</section>
+</section>

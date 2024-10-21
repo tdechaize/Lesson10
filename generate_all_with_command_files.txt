@@ -1,0 +1,335 @@
+"Directory del'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  	: Lesson10"
+Beginning of generate_all_with_command_files.bat, current time is 05/03/2024:17:34:56,10
+Commande ECHO dÇsactivÇe.
+Not found ".c"
+Commande ECHO dÇsactivÇe.
+Not found ".c"
+Commande ECHO dÇsactivÇe.
+Not found ".c"
+Commande ECHO dÇsactivÇe.
+Not found ".c"
+"GÈnÈration batch pour le compilateur Borland C/C++ 5.51 : mode Debug"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+
+C:\src\OpenGL\NeHe_Lesson10-master>REM    G√©n√©ration d'une application [console|windows|lib|dll] (compil + link/tlib) pour le compilateur Borland C/C++ 5.51  
+
+C:\src\OpenGL\NeHe_Lesson10-master>SET PATH=C:\BCC55\bin;C:\Program Files\OpenSSH\;C:\Program Files\ImageMagick-7.1.1-Q16;C:\VulkanSDK\1.3.268.0\Bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\libnvvp;C:\Program Files\Microsoft\jdk-11.0.16.101-hotspot\bin;C:\Program Files (x86)\VMware\VMware Player\bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapathC:\Program Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Windows\SysWOW64\WindowsPowerShell\v1.0;C:\ProgramData\chocolatey\bin;C:\Windows\System32;C:\Program Files\GitHub CLI\;C:\Program Files\dotnet\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Calibre2\;C:\Program Files\PuTTY\;C:\CodeBlocks;C:\Program Files\NVIDIA Corporation\Nsight Compute 2023.1.1\;C:\Program Files\nodejs\;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\bin\Hostx64\x64;C:\Program Files (x86)\NVIDIA Corporation\Cg\bin;C:\Program Files (x86)\NVIDIA Corporation\Cg\bin.x64;C:\Program Files\TortoiseGit\bin;C:\Program Files\MIT\Kerberos\bin;C:\Program Files\gs\gs10.01.2\bin;C:\Program Files (x86)\GitExtensions\;C:\devkitPro\msys2\usr\bin;C:\Program Files\Graphviz\bin;C:\Program Files\CMake\bin;C:\Program Files\Meson\;C:\Program Files\VSCodium\bin;C:\Program Files (x86)\Gpg4win\..\GnuPG\bin;C:\clangd_17.0.3\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\PowerShell\7\;C:\Program Files\Git\cmd;C:\TDM-GCC-32\bin;C:\Program Files\Conan\conan;C:\Users\thier\.cargo\bin;C:\Users\thier\.cargo\bin;C:\Users\thier\AppData\Local\Microsoft\WindowsApps;C:\Users\thier\AppData\Local\GitHubDesktop\bin;C:\Users\thier\AppData\Local\Programs\VSCodium\bin;C:\Users\thier\AppData\Roaming\npm;C:\Users\thier\AppData\Local\GitHubDesktop\bin;C:\Users\thier\AppData\Roaming\npm;C:\Program Files\SDCC\bin;C:\Users\thier\.dotnet\tools 
+
+C:\src\OpenGL\NeHe_Lesson10-master>SET INCLUDE=C:\BCC55\include 
+
+C:\src\OpenGL\NeHe_Lesson10-master>SET LIB1=C:\BCC55\lib\PSDK 
+
+C:\src\OpenGL\NeHe_Lesson10-master>set LIB2=C:\BCC55\lib 
+
+C:\src\OpenGL\NeHe_Lesson10-master>SET OBJS= 
+
+C:\src\OpenGL\NeHe_Lesson10-master>if "windows" == "console" goto CONSOL 
+
+C:\src\OpenGL\NeHe_Lesson10-master>if "windows" == "windows" goto APPWIN 
+
+C:\src\OpenGL\NeHe_Lesson10-master>echo "Borland C/C++ 5.5 -> Gen√©ration windows de l'application en mode : Debug" 
+"Borland C/C++ 5.5 -> Gen√©ration windows de l'application en mode : Debug"
+
+C:\src\OpenGL\NeHe_Lesson10-master>if "Debug" == "Debug" goto DEBAPP 
+
+C:\src\OpenGL\NeHe_Lesson10-master>set "CFLAGS=-c -tWM -w -w-par -w-inl -W -a1 -O2 -6 -v" 
+
+C:\src\OpenGL\NeHe_Lesson10-master>if exist C:\src\OpenGL\NeHe_Lesson10-master\src_c.txt (for /F "tokens=* delims=" %a in ('type C:\src\OpenGL\NeHe_Lesson10-master\src_c.txt') do (
+bcc32 -c -DDEBUG -D_DEBUG -IC:\BCC55\include -oobjBC55\Debug\%a.obj src\%a.c  
+ call :concat objBC55\Debug\%a.obj 
+) ) 
+
+C:\src\OpenGL\NeHe_Lesson10-master>(
+bcc32 -c -DDEBUG -D_DEBUG -IC:\BCC55\include -oobjBC55\Debug\logger.obj src\logger.c  
+ call :concat objBC55\Debug\logger.obj 
+) 
+Borland C++ 5.5.1 for Win32 Copyright (c) 1993, 2000 Borland
+src\logger.c:
+Warning W8004 src\logger.c 45: 'size' is assigned a value that is never used in function print_time
+Warning W8065 src\logger.c 79: Call to function 'print_time' with no prototype in function log_print
+
+C:\src\OpenGL\NeHe_Lesson10-master>set OBJS=objBC55\Debug\logger.obj  
+
+C:\src\OpenGL\NeHe_Lesson10-master>EXIT /B 
+
+C:\src\OpenGL\NeHe_Lesson10-master>bcc32 -c -tWM -w -w-par -w-inl -W -a1 -O2 -6 -v -DDEBUG -D_DEBUG -IC:\BCC55\include -oobjBC55\Debug\Lesson10.obj src\Lesson10.c 
+Borland C++ 5.5.1 for Win32 Copyright (c) 1993, 2000 Borland
+src\Lesson10.c:
+Warning W8004 src\Lesson10.c 205: 'vert' is assigned a value that is never used in function SetupWorld
+Warning W8004 src\Lesson10.c 205: 'loop' is assigned a value that is never used in function SetupWorld
+Warning W8065 src\Lesson10.c 380: Call to function 'LoadGLTextures' with no prototype in function InitGL
+Warning W8065 src\Lesson10.c 394: Call to function 'SetupWorld' with no prototype in function InitGL
+Warning W8004 src\Lesson10.c 417: 'loop_m' is assigned a value that is never used in function DrawGLScene
+Warning W8060 src\Lesson10.c 595: Possibly incorrect assignment in function CreateGLWindow
+Warning W8071 src\Lesson10.c 614: Conversion may lose significant digits in function CreateGLWindow
+Warning W8060 src\Lesson10.c 616: Possibly incorrect assignment in function CreateGLWindow
+Warning W8060 src\Lesson10.c 637: Possibly incorrect assignment in function CreateGLWindow
+Warning W8004 src\Lesson10.c 624: 'PixelFormat' is assigned a value that is never used in function CreateGLWindow
+
+C:\src\OpenGL\NeHe_Lesson10-master>brcc32 -32 -iC:\BCC55\include -foobjBC55\Debug\Lesson10.res src\Lesson10.rc 
+Borland Resource Compiler  Version 5.40
+Copyright (c) 1990, 1999 Inprise Corporation.  All rights reserved.
+
+C:\src\OpenGL\NeHe_Lesson10-master>if exist C:\src\OpenGL\NeHe_Lesson10-master\src_c.txt (ilink32 -q -aa -V4.0 -c -x -Gn -L"C:\BCC55\lib\PSDK" -L"C:\BCC55\lib" c0w32.obj objBC55\Debug\logger.obj  objBC55\Debug\Lesson10.obj, binBC55\Debug\Lesson10.exe, , import32.lib cw32.lib opengl32.lib gdi32.lib advapi32.lib comdlg32.lib winmm.lib user32.lib kernel32.lib, ,objBC55\Debug\Lesson10.res )  else (ilink32 -q -aa -V4.0 -c -x -Gn -L"C:\BCC55\lib\PSDK" -L"C:\BCC55\lib" c0w32.obj objBC55\Debug\Lesson10.obj, binBC55\Debug\Lesson10.exe, , import32.lib cw32.lib opengl32.lib gdi32.lib advapi32.lib comdlg32.lib winmm.lib user32.lib kernel32.lib, ,objBC55\Debug\Lesson10.res ) 
+
+C:\src\OpenGL\NeHe_Lesson10-master>goto FIN 
+
+C:\src\OpenGL\NeHe_Lesson10-master>SET INCLUDE= 
+
+C:\src\OpenGL\NeHe_Lesson10-master>SET LIB= 
+
+C:\src\OpenGL\NeHe_Lesson10-master>SET PATH=C:\Program Files\OpenSSH\;C:\Program Files\ImageMagick-7.1.1-Q16;C:\VulkanSDK\1.3.268.0\Bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\libnvvp;C:\Program Files\Microsoft\jdk-11.0.16.101-hotspot\bin;C:\Program Files (x86)\VMware\VMware Player\bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapathC:\Program Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Windows\SysWOW64\WindowsPowerShell\v1.0;C:\ProgramData\chocolatey\bin;C:\Windows\System32;C:\Program Files\GitHub CLI\;C:\Program Files\dotnet\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Calibre2\;C:\Program Files\PuTTY\;C:\CodeBlocks;C:\Program Files\NVIDIA Corporation\Nsight Compute 2023.1.1\;C:\Program Files\nodejs\;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\bin\Hostx64\x64;C:\Program Files (x86)\NVIDIA Corporation\Cg\bin;C:\Program Files (x86)\NVIDIA Corporation\Cg\bin.x64;C:\Program Files\TortoiseGit\bin;C:\Program Files\MIT\Kerberos\bin;C:\Program Files\gs\gs10.01.2\bin;C:\Program Files (x86)\GitExtensions\;C:\devkitPro\msys2\usr\bin;C:\Program Files\Graphviz\bin;C:\Program Files\CMake\bin;C:\Program Files\Meson\;C:\Program Files\VSCodium\bin;C:\Program Files (x86)\Gpg4win\..\GnuPG\bin;C:\clangd_17.0.3\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\PowerShell\7\;C:\Program Files\Git\cmd;C:\TDM-GCC-32\bin;C:\Program Files\Conan\conan;C:\Users\thier\.cargo\bin;C:\Users\thier\.cargo\bin;C:\Users\thier\AppData\Local\Microsoft\WindowsApps;C:\Users\thier\AppData\Local\GitHubDesktop\bin;C:\Users\thier\AppData\Local\Programs\VSCodium\bin;C:\Users\thier\AppData\Roaming\npm;C:\Users\thier\AppData\Local\GitHubDesktop\bin;C:\Users\thier\AppData\Roaming\npm;C:\Program Files\SDCC\bin;C:\Users\thier\.dotnet\tools 
+
+C:\src\OpenGL\NeHe_Lesson10-master>SET LIB1="" 
+
+C:\src\OpenGL\NeHe_Lesson10-master>set LIB2="" 
+
+C:\src\OpenGL\NeHe_Lesson10-master>cd C:\src\OpenGL\NeHe_Lesson10-master 
+
+C:\src\OpenGL\NeHe_Lesson10-master>endlocal
+
+C:\src\OpenGL\NeHe_Lesson10-master>echo "GÈnÈration batch pour le compilateur Borland C/C++ 5.51 : mode Release" 
+"GÈnÈration batch pour le compilateur Borland C/C++ 5.51 : mode Release"
+
+C:\src\OpenGL\NeHe_Lesson10-master>call C:\src\OpenGL\NeHe_Lesson10-master\build.batch\Compil_link_Borland_32b_windows.bat C:\src\OpenGL\NeHe_Lesson10-master Lesson10 windows Release 
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+
+C:\src\OpenGL\NeHe_Lesson10-master>REM    G√©n√©ration d'une application [console|windows|lib|dll] (compil + link/tlib) pour le compilateur Borland C/C++ 5.51  
+
+C:\src\OpenGL\NeHe_Lesson10-master>SET PATH=C:\BCC55\bin;C:\Program Files\OpenSSH\;C:\Program Files\ImageMagick-7.1.1-Q16;C:\VulkanSDK\1.3.268.0\Bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\libnvvp;C:\Program Files\Microsoft\jdk-11.0.16.101-hotspot\bin;C:\Program Files (x86)\VMware\VMware Player\bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapathC:\Program Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Windows\SysWOW64\WindowsPowerShell\v1.0;C:\ProgramData\chocolatey\bin;C:\Windows\System32;C:\Program Files\GitHub CLI\;C:\Program Files\dotnet\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Calibre2\;C:\Program Files\PuTTY\;C:\CodeBlocks;C:\Program Files\NVIDIA Corporation\Nsight Compute 2023.1.1\;C:\Program Files\nodejs\;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\bin\Hostx64\x64;C:\Program Files (x86)\NVIDIA Corporation\Cg\bin;C:\Program Files (x86)\NVIDIA Corporation\Cg\bin.x64;C:\Program Files\TortoiseGit\bin;C:\Program Files\MIT\Kerberos\bin;C:\Program Files\gs\gs10.01.2\bin;C:\Program Files (x86)\GitExtensions\;C:\devkitPro\msys2\usr\bin;C:\Program Files\Graphviz\bin;C:\Program Files\CMake\bin;C:\Program Files\Meson\;C:\Program Files\VSCodium\bin;C:\Program Files (x86)\Gpg4win\..\GnuPG\bin;C:\clangd_17.0.3\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\PowerShell\7\;C:\Program Files\Git\cmd;C:\TDM-GCC-32\bin;C:\Program Files\Conan\conan;C:\Users\thier\.cargo\bin;C:\Users\thier\.cargo\bin;C:\Users\thier\AppData\Local\Microsoft\WindowsApps;C:\Users\thier\AppData\Local\GitHubDesktop\bin;C:\Users\thier\AppData\Local\Programs\VSCodium\bin;C:\Users\thier\AppData\Roaming\npm;C:\Users\thier\AppData\Local\GitHubDesktop\bin;C:\Users\thier\AppData\Roaming\npm;C:\Program Files\SDCC\bin;C:\Users\thier\.dotnet\tools 
+
+C:\src\OpenGL\NeHe_Lesson10-master>SET INCLUDE=C:\BCC55\include 
+
+C:\src\OpenGL\NeHe_Lesson10-master>SET LIB1=C:\BCC55\lib\PSDK 
+
+C:\src\OpenGL\NeHe_Lesson10-master>set LIB2=C:\BCC55\lib 
+
+C:\src\OpenGL\NeHe_Lesson10-master>SET OBJS= 
+
+C:\src\OpenGL\NeHe_Lesson10-master>if "windows" == "console" goto CONSOL 
+
+C:\src\OpenGL\NeHe_Lesson10-master>if "windows" == "windows" goto APPWIN 
+
+C:\src\OpenGL\NeHe_Lesson10-master>echo "Borland C/C++ 5.5 -> Gen√©ration windows de l'application en mode : Release" 
+"Borland C/C++ 5.5 -> Gen√©ration windows de l'application en mode : Release"
+
+C:\src\OpenGL\NeHe_Lesson10-master>if "Release" == "Debug" goto DEBAPP 
+
+C:\src\OpenGL\NeHe_Lesson10-master>set "CFLAGS=-c -tWM -w -w-par -w-inl -W -a1 -O2 -6" 
+
+C:\src\OpenGL\NeHe_Lesson10-master>if exist C:\src\OpenGL\NeHe_Lesson10-master\src_c.txt (for /F "tokens=* delims=" %a in ('type C:\src\OpenGL\NeHe_Lesson10-master\src_c.txt') do (
+bcc32 -c -DNDEBUG -IC:\BCC55\include -oobjBC55\Release\%a.obj src\%a.c  
+ call :concat objBC55\Release\%a.obj 
+) ) 
+
+C:\src\OpenGL\NeHe_Lesson10-master>(
+bcc32 -c -DNDEBUG -IC:\BCC55\include -oobjBC55\Release\logger.obj src\logger.c  
+ call :concat objBC55\Release\logger.obj 
+) 
+Borland C++ 5.5.1 for Win32 Copyright (c) 1993, 2000 Borland
+src\logger.c:
+Warning W8004 src\logger.c 45: 'size' is assigned a value that is never used in function print_time
+Warning W8065 src\logger.c 79: Call to function 'print_time' with no prototype in function log_print
+
+C:\src\OpenGL\NeHe_Lesson10-master>set OBJS=objBC55\Release\logger.obj  
+
+C:\src\OpenGL\NeHe_Lesson10-master>EXIT /B 
+
+C:\src\OpenGL\NeHe_Lesson10-master>bcc32 -c -tWM -w -w-par -w-inl -W -a1 -O2 -6 -DNDEBUG -IC:\BCC55\include -oobjBC55\Release\Lesson10.obj src\Lesson10.c 
+Borland C++ 5.5.1 for Win32 Copyright (c) 1993, 2000 Borland
+src\Lesson10.c:
+Warning W8004 src\Lesson10.c 205: 'vert' is assigned a value that is never used in function SetupWorld
+Warning W8004 src\Lesson10.c 205: 'loop' is assigned a value that is never used in function SetupWorld
+Warning W8065 src\Lesson10.c 380: Call to function 'LoadGLTextures' with no prototype in function InitGL
+Warning W8065 src\Lesson10.c 394: Call to function 'SetupWorld' with no prototype in function InitGL
+Warning W8004 src\Lesson10.c 417: 'loop_m' is assigned a value that is never used in function DrawGLScene
+Warning W8060 src\Lesson10.c 595: Possibly incorrect assignment in function CreateGLWindow
+Warning W8071 src\Lesson10.c 614: Conversion may lose significant digits in function CreateGLWindow
+Warning W8060 src\Lesson10.c 616: Possibly incorrect assignment in function CreateGLWindow
+Warning W8060 src\Lesson10.c 637: Possibly incorrect assignment in function CreateGLWindow
+Warning W8004 src\Lesson10.c 624: 'PixelFormat' is assigned a value that is never used in function CreateGLWindow
+
+C:\src\OpenGL\NeHe_Lesson10-master>brcc32 -32 -iC:\BCC55\include -foobjBC55\Release\Lesson10.res src\Lesson10.rc 
+Borland Resource Compiler  Version 5.40
+Copyright (c) 1990, 1999 Inprise Corporation.  All rights reserved.
+
+C:\src\OpenGL\NeHe_Lesson10-master>if exist C:\src\OpenGL\NeHe_Lesson10-master\src_c.txt (ilink32 -q -aa -V4.0 -c -x -Gn -L"C:\BCC55\lib\PSDK" -L"C:\BCC55\lib" c0w32.obj objBC55\Release\logger.obj  objBC55\Release\Lesson10.obj, binBC55\Release\Lesson10.exe, , import32.lib cw32.lib opengl32.lib gdi32.lib advapi32.lib comdlg32.lib winmm.lib user32.lib kernel32.lib, ,objBC55\Release\Lesson10.res )  else (ilink32 -q -aa -V4.0 -c -x -Gn -L"C:\BCC55\lib\PSDK" -L"C:\BCC55\lib" c0w32.obj objBC55\Release\Lesson10.obj, binBC55\Release\Lesson10.exe, , import32.lib cw32.lib opengl32.lib gdi32.lib advapi32.lib comdlg32.lib winmm.lib user32.lib kernel32.lib, ,objBC55\Release\Lesson10.res ) 
+
+C:\src\OpenGL\NeHe_Lesson10-master>goto FIN 
+
+C:\src\OpenGL\NeHe_Lesson10-master>SET INCLUDE= 
+
+C:\src\OpenGL\NeHe_Lesson10-master>SET LIB= 
+
+C:\src\OpenGL\NeHe_Lesson10-master>SET PATH=C:\Program Files\OpenSSH\;C:\Program Files\ImageMagick-7.1.1-Q16;C:\VulkanSDK\1.3.268.0\Bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\libnvvp;C:\Program Files\Microsoft\jdk-11.0.16.101-hotspot\bin;C:\Program Files (x86)\VMware\VMware Player\bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapathC:\Program Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Windows\SysWOW64\WindowsPowerShell\v1.0;C:\ProgramData\chocolatey\bin;C:\Windows\System32;C:\Program Files\GitHub CLI\;C:\Program Files\dotnet\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Calibre2\;C:\Program Files\PuTTY\;C:\CodeBlocks;C:\Program Files\NVIDIA Corporation\Nsight Compute 2023.1.1\;C:\Program Files\nodejs\;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\bin\Hostx64\x64;C:\Program Files (x86)\NVIDIA Corporation\Cg\bin;C:\Program Files (x86)\NVIDIA Corporation\Cg\bin.x64;C:\Program Files\TortoiseGit\bin;C:\Program Files\MIT\Kerberos\bin;C:\Program Files\gs\gs10.01.2\bin;C:\Program Files (x86)\GitExtensions\;C:\devkitPro\msys2\usr\bin;C:\Program Files\Graphviz\bin;C:\Program Files\CMake\bin;C:\Program Files\Meson\;C:\Program Files\VSCodium\bin;C:\Program Files (x86)\Gpg4win\..\GnuPG\bin;C:\clangd_17.0.3\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\PowerShell\7\;C:\Program Files\Git\cmd;C:\TDM-GCC-32\bin;C:\Program Files\Conan\conan;C:\Users\thier\.cargo\bin;C:\Users\thier\.cargo\bin;C:\Users\thier\AppData\Local\Microsoft\WindowsApps;C:\Users\thier\AppData\Local\GitHubDesktop\bin;C:\Users\thier\AppData\Local\Programs\VSCodium\bin;C:\Users\thier\AppData\Roaming\npm;C:\Users\thier\AppData\Local\GitHubDesktop\bin;C:\Users\thier\AppData\Roaming\npm;C:\Program Files\SDCC\bin;C:\Users\thier\.dotnet\tools 
+
+C:\src\OpenGL\NeHe_Lesson10-master>SET LIB1="" 
+
+C:\src\OpenGL\NeHe_Lesson10-master>set LIB2="" 
+
+C:\src\OpenGL\NeHe_Lesson10-master>cd C:\src\OpenGL\NeHe_Lesson10-master 
+
+C:\src\OpenGL\NeHe_Lesson10-master>endlocal
+
+C:\src\OpenGL\NeHe_Lesson10-master>IF "" NEQ "" GOTO FIN 
+
+C:\src\OpenGL\NeHe_Lesson10-master>REM             GÈnÈration batch pour GCC 9.2.0 intÈgrÈ ‡ MINGW32 (version officielle) 
+
+C:\src\OpenGL\NeHe_Lesson10-master>echo "GÈnÈration batch pour GCC 9.2.0 intÈgrÈ ‡ MINGW32 (version officielle) : mode Debug" 
+"GÈnÈration batch pour GCC 9.2.0 intÈgrÈ ‡ MINGW32 (version officielle) : mode Debug"
+
+C:\src\OpenGL\NeHe_Lesson10-master>call C:\src\OpenGL\NeHe_Lesson10-master\build.batch\Compil_link_MINGW32OF_32b_windows.bat C:\src\OpenGL\NeHe_Lesson10-master Lesson10 windows Debug 
+
+C:\src\OpenGL\NeHe_Lesson10-master>echo "R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master" 
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+
+C:\src\OpenGL\NeHe_Lesson10-master>echo "Nom de l'application  				: Lesson10" 
+"Nom de l'application  				: Lesson10"
+"GCC 32b de la version Mingw Officielle -> Gen√©ration windows de l'application en mode : Debug"
+"GÈnÈration batch pour GCC 9.2.0 intÈgrÈ ‡ MINGW32 (version officielle) : mode Release"
+
+C:\src\OpenGL\NeHe_Lesson10-master>echo "R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master" 
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+
+C:\src\OpenGL\NeHe_Lesson10-master>echo "Nom de l'application  				: Lesson10" 
+"Nom de l'application  				: Lesson10"
+"GCC 32b de la version Mingw Officielle -> Gen√©ration windows de l'application en mode : Release"
+"GÈnÈration batch pour GCC 11.2.0 intÈgrÈ ‡ Red-Panda DevCpp 2.10 : mode Debug"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+"Red Panda DEVCPP -> Gen√©ration windows de l'application en mode : Debug"
+"GÈnÈration batch pour GCC 11.2.0 intÈgrÈ ‡ Red-Panda DevCpp 2.10 : mode Release"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+"Red Panda DEVCPP -> Gen√©ration windows de l'application en mode : Release"
+"GÈnÈration batch pour GCC 13.1.0 intÈgrÈ ‡ l'environnement IDE Code::Blocks : mode Debug"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+"GCC 64b Mingw64 IDE CB -> Gen√©ration windows de l'application en mode : Debug"
+"GÈnÈration batch pour GCC 13.1.0 intÈgrÈ ‡ l'environnement IDE Code::Blocks : mode Release"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+"GCC 64b Mingw64 IDE CB -> Gen√©ration windows de l'application en mode : Release"
+"GÈnÈration batch pour GCC 11.4.0 32 bits intÈgrÈ ‡ l'environnement CYGWIN 64 bits : mode Debug"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+"GCC 32b inclus dans CYGWIN64 -> Gen√©ration windows de l'application en mode : Debug"
+"GÈnÈration batch pour GCC 11.4.0 32 bits intÈgrÈ ‡ l'environnement CYGWIN 64 bits : mode Release"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+"GCC 32b inclus dans CYGWIN64 -> Gen√©ration windows de l'application en mode : Release"
+"GÈnÈration batch pour GCC 11.4.0 64 bits intÈgrÈ ‡ l'environnement CYGWIN 64 bits : mode Debug"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+"GCC 64b inclus dans CYGWIN64 -> Gen√©ration windows de l'application en mode : Debug"
+"GÈnÈration batch pour GCC 11.4.0 64 bits intÈgrÈ ‡ l'environnement CYGWIN 64 bits : mode Release"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+"GCC 64b inclus dans CYGWIN64 -> Gen√©ration windows de l'application en mode : Release"
+"GÈnÈration batch pour GCC 13.2.0 32 bits intÈgrÈ au package WINLIBS : mode Debug"
+
+C:\src\OpenGL\NeHe_Lesson10-master>echo "R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master" 
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+
+C:\src\OpenGL\NeHe_Lesson10-master>echo "Nom de l'application  				: Lesson10" 
+"Nom de l'application  				: Lesson10"
+"GCC 32b Mingw32 packag√© Winlibs -> Gen√©ration windows de l'application en mode : Debug"
+"GÈnÈration batch pour GCC 13.2.0 32 bits intÈgrÈ au package WINLIBS : mode Release"
+
+C:\src\OpenGL\NeHe_Lesson10-master>echo "R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master" 
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+
+C:\src\OpenGL\NeHe_Lesson10-master>echo "Nom de l'application  				: Lesson10" 
+"Nom de l'application  				: Lesson10"
+"GCC 32b Mingw32 packag√© Winlibs -> Gen√©ration windows de l'application en mode : Release"
+"GÈnÈration batch pour GCC 13.2.0 64 bits intÈgrÈ au package WINLIBS : mode Debug"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+"GCC 64b Mingw64 packag√© Winlibs -> Gen√©ration windows de l'application en mode : Debug"
+"GÈnÈration batch pour GCC 13.2.0 64 bits intÈgrÈ au package WINLIBS : mode Release"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+"GCC 64b Mingw64 packag√© Winlibs -> Gen√©ration windows de l'application en mode : Release"
+"GÈnÈration batch pour GCC 13.2.0 32 bits intÈgrÈ ‡ l'environnement MSYS2 : mode Debug"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+"GCC 32b Mingw32 packag√© MSYS2 -> Gen√©ration windows de l'application en mode : Debug"
+"GÈnÈration batch pour GCC 13.2.0 32 bits intÈgrÈ ‡ l'environnement MSYS2 : mode Release"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+"GCC 32b Mingw32 packag√© MSYS2 -> Gen√©ration windows de l'application en mode : Release"
+"GÈnÈration batch pour GCC 13.2.0 64 bits intÈgrÈ ‡ l'environnement MSYS2 : mode Debug"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+"GCC 64b Mingw64 packag√© MSYS2 -> Gen√©ration windows de l'application en mode : Debug"
+"GÈnÈration batch pour GCC 13.2.0 64 bits intÈgrÈ ‡ l'environnement MSYS2 : mode Release"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+"GCC 64b Mingw64 packag√© MSYS2 -> Gen√©ration windows de l'application en mode : Release"
+"GÈnÈration batch pour GCC 13.2.0 UCRT 64 bits intÈgrÈ ‡ l'environnement MSYS2 : mode Debug"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+"GCC + UCRT 64b Mingw64 packag√© MSYS2 -> Gen√©ration windows de l'application en mode : Debug"
+"GÈnÈration batch pour GCC 13.2.0 UCRT 64 bits intÈgrÈ ‡ l'environnement MSYS2 : mode Release"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+"GCC + UCRT 64b Mingw64 packag√© MSYS2 -> Gen√©ration windows de l'application en mode : Release"
+"GÈnÈration batch pour GCC 10.3.0 intÈgrÈ ‡ l'environnement TDM 32 bits : mode Debug"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+"GCC 32b TDMW32 -> Gen√©ration windows de l'application en mode : Debug"
+"GÈnÈration batch pour GCC 10.3.0 intÈgrÈ ‡ l'environnement TDM 32 bits : mode Release"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+"GCC 32b TDMW32 -> Gen√©ration windows de l'application en mode : Release"
+"GÈnÈration batch pour GCC 10.3.0 intÈgrÈ ‡ l'environnement TDM 64 bits : mode Debug"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+"GCC 64b TDMW64 -> Gen√©ration windows de l'application en mode : Debug"
+"GÈnÈration batch pour GCC 10.3.0 intÈgrÈ ‡ l'environnement TDM 64 bits : mode Release"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+"GCC 64b TDMW64 -> Gen√©ration windows de l'application en mode : Release"
+"GÈnÈration batch pour Visual Studio 2022 Community en version 32 bits : mode Debug"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+"Visual C/C++ 32 bits (VS2022) -> Gen√©ration windows de l'application en mode : Debug"
+logger.c
+Lesson10.c
+Microsoft (R) Windows (R) Resource Compiler Version 10.0.10011.16384
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+"GÈnÈration batch pour Visual Studio 2022 Community en version 32 bits : mode Release"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+"Visual C/C++ 32 bits (VS2022) -> Gen√©ration windows de l'application en mode : Release"
+logger.c
+Lesson10.c
+Microsoft (R) Windows (R) Resource Compiler Version 10.0.10011.16384
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+"GÈnÈration batch pour Visual Studio 2022 Community en version 64 bits : mode Debug"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+"Visual C/C++ 64 bits (VS2022) -> Gen√©ration windows de l'application en mode : Debug"
+logger.c
+Lesson10.c
+Microsoft (R) Windows (R) Resource Compiler Version 10.0.10011.16384
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+"GÈnÈration batch pour Visual Studio 2022 Community en version 64 bits : mode Release"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+"Visual C/C++ 64 bits (VS2022) -> Gen√©ration windows de l'application en mode : Release"
+logger.c
+Lesson10.c
+Microsoft (R) Windows (R) Resource Compiler Version 10.0.10011.16384
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+"GÈnÈration batch pour CLANG en version 32 bits adossÈ ‡ Visual Studio 2022 : mode Debug"
+"R√©pertoire principal de l'application : C:\src\OpenGL\NeHe_Lesson10-master"
+"Nom de l'application  				: Lesson10"
+"CLANG (adoss√© √† VS2022 32 bits) -> Gen√©ration windows de l'application en mode : Debug"

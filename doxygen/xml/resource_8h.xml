@@ -1,0 +1,548 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.12.0" xml:lang="fr">
+  <compounddef id="resource_8h" kind="file" language="C++">
+    <compoundname>resource.h</compoundname>
+    <includedby refid="_lesson10_8c" local="yes">Lesson10.c</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>Lesson10.c</label>
+        <link refid="_lesson10_8c"/>
+      </node>
+      <node id="1">
+        <label>resource.h</label>
+        <link refid="resource_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="resource_8h_1abb326bd165140b31acf04b893ef655ca" prot="public" static="no">
+        <name>IDC_MYICON</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="28" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1a9772c84d39896ad00b9aeb34b15d324d" prot="public" static="no">
+        <name>IDR_MAINFRAME</name>
+        <initializer>101</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="29" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1aa9b6008c47cd133dfc8910da61d25547" prot="public" static="no">
+        <name>IDD_TEXTDIALOGSAMPLE_DIALOG</name>
+        <initializer>102</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="30" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1a636c9aea2a8d16b73e43df39b3e0e7bd" prot="public" static="no">
+        <name>IDS_APP_TITLE</name>
+        <initializer>103</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="31" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1a77a06326b569136edbb6c766bc98c33c" prot="public" static="no">
+        <name>IDD_ABOUTBOX</name>
+        <initializer>103</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="32" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1a589e0105bc3e8681893dbf51210ceeec" prot="public" static="no">
+        <name>IDM_ABOUT</name>
+        <initializer>104</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="33" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1a79aeed168a959b22b32169e25f8c1f4d" prot="public" static="no">
+        <name>IDM_EXIT</name>
+        <initializer>105</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="34" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1ada4e016f41f888392b4593fb06ec30c6" prot="public" static="no">
+        <name>IDI_TEXTDIALOGSAMPLE</name>
+        <initializer>107</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="35" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1a861a8cb71616b4615a5823bcf4bff6e3" prot="public" static="no">
+        <name>IDI_SMALL</name>
+        <initializer>108</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="36" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1a1bcb09c5d8ed79c19adef9966f1611c9" prot="public" static="no">
+        <name>IDC_TEXTDIALOGSAMPLE</name>
+        <initializer>109</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="37" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1a47e8d200dc6011ad0e877103b2ca518e" prot="public" static="no">
+        <name>IDI_MYICON</name>
+        <initializer>201</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="39" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1acfb35c4efbc593430638b09db17f2870" prot="public" static="no">
+        <name>IDC_BUTTON1</name>
+        <initializer>1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="40" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1a6acf6d252c94ab75397fd635ba891820" prot="public" static="no">
+        <name>IDC_BUTTON2</name>
+        <initializer>1001</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="41" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1ac815623c2e290aaaa0cb5b4fe1a9c250" prot="public" static="no">
+        <name>IDC_SIZE_SLIDER</name>
+        <initializer>1002</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="42" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1ab4e21846d3aafa3b25776fb8a9f1349e" prot="public" static="no">
+        <name>IDC_SIZE_LABEL</name>
+        <initializer>1003</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="43" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1af2bfc1a3289259238891ce6c5dbad731" prot="public" static="no">
+        <name>IDC_INPUT_TEXT</name>
+        <initializer>1005</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="44" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1ac664e8706a326bb8075ef8c0c68994a1" prot="public" static="no">
+        <name>IDC_FONT_LIST</name>
+        <initializer>1006</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="45" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1a5b2ec9538c6aa2df05ccd5dcf1b96b77" prot="public" static="no">
+        <name>IDC_BOLD</name>
+        <initializer>1008</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="46" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1af51c6cfd15b5882f8626b0903738fd7e" prot="public" static="no">
+        <name>IDC_ITALIC</name>
+        <initializer>1009</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="47" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1aa1c710246b8a9ecf74161fc9a5ce7990" prot="public" static="no">
+        <name>IDC_CHECK4</name>
+        <initializer>1010</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="48" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1a6db3f2481d01b31a2a3a6611399c759d" prot="public" static="no">
+        <name>IDC_UNDERLINE</name>
+        <initializer>1010</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="49" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1ac93033490bc8943cfc82ec3b40e5cd74" prot="public" static="no">
+        <name>IDC_STATIC</name>
+        <initializer>-1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="50" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1a5e37819f33cd3dbfdfaf2d3c13f4fc7b" prot="public" static="no">
+        <name>IDC_DWRITE_TEXT</name>
+        <initializer>-1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="51" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1ae6ef9058da3d1f2efdc365d6643d1de3" prot="public" static="no">
+        <name>VER_FILEVERSION</name>
+        <initializer>2,0,4,0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="67" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1a9ab9575a5fdacc8d78fb6a6a982bb060" prot="public" static="no">
+        <name>VER_FILEVERSION_STR</name>
+        <initializer>&quot;2.0.4.0\0&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="68" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1a1f0c72807dfc9de46855bff55bae541c" prot="public" static="no">
+        <name>VER_PRODUCTVERSION</name>
+        <initializer>2,0,4,0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="70" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1a5084df706ac15e76da275c143313f3d9" prot="public" static="no">
+        <name>VER_PRODUCTVERSION_STR</name>
+        <initializer>&quot;2.0.4.0\0&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="71" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1a1f1f8dc49fd0561cf19429a6f0296ab3" prot="public" static="no">
+        <name>VER_DEBUG</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="74" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1ae5e9111e9af54e6a31e3f8b369cd3e19" prot="public" static="no">
+        <name>VER_COMPANYNAME_STR</name>
+        <initializer>&quot;NeHe Productions\0&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="79" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1ad53fc999ea2c9ed67903bcc0bc88f257" prot="public" static="no">
+        <name>VER_FILEDESCRIPTION_STR</name>
+        <initializer>&quot;NeHe Lesson10 OpenGL\0&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="80" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1a9c575d8650180954b0a0318d0bb30c71" prot="public" static="no">
+        <name>VER_INTERNALNAME_STR</name>
+        <initializer>&quot;Lesson10\0&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="81" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1a0592f3cc57ce5994c8339bd057ae130c" prot="public" static="no">
+        <name>VER_LEGALCOPYRIGHT_STR</name>
+        <initializer>&quot;No patent. For free use.\0&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="82" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1a9532e03b291a013007c17978f72d1a80" prot="public" static="no">
+        <name>VER_LEGALTRADEMARKS1_STR</name>
+        <initializer>&quot;Neon Helium Productions\0&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="83" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1a3788d012ee2bbc1972b1003a16608f31" prot="public" static="no">
+        <name>VER_LEGALTRADEMARKS2_STR</name>
+        <initializer>&quot;See usage rules on www -&gt; nehe.gamedev.net\0&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="84" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1abfbc08ce9e78d5afc2d0c129643d9909" prot="public" static="no">
+        <name>VER_ORIGINALFILENAME_STR</name>
+        <initializer>&quot;Lesson10.exe\0&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="85" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1ad051d3f058991a313899785727ae6fd4" prot="public" static="no">
+        <name>VER_DATE_BUILD</name>
+        <initializer>&quot;Septembre 2020\0&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="87" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1aa559c3e72b87773444a1b3e0a1ea8502" prot="public" static="no">
+        <name>VER_COMMENTS</name>
+        <initializer>&quot;Paradigm : one source for multiple free C compilers\0&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="88" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1a52785d1d76582d8ac8f0354dae4c6c8d" prot="public" static="no">
+        <name>VER_SUPPORT</name>
+        <initializer>&quot;thierry.dechaize@gmail.com\0&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="89" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="resource_8h_1a7bdca6a0c9edff2b7b59a59ef0298862" prot="public" static="no">
+        <name>VER_USERS</name>
+        <initializer>&quot;Anyone, unlimited.\0&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" line="90" column="9" bodyfile="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Les définitions utilisées par le programme et les ressources. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Comments manageable by Doxygen</para>
+<para><simplesect kind="author"><para>Created by Thierry Dechaize to verify paradigm : one source for multiple C Compilers </para>
+</simplesect>
+<simplesect kind="version"><para>2.0.4.0 </para>
+</simplesect>
+<simplesect kind="date"><para>16 Octobre 2024</para>
+</simplesect>
+Rien à dire, il faut lire. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">*******************************************</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">*<sp/><sp/><sp/>Resource<sp/>Header<sp/>File<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">*<sp/><sp/><sp/>Created<sp/>by<sp/>Thierry<sp/>DECHAIZE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*<sp/><sp/><sp/>Date<sp/>:<sp/>2013/11/29<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">*******************************************</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">*</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HEADER_RESOURCE__INCLUDED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HEADER_RESOURCE__INCLUDED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="resource_8h_1abb326bd165140b31acf04b893ef655ca" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IDC_MYICON<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="resource_8h_1a9772c84d39896ad00b9aeb34b15d324d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IDR_MAINFRAME<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>101</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="resource_8h_1aa9b6008c47cd133dfc8910da61d25547" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IDD_TEXTDIALOGSAMPLE_DIALOG<sp/><sp/><sp/><sp/><sp/>102</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="resource_8h_1a636c9aea2a8d16b73e43df39b3e0e7bd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IDS_APP_TITLE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>103</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="resource_8h_1a77a06326b569136edbb6c766bc98c33c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IDD_ABOUTBOX<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>103</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="resource_8h_1a589e0105bc3e8681893dbf51210ceeec" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IDM_ABOUT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>104</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="resource_8h_1a79aeed168a959b22b32169e25f8c1f4d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IDM_EXIT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>105</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="resource_8h_1ada4e016f41f888392b4593fb06ec30c6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IDI_TEXTDIALOGSAMPLE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>107</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="resource_8h_1a861a8cb71616b4615a5823bcf4bff6e3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IDI_SMALL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>108</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="resource_8h_1a1bcb09c5d8ed79c19adef9966f1611c9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IDC_TEXTDIALOGSAMPLE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>109</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>IDR_MAINFRAME<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>128</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="resource_8h_1a47e8d200dc6011ad0e877103b2ca518e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IDI_MYICON<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>201</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="resource_8h_1acfb35c4efbc593430638b09db17f2870" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IDC_BUTTON1<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="resource_8h_1a6acf6d252c94ab75397fd635ba891820" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IDC_BUTTON2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1001</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="resource_8h_1ac815623c2e290aaaa0cb5b4fe1a9c250" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IDC_SIZE_SLIDER<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1002</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="resource_8h_1ab4e21846d3aafa3b25776fb8a9f1349e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IDC_SIZE_LABEL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1003</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="resource_8h_1af2bfc1a3289259238891ce6c5dbad731" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IDC_INPUT_TEXT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1005</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="resource_8h_1ac664e8706a326bb8075ef8c0c68994a1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IDC_FONT_LIST<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1006</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="resource_8h_1a5b2ec9538c6aa2df05ccd5dcf1b96b77" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IDC_BOLD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1008</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="resource_8h_1af51c6cfd15b5882f8626b0903738fd7e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IDC_ITALIC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1009</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="resource_8h_1aa1c710246b8a9ecf74161fc9a5ce7990" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IDC_CHECK4<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1010</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="resource_8h_1a6db3f2481d01b31a2a3a6611399c759d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IDC_UNDERLINE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1010</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="resource_8h_1ac93033490bc8943cfc82ec3b40e5cd74" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IDC_STATIC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="resource_8h_1a5e37819f33cd3dbfdfaf2d3c13f4fc7b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IDC_DWRITE_TEXT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Next<sp/>default<sp/>values<sp/>for<sp/>new<sp/>objects</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>APSTUDIO_INVOKED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>APSTUDIO_READONLY_SYMBOLS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_APS_NO_MFC<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_APS_NEXT_RESOURCE_VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>129</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_APS_NEXT_COMMAND_VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>32771</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_APS_NEXT_CONTROL_VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1011</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_APS_NEXT_SYMED_VALUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>110</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Define<sp/>strings<sp/>for<sp/>VERSIONINFO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="resource_8h_1ae6ef9058da3d1f2efdc365d6643d1de3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VER_FILEVERSION<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2,0,4,0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="resource_8h_1a9ab9575a5fdacc8d78fb6a6a982bb060" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VER_FILEVERSION_STR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;2.0.4.0\0&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="resource_8h_1a1f0c72807dfc9de46855bff55bae541c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VER_PRODUCTVERSION<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2,0,4,0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="resource_8h_1a5084df706ac15e76da275c143313f3d9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VER_PRODUCTVERSION_STR<sp/><sp/><sp/><sp/><sp/><sp/>&quot;2.0.4.0\0&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(DEBUG)<sp/>||<sp/>!defined(_DEBUG)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="resource_8h_1a1f1f8dc49fd0561cf19429a6f0296ab3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VER_DEBUG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VER_DEBUG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>VS_FF_DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="resource_8h_1ae5e9111e9af54e6a31e3f8b369cd3e19" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VER_COMPANYNAME_STR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;NeHe<sp/>Productions\0&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="resource_8h_1ad53fc999ea2c9ed67903bcc0bc88f257" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VER_FILEDESCRIPTION_STR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;NeHe<sp/>Lesson10<sp/>OpenGL\0&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="resource_8h_1a9c575d8650180954b0a0318d0bb30c71" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VER_INTERNALNAME_STR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;Lesson10\0&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="resource_8h_1a0592f3cc57ce5994c8339bd057ae130c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VER_LEGALCOPYRIGHT_STR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;No<sp/>patent.<sp/>For<sp/>free<sp/>use.\0&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="resource_8h_1a9532e03b291a013007c17978f72d1a80" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VER_LEGALTRADEMARKS1_STR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;Neon<sp/>Helium<sp/>Productions\0&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="resource_8h_1a3788d012ee2bbc1972b1003a16608f31" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VER_LEGALTRADEMARKS2_STR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;See<sp/>usage<sp/>rules<sp/>on<sp/>www<sp/>-&gt;<sp/>nehe.gamedev.net\0&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="resource_8h_1abfbc08ce9e78d5afc2d0c129643d9909" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VER_ORIGINALFILENAME_STR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;Lesson10.exe\0&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">//<sp/>#define<sp/>VER_PRODUCTNAME_STR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;Lesson10<sp/>OpenGL<sp/>:<sp/>Texture<sp/>mapping<sp/>on<sp/>cube<sp/>in<sp/>rotation.\0&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="resource_8h_1ad051d3f058991a313899785727ae6fd4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VER_DATE_BUILD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;Septembre<sp/>2020\0&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="resource_8h_1aa559c3e72b87773444a1b3e0a1ea8502" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VER_COMMENTS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;Paradigm<sp/>:<sp/>one<sp/>source<sp/>for<sp/>multiple<sp/>free<sp/>C<sp/>compilers\0&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="resource_8h_1a52785d1d76582d8ac8f0354dae4c6c8d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VER_SUPPORT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;thierry.dechaize@gmail.com\0&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="resource_8h_1a7bdca6a0c9edff2b7b59a59ef0298862" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VER_USERS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;Anyone,<sp/>unlimited.\0&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>HEADER_RESOURCE__INCLUDED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="C:/src/OpenGL/NeHe_Lesson10-master/src/resource.h"/>
+  </compounddef>
+</doxygen>
